@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publications on VMC</title>
+    <link>/publications/</link>
+    <description>Recent content in Publications on VMC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/publications/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Publications List</title>
+      <link>/publications/publications-list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/publications/publications-list/</guid>
+      <description>Please refer to the paper below when publishing results base on simulations with VMC:
+Reference paper
+Hřivnáčová I et al: The Virtual MonteCarlo,
+ECONF C0303241:THJT006,2003; e-Print: cs.SE/0306005
+ All publications listed in time reversed order:
+ Geant4 VMC 3.0
+, I Hřivnáčová, A Gheata 2015 J. Phys.: Conf. Ser. 664 072020 doi: 10.1088 /1742-6596/664/7/072020
+ The Geant4 Virtual Monte Carlo I Hřivnáčová 2012 J. Phys.: Conf. Ser. 396 022024 doi:10.1088 /1742-6596/119/3/032025  Physics lists in Geant4 VMC</description>
+    </item>
+    
+    <item>
+      <title>Meetings (Old)</title>
+      <link>/publications/meetings/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/publications/meetings/</guid>
+      <description> VMC meeting, CERN, 03 June 2009  &amp;nbsp; VMC meeting, CERN, 04 February 2009  &amp;nbsp; VMC Open issues meeting, CERN, 22 September 2008  &amp;nbsp; VMC Workshop, CERN, 29-30th November 2004   </description>
+    </item>
+    
+  </channel>
+</rss>
