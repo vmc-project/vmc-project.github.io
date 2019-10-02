@@ -51,10 +51,6 @@
   </url>
   
   <url>
-    <loc>/download/tar-files/</loc>
-  </url>
-  
-  <url>
     <loc>/user-guide/vmc/vmc-concept/</loc>
   </url>
   
@@ -144,6 +140,10 @@
   
   <url>
     <loc>/user-guide/geant4_vmc/stacking-of-particles/</loc>
+  </url>
+  
+  <url>
+    <loc>/download/tar-files/</loc>
   </url>
   
   <url>

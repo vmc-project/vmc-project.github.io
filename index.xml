@@ -133,17 +133,6 @@ path to Pythia6 library /your_path/geant3_install/lib[64] /your_path/examples_in
     </item>
     
     <item>
-      <title>Tar Files</title>
-      <link>/download/tar-files/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/download/tar-files/</guid>
-      <description>Pro versions    Package Version Tar file Tested with     vmc 0.1 (*) v0-1.tar.gz ROOT v6.18.00   geant3 2.7 v2-7.tar.gz ROOT 6.14.06   geant4_vmc 4.0.p1 v4-0-p1.tar.gz ROOT 6.14.06,
-Geant4 10.05 (with embedded CLHEP 2.4.1.0), VGM 4.4, Garfield master at 07c0ec50a0d3086b3 (**)    (*) this is development version, the pro version is under construction
-(**) with fixes in MR #1 in https://gitlab.</description>
-    </item>
-    
-    <item>
       <title>VMC Concept</title>
       <link>/user-guide/vmc/vmc-concept/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -297,6 +286,17 @@ Download Geant4 - from the Geant4 Web site</description>
       <guid>/user-guide/geant4_vmc/stacking-of-particles/</guid>
       <description>The user VMC stack is used differently in Geant3 VMC and Geant4 VMC. Geant3 VMC pops both primary and secondary particles as they are provided by TVirtualMCStack::PopNextTrack(), while Geant4 VMC pops only primary particles using TVirtualMCStack::PopPrimaryForTracking() from the VMC stack.
 Stacking of secondary particles is then handled by Geant4 kernel and the user VMC stack only monitors this stacking. By default, Geant4 VMC saves each secondary particle when it starts its tracking (at the the pre-track phase).</description>
+    </item>
+    
+    <item>
+      <title>Tar Files</title>
+      <link>/download/tar-files/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/download/tar-files/</guid>
+      <description>Pro versions    Package Version Tar file Tested with     vmc 0.1 (*) v0-1.tar.gz ROOT v6.18.00   geant3 2.7 v2-7.tar.gz ROOT 6.14.06   geant4_vmc 4.0.p1 v4-0-p1.tar.gz ROOT 6.14.06,
+Geant4 10.05 (with embedded CLHEP 2.4.1.0), VGM 4.4, Garfield master at 07c0ec50a0d3086b3 (**)    (*) this is development version, the pro version is under construction
+(**) with fixes in MR #1 in https://gitlab.</description>
     </item>
     
     <item>
