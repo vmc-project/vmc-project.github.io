@@ -1249,62 +1249,85 @@
 
 <h2 id="overview">Overview</h2>
 
-<p>The VMC package provides an abstract interface for Monte Carlo transport engines. Interfaces are implemented for
-* <a href="https://github.com/vmc-project/geant3">GEANT3</a>
-* <a href="https://github.com/vmc-project/geant4_vmc">GEANT4</a></p>
-
-<p>each deriving from <code>TVirtualMC</code> implementing all necessary methods.</p>
-
-<p>Before a user can instantiate an engine, an object deriving from <code>TVirtualMCApplication</code> needs to be present which has to be implemented by the user. It contains necessary hooks called from the <code>TVirtualMC</code>s depending on their internal state. At the same time it provides the bridge between the user code and VMC. For instance, the user code can contain the geometry construction routines somewhere which should be called from the implemented <code>UserApplication::ConstructGeometry()</code>.</p>
+<p>The VMC package allows splitting the event simulation among multiple engines. The criteria how to split the simulation have to be defined by the user and among others the decision which engine to be used could depend on
+<ul>
+<li>geometry</li>
+<li>particle phase space</li>
+<li>particle type</li>
+<li>any combination of that</li>
+<li>...</li>
+</ul>
+Running multiple engines is fully supported for
+<ul>
+<li> <a href="https://github.com/vmc-project/geant3">GEANT3</a></li>
+<li><a href="https://github.com/vmc-project/geant4_vmc">GEANT4</a></li>
+</ul>
+This also allows the user to implement his/her own class deriving from <code>TVirtualMC</code> to be used in a splitted simulation. The communication between the engines is handled by a singleton object of type <code>TMCManager</code> such that the user does not have to deal with special implementation details. Hence, pausing an engines, re-starting them or transferring a track from one to the other is done automatically and at the same time the user stack is kept up-to-date. Furthermore, the same user application derived from <code>TVirtualMCApplication</code> together with the same user stack derived from <code>TVirtualMCStack</code> can be used for both a single engine run or a simulation splitted among multiple ones.
+</p>
 
 <p>Further general information on the VMC project can be found <a href="https://root.cern.ch/vmc">here</a></p>
 
 <h2 id="running-multiple-different-engines">Running multiple different engines</h2>
+<p>
+To keep the overhead as small as possible, the <code>TMCManager</code> object has to be requested by the user explicitly during construction of the <code>UserApplication</code> by calling <code>TVirtualMCApplication::RequestManager()</code>. That make the manager available via the protected member <code>TVirtualMCApplication::fMCManager</code> but a pointer can also always be obtained via <code>TMCManager *TMCManager::Instance()</code>.
+</p>
 
-<p>The simulation of an event can be shared among multiple different engines deriving from <code>TVirtualMC</code> which are handled by a singleton <code>TMCManager</code> object. In such a scenario the user has to call <code>TVirtualMCApplication::RequestMCManager()</code> in the constructor of the user application. A pointer to the manager object is then available via the protected <code>TVirtualMCApplication::fMCManager</code> but can also be obtained using the static method <code>TMCManager *TMCManager::Instance()</code>.</p>
-
-<p><code>TMCManager</code> provides the following interfaces:</p>
-
+<p>
+The most important interfaces of the <code>TMCManager</code> to deal with multiple VMCs are:
 <ul>
-<li><code>void SetUserStack(TVirtualMCStack* userStack)</code> notifies the manager on the user stack such that it will be kept up-to-date during the simulation. Running without having set the user stack is not possible and the <code>TMCManager</code> will abort in that case.</li>
-<li><code>void ForwardTrack(Int_t toBeDone, Int_t trackId, Int_t parentId, TParticle* userParticle)</code>: The user is still the owner of all track objects (aka <code>TParticle</code>) being created. Hence, all engine calls to <code>TVirtualMCStack::PushTrack(...)</code> are forwarded to the user stack. This can then invoke the <code>ForwardTrack(..)</code> method of the manager to pass the pointer to the constructed <code>TParticle</code> object. If a particle should be pushed to an engine other than the one currently running the engine&rsquo;s id has to be provided as the last argument.</li>
-<li><code>void TransferTrack(Int_t targetEngineId)</code>: E.g. during <code>TVirtualMCApplication::Stepping()</code> the user might decide that the current track should be transferred to another engine, for instance, if a certain volume is entered. Specifying the ID of the target engine the manager will take care of interrupting the track in the current engine, extracting the kinematics and geometry state and it will push this to the stack of the target engine.</li>
-<li><code>template &lt;typename F&gt; void Apply(F f)</code> assumes <code>f</code> to implement the <code>()</code> operator and taking a <code>TVirtualMC</code> pointer as an arument. <code>f</code> will be then called for all engines.</li>
-<li><code>template &lt;typename F&gt; void Init(F f)</code> works as <code>TMCManager::Apply</code> during the initialization of the engines. It can also be called without an argument such that no additional user routine is included.</li>
-<li><code>void Run(Int_t nEvents)</code> steers a run for the specified number of events.</li>
-<li><code>void ConnectEnginePointers(TVirtualMC *&amp;mc)</code> gives the possibility for a user to pass a pointer which will always be set to point to the currently running engine.</li>
-<li><code>TVirtualMC *GetCurrentEngine()</code> provides the user with the currently running engine.</li>
+<li><code>void SetUserStack(TVirtualMCStack* userStack)</code><br />
+This notifies the manager about the user stack such that it will be kept up-to-date during the simulation. If that is not done, the <code>TMCManager</code> will abort.</li>
+<li><code>void ForwardTrack(Int_t toBeDone, Int_t trackId, Int_t parentId, TParticle* userParticle)</code><br />
+The user is always the owner of all track objects (aka <code>TParticle</code>) being created. Hence, all engine calls to <code>TVirtualMCStack::PushTrack(...)</code> are first redirected to the user stack where the user needs to make sure a <code>TParticle</code> object is created. After that, <code>TMCManager::ForwardTrack(..)</code> must be invoked to forward the pointer of the <code>TParticle</code> object which was just constructed. If a particle should be pushed to an engine other than the one currently running, the engine&rsquo;s ID has to be provided as the last argument.</li>
+<li><code>void TransferTrack(Int_t targetEngineId)</code><br />
+For instance during <code>TVirtualMCApplication::Stepping()</code> the user might decide that the current track should be transferred to another engine, e.g., if a certain volume is entered. By specifying the ID or the pointer of the target engine the manager will take care of interrupting the track in the current engine, extracting the kinematics and geometry state and it will save these information for the target engine.</li>
+<li><code>template &lt;typename F&gt; void Apply(F f)</code><br />
+This assumes <code>f</code> to implement the <code>()</code> operator and taking a <code>TVirtualMC</code> pointer as an arument. <code>f</code> will then be called for all registered engines.</li>
+<li><code>template &lt;typename F&gt; void Init(F f)</code><br />
+This works similar to <code>TMCManager::Apply</code> during the initialization of the engines. It can also be called without an argument such that no additional user routine is included.</li>
+<li><code>void Run(Int_t nEvents)</code><br />
+A run involving all registered VMCs is steered for the specified number of events.</li>
+<li><code>void ConnectEnginePointers(TVirtualMC *&amp;mc)</code><br />
+This gives the possibility for a user to pass a pointer of type <code>TVirtualMC</code> which will always be set to point to the currently running engine. Note, however, that there is a protected member <code>TVirtualMCApplication::fMC</code> which is always up-to-date and can hence be used within the user&rsquo;s application code.</li>
+<li><code>TVirtualMC *GetCurrentEngine()</code><br />
+This provides the user with a pointer to the currently running engine.</li>
 </ul>
+</p>
 
-<p>An example of how the <code>TMCManager</code> is utilized in a multi-run can be found in <code>examples/EME</code> of the <a href="https://github.com/vmc-project/geant4_vmc">GEANT4_VMC repository</a>.</p>
+<p>An example of how the <code>TMCManager</code> is utilized in a multi-run can be found in the <a href="https://github.com/vmc-project/geant4_vmc/examples/E03/E03c">GEANT4_VMC repository</a>. Looking at the <code>diff</code> between e.g. <strong>E03a</strong> and <strong>E03c</strong> highlights the very little additions necessary for running multiple engines. As one can see, minimal extensions are required and the same user stack and application can be used for both a single and a multi-run. In addition, this example can be used enabling only one engine or both <code>GEANT3_VMC</code> and <code>GEANT4_VMC</code>.</p>
 
-<h3 id="workflow">Workflow</h3>
+<h3 id="workflow">Example workflow</h3>
 
 <p><strong>Implementation</strong>
-1. Implement your application as you have done before. Request the <code>TMCManager</code> in your constructor if needed via <code>TVirtualMCApplication::RequestMCManager()</code>
-2. Implement your user stack as you have done before. At an appropriate stage (e.g. in <code>UserStack::PushTrack(...)</code>) you should call <code>TMCManager::ForwardTrack(...)</code> to forward the pointers to your newly constructed <code>TParticle</code> objects.
-3. Set your stack using <code>TMCManager::SetUserStack(...)</code>.</p>
+<ol>
+<li>Implement your application as you have done before. Request the <code>TMCManager</code> in your constructor by calling <code>TVirtualMCApplication::RequestMCManager()</code>.</li>
+<li>Implement your user stack as you have done before. At an appropriate stage (i.e. in <code>UserStack::PushTrack(...)</code>) you would call <code>TMCManager::ForwardTrack(...)</code> to forward the pointers to your newly constructed <code>TParticle</code> objects.</li>
+<li>Set your stack using <code>TMCManager::SetUserStack(...)</code>.</li>
+</ol>
+To use the same stack in all cases, one can always check whether the manager is present checking if <code>TMCManager::Instance()</code> returns a valid pointer.
+</p>
 
-<p><strong>Usage</strong>
-1. Instantiate your application
-2. Instantiate the engines you want to use.
-3. Call <code>TMCManager::Init(...)</code>.
-4. Call <code>TMCManager::Run(...)</code></p>
+<p><strong>Usage/running</strong>
+<ol>
+<li>Instantiate your application,</li>
+<li>instantiate the engines you want to use (these are registered automatically to the manager),</li>
+<li>call <code>TMCManager::Init(...)</code> (if needed with your custom initialization procedure),</li>
+<li>call <code>TMCManager::Run(...)</code> specifiyng the desired number of events to be simulated.
+</ol></p>
 
-<p><strong>Further comments</strong></p>
-
-<p>The geometry is built once centrally via the <code>TMCManager</code> calling</p>
+<p><strong>Further comments</strong>
+<br />
+The geometry is built once centrally via the <code>TMCManager</code> calling
 
 <ol>
-<li><code>TVirtualMCApplication::ConstructGeometry()</code></li>
-<li><code>TVirtualMCApplication::MisalignGeometry()</code></li>
-<li><code>TVirtualMCApplication::ConstructOpGeometry()</code></li>
+<li><code>TVirtualMCApplication::ConstructGeometry(),</code></li>
+<li><code>TVirtualMCApplication::MisalignGeometry(),</code></li>
+<li><code>TVirtualMCApplication::ConstructOpGeometry().</code></li>
 </ol>
 
 <p>so it is expected that these methods do not depend on any engine.</p>
 
-<p>If multiple engines have been instantiated, never call <code>TVirtualMC::ProcessRun(...)</code> or other steering methods on the engine since that would bypass the <code>TMCManager</code></p>
-
+<p>If multiple engines have been instantiated, never use <code>TVirtualMC::ProcessRun(...)</code> or other steering methods on the individual engines since that would bypass the <code>TMCManager</code> and will lead to inconsistent behavior.</p>
 
 <footer class=" footline" >
 	
