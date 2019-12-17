@@ -12,20 +12,20 @@
     <title>Multiple VMC Engines :: VMC</title>
 
     
-    <link href="/css/nucleus.css?1570006105" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1570006105" rel="stylesheet">
-    <link href="/css/hybrid.css?1570006105" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1570006105" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1570006105" rel="stylesheet">
-    <link href="/css/auto-complete.css?1570006105" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1570006105" rel="stylesheet">
-    <link href="/css/theme.css?1570006105" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1570006105" rel="stylesheet">
+    <link href="/css/nucleus.css?1576594972" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1576594972" rel="stylesheet">
+    <link href="/css/hybrid.css?1576594972" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1576594972" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1576594972" rel="stylesheet">
+    <link href="/css/auto-complete.css?1576594972" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1576594972" rel="stylesheet">
+    <link href="/css/theme.css?1576594972" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1576594972" rel="stylesheet">
     
-      <link href="/css/theme-vmc.css?1570006105" rel="stylesheet">
+      <link href="/css/theme-vmc.css?1576594972" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1570006105"></script>
+    <script src="/js/jquery-3.3.1.min.js?1576594972"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1570006105"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1570006105"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1576594972"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1576594972"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1570006105"></script>
+<script type="text/javascript" src="/js/search.js?1576594972"></script>
 
     
   </div>
@@ -1214,10 +1214,10 @@
 <ul>
 <li>
 <ul>
-<li><a href="#overview">Overview</a></li>
-<li><a href="#running-multiple-different-engines">Running multiple different engines</a>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#how-multiple-engines-are-handled">How multiple engines are handled</a>
 <ul>
-<li><a href="#workflow">Workflow</a></li>
+<li><a href="#implementation-and-workflow-example">Implementation and workflow example</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1247,63 +1247,174 @@
 
 
 
-<h2 id="overview">Overview</h2>
+<h2 id="introduction">Introduction</h2>
 
-<p>The VMC package provides an abstract interface for Monte Carlo transport engines. Interfaces are implemented for
-* <a href="https://github.com/vmc-project/geant3">GEANT3</a>
-* <a href="https://github.com/vmc-project/geant4_vmc">GEANT4</a></p>
+<p>The VMC package allows splitting the event simulation among multiple engines. The criteria of how to split the simulation have to be defined by the user and among others the decision which engine to be used could depend on</p>
 
-<p>each deriving from <code>TVirtualMC</code> implementing all necessary methods.</p>
+<ul>
+<li>geometry</li>
+<li>particle phase space</li>
+<li>particle type</li>
+<li>any combination of that</li>
+<li>&hellip;</li>
+</ul>
 
-<p>Before a user can instantiate an engine, an object deriving from <code>TVirtualMCApplication</code> needs to be present which has to be implemented by the user. It contains necessary hooks called from the <code>TVirtualMC</code>s depending on their internal state. At the same time it provides the bridge between the user code and VMC. For instance, the user code can contain the geometry construction routines somewhere which should be called from the implemented <code>UserApplication::ConstructGeometry()</code>.</p>
+<p>Running multiple engines is fully supported for</p>
+
+<ul>
+<li><a href="https://github.com/vmc-project/geant3">GEANT3_VMC</a></li>
+<li><a href="https://github.com/vmc-project/geant4_vmc">GEANT4_VMC</a></li>
+</ul>
+
+<p>This also allows the user to implement his/her own class deriving from <a href="https://github.com/vmc-project/vmc/blob/master/source/include/TVirtualMC.h">TVirtualMC</a> to be used in a split simulation. The communication between the engines is handled by a singleton object of type <a href="https://github.com/vmc-project/vmc/blob/master/source/include/TVirtualMC.h">TMCManager</a> such that the user does not have to deal with special implementation details. Hence, pausing an engine, re-starting it or transferring tracks between them is done automatically and at the same time the user stack is kept up-to-date. Furthermore, the same user application derived from <a href="https://github.com/vmc-project/vmc/blob/master/source/include/TVirtualMC.h">TVirtualMCApplication</a> together with the same user stack derived from <a href="https://github.com/vmc-project/vmc/blob/master/source/include/TVirtualMC.h">TVirtualMCStack</a> can be used for both a single engine run or a simulation split among multiple ones.</p>
 
 <p>Further general information on the VMC project can be found <a href="https://root.cern.ch/vmc">here</a></p>
 
-<h2 id="running-multiple-different-engines">Running multiple different engines</h2>
+<h2 id="how-multiple-engines-are-handled">How multiple engines are handled</h2>
 
-<p>The simulation of an event can be shared among multiple different engines deriving from <code>TVirtualMC</code> which are handled by a singleton <code>TMCManager</code> object. In such a scenario the user has to call <code>TVirtualMCApplication::RequestMCManager()</code> in the constructor of the user application. A pointer to the manager object is then available via the protected <code>TVirtualMCApplication::fMCManager</code> but can also be obtained using the static method <code>TMCManager *TMCManager::Instance()</code>.</p>
+<p>To keep the overhead as small as possible, the <a href="https://github.com/vmc-project/vmc/blob/master/source/include/TMCManager.h">TMCManager</a> object has to be requested by the user explicitly during construction of the user application by calling <a href="https://github.com/vmc-project/vmc/blob/master/source/include/TVirtualMCApplication.h#L55">TVirtualMCApplication::RequestManager()</a>. That makes the manager available via the protected member <a href="https://github.com/vmc-project/vmc/blob/master/source/include/TVirtualMCApplication.h#L155">TVirtualMCApplication::fMCManager</a> and a pointer can also always be obtained via <a href="https://github.com/vmc-project/vmc/blob/master/source/include/TMCManager.h#L55">TMCManager *TMCManager::Instance()</a>. In a single run, on the other hand, there is no such object and the VMC would directly interacts with the user&rsquo;s particle stack. In that case the scenario of how that VMC is treated and interacts with other objects is the same as it was in previous versions of the VMC package.</p>
 
-<p><code>TMCManager</code> provides the following interfaces:</p>
+<p>The most important interfaces of the <a href="https://github.com/vmc-project/vmc/blob/master/source/include/TMCManager.h">TMCManager</a> to deal with multiple VMCs are:</p>
 
 <ul>
-<li><code>void SetUserStack(TVirtualMCStack* userStack)</code> notifies the manager on the user stack such that it will be kept up-to-date during the simulation. Running without having set the user stack is not possible and the <code>TMCManager</code> will abort in that case.</li>
-<li><code>void ForwardTrack(Int_t toBeDone, Int_t trackId, Int_t parentId, TParticle* userParticle)</code>: The user is still the owner of all track objects (aka <code>TParticle</code>) being created. Hence, all engine calls to <code>TVirtualMCStack::PushTrack(...)</code> are forwarded to the user stack. This can then invoke the <code>ForwardTrack(..)</code> method of the manager to pass the pointer to the constructed <code>TParticle</code> object. If a particle should be pushed to an engine other than the one currently running the engine&rsquo;s id has to be provided as the last argument.</li>
-<li><code>void TransferTrack(Int_t targetEngineId)</code>: E.g. during <code>TVirtualMCApplication::Stepping()</code> the user might decide that the current track should be transferred to another engine, for instance, if a certain volume is entered. Specifying the ID of the target engine the manager will take care of interrupting the track in the current engine, extracting the kinematics and geometry state and it will push this to the stack of the target engine.</li>
-<li><code>template &lt;typename F&gt; void Apply(F f)</code> assumes <code>f</code> to implement the <code>()</code> operator and taking a <code>TVirtualMC</code> pointer as an arument. <code>f</code> will be then called for all engines.</li>
-<li><code>template &lt;typename F&gt; void Init(F f)</code> works as <code>TMCManager::Apply</code> during the initialization of the engines. It can also be called without an argument such that no additional user routine is included.</li>
-<li><code>void Run(Int_t nEvents)</code> steers a run for the specified number of events.</li>
-<li><code>void ConnectEnginePointers(TVirtualMC *&amp;mc)</code> gives the possibility for a user to pass a pointer which will always be set to point to the currently running engine.</li>
-<li><code>TVirtualMC *GetCurrentEngine()</code> provides the user with the currently running engine.</li>
+<li><code>void SetUserStack(TVirtualMCStack* userStack)</code><br />
+This notifies the manager about the user stack such that it will be kept up-to-date during the simulation. Not setting it makes the <a href="https://github.com/vmc-project/vmc/blob/master/source/include/TMCManager.h">TMCManager</a> abort the execution.</li>
+<li><code>void ForwardTrack(Int_t toBeDone, Int_t trackId, Int_t parentId, TParticle* userParticle)</code><br />
+The user is always the owner of all track objects (aka <code>TParticle</code>) being created. Hence, all engine calls to <code>TVirtualMCStack::PushTrack(...)</code> are first redirected to the user stack where a <code>TParticle</code> has to be created on the heap. After that, this method has to be invoked to forward the pointer of the created <code>TParticle</code> object. If a particle should be pushed to an engine other than the one currently running, the engine&rsquo;s ID has to be provided as the last argument.</li>
+<li><code>void TransferTrack(Int_t targetEngineId)</code><br />
+For instance during <code>TVirtualMCApplication::Stepping()</code> the user might decide that the current track should be transferred to another engine, e.g., if a certain volume is entered. By specifying the ID or the pointer to the target engine the manager will take care of interrupting the track in the current engine, extracting the kinematics and geometry state and it will save these information for the target engine.</li>
+<li><code>template &lt;typename F&gt; void Apply(F f)</code><br />
+This assumes <code>f</code> to implement the <code>()</code> operator and taking a <a href="https://github.com/vmc-project/vmc/blob/master/source/include/TVirtualMC.h">TVirtualMC</a> pointer as an argument. <code>f</code> will be then called for all engines.</li>
+<li><code>template &lt;typename F&gt; void Init(F f)</code><br />
+This works as <code>TMCManager::Apply</code> during the initialization of the engines. It can also be called without an argument such that no additional user routine is included.</li>
+<li><code>void Run(Int_t nEvents)</code><br />
+A run involving all registered VMCs is steered for the specific number of events.</li>
+<li><code>void ConnectEnginePointers(TVirtualMC *&amp;mc)</code><br />
+This gives the possibility for a user to pass a pointer variable which will always be set to point to the currently running engine. Note, however, that there is a protected member <code>TVirtualMCApplication::fMC</code> which always points to the currently running engine and it can therefore be used within the application&rsquo;s code.</li>
+<li><code>TVirtualMC *GetCurrentEngine()</code><br />
+This provides the user with a pointer to the currently running engine.</li>
 </ul>
 
-<p>An example of how the <code>TMCManager</code> is utilized in a multi-run can be found in <code>examples/EME</code> of the <a href="https://github.com/vmc-project/geant4_vmc">GEANT4_VMC repository</a>.</p>
+<p>An example of how the <a href="https://github.com/vmc-project/vmc/blob/master/source/include/TMCManager.h">TMCManager</a> is utilized in a multi-run can be found in E03c example of the <a href="https://github.com/vmc-project/geant4_vmc/examples/E03/E03c">GEANT4_VMC repository</a>. The <code>diff</code> of e.g <strong>E03/E03a</strong> and <strong>E03/E03c</strong> nicely highlights the small amount of extensions necessary to use the same application and stack for both a single and a multi-run.</p>
 
-<h3 id="workflow">Workflow</h3>
+<h3 id="implementation-and-workflow-example">Implementation and workflow example</h3>
 
-<p><strong>Implementation</strong>
-1. Implement your application as you have done before. Request the <code>TMCManager</code> in your constructor if needed via <code>TVirtualMCApplication::RequestMCManager()</code>
-2. Implement your user stack as you have done before. At an appropriate stage (e.g. in <code>UserStack::PushTrack(...)</code>) you should call <code>TMCManager::ForwardTrack(...)</code> to forward the pointers to your newly constructed <code>TParticle</code> objects.
-3. Set your stack using <code>TMCManager::SetUserStack(...)</code>.</p>
+<p>The general workflow of a multi-run is explained using some of the classes/implementations of the <a href="https://github.com/vmc-project/geant4_vmc/examples/E03/E03c">E03c example</a> mentioned above.</p>
 
-<p><strong>Usage</strong>
-1. Instantiate your application
-2. Instantiate the engines you want to use.
-3. Call <code>TMCManager::Init(...)</code>.
-4. Call <code>TMCManager::Run(...)</code></p>
-
-<p><strong>Further comments</strong></p>
-
-<p>The geometry is built once centrally via the <code>TMCManager</code> calling</p>
+<p><strong>Implementation</strong></p>
 
 <ol>
-<li><code>TVirtualMCApplication::ConstructGeometry()</code></li>
-<li><code>TVirtualMCApplication::MisalignGeometry()</code></li>
+<li>Implement your application and stack as you have done before. Request the <a href="https://github.com/vmc-project/vmc/blob/master/source/include/TMCManager.h">TMCManager</a> in your constructor by calling <code>TVirtualMCApplication::RequestMCManager()</code>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">Ex03MCApplication<span style="color:#f92672">::</span>Ex03MCApplication(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> name, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> title, Bool_t isMulti, Bool_t splitSimulation)
+{
+        <span style="color:#75715e">// some construction
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// user stack
+</span><span style="color:#75715e"></span>        fStack <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Ex03MCStack(<span style="color:#ae81ff">1000</span>);
+        <span style="color:#66d9ef">if</span>(isMulti) {
+            RequestManager();
+            fMCManager<span style="color:#f92672">-&gt;</span>SetUserStack(fStack);
+        }
+        <span style="color:#75715e">// further construction
+</span><span style="color:#75715e"></span>}
+</code></pre></div></li>
+<li>At an appropriate stage (i.e. in <code>UserStack::PushTrack(...)</code>) you would call <code>TMCManager::ForwardTrack(...)</code> to forward the pointer to your newly constructed <code>TParticle</code> object.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> Ex03MCStack<span style="color:#f92672">::</span>PushTrack(Int_t toBeDone, Int_t parent, ..., Int_t<span style="color:#f92672">&amp;</span> ntr, ...)
+{
+        <span style="color:#75715e">// TParticle construction yielding pointer &#34;particle&#34;
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// User defines the track ID
+</span><span style="color:#75715e"></span>        ntr <span style="color:#f92672">=</span> GetNtrack() <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
+
+        <span style="color:#75715e">// Forward to the TMCManager in case of multi-run
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">auto</span> mgr <span style="color:#f92672">=</span> TMCManager<span style="color:#f92672">::</span>Instance()) {
+            mgr<span style="color:#f92672">-&gt;</span>ForwardTrack(toBeDone, ntr, parent, particle);
+        }
+        <span style="color:#75715e">// further implementations
+</span><span style="color:#75715e"></span>}
+</code></pre></div></li>
+<li>Whenever needed, check the presence of <a href="https://github.com/vmc-project/vmc/blob/master/source/include/TMCManager.h"><code>TMCManager</code></a> to decide whether the code should work for single or multi-run, e.g. in the constructor of <code>Ex03DetectorConstruction</code> where its member <code>fMC</code> is setup to point to the currently running VMC in the multi-run scenario.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">Ex03DetecorConstruction<span style="color:#f92672">::</span>Ex03DetectorConstruction(...)
+{
+        <span style="color:#75715e">// some construction
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">auto</span> mgr <span style="color:#f92672">=</span> TMCManager<span style="color:#f92672">::</span>Instance()) {
+            mgr<span style="color:#f92672">-&gt;</span>ConnectEnginePointer(fMC);
+        <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>        }
+        <span style="color:#75715e">// maybe some more construction
+</span><span style="color:#75715e"></span>}
+</code></pre></div></li>
+<li>Transfer a track involving <code>TMCManager::TransferTrack(...)</code>. If the target VMC ID coincides with the one currently running, nothing will happen and the simulation would just continue.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">Ex03MCApplication<span style="color:#f92672">::</span>Stepping()
+{
+        <span style="color:#75715e">// some implementation
+</span><span style="color:#75715e"></span>        Int_t targetId <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">if</span> (fMC<span style="color:#f92672">-&gt;</span>GetId() <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> strcmp(fMC<span style="color:#f92672">-&gt;</span>GetCurrentVolName(), <span style="color:#e6db74">&#34;ABSO&#34;</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
+            targetId <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        }
+        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (fMC<span style="color:#f92672">-&gt;</span>GetId() <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;&amp;</span> strcmp(fMC<span style="color:#f92672">-&gt;</span>GetCurrentVolName(), <span style="color:#e6db74">&#34;GAPX&#34;</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
+            targetId <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        }
+        <span style="color:#66d9ef">if</span> (targetId <span style="color:#f92672">&gt;</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) {
+            <span style="color:#66d9ef">if</span> (fVerbose.GetLevel() <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>) {
+                Info(<span style="color:#e6db74">&#34;Stepping&#34;</span>, <span style="color:#e6db74">&#34;Transfer track&#34;</span>);
+            }
+            fMCManager<span style="color:#f92672">-&gt;</span>TransferTrack(targetId);
+        }   
+        <span style="color:#75715e">// further implementations
+</span><span style="color:#75715e"></span>}
+</code></pre></div>
+To use the same stack in both scenarios (single and multi-run), one can always check whether the manager is present by checking if <code>TMCManager::Instance()</code> returns a valid pointer value.</li>
+</ol>
+
+<p><strong>Usage</strong></p>
+
+<ol>
+<li>Instantiate your application (here the user stack is created during construction of the application, see above)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">auto</span> isMulti <span style="color:#f92672">=</span> true;
+<span style="color:#66d9ef">auto</span> splitSimulation <span style="color:#f92672">=</span> true;
+<span style="color:#66d9ef">auto</span> appl <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Ex03MCapplication(<span style="color:#e6db74">&#34;multiApplication&#34;</span>, <span style="color:#e6db74">&#34;multiApplication&#34;</span>, isMulti, splitSimulation);
+</code></pre></div></li>
+<li>Instantiate the engines you want to use (these are registered automatically to the manager). In the E03c example this is done in <code>TVirtualMCApplication::InitMC</code> but to clarify, it is written here explicitely,
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">auto</span> engine1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TGeant3(...);
+<span style="color:#66d9ef">auto</span> engine2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TGeant4(...);
+<span style="color:#75715e">// Nothing further to be done
+</span></code></pre></div></li>
+<li>Call <code>TMCManager::Init(...)</code> (if needed with your custom initialization procedure, see above; that can of course also be wrapped into another method of your application as it is done here),
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> Ex03MCApplication<span style="color:#f92672">::</span>InitMC(std<span style="color:#f92672">::</span>initializer_list<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">*&gt;</span> setupMacros)
+{
+      <span style="color:#75715e">// some implementation
+</span><span style="color:#75715e"></span>      fMCManager<span style="color:#f92672">-&gt;</span>Init([<span style="color:#66d9ef">this</span>](TVirtualMC<span style="color:#f92672">*</span> mc) {
+        mc<span style="color:#f92672">-&gt;</span>SetRootGeometry();
+        mc<span style="color:#f92672">-&gt;</span>SetMagField(fMagField);
+        mc<span style="color:#f92672">-&gt;</span>Init();
+        mc<span style="color:#f92672">-&gt;</span>BuildPhysics();
+      });
+      <span style="color:#75715e">// further implementations
+</span><span style="color:#75715e"></span>}
+</code></pre></div>
+The lambda argument will be called for each registered VMC separately. If necessary, it can be more specific. Instead of passing a lambda function, a function pointer could be given or also an object. The only requirement is that what is passed implements a <code>()</code> operator taking a VMC pointer as an argument.</li>
+<li>Call <code>TMCManager::Run(...)</code> specifying the desired number of events to be simulated.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> Ex03MCApplication<span style="color:#f92672">::</span>RunMC(Int_t nofEvents)
+{
+      <span style="color:#75715e">// some implementation
+</span><span style="color:#75715e"></span>      fMCManager<span style="color:#f92672">-&gt;</span>Run(nofEvents);
+      <span style="color:#75715e">// further implementations
+</span><span style="color:#75715e"></span>}
+</code></pre></div></li>
+</ol>
+
+<p><strong>Important comments</strong></p>
+
+<p>The geometry is built once centrally via the <a href="https://github.com/vmc-project/vmc/blob/master/source/include/TMCManager.h">TMCManager</a> calling</p>
+
+<ol>
+<li><code>TVirtualMCApplication::ConstructGeometry()</code>,</li>
+<li><code>TVirtualMCApplication::MisalignGeometry()</code>,</li>
 <li><code>TVirtualMCApplication::ConstructOpGeometry()</code></li>
 </ol>
 
-<p>so it is expected that these methods do not depend on any engine.</p>
+<p>and therefore, it is expected that these methods do not depend on any engine.</p>
 
-<p>If multiple engines have been instantiated, never call <code>TVirtualMC::ProcessRun(...)</code> or other steering methods on the engine since that would bypass the <code>TMCManager</code></p>
+<p>If multiple engines have been instantiated, never call <code>TVirtualMC::ProcessRun(...)</code> or other steering methods on the individual engine because that would bypass the <a href="https://github.com/vmc-project/vmc/blob/master/source/include/TMCManager.h">TMCManager</a> and will lead to inconsistent behavior.</p>
 
 
 <footer class=" footline" >
@@ -2120,19 +2231,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1570006105"></script>
-    <script src="/js/perfect-scrollbar.min.js?1570006105"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1570006105"></script>
-    <script src="/js/jquery.sticky.js?1570006105"></script>
-    <script src="/js/featherlight.min.js?1570006105"></script>
-    <script src="/js/highlight.pack.js?1570006105"></script>
+    <script src="/js/clipboard.min.js?1576594972"></script>
+    <script src="/js/perfect-scrollbar.min.js?1576594972"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1576594972"></script>
+    <script src="/js/jquery.sticky.js?1576594972"></script>
+    <script src="/js/featherlight.min.js?1576594972"></script>
+    <script src="/js/highlight.pack.js?1576594972"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1570006105"></script>
-    <script src="/js/learn.js?1570006105"></script>
-    <script src="/js/hugo-learn.js?1570006105"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1576594972"></script>
+    <script src="/js/learn.js?1576594972"></script>
+    <script src="/js/hugo-learn.js?1576594972"></script>
 
-    <link href="/mermaid/mermaid.css?1570006105" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1570006105"></script>
+    <link href="/mermaid/mermaid.css?1576594972" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1576594972"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
