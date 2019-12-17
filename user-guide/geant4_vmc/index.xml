@@ -110,7 +110,7 @@ From Root to Geant4 UI Switching UI: root [0] ((TGeant4*)gMC)-&amp;gt;StartGeant
     </item>
     
     <item>
-      <title>Vebosity</title>
+      <title>Verbosity</title>
       <link>/user-guide/geant4_vmc/verbosity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -120,7 +120,7 @@ From Root to Geant4 UI Switching UI: root [0] ((TGeant4*)gMC)-&amp;gt;StartGeant
     </item>
     
     <item>
-      <title>Vebosity for Developers</title>
+      <title>Verbosity for Developers</title>
       <link>/user-guide/geant4_vmc/vebosity-for-developers/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
