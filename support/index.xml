@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Support on VMC</title>
@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/support/mailing-list/</guid>
-      <description>The mailing list is used to keep you up to date about new developments in VMC packages, releases and bug fixes. This list is also used to discuss use of VMC with other users and with the developers. If you want to report a bug, please, use Bug Reports page. To join the root-vmc@cern.ch mailing list, do the following: If you don&#39;t have a CERN account, create a light weight CERN account.</description>
+      <description></description>
     </item>
     
     <item>
@@ -25,10 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/support/bug-reports/</guid>
-      <description>We use JIRA to track bugs and to gather feature requests.
- If you are new to using JIRA, you might want to read the ROOT Bug Tracker page first.
- Report a bug in VMC packages.
- The old problem reports can be found at this page.</description>
+      <description></description>
     </item>
     
   </channel>

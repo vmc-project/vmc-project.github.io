@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>VMC Project on VMC</title>
@@ -17,7 +17,7 @@
       
       <guid>/installation/examples/build-options/</guid>
       <description>Overview of the available options for building VMC examples and their default values:
-VMC_WITH_Geant4 Build with Geant4 OFF VMC_WITH_Geant3 Build with Geant3 OFF VMC_WITH_MTRoot Build with MTRoot ON VMC_INSTALL_EXAMPLES Install examples libraries and programs ON  Geant4 VMC build options are automatically exported in Geant4VMCConfig.cmake. If Geant4 VMC was built with VGM, the VGM installation path has to be provided via -DVGM_DIR option.</description>
+VMC_WITH_Geant4 Build with Geant4 OFF VMC_WITH_Geant3 Build with Geant3 OFF VMC_WITH_Multi Build with multiple engines OFF VMC_WITH_MTRoot Build with MTRoot ON VMC_INSTALL_EXAMPLES Install examples libraries and programs ON Geant4 VMC build options are automatically exported in Geant4VMCConfig.cmake. If Geant4 VMC was built with VGM, the VGM installation path has to be provided via -DVGM_DIR option.</description>
     </item>
     
     <item>
@@ -28,7 +28,7 @@ VMC_WITH_Geant4 Build with Geant4 OFF VMC_WITH_Geant3 Build with Geant3 OFF VMC_
       <guid>/installation/geant4_vmc/build-options/</guid>
       <description>Geant4 VMC includes G4Root and MTRoot packages, which are independent from Geant4 VMC and can be build and used stand-alone. Use of G4Root, VGM, Geant4 G3toG4, UI and VIS packages in Geant4 VMC library is optional and can be switched on/off during CMake build.
 Overview of available options and their default values:
-Geant4VMC_BUILD_G4Root Build G4Root ON Geant4VMC_BUILD_MTRoot Build MTRoot ON Geant4VMC_BUILD_Geant4VMC Build Geant4VMC ON Geant4VMC_BUILD_EXAMPLES Build VMC examples ON Geant4VMC_USE_G4Root Build with G4Root ON Geant4VMC_USE_VGM Build with VGM OFF Geant4VMC_USE_GEANT4_UI Build with Geant4 UI drivers ON Geant4VMC_USE_GEANT4_VIS Build with Geant4 Vis drivers ON Geant4VMC_USE_GEANT4_G3TOG4 Build with Geant4 G3toG4 library OFF Geant4VMC_INSTALL_EXAMPLES Install examples ON  </description>
+Geant4VMC_BUILD_G4Root Build G4Root ON Geant4VMC_BUILD_MTRoot Build MTRoot ON Geant4VMC_BUILD_Geant4VMC Build Geant4VMC ON Geant4VMC_BUILD_EXAMPLES Build VMC examples ON Geant4VMC_USE_G4Root Build with G4Root ON Geant4VMC_USE_VGM Build with VGM OFF Geant4VMC_USE_GEANT4_UI Build with Geant4 UI drivers ON Geant4VMC_USE_GEANT4_VIS Build with Geant4 Vis drivers ON Geant4VMC_USE_GEANT4_G3TOG4 Build with Geant4 G3toG4 library OFF Geant4VMC_INSTALL_EXAMPLES Install examples ON </description>
     </item>
     
     <item>
@@ -37,7 +37,7 @@ Geant4VMC_BUILD_G4Root Build G4Root ON Geant4VMC_BUILD_MTRoot Build MTRoot ON Ge
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/installation/examples/examples-old/</guid>
-      <description>The following instructions apply only to 3.00.b01 (beta) version and are kept for reference purpose only. For the production version (3.0) see Installing and Running Examples page.  Since Geant4 VMC 3.0.x, there are also provided examples main programs which can be built with either shared or static libraries of all packages. Building with static libraries can make execution faster, especially when running in multi-threaded mode, than when running with dynamic loading of shared libraries in a &#34;</description>
+      <description></description>
     </item>
     
     <item>
@@ -48,7 +48,7 @@ Geant4VMC_BUILD_G4Root Build G4Root ON Geant4VMC_BUILD_MTRoot Build MTRoot ON Ge
       <guid>/user-guide/geant4_vmc/geometry-definition-navigation/</guid>
       <description>Geometry definition The VMC supports two ways of geometry definition:
  via Root geometry package (TGeo) via TVirtualMC interface (historically the first way)  The first (newer) way is recommended for new users, the way via VMC is kept for a backward compatibility.
-Since the version 2.0, user can choose between Geant4 native navigation and G4Root navigation, if geometry is define via TGeo. The choice of the navigation is done via the option specified with creating TG4RunConfiguration  object (see examples  for more details):</description>
+Since the version 2.0, user can choose between Geant4 native navigation and G4Root navigation, if geometry is define via TGeo. The choice of the navigation is done via the option specified with creating TG4RunConfiguration object (see examples for more details):</description>
     </item>
     
     <item>
@@ -57,8 +57,7 @@ Since the version 2.0, user can choose between Geant4 native navigation and G4Ro
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/installation/geant3/geant3-old/</guid>
-      <description>The following instructions apply to the installation of the versions &amp;lt; 2.0.
- First get the Geant3 source from the Download page. No special configuration option for Root installation is needed with the actual version of Root.   With old Root v5.20/00, you have to specify your Fortran compiler:  --with-f77=g77  &amp;nbsp;  geant3 requires Pythia6 library. You can follow ROOT installation instructions or directly the Pythia site.  &amp;nbsp; To install geant3:</description>
+      <description>The following instructions apply to the installation of the versions &amp;lt; 2.0.</description>
     </item>
     
     <item>
@@ -67,8 +66,8 @@ Since the version 2.0, user can choose between Geant4 native navigation and G4Ro
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/installation/geant4_vmc/geant4_vmc-old/</guid>
-      <description>The following instructions apply to the installation of versions &amp;lt; 3.0. For the required configurations of Root and Geant4 for these older versions see Special installations  page.
-  Getting source   First get the Geant4 VMC source from the Download page.  Root configuration  Since the version 2.9 there are no special configuration options for Root needed.  The path to Root installation can be defined in two complementary ways:</description>
+      <description>&amp;lt;li&amp;gt;&amp;lt;b&amp;gt;OpenGL visualization &amp;lt;/b&amp;gt; &amp;lt;br&amp;gt;  It is recommended to build Geant4 X11 OpenGL visualization driver used in the VMC examples. It is handled in Geant4 CMake build via the following CMake option:
+-DGEANT4_USE_OPENGL_X11=ON &amp;lt;/li&amp;gt; &amp;lt;li&amp;gt; &amp;lt;h3&amp;gt; Geant4 VMC &amp;lt;/h3&amp;gt;  </description>
     </item>
     
     <item>
@@ -79,9 +78,7 @@ Since the version 2.0, user can choose between Geant4 native navigation and G4Ro
       <guid>/installation/vmc/</guid>
       <description>VMC requires ROOT.
 VMC uses CMake to configure a build system for compiling and installing the headers, libraries and Cmake configuration files. To install VMC:
- First get the VMC source from the Download page. We will assume that the VMC package sits in a subdirectory /mypath/vmc
- Create build directory alongside our source directory
-$ cd /mypath $ mkdir vmc_build $ ls vmc vmc_build  To configure the build, change into the build directory and run CMake:</description>
+ First get the VMC source from the Download page. We will assume that the VMC package sits in a subdirectory  /mypath/vmc Create build directory alongside our source directory  $ cd /mypath $ mkdir vmc_build $ ls vmc vmc_build To configure the build, change into the build directory and run CMake:  $ cd /mypath/vmc_build $ cmake -DCMAKE_INSTALL_PREFIX=/mypath/vmc_install /mypath/vmc   If ROOT environment was defined using thisroot.</description>
     </item>
     
     <item>
@@ -99,7 +96,7 @@ $ cd /mypath $ mkdir vmc_build $ ls vmc vmc_build  To configure the build, chang
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/support/mailing-list/</guid>
-      <description>The mailing list is used to keep you up to date about new developments in VMC packages, releases and bug fixes. This list is also used to discuss use of VMC with other users and with the developers. If you want to report a bug, please, use Bug Reports page. To join the root-vmc@cern.ch mailing list, do the following: If you don&#39;t have a CERN account, create a light weight CERN account.</description>
+      <description></description>
     </item>
     
     <item>
@@ -113,9 +110,8 @@ Reference paper
 Hřivnáčová I et al: The Virtual MonteCarlo,
 ECONF C0303241:THJT006,2003; e-Print: cs.SE/0306005
  All publications listed in time reversed order:
- Geant4 VMC 3.0
-, I Hřivnáčová, A Gheata 2015 J. Phys.: Conf. Ser. 664 072020 doi: 10.1088 /1742-6596/664/7/072020
- The Geant4 Virtual Monte Carlo I Hřivnáčová 2012 J. Phys.: Conf. Ser. 396 022024 doi:10.1088 /1742-6596/119/3/032025  Physics lists in Geant4 VMC</description>
+  Geant4 VMC 3.0, I Hřivnáčová, A Gheata 2015 J. Phys.: Conf. Ser. 664 072020 doi: 10.1088 /1742-6596/664/7/072020
+  The Geant4 Virtual Monte Carlo I Hřivnáčová 2012 J. Phys.: Conf. Ser. 396 022024 doi:10.</description>
     </item>
     
     <item>
@@ -126,10 +122,10 @@ ECONF C0303241:THJT006,2003; e-Print: cs.SE/0306005
       <guid>/installation/examples/running-examples/</guid>
       <description>First, make sure that you have included all libraries paths in your shared library path.
 For all MCs:
-/your_path/root/lib /your_path/mtroot_install/lib[64]  The MTRoot package is provided in Geant4 VMC and is installed by default with Geant4 VMC library and is located in geant4_vmc_install. It can be however installed also stand-alone and without Geant4 libraries.
+/your_path/root/lib /your_path/mtroot_install/lib[64] The MTRoot package is provided in Geant4 VMC and is installed by default with Geant4 VMC library and is located in geant4_vmc_install. It can be however installed also stand-alone and without Geant4 libraries.
 For Geant3 only:
-path to Pythia6 library /your_path/geant3_install/lib[64] /your_path/examples_install_g3/lib[64]  For Geant4 only:
-/your_path/geant4_install/lib[64] /your_path/geant4_vmc_install/lib[64] /your_path/examples_install_g4/lib[64]  Running examples from Root session The example can be run by calling the provided macros from Root session:</description>
+path to Pythia6 library /your_path/geant3_install/lib[64] /your_path/examples_install_g3/lib[64] For Geant4 only:
+/your_path/geant4_install/lib[64] /your_path/geant4_vmc_install/lib[64] /your_path/examples_install_g4/lib[64] Running examples from Root session The example can be run by calling the provided macros from Root session:</description>
     </item>
     
     <item>
@@ -159,10 +155,7 @@ See more details on the VMC Examples web page.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/support/bug-reports/</guid>
-      <description>We use JIRA to track bugs and to gather feature requests.
- If you are new to using JIRA, you might want to read the ROOT Bug Tracker page first.
- Report a bug in VMC packages.
- The old problem reports can be found at this page.</description>
+      <description></description>
     </item>
     
     <item>
@@ -171,7 +164,7 @@ See more details on the VMC Examples web page.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/examples/experiment-frameworks/</guid>
-      <description> VMC was developed by the ALICE Software Project and, since then it was adopted by other experiment frameworks.
+      <description>VMC was developed by the ALICE Software Project and, since then it was adopted by other experiment frameworks.
 ALICE  AliRoot - the ALICE software framework (for LHC Run 1 and 2) O2 - the new ALICE software framework in development (for LHC Run 3 and 4)  FAIR  FairRoot - A simulation, reconstruction and analysis framework, based on the ROOT system, for FAIR experiments  </description>
     </item>
     
@@ -181,10 +174,8 @@ ALICE  AliRoot - the ALICE software framework (for LHC Run 1 and 2) O2 - the new
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/installation/geant4_vmc/special-installations/</guid>
-      <description>Root Configuration for geant4_vmc versions (2.x - 2.8)  The older geant4_vmc versions (2.x - 2.8) require Root to be configured with g4root package; for this you have to specify the following configure options:
- &amp;ndash;enable-g4root &amp;ndash;with-g4-incdir=$G4INSTALL/include &amp;ndash;with-g4-libdir=$G4INSTALL/lib/Linux-g++ &amp;ndash;with-clhep-incdir=$CLHEP_BASE_DIR/include \ 
-
-&amp;lt;li&amp;gt; &amp;lt;h3&amp;gt;Geant4 configuration (version &amp;gt;= 9.5) &amp;lt;br&amp;gt; with manual installation (with GNUmake) &amp;lt;/h3&amp;gt;  If you install Geant4 with the GNUmakefile build system and your own environment setting, you need to have set the following environment variables.</description>
+      <description>&amp;lt;li&amp;gt; &amp;lt;h3&amp;gt;Geant4 configuration (version &amp;gt;= 9.5) &amp;lt;br&amp;gt; with manual installation (with GNUmake) &amp;lt;/h3&amp;gt;  If you install Geant4 with the GNUmakefile build system and your own environment setting, you need to have set the following environment variables. This way of installation requires an experience in Geant4 and so it is not recommended for novice users.
+G4LIB_BUILD_SHARED set to 1 (required) G4LIB_USE_G3TOG4 set to 1 (required) G4VIS_BUILD_OPENGLX_DRIVER set to 1 (recommended) G4VIS_USE_OPENGLX set to 1 (recommended) If Geant4 is installed in a different path than the path to the source tree, the following additional variables have to be set: G4LIB &amp;hellip; path to Geant4 libraries (optional) G4INCLUDE &amp;hellip; path to Geant4 include files (option) </description>
     </item>
     
     <item>
@@ -194,9 +185,8 @@ ALICE  AliRoot - the ALICE software framework (for LHC Run 1 and 2) O2 - the new
       
       <guid>/installation/geant4_vmc/required-optional-packages/</guid>
       <description>Geant4 VMC requires ROOT and Geant4 installed, and optionally, it can be built with VGM. See below tips for configuration and installation of these packages.
-The path to required and optional packages installations can be defined in these complementary ways:
-a) Via path to the CMake configuration file
-Geant4_DIR ... path to Geant4Config.cmake ROOT_DIR ... path to ROOTConfig.cmake VGM_DIR ... path to VGMConfig.cmake  b) With their configuration script available in your PATH (Geant4 and Root):</description>
+The path to required and optional packages installations can be defined in the standard CMake way, via the paths to the CMake configuration file:
+Geant4_DIR ... path to Geant4Config.cmake ROOT_DIR ... path to ROOTConfig.cmake VGM_DIR ... path to VGMConfig.cmake CMake will also find the CMake configuration files (for ROOT and Geant4) if you source the relevant script from the packages installations (CMAKE_INSTALL_PREFIX) so that they are available in the sestem paths:</description>
     </item>
     
     <item>
@@ -206,9 +196,7 @@ Geant4_DIR ... path to Geant4Config.cmake ROOT_DIR ... path to ROOTConfig.cmake 
       
       <guid>/download/git-vmc/</guid>
       <description>Development version (the whole repository):
-git clone http://github.com/vmc-project/vmc.git  The pro version is under construction.
-To switch to pro tagged version 1.0:
-```bash cd vmc git checkout v1-0 ``` -- </description>
+git clone http://github.com/vmc-project/vmc.git The &amp;lsquo;pro&amp;rsquo; version is under construction.</description>
     </item>
     
     <item>
@@ -218,7 +206,7 @@ To switch to pro tagged version 1.0:
       
       <guid>/user-guide/vmc/vmc-library/</guid>
       <description>The core of the VMC, VMC library, provides a set of interfaces which completely decouple the dependencies between the user code and the concrete Monte Carlo:
- TVirtualMC: Interface to the concrete Monte Carlo program TVirtualMCApplication: Interface to the user&amp;rsquo;s Monte Carlo application TVirtualMCStack: Interface to the particle stack TVirtualMCDecayer: Interface to the external decayer TVirtualMCSensitiveDetector: Interface to the user&amp;rsquo;s sensitive detector  The implementation of the TVirtualMC interface is provided for two Monte Carlo transport codes, GEANT3 and Geant4, with the VMC packages listed below.</description>
+ TVirtualMC: Interface to the concrete Monte Carlo program TVirtualMCApplication: Interface to the user&#39;s Monte Carlo application TVirtualMCStack: Interface to the particle stack TVirtualMCDecayer: Interface to the external decayer TVirtualMCSensitiveDetector: Interface to the user&#39;s sensitive detector  The implementation of the TVirtualMC interface is provided for two Monte Carlo transport codes, GEANT3 and Geant4, with the VMC packages listed below.</description>
     </item>
     
     <item>
@@ -228,10 +216,8 @@ To switch to pro tagged version 1.0:
       
       <guid>/download/git-geant3/</guid>
       <description>Development version (the whole repository):
-git clone http://github.com/vmc-project/geant3.git  To switch to pro tagged version 2.7:
-cd geant3 git checkout v2-7  To switch to old tagged version 2.6:
-(For older versions see the correspondent tag and the required version of ROOT in the table):
-cd geant3 git checkout v2-6  </description>
+git clone http://github.com/vmc-project/geant3.git To switch to the &amp;lsquo;pro&amp;rsquo; tagged version 2.7:
+cd geant3 git checkout v2-7 To switch to the &amp;lsquo;old&amp;rsquo; tagged version 2.6:cd geant3 git checkout v2-6 For older versions see the correspondent tag and the required version of ROOT in the table.</description>
     </item>
     
     <item>
@@ -263,10 +249,10 @@ using the new TVirtualMC function: void TVirtualMC::SetSensitiveDetector( const 
       
       <guid>/download/git-geant4_vmc/</guid>
       <description>Development version (the whole repository):
-git clone http://github.com/vmc-project/geant4_vmc.git  To switch to tagged tagged version 4.0.p1:
-git checkout v4-0-p1  To switch to old tagged version 3.6.p3 (compatible with Geant4 10.04.x):
-cd geant4_vmc git checkout v3-6-p3  The list of new developments, bug fixes and the required versions of ROOT and Geant4 for each version can be found in the history file.
-Download Geant4 - from the Geant4 Web site</description>
+git clone http://github.com/vmc-project/geant4_vmc.git To switch to the &amp;lsquo;pro&amp;rsquo; tagged version 4.0.p3 (compatible with Geant4 10.5.x):
+git checkout v4-0-p3 To switch to the &amp;lsquo;old&amp;rsquo; tagged version 3.6.p6 X(compatible with Geant4 10.4.x):
+cd geant4_vmc git checkout v3-6-p6 The list of new developments, bug fixes and the required versions of ROOT and Geant4 for each version can be found in the history file.
+Download Geant4 - from the Geant4 Web site   </description>
     </item>
     
     <item>
@@ -275,7 +261,7 @@ Download Geant4 - from the Geant4 Web site</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/user-guide/geant4_vmc/physics-lists/</guid>
-      <description>Physics list selection Physics Geant4 VMC does not provide a default physics list. User have to choose the physics list from the physics lists provided in Geant4 (see the Geant4 Physics List Guide or include their own physics list. The choice of the physics list is done via the option specified with creating TG4RunConfiguration  object. This option is passed asthe second argument in TG4RunConfiguration constructor (see examples for more details).</description>
+      <description>Physics list selection Physics Geant4 VMC does not provide a default physics list. User have to choose the physics list from the physics lists provided in Geant4 (see the Geant4 Physics List Guide or include their own physics list. The choice of the physics list is done via the option specified with creating TG4RunConfiguration object. This option is passed asthe second argument in TG4RunConfiguration constructor (see examples for more details).This option can be defined as:</description>
     </item>
     
     <item>
@@ -294,9 +280,8 @@ Stacking of secondary particles is then handled by Geant4 kernel and the user VM
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/download/tar-files/</guid>
-      <description>Pro versions    Package Version Tar file Tested with     vmc 0.1 (*) v0-1.tar.gz ROOT v6.18.00   geant3 2.7 v2-7.tar.gz ROOT 6.14.06   geant4_vmc 4.0.p1 v4-0-p1.tar.gz ROOT 6.14.06,
-Geant4 10.05 (with embedded CLHEP 2.4.1.0), VGM 4.4, Garfield master at 07c0ec50a0d3086b3 (**)    (*) this is development version, the pro version is under construction
-(**) with fixes in MR #1 in https://gitlab.</description>
+      <description>Pro versions    Package Version Tar file Tested with     vmc 0.1 (*) v0-1.tar.gz ROOT v6.18.00   geant3 2.7 v2-7.tar.gz ROOT 6.14.06   geant4_vmc 4.0.p3 v4-0-p3.tar.gz ROOT 6.18.04,Geant4 10.5.p01 (with embedded CLHEP 2.4.1.0), VGM 4.4 and 4.6, Garfield master at c5efc3e352101b59e    (*) this is development version, the pro version is under construction
+In general, the VMC packages can be built with the Root versions which they were tested with and higher, and Geant4 VMC with the Geant4 version which it was tested with including the patches.</description>
     </item>
     
     <item>
@@ -337,7 +322,7 @@ Such customization is recommended for including a user own physics list. User ha
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/publications/meetings/</guid>
-      <description> VMC meeting, CERN, 03 June 2009  &amp;nbsp; VMC meeting, CERN, 04 February 2009  &amp;nbsp; VMC Open issues meeting, CERN, 22 September 2008  &amp;nbsp; VMC Workshop, CERN, 29-30th November 2004   </description>
+      <description></description>
     </item>
     
     <item>
@@ -347,7 +332,7 @@ Such customization is recommended for including a user own physics list. User ha
       
       <guid>/user-guide/geant4_vmc/visualization/</guid>
       <description>Geant4 visualization and UI drivers can be in Geant4 VMC enabled via dedicated CMake configuration options. See more details in Installing Geant4 VMC.
-The G3-like functions for visualization defined in TVirtualMC are overcome with the interactive visualization capabilities of both Root and Geant4 geometry modellers, that&amp;rsquo;s why user is encouraged to use these modeller directly. User can set Geant4 visualization options using Geant4 visualization commands, as it is illustrated in the VMC examples  in g4vis.</description>
+The G3-like functions for visualization defined in TVirtualMC are overcome with the interactive visualization capabilities of both Root and Geant4 geometry modellers, that&#39;s why user is encouraged to use these modeller directly. User can set Geant4 visualization options using Geant4 visualization commands, as it is illustrated in the VMC examples in g4vis.</description>
     </item>
     
     <item>
@@ -356,7 +341,7 @@ The G3-like functions for visualization defined in TVirtualMC are overcome with 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/user-guide/geant4_vmc/switching-user-interfaces/</guid>
-      <description>The VMC interface provides a common denominator for all implemented MC&amp;rsquo;s and cannot cover all commands available in a Geant4 user session through Geant4 user interface (UI). Switching between the Root UI and the Geant4 UI gives a user the possibility of working with the native Geant4 UI. It is also possible to process a foreign command or a foreign macro in both UIs:
+      <description>The VMC interface provides a common denominator for all implemented MC&#39;s and cannot cover all commands available in a Geant4 user session through Geant4 user interface (UI). Switching between the Root UI and the Geant4 UI gives a user the possibility of working with the native Geant4 UI. It is also possible to process a foreign command or a foreign macro in both UIs:
 From Root to Geant4 UI Switching UI: root [0] ((TGeant4*)gMC)-&amp;gt;StartGeantUI();</description>
     </item>
     
@@ -366,7 +351,8 @@ From Root to Geant4 UI Switching UI: root [0] ((TGeant4*)gMC)-&amp;gt;StartGeant
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/user-guide/geant4_vmc/multi-threaded-processing/</guid>
-      <description>Geant4 VMC with Multi-threading Geant4 Since version 3.00, Geant4 VMC supports running Geant4 in multi-threading (MT) mode. The VMC application will run automatically in MT mode when Geant4 VMC is built against Geant4 MT. This default behaviour can be changed via the option specified with creating TG4RunConfiguration  passed as the fifth argument in TG4RunConfiguration constructor. (Note that the fourth argument, specialStacking option, cannot be omitted in this case.)</description>
+      <description>Geant4 VMC with Multi-threading Geant4 Since version 3.00, Geant4 VMC supports running Geant4 in multi-threading (MT) mode. The VMC application will run automatically in MT mode when Geant4 VMC is built against Geant4 MT. This default behaviour can be changed via the option specified with creating TG4RunConfiguration passed as the fifth argument in TG4RunConfiguration constructor. (Note that the fourth argument, specialStacking option, cannot be omitted in this case.)
+The VMC application which has not been migrated to MT should be run in a sequential mode, either with Geant4 VMC built against Geant4 sequential libraries or with Geant4 VMC built against Geant4 MT libraries with disabled multi-threading mode in TG4RunConfiguration.</description>
     </item>
     
     <item>
@@ -376,7 +362,7 @@ From Root to Geant4 UI Switching UI: root [0] ((TGeant4*)gMC)-&amp;gt;StartGeant
       
       <guid>/user-guide/geant4_vmc/verbosity/</guid>
       <description>For many Geant4 VMC classes (like for Geant4 classes) the user can select a higher verbosity level and activate various printings which can help in understanding or debugging his application.
- /mcVerbose/all level  Set the same verbose level (level &amp;gt;= 0) to all Geant4 VMC objects. If level = 0 no printing is issued, the higher the level is more printings will be issued.  /mcVerbose/geometryManager 2  Activate the debug printing from VGM geometry conversion (when geomRootToGeant4 option is selected)  /mcVerbose/regionsManager 1 [2] [3]  level=1: print the number of regions added via VMC level=2: print also the list of all volumes, the cuts in energy and calculated cuts in range level=3: print also all evaluated energy values  /mcVerbose/composedPhysicsList 2 [3] [4] Set the same verbose level to the registed user physics lists.</description>
+  /mcVerbose/all level  Set the same verbose level (level &amp;gt;= 0) to all Geant4 VMC objects. If level = 0 no printing is issued, the higher the level is more printings will be issued.    /mcVerbose/geometryManager 2  Activate the debug printing from VGM geometry conversion (when geomRootToGeant4 option is selected)    /mcVerbose/regionsManager 1 [2] [3]  level=1: print the number of regions added via VMC level=2: print also the list of all volumes, the cuts in energy and calculated cuts in range level=3: print also all evaluated energy values    /mcVerbose/composedPhysicsList 2 [3] [4] Set the same verbose level to the registed user physics lists.</description>
     </item>
     
     <item>
@@ -386,7 +372,7 @@ From Root to Geant4 UI Switching UI: root [0] ((TGeant4*)gMC)-&amp;gt;StartGeant
       
       <guid>/user-guide/geant4_vmc/vebosity-for-developers/</guid>
       <description>For many Geant4 VMC classes (like for Geant4 classes) the user can select a higher verbosity level and activate various printings which can help in understanding or debugging his application. Here we list the commands useful rather for Geant4 VMC developers, for the commands useful for users see Verbosity.
- /mcVerbose/SDConstruction 2  Print the volumes IDs (implemented via G4VSensitiveDetector objects) and the maps between volumes and volume IDs.  /mcVerbose/runManager 3  Print the logical volume store.</description>
+  /mcVerbose/SDConstruction 2  Print the volumes IDs (implemented via G4VSensitiveDetector objects) and the maps between volumes and volume IDs.    /mcVerbose/runManager 3  Print the logical volume store.</description>
     </item>
     
     <item>
@@ -395,7 +381,7 @@ From Root to Geant4 UI Switching UI: root [0] ((TGeant4*)gMC)-&amp;gt;StartGeant
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/user-guide/geant4_vmc/source-code-documentation/</guid>
-      <description>Source code documentation  has been generated from the source code by Doxygen .</description>
+      <description></description>
     </item>
     
     <item>
@@ -404,7 +390,7 @@ From Root to Geant4 UI Switching UI: root [0] ((TGeant4*)gMC)-&amp;gt;StartGeant
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/copyright/</guid>
-      <description>Copyright &amp;copy; 2019 CERN and copyright holders of VMC Project. This software is distributed under the terms of the GNU General Public License v3 (GPL Version 3), copied verbatim in the file &amp;ldquo;LICENSE&amp;rdquo;.
+      <description>Copyright (C) 2019 CERN and copyright holders of VMC Project. This software is distributed under the terms of the GNU General Public License v3 (GPL Version 3), copied verbatim in the file &amp;ldquo;LICENSE&amp;rdquo;.
 Copyright holders Institutions:
  European Organization for Nuclear Research (CERN), Geneva, Switzerland Institut de Physique Nucléaire dʼOrsay (IPNO), Université Paris-Sud, CNRS-IN2P3, Orsay, France Ruprecht Karls Universitaet Heidelberg (DE)*  </description>
     </item>
@@ -418,7 +404,7 @@ Copyright holders Institutions:
       <description>The concept of Virtual MonteCarlo has been developed by the ALICE Software Project . Authors: R.Brun1, F.Carminati1, I.Hrivnacova2, A.Morsch1
 The integration with TGeo, G4Root: A. Gheata1
 The multiple VMC engines: B. Volkel1,3
-1 European Organization for Nuclear Research (CERN), Geneva, Switzerland 2 Institut de Physique Nucléaire dʼOrsay (IPNO), Université Paris-Sud, CNRS-IN2P3, Orsay, France 3 Ruprecht Karls Universitaet Heidelberg (DE)</description>
+1European Organization for Nuclear Research (CERN), Geneva, Switzerland 2Institut de Physique Nucléaire dʼOrsay (IPNO), Université Paris-Sud, CNRS-IN2P3, Orsay, France 3Ruprecht Karls Universitaet Heidelberg (DE)</description>
     </item>
     
   </channel>

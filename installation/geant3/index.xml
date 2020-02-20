@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Installing Geant3 on VMC</title>
@@ -16,8 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/installation/geant3/geant3-old/</guid>
-      <description>The following instructions apply to the installation of the versions &amp;lt; 2.0.
- First get the Geant3 source from the Download page. No special configuration option for Root installation is needed with the actual version of Root.   With old Root v5.20/00, you have to specify your Fortran compiler:  --with-f77=g77  &amp;nbsp;  geant3 requires Pythia6 library. You can follow ROOT installation instructions or directly the Pythia site.  &amp;nbsp; To install geant3:</description>
+      <description>The following instructions apply to the installation of the versions &amp;lt; 2.0.</description>
     </item>
     
   </channel>

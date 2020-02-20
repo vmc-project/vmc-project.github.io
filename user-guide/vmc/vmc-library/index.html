@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.55.6" />
+    <meta name="generator" content="Hugo 0.62.2" />
     <meta name="description" content="">
 
 
@@ -12,20 +12,20 @@
     <title>VMC Library :: VMC</title>
 
     
-    <link href="/css/nucleus.css?1576595387" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1576595387" rel="stylesheet">
-    <link href="/css/hybrid.css?1576595387" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1576595387" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1576595387" rel="stylesheet">
-    <link href="/css/auto-complete.css?1576595387" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1576595387" rel="stylesheet">
-    <link href="/css/theme.css?1576595387" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1576595387" rel="stylesheet">
+    <link href="/css/nucleus.css?1582215841" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1582215841" rel="stylesheet">
+    <link href="/css/hybrid.css?1582215841" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1582215841" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1582215841" rel="stylesheet">
+    <link href="/css/auto-complete.css?1582215841" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1582215841" rel="stylesheet">
+    <link href="/css/theme.css?1582215841" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1582215841" rel="stylesheet">
     
-      <link href="/css/theme-vmc.css?1576595387" rel="stylesheet">
+      <link href="/css/theme-vmc.css?1582215841" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1576595387"></script>
+    <script src="/js/jquery-3.3.1.min.js?1582215841"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1576595387"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1576595387"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1582215841"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1582215841"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1576595387"></script>
+<script type="text/javascript" src="/js/search.js?1582215841"></script>
 
     
   </div>
@@ -268,6 +268,81 @@
  
   
     
+    <li data-nav-id="/installation/examples/" title="Installing and Running Examples" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/installation/examples/">
+          Examples
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/installation/examples/build-options/" title="Build Options" class="dd-item ">
+        <a href="/installation/examples/build-options/">
+        Build Options
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+             
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/installation/examples/running-examples/" title="Running examples" class="dd-item ">
+        <a href="/installation/examples/running-examples/">
+        Running examples
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
     <li data-nav-id="/installation/geant4_vmc/" title="Installing Geant4 VMC" class="dd-item 
         
         
@@ -321,81 +396,6 @@
       <li data-nav-id="/installation/geant4_vmc/required-optional-packages/" title="Required and Optional Packages" class="dd-item ">
         <a href="/installation/geant4_vmc/required-optional-packages/">
         Required and Optional Packages
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-    <li data-nav-id="/installation/examples/" title="Installing and Running Examples" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/installation/examples/">
-          Examples
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-          
-        
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/installation/examples/build-options/" title="Build Options" class="dd-item ">
-        <a href="/installation/examples/build-options/">
-        Build Options
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-             
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/installation/examples/running-examples/" title="Running examples" class="dd-item ">
-        <a href="/installation/examples/running-examples/">
-        Running examples
         
         </a>
     </li>
@@ -1211,12 +1211,9 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#multiple-vmcs">Multiple VMCs</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#multiple-vmcs">Multiple VMCs</a></li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -1241,28 +1238,19 @@
 
 
 
-
-
 <p>The core of the VMC, VMC library, provides a set of interfaces which completely decouple the dependencies between the user code and the concrete Monte Carlo:</p>
-
 <ul>
 <li><a href="https://root.cern/doc/master/classTVirtualMC.html">TVirtualMC</a>: Interface to the concrete Monte Carlo program</li>
-<li><a href="https://root.cern/doc/master/classTVirtualMCApplication.html">TVirtualMCApplication</a>: Interface to the user&rsquo;s Monte Carlo application</li>
+<li><a href="https://root.cern/doc/master/classTVirtualMCApplication.html">TVirtualMCApplication</a>: Interface to the user's Monte Carlo application</li>
 <li><a href="https://root.cern/doc/master/classTVirtualMCStack.html">TVirtualMCStack</a>: Interface to the particle stack</li>
 <li><a href="https://root.cern/doc/master/classTVirtualMCDecayer.html">TVirtualMCDecayer</a>: Interface to the external decayer</li>
-<li><a href="https://root.cern/doc/master/classTVirtualMCSensitiveDetector.html">TVirtualMCSensitiveDetector</a>: Interface to the user&rsquo;s sensitive detector</li>
+<li><a href="https://root.cern/doc/master/classTVirtualMCSensitiveDetector.html">TVirtualMCSensitiveDetector</a>: Interface to the user's sensitive detector</li>
 </ul>
-
 <p>The implementation of the TVirtualMC interface is provided for two Monte Carlo transport codes, GEANT3 and <a href="http://geant4.web.cern.ch/geant4/">Geant4</a>, with the VMC packages listed below. The implementation for the third Monte Carlo transport code, FLUKA, has been discontinued by the FLUKA team in 2010.</p>
-
 <p>The other three interfaces are implemented in the user application.The user has to implement two mandatory classes: the <strong>MC application</strong> (derived from TVirtualMCApplication) and the <strong>MC stack</strong> (derived from TVirtualMCStack), optionally an external decayer (derived from TVirtualMCDecayer) can be introduced. The user VMC application is independent from concrete transport codes (GEANT3, Geant4, FLUKA). The transport code which will be used for simulation is selected at run time - when processing a ROOT macro where the concrete Monte Carlo is instantiated.</p>
-
 <p>The relationships between the interfaces and their implementations are illustrated in the class diagrams: User MC application , Virtual MC , demonstarting the decoupling between the user code and the concrete transport code.</p>
-
 <h2 id="multiple-vmcs">Multiple VMCs</h2>
-
 <p>Since the development version the simulation can be shared among multiple different engines deriving from <a href="https://root.cern/doc/master/classTVirtualMC.html">TVirtualMC</a> which are handled by a singleton <a href="https://root.cern/doc/master/classTMCManager.html">TMCManager</a> object.</p>
-
 <p>See more detailed description in <a href="/user-guide/vmc/multiple-vmc">the dedicated section</a>.</p>
 
 
@@ -1469,11 +1457,6 @@
                         
             
             
-        
-                    
-                        
-            
-            
                 
                     
                 
@@ -1516,6 +1499,11 @@
                     
 
                     
+            
+        
+                    
+                        
+            
             
         
                     
@@ -2080,19 +2068,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1576595387"></script>
-    <script src="/js/perfect-scrollbar.min.js?1576595387"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1576595387"></script>
-    <script src="/js/jquery.sticky.js?1576595387"></script>
-    <script src="/js/featherlight.min.js?1576595387"></script>
-    <script src="/js/highlight.pack.js?1576595387"></script>
+    <script src="/js/clipboard.min.js?1582215841"></script>
+    <script src="/js/perfect-scrollbar.min.js?1582215841"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1582215841"></script>
+    <script src="/js/jquery.sticky.js?1582215841"></script>
+    <script src="/js/featherlight.min.js?1582215841"></script>
+    <script src="/js/highlight.pack.js?1582215841"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1576595387"></script>
-    <script src="/js/learn.js?1576595387"></script>
-    <script src="/js/hugo-learn.js?1576595387"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1582215841"></script>
+    <script src="/js/learn.js?1582215841"></script>
+    <script src="/js/hugo-learn.js?1582215841"></script>
 
-    <link href="/mermaid/mermaid.css?1576595387" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1576595387"></script>
+    <link href="/mermaid/mermaid.css?1582215841" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1582215841"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
