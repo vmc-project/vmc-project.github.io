@@ -144,7 +144,7 @@
 	"title": "VMC",
 	"tags": [],
 	"description": "",
-	"content": "Development version (the whole repository):\ngit clone http://github.com/vmc-project/vmc.git The \u0026lsquo;pro\u0026rsquo; version is under construction.\n"
+	"content": "Development version (the whole repository):\ngit clone http://github.com/vmc-project/vmc.git To switch to pro tagged version 1.0:\ncd vmc git checkout v1-0 The list of new developments, bug fixes and the required versions of ROOT and Geant4 for each version can be found in the History file.\n"
 },
 {
 	"uri": "/user-guide/vmc/vmc-library/",
@@ -158,7 +158,7 @@
 	"title": "Geant3",
 	"tags": [],
 	"description": "",
-	"content": "Development version (the whole repository):\ngit clone http://github.com/vmc-project/geant3.git To switch to the \u0026lsquo;pro\u0026rsquo; tagged version 2.7:\ncd geant3 git checkout v2-7 To switch to the \u0026lsquo;old\u0026rsquo; tagged version 2.6:cd geant3 git checkout v2-6 For older versions see the correspondent tag and the required version of ROOT in the table.\n"
+	"content": "Development version (the whole repository):\ngit clone http://github.com/vmc-project/geant3.git To switch to the \u0026lsquo;pro\u0026rsquo; tagged version 3.0:\ncd geant3 git checkout v3-0 To switch to the \u0026lsquo;old\u0026rsquo; tagged version 2.7:cd geant3 git checkout v2-7 For older versions see the correspondent tag and the required version of ROOT in the history file.\n"
 },
 {
 	"uri": "/installation/examples/",
@@ -214,7 +214,7 @@
 	"title": "Geant4 VMC",
 	"tags": [],
 	"description": "",
-	"content": "Development version (the whole repository):\ngit clone http://github.com/vmc-project/geant4_vmc.git To switch to the \u0026lsquo;pro\u0026rsquo; tagged version 4.0.p3 (compatible with Geant4 10.5.x):\ngit checkout v4-0-p3 To switch to the \u0026lsquo;old\u0026rsquo; tagged version 3.6.p6 X(compatible with Geant4 10.4.x):\ncd geant4_vmc git checkout v3-6-p6 The list of new developments, bug fixes and the required versions of ROOT and Geant4 for each version can be found in the history file.\nDownload Geant4 - from the Geant4 Web site   "
+	"content": "Development version (the whole repository):\ngit clone http://github.com/vmc-project/geant4_vmc.git To switch to the \u0026lsquo;pro\u0026rsquo; tagged version 5.0 (compatible with Geant4 10.5.x):\ngit checkout v5-0 To switch to the \u0026lsquo;old\u0026rsquo; tagged version 3.6.p6 X(compatible with Geant4 10.4.x):\ncd geant4_vmc git checkout v3-6-p6 The list of new developments, bug fixes and the required versions of ROOT and Geant4 for each version can be found in the history file.\nDownload Geant4 - from the Geant4 Web site   "
 },
 {
 	"uri": "/user-guide/geant4_vmc/physics-lists/",
@@ -249,7 +249,7 @@
 	"title": "Tar Files",
 	"tags": [],
 	"description": "",
-	"content": "Pro versions    Package Version Tar file Tested with     vmc 0.1 (*) v0-1.tar.gz ROOT v6.18.00   geant3 2.7 v2-7.tar.gz ROOT 6.14.06   geant4_vmc 4.0.p3 v4-0-p3.tar.gz ROOT 6.18.04,Geant4 10.5.p01 (with embedded CLHEP 2.4.1.0), VGM 4.4 and 4.6, Garfield master at c5efc3e352101b59e    (*) this is development version, the pro version is under construction\nIn general, the VMC packages can be built with the Root versions which they were tested with and higher, and Geant4 VMC with the Geant4 version which it was tested with including the patches. Note that the Geant4 patches released after the Geant4 VMC tag do not appear in the table above, it is however recommended to update Geant4 with each patch release.\nOld versions    Package Version Tar file Tested with     geant3 2.6 v2-6.tar.gz ROOT 5.34.38 and 6.14.06    "
+	"content": "Pro versions    Package Version Tar file Tested with     vmc 1.0 v1-0.tar.gz ROOT 6.18/04 (*)   geant3 3.0 v3-0.tar.gz ROOT 6.18/04 (*)   geant4_vmc 5.0 v5-0.tar.gz ROOT 6.18.04 (*),Geant4 10.5.p01 (with embedded CLHEP 2.4.1.0), VGM 4.6, Garfield master at c5efc3e352101b59e    (*) VMC 1.0 is ahead of the vmc in ROOT 6.18/04. It includes fixes scheduled for the next ROOT tags 6.18/06 and 6.20/00. For this reason, the new multiple engine mode works correctly only with the VMC stand-alone or with vmc in ROOT master or v6-18-patches or v6-20-patches.\nIn general, the VMC packages can be built with the Root versions which they were tested with and higher, and Geant4 VMC with the Geant4 version which it was tested with including the patches. Note that the Geant4 patches released after the Geant4 VMC tag do not appear in the table above, it is however recommended to update Geant4 with each patch release.\nOld versions    Package Version Tar file Tested with     geant3 2.7 v2-7.tar.gz ROOT 6.14.06    "
 },
 {
 	"uri": "/user-guide/geant3+vmc/",
@@ -382,5 +382,5 @@
 	"title": "VMC Project",
 	"tags": [],
 	"description": "",
-	"content": "VMC Project Virtual Monte Carlo (VMC) defines an abstract layer between a detector simulation user code (MC application) and the Monte Carlo transport code (MC). In this way the user code is independent of any specific MC and can be used with different transport codes within the same simulation application.\nThe implementation of the interface is provided for two Monte Carlo transport codes, GEANT3 and Geant4. The implementation for the third Monte Carlo transport code, FLUKA, has been discontinued by the FLUKA team in 2010.\nVMC was developed by the ALICE Software Project and, after the complete removal of all dependencies from the experiment specific framework, it was included in ROOT and then gradually separated from ROOT into a stand-alone vmc-projet.\nThese are new documentation pages, migrated from root.cern.ch/vmc. If you have suggestions about how to improve this documentation, you can let us know. See Support.\nReference paper\nHřivnáčová I et al: The Virtual MonteCarlo,\nECONF C0303241:THJT006,2003; e-Print: cs.SE/0306005\n Contact: root-vmc@cern.chLast update: 20/02/2020\n"
+	"content": "VMC Project Virtual Monte Carlo (VMC) defines an abstract layer between a detector simulation user code (MC application) and the Monte Carlo transport code (MC). In this way the user code is independent of any specific MC and can be used with different transport codes within the same simulation application.\nThe implementation of the interface is provided for two Monte Carlo transport codes, GEANT3 and Geant4. The implementation for the third Monte Carlo transport code, FLUKA, has been discontinued by the FLUKA team in 2010.\nVMC was developed by the ALICE Software Project and, after the complete removal of all dependencies from the experiment specific framework, it was included in ROOT and then gradually separated from ROOT into a stand-alone vmc-projet.\nThese are new documentation pages, migrated from root.cern.ch/vmc. If you have suggestions about how to improve this documentation, you can let us know. See Support.\nReference paper\nHřivnáčová I et al: The Virtual MonteCarlo,\nECONF C0303241:THJT006,2003; e-Print: cs.SE/0306005\n Contact: root-vmc@cern.chLast update: 24/02/2020\n"
 }]
