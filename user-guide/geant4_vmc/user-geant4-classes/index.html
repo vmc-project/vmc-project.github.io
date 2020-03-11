@@ -12,20 +12,20 @@
     <title>User Geant4 Classes :: VMC</title>
 
     
-    <link href="/css/nucleus.css?1582545376" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1582545376" rel="stylesheet">
-    <link href="/css/hybrid.css?1582545376" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1582545376" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1582545376" rel="stylesheet">
-    <link href="/css/auto-complete.css?1582545376" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1582545376" rel="stylesheet">
-    <link href="/css/theme.css?1582545376" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1582545376" rel="stylesheet">
+    <link href="/css/nucleus.css?1583933992" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1583933992" rel="stylesheet">
+    <link href="/css/hybrid.css?1583933992" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1583933992" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1583933992" rel="stylesheet">
+    <link href="/css/auto-complete.css?1583933992" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1583933992" rel="stylesheet">
+    <link href="/css/theme.css?1583933992" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1583933992" rel="stylesheet">
     
-      <link href="/css/theme-vmc.css?1582545376" rel="stylesheet">
+      <link href="/css/theme-vmc.css?1583933992" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1582545376"></script>
+    <script src="/js/jquery-3.3.1.min.js?1583933992"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1582545376"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1582545376"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1583933992"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1583933992"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1582545376"></script>
+<script type="text/javascript" src="/js/search.js?1583933992"></script>
 
     
   </div>
@@ -1150,7 +1150,7 @@
 
     
     <section id="footer">
-      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+      <p>Built from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
 
     </section>
   </div>
@@ -1247,12 +1247,12 @@
 <p>The default Geant4 VMC behaviour, defined by the Geant4 user mandatory classes and user action classes implemented in Geant4 VMC, can be customized by a user by providing his own class derived from <code>TG4RunConfiguration</code>.</p>
 <p>Such customization is recommended for including a user own physics list. User has also the possibility to override detector construction and/or primary generation action classes and use an existing Geant4 geometry/primary generator definition with VMC. In other cases, though the customisation is possible and allowed by the design, it has not been tested and so it is not recommended especially for the novice users.</p>
 <h3 id="user-physics-list">User Physics List</h3>
-<p>The example of including user own physics list is provided in the VMC example E03 in <!-- raw HTML omitted -->  Ex03RunConfiguration2 <!-- raw HTML omitted --> class.</p>
-<p>In case, a user has registered his own physics list, he has a possibility to combine his own physics list with the <code>TG4SpecialPhysicsList</code> using <code>TG4ComposedPhysics</code> list as it is demonstrated in the VMC example E03, see <!-- raw HTML omitted -->  Ex03RunConfiguration2 <!-- raw HTML omitted -->, and he can then activate any special process as described above.( Another possibility, which requires more expertise, would be to register the special process physics constructor (eg. class <code>TG4SpecialCutsPhysics</code>) in a user own modular physics list.)</p>
+<p>The example of including user own physics list is provided in the VMC example E03 in <a href="http://ivana.home.cern.ch/ivana/examples_html/classEx03RunConfiguration2.html">Ex03RunConfiguration2</a> class.</p>
+<p>In case, a user has registered his own physics list, he has a possibility to combine his own physics list with the <code>TG4SpecialPhysicsList</code> using <code>TG4ComposedPhysics</code> list as it is demonstrated in the VMC example E03, see <a href="http://ivana.home.cern.ch/ivana/examples_html/classEx03RunConfiguration2.html">Ex03RunConfiguration2</a>, and he can then activate any special process as described above.( Another possibility, which requires more expertise, would be to register the special process physics constructor (eg. class <code>TG4SpecialCutsPhysics</code>) in a user own modular physics list.)</p>
 <h3 id="user-detector-construction">User Detector Construction</h3>
-<p>Including of user geometry construction is also demonstrated in the example E03 in <!-- raw HTML omitted -->  Ex03RunConfiguration1 <!-- raw HTML omitted --> class.</p>
+<p>Including of user geometry construction is also demonstrated in the example E03 in <a href="http://ivana.home.cern.ch/ivana/examples_html/classEx03RunConfiguration1.html">Ex03RunConfiguration1</a> class.</p>
 <h3 id="regions">Regions</h3>
-<p>Since version 2.5, users have a possibility to define Geant4 regions by overriding the  <!-- raw HTML omitted -->  TG4VUserRegionConstruction <!-- raw HTML omitted --> class. Definition and including of such a user region construction class in the VMC application is demonstrated in the example E03 in <!-- raw HTML omitted -->  Ex03RunConfiguration3 <!-- raw HTML omitted --> class.</p>
+<p>Since version 2.5, users have a possibility to define Geant4 regions by overriding the  <a href="http://ivana.home.cern.ch/ivana/g4vmc_html/classTG4VUserRegionConstruction.html">TG4VUserRegionConstruction</a> class. Definition and including of such a user region construction class in the VMC application is demonstrated in the example E03 in <a href="http://ivana.home.cern.ch/ivana/examples_html/classEx03RunConfiguration3.html">Ex03RunConfiguration3</a> class.</p>
 
 
 <footer class=" footline" >
@@ -2072,19 +2072,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1582545376"></script>
-    <script src="/js/perfect-scrollbar.min.js?1582545376"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1582545376"></script>
-    <script src="/js/jquery.sticky.js?1582545376"></script>
-    <script src="/js/featherlight.min.js?1582545376"></script>
-    <script src="/js/highlight.pack.js?1582545376"></script>
+    <script src="/js/clipboard.min.js?1583933992"></script>
+    <script src="/js/perfect-scrollbar.min.js?1583933992"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1583933992"></script>
+    <script src="/js/jquery.sticky.js?1583933992"></script>
+    <script src="/js/featherlight.min.js?1583933992"></script>
+    <script src="/js/highlight.pack.js?1583933992"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1582545376"></script>
-    <script src="/js/learn.js?1582545376"></script>
-    <script src="/js/hugo-learn.js?1582545376"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1583933992"></script>
+    <script src="/js/learn.js?1583933992"></script>
+    <script src="/js/hugo-learn.js?1583933992"></script>
 
-    <link href="/mermaid/mermaid.css?1582545376" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1582545376"></script>
+    <link href="/mermaid/mermaid.css?1583933992" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1583933992"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

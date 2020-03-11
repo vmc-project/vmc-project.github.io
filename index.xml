@@ -48,7 +48,7 @@ Geant4VMC_BUILD_G4Root Build G4Root ON Geant4VMC_BUILD_MTRoot Build MTRoot ON Ge
       <guid>/user-guide/geant4_vmc/geometry-definition-navigation/</guid>
       <description>Geometry definition The VMC supports two ways of geometry definition:
  via Root geometry package (TGeo) via TVirtualMC interface (historically the first way)  The first (newer) way is recommended for new users, the way via VMC is kept for a backward compatibility.
-Since the version 2.0, user can choose between Geant4 native navigation and G4Root navigation, if geometry is define via TGeo. The choice of the navigation is done via the option specified with creating TG4RunConfiguration object (see examples for more details):</description>
+Since the version 2.0, user can choose between Geant4 native navigation and G4Root navigation, if geometry is define via TGeo. The choice of the navigation is done via the option specified with creating TG4RunConfiguration object (see VMC examples for more details):</description>
     </item>
     
     <item>
@@ -96,7 +96,9 @@ VMC uses CMake to configure a build system for compiling and installing the head
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/support/mailing-list/</guid>
-      <description></description>
+      <description>The mailing list is used to keep you up to date about new developments in VMC packages, releases and bug fixes. This list is also used to discuss use of VMC with other users and with the developers. If you want to report a bug, please, use Bug Reports.
+To join the root-vmc@cern.ch mailing list, do the following:
+ If you don&#39;t have a CERN account, create a light weight CERN account.</description>
     </item>
     
     <item>
@@ -155,7 +157,9 @@ See more details on the VMC Examples web page.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/support/bug-reports/</guid>
-      <description></description>
+      <description>We use JIRA to track bugs and to gather feature requests.
+If you are new to using JIRA, you might want to read the ROOT Report a bug with JIRA page first.
+Report a bug in VMC packages.</description>
     </item>
     
     <item>
@@ -250,10 +254,10 @@ using the new TVirtualMC function: void TVirtualMC::SetSensitiveDetector( const 
       
       <guid>/download/git-geant4_vmc/</guid>
       <description>Development version (the whole repository):
-git clone http://github.com/vmc-project/geant4_vmc.git To switch to the &amp;lsquo;pro&amp;rsquo; tagged version 5.0 (compatible with Geant4 10.5.x):
-git checkout v5-0 To switch to the &amp;lsquo;old&amp;rsquo; tagged version 3.6.p6 X(compatible with Geant4 10.4.x):
-cd geant4_vmc git checkout v3-6-p6 The list of new developments, bug fixes and the required versions of ROOT and Geant4 for each version can be found in the history file.
-Download Geant4 - from the Geant4 Web site   </description>
+git clone http://github.com/vmc-project/geant4_vmc.git To switch to the &amp;lsquo;pro&amp;rsquo; tagged version 5.1 (compatible with Geant4 10.6.x):
+git checkout v5-1 To switch to the &amp;lsquo;old&amp;rsquo; tagged version 5.0 (compatible with Geant4 10.5.x):
+cd geant4_vmc git checkout v5-0 The list of new developments, bug fixes and the required versions of ROOT and Geant4 for each version can be found in the history file.
+Download Geant4 - from the Geant4 Web site</description>
     </item>
     
     <item>
@@ -281,7 +285,7 @@ Stacking of secondary particles is then handled by Geant4 kernel and the user VM
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/download/tar-files/</guid>
-      <description>Pro versions    Package Version Tar file Tested with     vmc 1.0 v1-0.tar.gz ROOT 6.18/04 (*)   geant3 3.0 v3-0.tar.gz ROOT 6.18/04 (*)   geant4_vmc 5.0 v5-0.tar.gz ROOT 6.18.04 (*),Geant4 10.5.p01 (with embedded CLHEP 2.4.1.0), VGM 4.6, Garfield master at c5efc3e352101b59e    (*) VMC 1.0 is ahead of the vmc in ROOT 6.18/04. It includes fixes scheduled for the next ROOT tags 6.</description>
+      <description>Pro versions    Package Version Tar file Tested with     vmc 1.0 v1-0.tar.gz ROOT 6.18/04 (*)   geant3 3.0 v3-0.tar.gz ROOT 6.18/04 (*)   geant4_vmc 5.1 v5-1.tar.gz ROOT 6.20.00,Geant4 10.6.p01 (with embedded CLHEP 2.4.1.3), VGM 4.8, Garfield master at 940d64b1a5be99a64    (*) VMC 1.0 is ahead of the vmc in ROOT 6.18/04. It includes fixes scheduled for the next ROOT tags 6.</description>
     </item>
     
     <item>
@@ -381,7 +385,7 @@ The VMC application which has not been migrated to MT should be run in a sequent
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/user-guide/geant4_vmc/source-code-documentation/</guid>
-      <description></description>
+      <description>Source code documentation has been generated from the source code by Doxygen.</description>
     </item>
     
     <item>

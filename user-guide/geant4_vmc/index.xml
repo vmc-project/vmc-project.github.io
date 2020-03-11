@@ -18,7 +18,7 @@
       <guid>/user-guide/geant4_vmc/geometry-definition-navigation/</guid>
       <description>Geometry definition The VMC supports two ways of geometry definition:
  via Root geometry package (TGeo) via TVirtualMC interface (historically the first way)  The first (newer) way is recommended for new users, the way via VMC is kept for a backward compatibility.
-Since the version 2.0, user can choose between Geant4 native navigation and G4Root navigation, if geometry is define via TGeo. The choice of the navigation is done via the option specified with creating TG4RunConfiguration object (see examples for more details):</description>
+Since the version 2.0, user can choose between Geant4 native navigation and G4Root navigation, if geometry is define via TGeo. The choice of the navigation is done via the option specified with creating TG4RunConfiguration object (see VMC examples for more details):</description>
     </item>
     
     <item>
@@ -136,7 +136,7 @@ The VMC application which has not been migrated to MT should be run in a sequent
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/user-guide/geant4_vmc/source-code-documentation/</guid>
-      <description></description>
+      <description>Source code documentation has been generated from the source code by Doxygen.</description>
     </item>
     
   </channel>
