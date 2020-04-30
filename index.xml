@@ -98,7 +98,7 @@ VMC uses CMake to configure a build system for compiling and installing the head
       <guid>/support/mailing-list/</guid>
       <description>The mailing list is used to keep you up to date about new developments in VMC packages, releases and bug fixes. This list is also used to discuss use of VMC with other users and with the developers. If you want to report a bug, please, use Bug Reports.
 To join the root-vmc@cern.ch mailing list, do the following:
- If you don&#39;t have a CERN account, create a light weight CERN account.</description>
+ If you don&amp;rsquo;t have a CERN account, create a light weight CERN account.</description>
     </item>
     
     <item>
@@ -200,8 +200,8 @@ Geant4_DIR ... path to Geant4Config.cmake ROOT_DIR ... path to ROOTConfig.cmake 
       
       <guid>/download/git-vmc/</guid>
       <description>Development version (the whole repository):
-git clone http://github.com/vmc-project/vmc.git To switch to pro tagged version 1.0:
-cd vmc git checkout v1-0 The list of new developments, bug fixes and the required versions of ROOT and Geant4 for each version can be found in the History file.</description>
+git clone http://github.com/vmc-project/vmc.git To switch to pro tagged version 1.0.p2:
+cd vmc git checkout v1-0-p2 The list of new developments, bug fixes and the required versions of ROOT and Geant4 for each version can be found in the History file.</description>
     </item>
     
     <item>
@@ -211,7 +211,7 @@ cd vmc git checkout v1-0 The list of new developments, bug fixes and the require
       
       <guid>/user-guide/vmc/vmc-library/</guid>
       <description>The core of the VMC, VMC library, provides a set of interfaces which completely decouple the dependencies between the user code and the concrete Monte Carlo:
- TVirtualMC: Interface to the concrete Monte Carlo program TVirtualMCApplication: Interface to the user&#39;s Monte Carlo application TVirtualMCStack: Interface to the particle stack TVirtualMCDecayer: Interface to the external decayer TVirtualMCSensitiveDetector: Interface to the user&#39;s sensitive detector  The implementation of the TVirtualMC interface is provided for two Monte Carlo transport codes, GEANT3 and Geant4, with the VMC packages listed below.</description>
+ TVirtualMC: Interface to the concrete Monte Carlo program TVirtualMCApplication: Interface to the user&amp;rsquo;s Monte Carlo application TVirtualMCStack: Interface to the particle stack TVirtualMCDecayer: Interface to the external decayer TVirtualMCSensitiveDetector: Interface to the user&amp;rsquo;s sensitive detector  The implementation of the TVirtualMC interface is provided for two Monte Carlo transport codes, GEANT3 and Geant4, with the VMC packages listed below.</description>
     </item>
     
     <item>
@@ -221,8 +221,8 @@ cd vmc git checkout v1-0 The list of new developments, bug fixes and the require
       
       <guid>/download/git-geant3/</guid>
       <description>Development version (the whole repository):
-git clone http://github.com/vmc-project/geant3.git To switch to the &amp;lsquo;pro&amp;rsquo; tagged version 3.0:
-cd geant3 git checkout v3-0 To switch to the &amp;lsquo;old&amp;rsquo; tagged version 2.7:cd geant3 git checkout v2-7 For older versions see the correspondent tag and the required version of ROOT in the history file.</description>
+git clone http://github.com/vmc-project/geant3.git To switch to the &amp;lsquo;pro&amp;rsquo; tagged version 3.4:
+cd geant3 git checkout v3-4 To switch to the &amp;lsquo;old&amp;rsquo; tagged version 2.7.p1:cd geant3 git checkout v2-7-p1 For older versions see the correspondent tag and the required version of ROOT in the history file.</description>
     </item>
     
     <item>
@@ -254,9 +254,9 @@ using the new TVirtualMC function: void TVirtualMC::SetSensitiveDetector( const 
       
       <guid>/download/git-geant4_vmc/</guid>
       <description>Development version (the whole repository):
-git clone http://github.com/vmc-project/geant4_vmc.git To switch to the &amp;lsquo;pro&amp;rsquo; tagged version 5.1 (compatible with Geant4 10.6.x):
-git checkout v5-1 To switch to the &amp;lsquo;old&amp;rsquo; tagged version 5.0 (compatible with Geant4 10.5.x):
-cd geant4_vmc git checkout v5-0 The list of new developments, bug fixes and the required versions of ROOT and Geant4 for each version can be found in the history file.
+git clone http://github.com/vmc-project/geant4_vmc.git To switch to the &amp;lsquo;pro&amp;rsquo; tagged version 5.1.p1 (compatible with Geant4 10.6.x):
+git checkout v5-1-p1 To switch to the &amp;lsquo;old&amp;rsquo; tagged version 5.0.p3 (compatible with Geant4 10.5.x):
+cd geant4_vmc git checkout v5-0-p3 The list of new developments, bug fixes and the required versions of ROOT and Geant4 for each version can be found in the history file.
 Download Geant4 - from the Geant4 Web site</description>
     </item>
     
@@ -285,7 +285,7 @@ Stacking of secondary particles is then handled by Geant4 kernel and the user VM
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/download/tar-files/</guid>
-      <description>Pro versions    Package Version Tar file Tested with     vmc 1.0 v1-0.tar.gz ROOT 6.18/04 (*)   geant3 3.0 v3-0.tar.gz ROOT 6.18/04 (*)   geant4_vmc 5.1 v5-1.tar.gz ROOT 6.20.00,Geant4 10.6.p01 (with embedded CLHEP 2.4.1.3), VGM 4.8, Garfield master at 940d64b1a5be99a64    (*) VMC 1.0 is ahead of the vmc in ROOT 6.18/04. It includes fixes scheduled for the next ROOT tags 6.</description>
+      <description>Pro versions    Package Version Tar file Tested with     vmc 1.0.p2 v1-0-p2.tar.gz *ROOT 6.20/00   geant3 3.4 v3-4.tar.gz ROOT 6.20/00 (*)   geant4_vmc 5.1.p1 v5-1-p1.tar.gz ROOT 6.20.00,Geant4 10.6.p01 (with embedded CLHEP 2.4.1.3), VGM 4.8, Garfield master at 940d64b1a5be99a64    In general, the VMC packages can be built with the Root versions which they were tested with and higher, and Geant4 VMC with the Geant4 version which it was tested with including the patches.</description>
     </item>
     
     <item>
@@ -336,7 +336,7 @@ Such customization is recommended for including a user own physics list. User ha
       
       <guid>/user-guide/geant4_vmc/visualization/</guid>
       <description>Geant4 visualization and UI drivers can be in Geant4 VMC enabled via dedicated CMake configuration options. See more details in Installing Geant4 VMC.
-The G3-like functions for visualization defined in TVirtualMC are overcome with the interactive visualization capabilities of both Root and Geant4 geometry modellers, that&#39;s why user is encouraged to use these modeller directly. User can set Geant4 visualization options using Geant4 visualization commands, as it is illustrated in the VMC examples in g4vis.</description>
+The G3-like functions for visualization defined in TVirtualMC are overcome with the interactive visualization capabilities of both Root and Geant4 geometry modellers, that&amp;rsquo;s why user is encouraged to use these modeller directly. User can set Geant4 visualization options using Geant4 visualization commands, as it is illustrated in the VMC examples in g4vis.</description>
     </item>
     
     <item>
@@ -345,7 +345,7 @@ The G3-like functions for visualization defined in TVirtualMC are overcome with 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/user-guide/geant4_vmc/switching-user-interfaces/</guid>
-      <description>The VMC interface provides a common denominator for all implemented MC&#39;s and cannot cover all commands available in a Geant4 user session through Geant4 user interface (UI). Switching between the Root UI and the Geant4 UI gives a user the possibility of working with the native Geant4 UI. It is also possible to process a foreign command or a foreign macro in both UIs:
+      <description>The VMC interface provides a common denominator for all implemented MC&amp;rsquo;s and cannot cover all commands available in a Geant4 user session through Geant4 user interface (UI). Switching between the Root UI and the Geant4 UI gives a user the possibility of working with the native Geant4 UI. It is also possible to process a foreign command or a foreign macro in both UIs:
 From Root to Geant4 UI Switching UI: root [0] ((TGeant4*)gMC)-&amp;gt;StartGeantUI();</description>
     </item>
     

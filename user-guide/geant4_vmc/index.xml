@@ -87,7 +87,7 @@ Such customization is recommended for including a user own physics list. User ha
       
       <guid>/user-guide/geant4_vmc/visualization/</guid>
       <description>Geant4 visualization and UI drivers can be in Geant4 VMC enabled via dedicated CMake configuration options. See more details in Installing Geant4 VMC.
-The G3-like functions for visualization defined in TVirtualMC are overcome with the interactive visualization capabilities of both Root and Geant4 geometry modellers, that&#39;s why user is encouraged to use these modeller directly. User can set Geant4 visualization options using Geant4 visualization commands, as it is illustrated in the VMC examples in g4vis.</description>
+The G3-like functions for visualization defined in TVirtualMC are overcome with the interactive visualization capabilities of both Root and Geant4 geometry modellers, that&amp;rsquo;s why user is encouraged to use these modeller directly. User can set Geant4 visualization options using Geant4 visualization commands, as it is illustrated in the VMC examples in g4vis.</description>
     </item>
     
     <item>
@@ -96,7 +96,7 @@ The G3-like functions for visualization defined in TVirtualMC are overcome with 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/user-guide/geant4_vmc/switching-user-interfaces/</guid>
-      <description>The VMC interface provides a common denominator for all implemented MC&#39;s and cannot cover all commands available in a Geant4 user session through Geant4 user interface (UI). Switching between the Root UI and the Geant4 UI gives a user the possibility of working with the native Geant4 UI. It is also possible to process a foreign command or a foreign macro in both UIs:
+      <description>The VMC interface provides a common denominator for all implemented MC&amp;rsquo;s and cannot cover all commands available in a Geant4 user session through Geant4 user interface (UI). Switching between the Root UI and the Geant4 UI gives a user the possibility of working with the native Geant4 UI. It is also possible to process a foreign command or a foreign macro in both UIs:
 From Root to Geant4 UI Switching UI: root [0] ((TGeant4*)gMC)-&amp;gt;StartGeantUI();</description>
     </item>
     

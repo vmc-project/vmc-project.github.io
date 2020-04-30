@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.62.2" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <meta name="description" content="">
 
 
@@ -12,20 +12,20 @@
     <title>Multi-threaded Processing :: VMC</title>
 
     
-    <link href="/css/nucleus.css?1583934787" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1583934787" rel="stylesheet">
-    <link href="/css/hybrid.css?1583934787" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1583934787" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1583934787" rel="stylesheet">
-    <link href="/css/auto-complete.css?1583934787" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1583934787" rel="stylesheet">
-    <link href="/css/theme.css?1583934787" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1583934787" rel="stylesheet">
+    <link href="/css/nucleus.css?1588252151" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1588252151" rel="stylesheet">
+    <link href="/css/hybrid.css?1588252151" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1588252151" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1588252151" rel="stylesheet">
+    <link href="/css/auto-complete.css?1588252151" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1588252151" rel="stylesheet">
+    <link href="/css/theme.css?1588252151" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1588252151" rel="stylesheet">
     
-      <link href="/css/theme-vmc.css?1583934787" rel="stylesheet">
+      <link href="/css/theme-vmc.css?1588252151" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1583934787"></script>
+    <script src="/js/jquery-3.3.1.min.js?1588252151"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1583934787"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1583934787"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1588252151"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1588252151"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1583934787"></script>
+<script type="text/javascript" src="/js/search.js?1588252151"></script>
 
     
   </div>
@@ -1216,7 +1216,7 @@
       <ul>
         <li><a href="#geant4-vmc-with-multi-threading-geant4">Geant4 VMC with Multi-threading Geant4</a></li>
         <li><a href="#migration-of-vmc-application-to-multi-threading">Migration of VMC application to Multi-threading</a></li>
-        <li><a href="#implementation-details--tips">Implementation details & tips</a></li>
+        <li><a href="#implementation-details--tips">Implementation details &amp; tips</a></li>
       </ul>
     </li>
   </ul>
@@ -1285,7 +1285,7 @@ In general, the objects which state is modified during event processing need to 
 </li>
 <li>
 <p>Carefully check thread-safety of your application code. Note that ROOT has to be initialized for multi-threading via calling
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">TThread<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Initialize();
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">TThread<span style="color:#f92672">::</span>Initialize();
    
 </code></pre></div>
 just at start of your Root macro or your application.</p>
@@ -1299,7 +1299,7 @@ just at start of your Root macro or your application.</p>
 with <code>-ftls-model=global-init</code> compilation flag (which is different
 from the Geant4 default, <code>-ftls-model=initial-exec</code>) and the tests
 show that it brings a performance penalty.</p>
-<p>That's why it is recommended to build the VMC application
+<p>That&rsquo;s why it is recommended to build the VMC application
 program linked with all libraries. Since Geant4 VMC 3.00 version,
 the main functions are provided for all VMC examples together with
 CMake configuration file for their build.</p>
@@ -1313,7 +1313,7 @@ when cloning your application:
 </li>
 <li>
 <p>Check the existence of <code>TVirtualMCRootManager</code> in <code>YourSD::Initialize()</code> as when running in MT mode the <code>TVirtualMCRootManager</code> is not instantiated on master but only on workers.
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">if</span> ( TVirtualMCRootManager<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Instance() ) Register();
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">if</span> ( TVirtualMCRootManager<span style="color:#f92672">::</span>Instance() ) Register();
   
 </code></pre></div></p>
 </li>
@@ -2161,19 +2161,19 @@ would be needed.)
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1583934787"></script>
-    <script src="/js/perfect-scrollbar.min.js?1583934787"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1583934787"></script>
-    <script src="/js/jquery.sticky.js?1583934787"></script>
-    <script src="/js/featherlight.min.js?1583934787"></script>
-    <script src="/js/highlight.pack.js?1583934787"></script>
+    <script src="/js/clipboard.min.js?1588252151"></script>
+    <script src="/js/perfect-scrollbar.min.js?1588252151"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1588252151"></script>
+    <script src="/js/jquery.sticky.js?1588252151"></script>
+    <script src="/js/featherlight.min.js?1588252151"></script>
+    <script src="/js/highlight.pack.js?1588252151"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1583934787"></script>
-    <script src="/js/learn.js?1583934787"></script>
-    <script src="/js/hugo-learn.js?1583934787"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1588252151"></script>
+    <script src="/js/learn.js?1588252151"></script>
+    <script src="/js/hugo-learn.js?1588252151"></script>
 
-    <link href="/mermaid/mermaid.css?1583934787" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1583934787"></script>
+    <link href="/mermaid/mermaid.css?1588252151" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1588252151"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

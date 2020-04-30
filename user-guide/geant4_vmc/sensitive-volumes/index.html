@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.62.2" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <meta name="description" content="">
 
 
@@ -12,20 +12,20 @@
     <title>Sensitive Detectors and Volumes :: VMC</title>
 
     
-    <link href="/css/nucleus.css?1583934787" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1583934787" rel="stylesheet">
-    <link href="/css/hybrid.css?1583934787" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1583934787" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1583934787" rel="stylesheet">
-    <link href="/css/auto-complete.css?1583934787" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1583934787" rel="stylesheet">
-    <link href="/css/theme.css?1583934787" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1583934787" rel="stylesheet">
+    <link href="/css/nucleus.css?1588252151" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1588252151" rel="stylesheet">
+    <link href="/css/hybrid.css?1588252151" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1588252151" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1588252151" rel="stylesheet">
+    <link href="/css/auto-complete.css?1588252151" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1588252151" rel="stylesheet">
+    <link href="/css/theme.css?1588252151" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1588252151" rel="stylesheet">
     
-      <link href="/css/theme-vmc.css?1583934787" rel="stylesheet">
+      <link href="/css/theme-vmc.css?1588252151" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1583934787"></script>
+    <script src="/js/jquery-3.3.1.min.js?1588252151"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1583934787"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1583934787"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1588252151"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1588252151"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1583934787"></script>
+<script type="text/javascript" src="/js/search.js?1588252151"></script>
 
     
   </div>
@@ -1242,15 +1242,15 @@
 <h2 id="sensitive-detectors">Sensitive Detectors</h2>
 <p>Recently (since ROOT version v6.13.04) a new interface to user sensitive detector, <a href="https://vmc-project.github.io/vmc/html/classTVirtualMCSensitiveDetector.html">TVirtualMCSensitiveDetector</a>, has been added in the set of VMC interfaces. The support for this new way of definig sensitive detector is available since geant3 2.6 and geant4_vmc 4.0.</p>
 <p>The user sensitive detectors object should be associated to the selected volumes in the new dedicated MCApplication function:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> TVirtualMCApplication<span style="color:#f92672">:</span><span style="color:#f92672">:</span>SetSensitiveDetectors()
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> TVirtualMCApplication<span style="color:#f92672">::</span>SetSensitiveDetectors()
 </code></pre></div></p>
 <p>using the new TVirtualMC function:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> TVirtualMC<span style="color:#f92672">:</span><span style="color:#f92672">:</span>SetSensitiveDetector(
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> TVirtualMC<span style="color:#f92672">::</span>SetSensitiveDetector(
 	<span style="color:#66d9ef">const</span> TString<span style="color:#f92672">&amp;</span> volumeName,
 	TVirtualMCSensitiveDetector<span style="color:#f92672">*</span> userSD);
 </code></pre></div>
 Users can also choose whether scoring should be performed exclusively via sensitive detectors or via both sensitive detectors and <code>MCApplication::Stepping()</code> using the function
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> VirtualMC<span style="color:#f92672">:</span><span style="color:#f92672">:</span>SetExclusiveSDScoring(Bool_t);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> VirtualMC<span style="color:#f92672">::</span>SetExclusiveSDScoring(Bool_t);
 </code></pre></div>
 If exclusive scoring is selected, the <code>MCApplication::Stepping()</code> is not called by MC.</p>
 <p>To demonstrate the usage of this new interfaces the <strong>E03 example</strong> was split in two variants:</p>
@@ -1272,7 +1272,7 @@ If exclusive scoring is selected, the <code>MCApplication::Stepping()</code> is 
 </code></pre><p>/mcDet/setSDSelectionFromTGeo true</p>
 <pre><code>The volumes in TGeo geometry are set sensitive by setting the option &quot;SV&quot; to TGeoVolume objects: 
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">TGeoVolume<span style="color:#f92672">*</span> myVolume <span style="color:#f92672">=</span> ...;
-myVolume<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>SetOption(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">SV</span><span style="color:#e6db74">&#34;</span>);
+myVolume<span style="color:#f92672">-&gt;</span>SetOption(<span style="color:#e6db74">&#34;SV&#34;</span>);
    
 </code></pre></div>
 User can also choose a different string than &quot;SV&quot; for sensitive volumes labeling. In this case, they have to notify Geant4 VMC about the label via the Geant4 VMC command: 
@@ -1658,6 +1658,55 @@ User can also choose a different string than &quot;SV&quot; for sensitive volume
                     
 
                     
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
             
         
                     
@@ -1668,6 +1717,169 @@ User can also choose a different string than &quot;SV&quot; for sensitive volume
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1873,10 +2085,10 @@ User can also choose a different string than &quot;SV&quot; for sensitive volume
 	 
 	 
 		
-			<a class="nav nav-prev" href="/user-guide/vmc/multiple-vmc/" title="Multiple VMC Engines"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/user-guide/geant4_vmc/magnetic-field/" title="Magnetic Field"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/user-guide/geant3&#43;vmc/" title="Geant3 &#43; VMC" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/user-guide/geant4_vmc/physics-lists/" title="Physics Lists" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1886,19 +2098,19 @@ User can also choose a different string than &quot;SV&quot; for sensitive volume
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1583934787"></script>
-    <script src="/js/perfect-scrollbar.min.js?1583934787"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1583934787"></script>
-    <script src="/js/jquery.sticky.js?1583934787"></script>
-    <script src="/js/featherlight.min.js?1583934787"></script>
-    <script src="/js/highlight.pack.js?1583934787"></script>
+    <script src="/js/clipboard.min.js?1588252151"></script>
+    <script src="/js/perfect-scrollbar.min.js?1588252151"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1588252151"></script>
+    <script src="/js/jquery.sticky.js?1588252151"></script>
+    <script src="/js/featherlight.min.js?1588252151"></script>
+    <script src="/js/highlight.pack.js?1588252151"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1583934787"></script>
-    <script src="/js/learn.js?1583934787"></script>
-    <script src="/js/hugo-learn.js?1583934787"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1588252151"></script>
+    <script src="/js/learn.js?1588252151"></script>
+    <script src="/js/hugo-learn.js?1588252151"></script>
 
-    <link href="/mermaid/mermaid.css?1583934787" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1583934787"></script>
+    <link href="/mermaid/mermaid.css?1588252151" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1588252151"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
