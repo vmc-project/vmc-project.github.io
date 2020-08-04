@@ -77,8 +77,7 @@ Since the version 2.0, user can choose between Geant4 native navigation and G4Ro
       
       <guid>/installation/vmc/</guid>
       <description>VMC requires ROOT.
-VMC uses CMake to configure a build system for compiling and installing the headers, libraries and Cmake configuration files. To install VMC:
- First get the VMC source from the Download page. We will assume that the VMC package sits in a subdirectory  /mypath/vmc Create build directory alongside our source directory  $ cd /mypath $ mkdir vmc_build $ ls vmc vmc_build To configure the build, change into the build directory and run CMake:  $ cd /mypath/vmc_build $ cmake -DCMAKE_INSTALL_PREFIX=/mypath/vmc_install /mypath/vmc   If ROOT environment was defined using thisroot.</description>
+In 2019, the vmc core package was separated from the ROOT source into a new stand-alone vmc package in the GitHub vmc-project organization. The motivation for this step was a gain in flexibility and faster workflow for new developments of multiple engine mode. Since ROOT version 6.18, the vmc package in ROOT is deprecated and it&amp;rsquo;s compilation is optional. The VMC stand-alone is then needed for building Geant3 and Geant4 VMC when using ROOT compiled with the vmc disabled (default).</description>
     </item>
     
     <item>
@@ -158,7 +157,6 @@ See more details on the VMC Examples web page.</description>
       
       <guid>/support/bug-reports/</guid>
       <description>We use JIRA to track bugs and to gather feature requests.
-If you are new to using JIRA, you might want to read the ROOT Report a bug with JIRA page first.
 Report a bug in VMC packages.</description>
     </item>
     
@@ -188,9 +186,9 @@ G4LIB_BUILD_SHARED set to 1 (required) G4LIB_USE_G3TOG4 set to 1 (required) G4VI
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/installation/geant4_vmc/required-optional-packages/</guid>
-      <description>Geant4 VMC requires ROOT and Geant4 installed, and optionally, it can be built with VGM. See below tips for configuration and installation of these packages.
+      <description>Geant4 VMC requires ROOT and Geant4 installed, then the VMC core package if using ROOT built without vmc enabled, and optionally, it can be built with VGM. See below tips for configuration and installation of these packages.
 The path to required and optional packages installations can be defined in the standard CMake way, via the paths to the CMake configuration file:
-Geant4_DIR ... path to Geant4Config.cmake ROOT_DIR ... path to ROOTConfig.cmake VGM_DIR ... path to VGMConfig.cmake CMake will also find the CMake configuration files (for ROOT and Geant4) if you source the relevant script from the packages installations (CMAKE_INSTALL_PREFIX) so that they are available in the sestem paths:</description>
+Geant4_DIR ... path to Geant4Config.cmake ROOT_DIR ... path to ROOTConfig.</description>
     </item>
     
     <item>
@@ -221,8 +219,8 @@ cd vmc git checkout v1-0-p3 The list of new developments, bug fixes and the requ
       
       <guid>/download/git-geant3/</guid>
       <description>Development version (the whole repository):
-git clone http://github.com/vmc-project/geant3.git To switch to the &amp;lsquo;pro&amp;rsquo; tagged version 3.5:
-cd geant3 git checkout v3-5 To switch to the &amp;lsquo;old&amp;rsquo; tagged version 2.7.p2:cd geant3 git checkout v2-7-p2 For older versions see the correspondent tag and the required version of ROOT in the history file.</description>
+git clone http://github.com/vmc-project/geant3.git To switch to the &amp;lsquo;pro&amp;rsquo; tagged version 3.6:
+cd geant3 git checkout v3-6 To switch to the &amp;lsquo;old&amp;rsquo; tagged version 2.7.p2:cd geant3 git checkout v2-7-p2 For older versions see the correspondent tag and the required version of ROOT in the history file.</description>
     </item>
     
     <item>
@@ -254,8 +252,8 @@ using the new TVirtualMC function: void TVirtualMC::SetSensitiveDetector( const 
       
       <guid>/download/git-geant4_vmc/</guid>
       <description>Development version (the whole repository):
-git clone http://github.com/vmc-project/geant4_vmc.git To switch to the &amp;lsquo;pro&amp;rsquo; tagged version 5.1.p1 (compatible with Geant4 10.6.x):
-git checkout v5-1-p1 To switch to the &amp;lsquo;old&amp;rsquo; tagged version 5.0.p5 (compatible with Geant4 10.5.x):
+git clone http://github.com/vmc-project/geant4_vmc.git To switch to the &amp;lsquo;pro&amp;rsquo; tagged version 5.2 (compatible with Geant4 10.6.x):
+git checkout v5-2 To switch to the &amp;lsquo;old&amp;rsquo; tagged version 5.0.p5 (compatible with Geant4 10.5.x):
 cd geant4_vmc git checkout v5-0-p5 The list of new developments, bug fixes and the required versions of ROOT and Geant4 for each version can be found in the history file.
 Download Geant4 - from the Geant4 Web site</description>
     </item>
@@ -285,7 +283,7 @@ Stacking of secondary particles is then handled by Geant4 kernel and the user VM
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/download/tar-files/</guid>
-      <description>Pro versions    Package Version Tar file Tested with     vmc 1.0.p3 v1-0-p3tar.gz *ROOT 6.22/00   geant3 3.5 v3-5.tar.gz ROOT 6.22/00 (*)   geant4_vmc 5.1.p1 v5-1-p1.tar.gz ROOT 6.20.00,Geant4 10.6.p01 (with embedded CLHEP 2.4.1.3), VGM 4.8, Garfield master at 940d64b1a5be99a64    In general, the VMC packages can be built with the Root versions which they were tested with and higher, and Geant4 VMC with the Geant4 version which it was tested with including the patches.</description>
+      <description>Pro versions    Package Version Tar file Tested with     vmc 1.0.p3 v1-0-p3tar.gz *ROOT 6.22/00   geant3 3.6 v3-6.tar.gz ROOT 6.22/00 (*)   geant4_vmc 5.2 v5-2.tar.gz ROOT 6.22.00,Geant4 10.6.p02 (with embedded CLHEP 2.4.1.3), VGM 4.8, Garfield master at 17a26cca556f50f16    In general, the VMC packages can be built with the Root versions which they were tested with and higher, and Geant4 VMC with the Geant4 version which it was tested with including the patches.</description>
     </item>
     
     <item>

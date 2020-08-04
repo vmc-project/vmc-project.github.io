@@ -12,20 +12,20 @@
     <title>Required and Optional Packages :: VMC</title>
 
     
-    <link href="/css/nucleus.css?1595498110" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1595498110" rel="stylesheet">
-    <link href="/css/hybrid.css?1595498110" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1595498110" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1595498110" rel="stylesheet">
-    <link href="/css/auto-complete.css?1595498110" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1595498110" rel="stylesheet">
-    <link href="/css/theme.css?1595498110" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1595498110" rel="stylesheet">
+    <link href="/css/nucleus.css?1596563381" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1596563381" rel="stylesheet">
+    <link href="/css/hybrid.css?1596563381" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1596563381" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1596563381" rel="stylesheet">
+    <link href="/css/auto-complete.css?1596563381" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1596563381" rel="stylesheet">
+    <link href="/css/theme.css?1596563381" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1596563381" rel="stylesheet">
     
-      <link href="/css/theme-vmc.css?1595498110" rel="stylesheet">
+      <link href="/css/theme-vmc.css?1596563381" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1595498110"></script>
+    <script src="/js/jquery-3.3.1.min.js?1596563381"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1595498110"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1595498110"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1596563381"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1596563381"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1595498110"></script>
+<script type="text/javascript" src="/js/search.js?1596563381"></script>
 
     
   </div>
@@ -268,81 +268,6 @@
  
   
     
-    <li data-nav-id="/installation/examples/" title="Installing and Running Examples" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/installation/examples/">
-          Examples
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-          
-        
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/installation/examples/build-options/" title="Build Options" class="dd-item ">
-        <a href="/installation/examples/build-options/">
-        Build Options
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-             
-            
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/installation/examples/running-examples/" title="Running examples" class="dd-item ">
-        <a href="/installation/examples/running-examples/">
-        Running examples
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
     <li data-nav-id="/installation/geant4_vmc/" title="Installing Geant4 VMC" class="dd-item 
         parent
         
@@ -396,6 +321,81 @@
       <li data-nav-id="/installation/geant4_vmc/required-optional-packages/" title="Required and Optional Packages" class="dd-item active">
         <a href="/installation/geant4_vmc/required-optional-packages/">
         Required and Optional Packages
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/installation/examples/" title="Installing and Running Examples" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/installation/examples/">
+          Examples
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/installation/examples/build-options/" title="Build Options" class="dd-item ">
+        <a href="/installation/examples/build-options/">
+        Build Options
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+             
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/installation/examples/running-examples/" title="Running examples" class="dd-item ">
+        <a href="/installation/examples/running-examples/">
+        Running examples
         
         </a>
     </li>
@@ -1245,10 +1245,11 @@
 
 
 
-<p>Geant4 VMC requires <a href="https://root.cern.ch/">ROOT</a> and <a href="http://geant4.web.cern.ch/">Geant4</a> installed, and optionally, it can be built with <a href="https://github.com/vmc-project/vgm">VGM</a>. See below tips for configuration and installation of these packages.</p>
+<p>Geant4 VMC requires <a href="https://root.cern.ch/">ROOT</a> and <a href="http://geant4.web.cern.ch/">Geant4</a> installed, then the <a href="/user-guide/vmc/vmc-library">VMC core package</a> if using ROOT built without <code>vmc</code> enabled, and optionally, it can be built with <a href="https://github.com/vmc-project/vgm">VGM</a>. See below tips for configuration and installation of these packages.</p>
 <p>The path to required and optional packages installations can be defined in the standard CMake way, via the paths to the CMake configuration file:</p>
 <pre><code>Geant4_DIR      ... path to Geant4Config.cmake
 ROOT_DIR        ... path to ROOTConfig.cmake
+VMC_DIR         ... path to VMCConfig.cmake
 VGM_DIR         ... path to VGMConfig.cmake
 </code></pre><p>CMake will also find the CMake configuration files (for ROOT and Geant4) if you source the relevant script from the packages installations (CMAKE_INSTALL_PREFIX) so that they are available in the sestem paths:</p>
 <pre><code>$ . bin/geant4.sh          ... Geant4 - on bourne shells (eg. bash)
@@ -1273,7 +1274,7 @@ Geant4 VMC 3.3 built against ROOT 5.x requires ROOT built with C++11 (not defaul
 <pre><code>--enable-cxx11
 </code></pre><p>option, when ROOT is built using configure script.</p>
 <h3 id="geant4">Geant4</h3>
-<p>To install Geant4 - download the source from <a href="http://geant4.web.cern.ch/geant4/support/download.shtml">Geant4 Download page</a> and follow the <a href="http://geant4.web.cern.ch/geant4/UserDocumentation/UsersGuides/InstallationGuide/html/index.html">Geant4 Installation Guide</a> together with the tips relevant to using it with VMC described below.</p>
+<p>To install Geant4 - download the source from <a href="http://geant4.web.cern.ch/support/download">Geant4 Download page</a> and follow the <a href="http://geant4.web.cern.ch/geant4/UserDocumentation/UsersGuides/InstallationGuide/html/index.html">Geant4 Installation Guide</a> together with the tips relevant to using it with VMC described below.</p>
 <ul>
 <li><strong>C++11</strong> <!-- raw HTML omitted -->
 Geant4 VMC 3.0 - 3.2 built against Geant4 10.0.x or 10.1.x and ROOT 6x requires
@@ -1482,59 +1483,6 @@ Geant4 VMC can be built against Geant4 installation in multi-threading mode whic
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                     
                 
                 
@@ -1593,6 +1541,40 @@ Geant4 VMC can be built against Geant4 installation in multi-threading mode whic
             
         
                     
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
             
         
                     
@@ -1601,8 +1583,27 @@ Geant4 VMC can be built against Geant4 installation in multi-threading mode whic
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
                         
-                        
+            
+            
+                
                     
                 
                 
@@ -2114,7 +2115,7 @@ Geant4 VMC can be built against Geant4 installation in multi-threading mode whic
 			<a class="nav nav-prev" href="/installation/geant4_vmc/build-options/" title="Build Options"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/user-guide/" title="User Guide" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/installation/examples/" title="Installing and Running Examples" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -2124,19 +2125,19 @@ Geant4 VMC can be built against Geant4 installation in multi-threading mode whic
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1595498110"></script>
-    <script src="/js/perfect-scrollbar.min.js?1595498110"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1595498110"></script>
-    <script src="/js/jquery.sticky.js?1595498110"></script>
-    <script src="/js/featherlight.min.js?1595498110"></script>
-    <script src="/js/highlight.pack.js?1595498110"></script>
+    <script src="/js/clipboard.min.js?1596563381"></script>
+    <script src="/js/perfect-scrollbar.min.js?1596563381"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1596563381"></script>
+    <script src="/js/jquery.sticky.js?1596563381"></script>
+    <script src="/js/featherlight.min.js?1596563381"></script>
+    <script src="/js/highlight.pack.js?1596563381"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1595498110"></script>
-    <script src="/js/learn.js?1595498110"></script>
-    <script src="/js/hugo-learn.js?1595498110"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1596563381"></script>
+    <script src="/js/learn.js?1596563381"></script>
+    <script src="/js/hugo-learn.js?1596563381"></script>
 
-    <link href="/mermaid/mermaid.css?1595498110" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1595498110"></script>
+    <link href="/mermaid/mermaid.css?1596563381" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1596563381"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

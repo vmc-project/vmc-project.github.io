@@ -28,8 +28,8 @@ cd vmc git checkout v1-0-p3 The list of new developments, bug fixes and the requ
       
       <guid>/download/git-geant3/</guid>
       <description>Development version (the whole repository):
-git clone http://github.com/vmc-project/geant3.git To switch to the &amp;lsquo;pro&amp;rsquo; tagged version 3.5:
-cd geant3 git checkout v3-5 To switch to the &amp;lsquo;old&amp;rsquo; tagged version 2.7.p2:cd geant3 git checkout v2-7-p2 For older versions see the correspondent tag and the required version of ROOT in the history file.</description>
+git clone http://github.com/vmc-project/geant3.git To switch to the &amp;lsquo;pro&amp;rsquo; tagged version 3.6:
+cd geant3 git checkout v3-6 To switch to the &amp;lsquo;old&amp;rsquo; tagged version 2.7.p2:cd geant3 git checkout v2-7-p2 For older versions see the correspondent tag and the required version of ROOT in the history file.</description>
     </item>
     
     <item>
@@ -39,8 +39,8 @@ cd geant3 git checkout v3-5 To switch to the &amp;lsquo;old&amp;rsquo; tagged ve
       
       <guid>/download/git-geant4_vmc/</guid>
       <description>Development version (the whole repository):
-git clone http://github.com/vmc-project/geant4_vmc.git To switch to the &amp;lsquo;pro&amp;rsquo; tagged version 5.1.p1 (compatible with Geant4 10.6.x):
-git checkout v5-1-p1 To switch to the &amp;lsquo;old&amp;rsquo; tagged version 5.0.p5 (compatible with Geant4 10.5.x):
+git clone http://github.com/vmc-project/geant4_vmc.git To switch to the &amp;lsquo;pro&amp;rsquo; tagged version 5.2 (compatible with Geant4 10.6.x):
+git checkout v5-2 To switch to the &amp;lsquo;old&amp;rsquo; tagged version 5.0.p5 (compatible with Geant4 10.5.x):
 cd geant4_vmc git checkout v5-0-p5 The list of new developments, bug fixes and the required versions of ROOT and Geant4 for each version can be found in the history file.
 Download Geant4 - from the Geant4 Web site</description>
     </item>
@@ -51,7 +51,7 @@ Download Geant4 - from the Geant4 Web site</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/download/tar-files/</guid>
-      <description>Pro versions    Package Version Tar file Tested with     vmc 1.0.p3 v1-0-p3tar.gz *ROOT 6.22/00   geant3 3.5 v3-5.tar.gz ROOT 6.22/00 (*)   geant4_vmc 5.1.p1 v5-1-p1.tar.gz ROOT 6.20.00,Geant4 10.6.p01 (with embedded CLHEP 2.4.1.3), VGM 4.8, Garfield master at 940d64b1a5be99a64    In general, the VMC packages can be built with the Root versions which they were tested with and higher, and Geant4 VMC with the Geant4 version which it was tested with including the patches.</description>
+      <description>Pro versions    Package Version Tar file Tested with     vmc 1.0.p3 v1-0-p3tar.gz *ROOT 6.22/00   geant3 3.6 v3-6.tar.gz ROOT 6.22/00 (*)   geant4_vmc 5.2 v5-2.tar.gz ROOT 6.22.00,Geant4 10.6.p02 (with embedded CLHEP 2.4.1.3), VGM 4.8, Garfield master at 17a26cca556f50f16    In general, the VMC packages can be built with the Root versions which they were tested with and higher, and Geant4 VMC with the Geant4 version which it was tested with including the patches.</description>
     </item>
     
   </channel>

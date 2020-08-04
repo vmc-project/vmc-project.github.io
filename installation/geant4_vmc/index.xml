@@ -47,9 +47,9 @@ G4LIB_BUILD_SHARED set to 1 (required) G4LIB_USE_G3TOG4 set to 1 (required) G4VI
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/installation/geant4_vmc/required-optional-packages/</guid>
-      <description>Geant4 VMC requires ROOT and Geant4 installed, and optionally, it can be built with VGM. See below tips for configuration and installation of these packages.
+      <description>Geant4 VMC requires ROOT and Geant4 installed, then the VMC core package if using ROOT built without vmc enabled, and optionally, it can be built with VGM. See below tips for configuration and installation of these packages.
 The path to required and optional packages installations can be defined in the standard CMake way, via the paths to the CMake configuration file:
-Geant4_DIR ... path to Geant4Config.cmake ROOT_DIR ... path to ROOTConfig.cmake VGM_DIR ... path to VGMConfig.cmake CMake will also find the CMake configuration files (for ROOT and Geant4) if you source the relevant script from the packages installations (CMAKE_INSTALL_PREFIX) so that they are available in the sestem paths:</description>
+Geant4_DIR ... path to Geant4Config.cmake ROOT_DIR ... path to ROOTConfig.</description>
     </item>
     
   </channel>

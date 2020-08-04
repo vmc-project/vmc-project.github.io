@@ -28,7 +28,6 @@ To join the root-vmc@cern.ch mailing list, do the following:
       
       <guid>/support/bug-reports/</guid>
       <description>We use JIRA to track bugs and to gather feature requests.
-If you are new to using JIRA, you might want to read the ROOT Report a bug with JIRA page first.
 Report a bug in VMC packages.</description>
     </item>
     
