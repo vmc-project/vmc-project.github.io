@@ -111,8 +111,11 @@ Reference paper
 Hřivnáčová I et al: The Virtual MonteCarlo,
 ECONF C0303241:THJT006,2003; e-Print: cs.SE/0306005
  All publications listed in time reversed order:
-  Geant4 VMC 3.0, I Hřivnáčová, A Gheata 2015 J. Phys.: Conf. Ser. 664 072020 doi: 10.1088 /1742-6596/664/7/072020
-  The Geant4 Virtual Monte Carlo I Hřivnáčová 2012 J. Phys.: Conf. Ser. 396 022024 doi:10.</description>
+  New Developments in the VMC Project,
+I Hřivnáčová, B Volkel 2020 EPJ Web Conf. Volume 245 02005
+doi: 10.1051/epjconf/202024502005
+  Using multiple engines in the Virtual Monte Carlo package,
+B Volkel et al 2020 EPJ Web Conf.</description>
     </item>
     
     <item>
