@@ -158,7 +158,7 @@
 	"title": "Geant3",
 	"tags": [],
 	"description": "",
-	"content": "Development version (the whole repository):\ngit clone http://github.com/vmc-project/geant3.git To switch to the \u0026lsquo;pro\u0026rsquo; tagged version 3.7:\ncd geant3 git checkout v3-7 To switch to the \u0026lsquo;old\u0026rsquo; tagged version 2.7.p2:cd geant3 git checkout v2-7-p2 For older versions see the correspondent tag and the required version of ROOT in the history file.\n"
+	"content": "Development version (the whole repository):\ngit clone http://github.com/vmc-project/geant3.git To switch to the \u0026lsquo;pro\u0026rsquo; tagged version 3.8:\ncd geant3 git checkout v3-8 To switch to the \u0026lsquo;old\u0026rsquo; tagged version 2.7.p2:cd geant3 git checkout v2-7-p2 For older versions see the correspondent tag and the required version of ROOT in the history file.\n"
 },
 {
 	"uri": "/installation/geant4_vmc/",
@@ -249,7 +249,7 @@
 	"title": "Tar Files",
 	"tags": [],
 	"description": "",
-	"content": "Pro versions    Package Version Tar file Tested with     vmc 1.0.p3 v1-0-p3tar.gz ROOT 6.22/00   geant3 3.7 v3-7.tar.gz ROOT 6.22/00   geant4_vmc 5.3 v5-3.tar.gz ROOT 6.22.06,Geant4 10.7 (with embedded CLHEP 2.4.4.0), VGM 4.8, Garfield master at 17a26cca556f50f16    In general, the VMC packages can be built with the Root versions which they were tested with and higher, and Geant4 VMC with the Geant4 version which it was tested with including the patches. Note that the Geant4 patches released after the Geant4 VMC tag do not appear in the table above, it is however recommended to update Geant4 with each patch release.\nOld versions    Package Version Tar file Tested with     geant3 2.7.p2 v2-7-p2.tar.gz ROOT 5.34/36    "
+	"content": "Pro versions    Package Version Tar file Tested with     vmc 1.0.p3 v1-0-p3tar.gz ROOT 6.22/00   geant3 3.8 v3-8.tar.gz ROOT 6.22/06   geant4_vmc 5.3 v5-3.tar.gz ROOT 6.22.06,Geant4 10.7 (with embedded CLHEP 2.4.4.0), VGM 4.8, Garfield master at 17a26cca556f50f16    In general, the VMC packages can be built with the Root versions which they were tested with and higher, and Geant4 VMC with the Geant4 version which it was tested with including the patches. Note that the Geant4 patches released after the Geant4 VMC tag do not appear in the table above, it is however recommended to update Geant4 with each patch release.\nOld versions    Package Version Tar file Tested with     geant3 2.7.p2 v2-7-p2.tar.gz ROOT 5.34/36    "
 },
 {
 	"uri": "/user-guide/geant3+vmc/",
@@ -382,5 +382,5 @@
 	"title": "VMC Project",
 	"tags": [],
 	"description": "",
-	"content": "VMC Project Virtual Monte Carlo (VMC) defines an abstract layer between a detector simulation user code (MC application) and the Monte Carlo transport code (MC). In this way the user code is independent of any specific MC and can be used with different transport codes within the same simulation application.\nThe implementation of the interface is provided for two Monte Carlo transport codes, GEANT3 and Geant4. The implementation for the third Monte Carlo transport code, FLUKA, has been discontinued by the FLUKA team in 2010.\nVMC was developed by the ALICE Software Project and, after the complete removal of all dependencies from the experiment specific framework, it was included in ROOT and then gradually separated from ROOT into a stand-alone vmc-projet.\nThese new documentation pages were migrated from the ROOT documentation. If you have suggestions about how to improve this documentation, you can let us know. See Support.\nReference paper\nHřivnáčová I et al: The Virtual MonteCarlo,\nECONF C0303241:THJT006,2003; e-Print: cs.SE/0306005\n Contact: root-vmc@cern.chLast update: 11/12/2020\n"
+	"content": "VMC Project Virtual Monte Carlo (VMC) defines an abstract layer between a detector simulation user code (MC application) and the Monte Carlo transport code (MC). In this way the user code is independent of any specific MC and can be used with different transport codes within the same simulation application.\nThe implementation of the interface is provided for two Monte Carlo transport codes, GEANT3 and Geant4. The implementation for the third Monte Carlo transport code, FLUKA, has been discontinued by the FLUKA team in 2010.\nVMC was developed by the ALICE Software Project and, after the complete removal of all dependencies from the experiment specific framework, it was included in ROOT and then gradually separated from ROOT into a stand-alone vmc-projet.\nThese new documentation pages were migrated from the ROOT documentation. If you have suggestions about how to improve this documentation, you can let us know. See Support.\nReference paper\nHřivnáčová I et al: The Virtual MonteCarlo,\nECONF C0303241:THJT006,2003; e-Print: cs.SE/0306005\n Contact: root-vmc@cern.chLast update: 17/02/2021\n"
 }]
