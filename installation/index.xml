@@ -17,7 +17,7 @@
       
       <guid>/installation/vmc/</guid>
       <description>VMC requires ROOT.
-In 2019, the vmc core package was separated from the ROOT source into a new stand-alone vmc package in the GitHub vmc-project organization. The motivation for this step was a gain in flexibility and faster workflow for new developments of multiple engine mode. Since ROOT version 6.18, the vmc package in ROOT is deprecated and it&amp;rsquo;s compilation is optional. The VMC stand-alone is then needed for building Geant3 and Geant4 VMC when using ROOT compiled with the vmc disabled (default).</description>
+The vmc core package was separated from the ROOT source into a new stand-alone vmc package in the GitHub vmc-project organization. The motivation for this step was a gain in flexibility and faster workflow for new developments of multiple engine mode. The vmc package in ROOT is deprecated since ROOT version 6.18 (its compilation is optional) and it is going to be removed in the next ROOT version, 6.</description>
     </item>
     
   </channel>

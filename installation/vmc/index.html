@@ -12,20 +12,20 @@
     <title>Installing VMC :: VMC</title>
 
     
-    <link href="/css/nucleus.css?1613566057" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1613566057" rel="stylesheet">
-    <link href="/css/hybrid.css?1613566057" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1613566057" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1613566057" rel="stylesheet">
-    <link href="/css/auto-complete.css?1613566057" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1613566057" rel="stylesheet">
-    <link href="/css/theme.css?1613566057" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1613566057" rel="stylesheet">
+    <link href="/css/nucleus.css?1638566967" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1638566967" rel="stylesheet">
+    <link href="/css/hybrid.css?1638566967" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1638566967" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1638566967" rel="stylesheet">
+    <link href="/css/auto-complete.css?1638566967" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1638566967" rel="stylesheet">
+    <link href="/css/theme.css?1638566967" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1638566967" rel="stylesheet">
     
-      <link href="/css/theme-vmc.css?1613566057" rel="stylesheet">
+      <link href="/css/theme-vmc.css?1638566967" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1613566057"></script>
+    <script src="/js/jquery-3.3.1.min.js?1638566967"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1613566057"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1613566057"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1638566967"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1638566967"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1613566057"></script>
+<script type="text/javascript" src="/js/search.js?1638566967"></script>
 
     
   </div>
@@ -1229,8 +1229,7 @@
 
 
 <p>VMC requires <a href="https://root.cern.ch/">ROOT</a>.</p>
-<p>In 2019, the <a href="/user-guide/vmc/vmc-library">vmc core package</a> was separated from the ROOT source into a new stand-alone <a href="https://github.com/vmc-project/vmc">vmc</a> package in the GitHub <a href="https://github.com/vmc-project">vmc-project</a> organization. The motivation for this step was a gain in flexibility and faster workflow for new developments of multiple engine mode. Since ROOT version 6.18, the vmc package in ROOT is deprecated and it&rsquo;s compilation is optional. The VMC stand-alone is then needed for building Geant3 and Geant4 VMC when using ROOT
-compiled with the vmc disabled (default).</p>
+<p>The <a href="/user-guide/vmc/vmc-library">vmc core package</a> was separated from the ROOT source into a new stand-alone <a href="https://github.com/vmc-project/vmc">vmc</a> package in the GitHub <a href="https://github.com/vmc-project">vmc-project</a> organization.  The motivation for this step was a gain in flexibility and faster workflow for new developments of multiple engine mode. The <code>vmc</code> package in ROOT is deprecated since ROOT version 6.18 (its compilation is optional) and it is going to be removed in the next ROOT version, 6.26. The VMC stand-alone is then needed for building Geant3 and Geant4 VMC when using ROOT compiled with the vmc disabled (default).</p>
 <p>VMC uses <a href="https://cmake.org/">CMake</a> to configure a build system for compiling and installing the headers, libraries and Cmake configuration files. To install VMC:</p>
 <ol>
 <li>First get the VMC source from the <a href="/download/git-vmc">Download page</a>. We will assume that the VMC package sits in a subdirectory</li>
@@ -2085,19 +2084,19 @@ $ cmake -DCMAKE_INSTALL_PREFIX=/mypath/vmc_install /mypath/vmc
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1613566057"></script>
-    <script src="/js/perfect-scrollbar.min.js?1613566057"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1613566057"></script>
-    <script src="/js/jquery.sticky.js?1613566057"></script>
-    <script src="/js/featherlight.min.js?1613566057"></script>
-    <script src="/js/highlight.pack.js?1613566057"></script>
+    <script src="/js/clipboard.min.js?1638566967"></script>
+    <script src="/js/perfect-scrollbar.min.js?1638566967"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1638566967"></script>
+    <script src="/js/jquery.sticky.js?1638566967"></script>
+    <script src="/js/featherlight.min.js?1638566967"></script>
+    <script src="/js/highlight.pack.js?1638566967"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1613566057"></script>
-    <script src="/js/learn.js?1613566057"></script>
-    <script src="/js/hugo-learn.js?1613566057"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1638566967"></script>
+    <script src="/js/learn.js?1638566967"></script>
+    <script src="/js/hugo-learn.js?1638566967"></script>
 
-    <link href="/mermaid/mermaid.css?1613566057" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1613566057"></script>
+    <link href="/mermaid/mermaid.css?1638566967" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1638566967"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -12,20 +12,20 @@
     <title>Installing Geant3 :: VMC</title>
 
     
-    <link href="/css/nucleus.css?1613566057" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1613566057" rel="stylesheet">
-    <link href="/css/hybrid.css?1613566057" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1613566057" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1613566057" rel="stylesheet">
-    <link href="/css/auto-complete.css?1613566057" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1613566057" rel="stylesheet">
-    <link href="/css/theme.css?1613566057" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1613566057" rel="stylesheet">
+    <link href="/css/nucleus.css?1638566967" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1638566967" rel="stylesheet">
+    <link href="/css/hybrid.css?1638566967" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1638566967" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1638566967" rel="stylesheet">
+    <link href="/css/auto-complete.css?1638566967" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1638566967" rel="stylesheet">
+    <link href="/css/theme.css?1638566967" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1638566967" rel="stylesheet">
     
-      <link href="/css/theme-vmc.css?1613566057" rel="stylesheet">
+      <link href="/css/theme-vmc.css?1638566967" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1613566057"></script>
+    <script src="/js/jquery-3.3.1.min.js?1638566967"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1613566057"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1613566057"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1638566967"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1638566967"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1613566057"></script>
+<script type="text/javascript" src="/js/search.js?1638566967"></script>
 
     
   </div>
@@ -1230,7 +1230,7 @@
 
 
 	<p>Geant3 with VMC requires the <a href="/user-guide/vmc/vmc-library">VMC core package</a> and <a href="https://root.cern.ch/">ROOT</a>.</p>
-<p>In 2019, the <a href="/user_guide/vmc/vmc-library">vmc core package</a> was separated from the ROOT source into a new stand-alone <a href="https://github.com/vmc-project/vmc">vmc</a> package in the GitHub <a href="https://github.com/vmc-project">vmc-project</a> organization. The motivation for this step was a gain in flexibility and faster workflow for new developments of multiple engine mode. Since ROOT version 6.18 the vmc package in ROOT is deprecated and it&rsquo;s compilation is optional. The VMC stand-alone is supported since Geant3 3.0.</p>
+<p>The <a href="/user_guide/vmc/vmc-library">vmc core package</a> was separated from the ROOT source into a new stand-alone <a href="https://github.com/vmc-project/vmc">vmc</a> package in the GitHub <a href="https://github.com/vmc-project">vmc-project</a> organization. The motivation for this step was a gain in flexibility and faster workflow for new developments of multiple engine mode. The <code>vmc</code> package in ROOT is deprecated since ROOT version 6.18 (its compilation is optional) and it is going to be removed in the next ROOT version, 6.26. The VMC stand-alone is supported since Geant3 3.0.</p>
 <p>Geant3 with VMC uses <a href="https://cmake.org/">CMake</a> to configure a build system for compiling and installing the headers, libraries and Cmake configuration files.</p>
 <p>To install geant3:</p>
 <ol>
@@ -1254,7 +1254,8 @@ $ cmake -DCMAKE_INSTALL_PREFIX=/mypath/geant3_install /mypath/geant3
 <p>If ROOT environment was defined using <code>thisroot.{c}sh</code> script, there is no need to provide the path to its installation. Otherwise, they can be provided using <code>-DROOT_DIR</code> cmake option.</p>
 </li>
 <li>
-<p>Since ROOT 6.18, building the VMC library is optional. When using ROOT built with the vmc option enabled, then Geant3 will automatically use the VMC library from ROOT, otherwise the VMC stand-alone library has to be provided using <code>-DVMC_DIR</code> cmake option.</p>
+<p>Since Geant3 3.9, the VMC stand-alone library has to be provided using <code>-DVMC_DIR</code> cmake option.
+If the VMC stand-alone library is not found, the cmake will fall back to ROOT and try to build against its VMC library (availble if ROOT was built with the <code>vmc</code> option enabled) and a deprecation warning will be issued.</p>
 </li>
 <li>
 <p>The Geant3 library is built by default in <code>RelWithDebInfo</code> build mode (Optimized build with debugging symbols). This default can be changed via the standard CMake option <code>CMAKE_BUILD_TYPE</code>. The other useful values are <!-- raw HTML omitted --></p>
@@ -2096,19 +2097,19 @@ $ cmake -DCMAKE_INSTALL_PREFIX=/mypath/geant3_install /mypath/geant3
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1613566057"></script>
-    <script src="/js/perfect-scrollbar.min.js?1613566057"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1613566057"></script>
-    <script src="/js/jquery.sticky.js?1613566057"></script>
-    <script src="/js/featherlight.min.js?1613566057"></script>
-    <script src="/js/highlight.pack.js?1613566057"></script>
+    <script src="/js/clipboard.min.js?1638566967"></script>
+    <script src="/js/perfect-scrollbar.min.js?1638566967"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1638566967"></script>
+    <script src="/js/jquery.sticky.js?1638566967"></script>
+    <script src="/js/featherlight.min.js?1638566967"></script>
+    <script src="/js/highlight.pack.js?1638566967"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1613566057"></script>
-    <script src="/js/learn.js?1613566057"></script>
-    <script src="/js/hugo-learn.js?1613566057"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1638566967"></script>
+    <script src="/js/learn.js?1638566967"></script>
+    <script src="/js/hugo-learn.js?1638566967"></script>
 
-    <link href="/mermaid/mermaid.css?1613566057" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1613566057"></script>
+    <link href="/mermaid/mermaid.css?1638566967" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1638566967"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
