@@ -144,7 +144,7 @@
 	"title": "VMC",
 	"tags": [],
 	"description": "",
-	"content": "Development version (the whole repository):\ngit clone http://github.com/vmc-project/vmc.git To switch to pro tagged version 1.1:\ncd vmc git checkout v1-1 The list of new developments, bug fixes and the required versions of ROOT and Geant4 for each version can be found in the History file.\n"
+	"content": "Development version (the whole repository):\ngit clone http://github.com/vmc-project/vmc.git To switch to pro tagged version 1.1.p1:\ncd vmc git checkout v1-1-p1 The list of new developments, bug fixes and the required versions of ROOT and Geant4 for each version can be found in the History file.\n"
 },
 {
 	"uri": "/user-guide/vmc/vmc-library/",
@@ -186,7 +186,7 @@
 	"title": "User Guide",
 	"tags": [],
 	"description": "",
-	"content": "Chapter 3 User Guide  Virtual Monte Carlo    VMC Concept     VMC Library     Multiple VMC Engines      Geant4 VMC    Geometry Definition \u0026amp; Navigation     Magnetic Field     Sensitive Detectors and Volumes     Physics Lists     Stacking of Particles     Special Cuts and Regions     User Geant4 Classes     Visualization     Switching User Interfaces     Multi-threaded Processing     Verbosity     Verbosity for Developers     Source code documentation      Geant3 \u0026#43; VMC    Geant3 \u0026#43; VMC Content      G4Root     MTRoot     "
+	"content": "Chapter 3 User Guide  Virtual Monte Carlo    VMC Concept     VMC Library     Multiple VMC Engines      Geant4 VMC    Geometry Definition \u0026amp; Navigation     Magnetic Field     Sensitive Detectors and Volumes     Physics Lists     Stacking of Particles     Special Cuts and Regions     User Geant4 Classes     Visualization     Switching User Interfaces     Multi-threaded Processing     Verbosity     Verbosity for Developers     Source code documentation      Geant3 \u0026#43; VMC    Geant3 \u0026#43; VMC Content      G4Root     MTRoot    VMC     Geant3     Geant4 VMC     Tar Files      "
 },
 {
 	"uri": "/user-guide/vmc/",
@@ -249,7 +249,7 @@
 	"title": "Tar Files",
 	"tags": [],
 	"description": "",
-	"content": "Pro versions    Package Version Tar file Tested with     vmc 1.1 v1-1.tar.gz ROOT 6.24/06   geant3 3.9 v3-9.tar.gz ROOT 6.24/06   geant4_vmc 5.4 v5-4.tar.gz ROOT 6.24.06,Geant4 10.7.p3 (with embedded CLHEP 2.4.4.0), VGM 4.8, Garfield 4.0    In general, the VMC packages can be built with the Root version which they were tested with and higher, and Geant4 VMC with the Geant4 version which it was tested with including the patches. Note that the Geant4 patches released after the Geant4 VMC tag do not appear in the table above, it is however recommended to update Geant4 with each patch release.\nOld versions    Package Version Tar file Tested with     geant3 2.7.p2 v2-7-p2.tar.gz ROOT 5.34/36    "
+	"content": "Pro versions    Package Version Tar file Tested with     vmc 1.1.p1 v1-1-p1.tar.gz ROOT 6.24/06   geant3 3.9 v3-9.tar.gz ROOT 6.24/06   geant4_vmc 5.4 v5-4.tar.gz ROOT 6.24.06,Geant4 10.7.p3 (with embedded CLHEP 2.4.4.0), VGM 4.8, Garfield 4.0    In general, the VMC packages can be built with the Root version which they were tested with and higher, and Geant4 VMC with the Geant4 version which it was tested with including the patches. Note that the Geant4 patches released after the Geant4 VMC tag do not appear in the table above, it is however recommended to update Geant4 with each patch release.\nOld versions    Package Version Tar file Tested with     geant3 2.7.p2 v2-7-p2.tar.gz ROOT 5.34/36    "
 },
 {
 	"uri": "/user-guide/geant3+vmc/",
@@ -382,5 +382,5 @@
 	"title": "VMC Project",
 	"tags": [],
 	"description": "",
-	"content": "VMC Project Virtual Monte Carlo (VMC) defines an abstract layer between a detector simulation user code (MC application) and the Monte Carlo transport code (MC). In this way the user code is independent of any specific MC and can be used with different transport codes within the same simulation application.\nThe implementation of the interface is provided for two Monte Carlo transport codes, GEANT3 and Geant4. The implementation for the third Monte Carlo transport code, FLUKA, has been discontinued by the FLUKA team in 2010.\nVMC was developed by the ALICE Software Project and, after the complete removal of all dependencies from the experiment specific framework, it was included in ROOT and then gradually separated from ROOT into a stand-alone vmc-projet.\nThese new documentation pages were migrated from the ROOT documentation. If you have suggestions about how to improve this documentation, you can let us know. See Support.\nReference paper\nHřivnáčová I et al: The Virtual MonteCarlo,\nECONF C0303241:THJT006,2003; e-Print: cs.SE/0306005\n Contact: root-vmc@cern.chLast update: 03/12/2021\n"
+	"content": "VMC Project Virtual Monte Carlo (VMC) defines an abstract layer between a detector simulation user code (MC application) and the Monte Carlo transport code (MC). In this way the user code is independent of any specific MC and can be used with different transport codes within the same simulation application.\nThe implementation of the interface is provided for two Monte Carlo transport codes, GEANT3 and Geant4. The implementation for the third Monte Carlo transport code, FLUKA, has been discontinued by the FLUKA team in 2010.\nVMC was developed by the ALICE Software Project and, after the complete removal of all dependencies from the experiment specific framework, it was included in ROOT and then gradually separated from ROOT into a stand-alone vmc-projet.\nThese new documentation pages were migrated from the ROOT documentation. If you have suggestions about how to improve this documentation, you can let us know. See Support.\nReference paper\nHřivnáčová I et al: The Virtual MonteCarlo,\nECONF C0303241:THJT006,2003; e-Print: cs.SE/0306005\n Contact: root-vmc@cern.chLast update: 07/12/2021\n"
 }]
