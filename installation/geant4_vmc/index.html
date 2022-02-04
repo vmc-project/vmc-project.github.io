@@ -12,20 +12,20 @@
     <title>Installing Geant4 VMC :: VMC</title>
 
     
-    <link href="/css/nucleus.css?1638888296" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1638888296" rel="stylesheet">
-    <link href="/css/hybrid.css?1638888296" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1638888296" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1638888296" rel="stylesheet">
-    <link href="/css/auto-complete.css?1638888296" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1638888296" rel="stylesheet">
-    <link href="/css/theme.css?1638888296" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1638888296" rel="stylesheet">
+    <link href="/css/nucleus.css?1643971708" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1643971708" rel="stylesheet">
+    <link href="/css/hybrid.css?1643971708" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1643971708" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1643971708" rel="stylesheet">
+    <link href="/css/auto-complete.css?1643971708" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1643971708" rel="stylesheet">
+    <link href="/css/theme.css?1643971708" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1643971708" rel="stylesheet">
     
-      <link href="/css/theme-vmc.css?1638888296" rel="stylesheet">
+      <link href="/css/theme-vmc.css?1643971708" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1638888296"></script>
+    <script src="/js/jquery-3.3.1.min.js?1643971708"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1638888296"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1638888296"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1643971708"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1643971708"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1638888296"></script>
+<script type="text/javascript" src="/js/search.js?1643971708"></script>
 
     
   </div>
@@ -530,6 +530,25 @@
 
             
           
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/user-guide/vmc/mtroot/" title="Root IO Manager" class="dd-item ">
+        <a href="/user-guide/vmc/mtroot/">
+        Root IO Manager
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -897,30 +916,6 @@
 
             
           
-            
-            
-
-
- 
-  
-    
-    <li data-nav-id="/user-guide/mtroot/" title="MTRoot" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/user-guide/mtroot/">
-          MTRoot
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
         
         </ul>
               
@@ -1253,7 +1248,10 @@ $ cmake -DCMAKE_INSTALL_PREFIX=/mypath/geant4_vmc_install /mypath/geant4_vmc
 <p>If ROOT and Geant4 environment was defined using <code>thisroot.[c]sh</code> and <code>geant4.[c]sh</code> scripts, there is no need to provide path to their installations. Otherwise, they can be provided using <code>-DROOT_DIR</code> and <code>-DGeant4_DIR</code> cmake options.</p>
 </li>
 <li>
-<p>Since Geant4 VMC 5.4, the VMC stand-alone library has to be provided using <code>-DVMC_DIR</code> cmake option. If the VMC stand-alone library is not found, the cmake will fall back to ROOT and try to build against its VMC library (availble if ROOT was built with the <code>vmc</code> option enabled) and a deprecation warning will be issued.</p>
+<p>Since Geant4 VMC 5.4, the VMC stand-alone library has to be provided using <code>-DVMC_DIR</code> cmake option. If the VMC stand-alone library is not found, the deprecated VMC library in ROOT (availble if ROOT was built with the <code>vmc</code> option enabled) can still be used, a deprecation warning will be issued in this case.</p>
+</li>
+<li>
+<p>Since Geant4 VMC 6.0, <strong>the deprecated VMC library in ROOT cannot be used</strong> and building against ROOT built with the <code>vmc</code> option enabled will fail with CMake error.</p>
 </li>
 </ul>
 <ol start="4">
@@ -1269,7 +1267,7 @@ $ cmake -DCMAKE_INSTALL_PREFIX=/mypath/geant4_vmc_install /mypath/geant4_vmc
 <li>Once the build has completed, you can install Geant4 VMC to the directory you specified earlier in CMAKE_INSTALL_PREFIX by running</li>
 </ol>
 <pre><code>$ make install
-</code></pre><p>This will build geant4_vmc, g4root and mtroot packages.
+</code></pre><p>This will build geant4_vmc, g4root and examples packages.
 For VMC examples see <a href="/installation/examples">VMC examples installation page</a>.</p>
 
 
@@ -1703,22 +1701,6 @@ For VMC examples see <a href="/installation/examples">VMC examples installation 
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
             
             
@@ -1735,6 +1717,9 @@ For VMC examples see <a href="/installation/examples">VMC examples installation 
             
         
                     
+            
+        
+                    
                         
             
             
@@ -1747,9 +1732,6 @@ For VMC examples see <a href="/installation/examples">VMC examples installation 
                     
                     
 
-                    
-            
-        
                     
                         
             
@@ -1927,6 +1909,38 @@ For VMC examples see <a href="/installation/examples">VMC examples installation 
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1958,22 +1972,6 @@ For VMC examples see <a href="/installation/examples">VMC examples installation 
                     
             
         
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
             
         
@@ -2152,19 +2150,19 @@ For VMC examples see <a href="/installation/examples">VMC examples installation 
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1638888296"></script>
-    <script src="/js/perfect-scrollbar.min.js?1638888296"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1638888296"></script>
-    <script src="/js/jquery.sticky.js?1638888296"></script>
-    <script src="/js/featherlight.min.js?1638888296"></script>
-    <script src="/js/highlight.pack.js?1638888296"></script>
+    <script src="/js/clipboard.min.js?1643971708"></script>
+    <script src="/js/perfect-scrollbar.min.js?1643971708"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1643971708"></script>
+    <script src="/js/jquery.sticky.js?1643971708"></script>
+    <script src="/js/featherlight.min.js?1643971708"></script>
+    <script src="/js/highlight.pack.js?1643971708"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1638888296"></script>
-    <script src="/js/learn.js?1638888296"></script>
-    <script src="/js/hugo-learn.js?1638888296"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1643971708"></script>
+    <script src="/js/learn.js?1643971708"></script>
+    <script src="/js/hugo-learn.js?1643971708"></script>
 
-    <link href="/mermaid/mermaid.css?1638888296" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1638888296"></script>
+    <link href="/mermaid/mermaid.css?1643971708" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1643971708"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

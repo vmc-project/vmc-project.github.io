@@ -131,6 +131,10 @@
   </url>
   
   <url>
+    <loc>/user-guide/vmc/mtroot/</loc>
+  </url>
+  
+  <url>
     <loc>/user-guide/geant4_vmc/</loc>
   </url>
   
@@ -164,10 +168,6 @@
   
   <url>
     <loc>/user-guide/geant4_vmc/special-cuts-and-regions/</loc>
-  </url>
-  
-  <url>
-    <loc>/user-guide/mtroot/</loc>
   </url>
   
   <url>

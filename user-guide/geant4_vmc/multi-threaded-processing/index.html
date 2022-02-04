@@ -12,20 +12,20 @@
     <title>Multi-threaded Processing :: VMC</title>
 
     
-    <link href="/css/nucleus.css?1638888296" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1638888296" rel="stylesheet">
-    <link href="/css/hybrid.css?1638888296" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1638888296" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1638888296" rel="stylesheet">
-    <link href="/css/auto-complete.css?1638888296" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1638888296" rel="stylesheet">
-    <link href="/css/theme.css?1638888296" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1638888296" rel="stylesheet">
+    <link href="/css/nucleus.css?1643971708" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1643971708" rel="stylesheet">
+    <link href="/css/hybrid.css?1643971708" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1643971708" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1643971708" rel="stylesheet">
+    <link href="/css/auto-complete.css?1643971708" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1643971708" rel="stylesheet">
+    <link href="/css/theme.css?1643971708" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1643971708" rel="stylesheet">
     
-      <link href="/css/theme-vmc.css?1638888296" rel="stylesheet">
+      <link href="/css/theme-vmc.css?1643971708" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1638888296"></script>
+    <script src="/js/jquery-3.3.1.min.js?1643971708"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1638888296"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1638888296"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1643971708"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1643971708"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1638888296"></script>
+<script type="text/javascript" src="/js/search.js?1643971708"></script>
 
     
   </div>
@@ -530,6 +530,25 @@
 
             
           
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/user-guide/vmc/mtroot/" title="Root IO Manager" class="dd-item ">
+        <a href="/user-guide/vmc/mtroot/">
+        Root IO Manager
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -887,30 +906,6 @@
         ">
       <a href="/user-guide/g4root/">
           G4Root
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
- 
-  
-    
-    <li data-nav-id="/user-guide/mtroot/" title="MTRoot" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/user-guide/mtroot/">
-          MTRoot
           
       </a>
       
@@ -1281,7 +1276,7 @@ and, optionally also the other functions listed in the previous section.</p>
 In general, the objects which state is modified during event processing need to be created on workers while the objects which are used in read-only mode can be be shared. See the examples implementation as a guidance.</p>
 </li>
 <li>
-<p>Replace your Root manager with <code>TVirtualMCRootManager</code>, provided in new <code>mtroot</code> library, which implements in a thread-safe way the functions previously provided in the VMC examples in the <code>Ex02RootManager</code> class.</p>
+<p>Replace your Root manager with <code>TMCRootManager</code>, provided in the <code>vmc</code> library, which implements in a thread-safe way the functions previously provided in the VMC examples in the <code>Ex02RootManager</code> class.</p>
 </li>
 <li>
 <p>Carefully check thread-safety of your application code. Note that ROOT has to be initialized for multi-threading via calling
@@ -1312,13 +1307,13 @@ when cloning your application:
 </code></pre></div></p>
 </li>
 <li>
-<p>Check the existence of <code>TVirtualMCRootManager</code> in <code>YourSD::Initialize()</code> as when running in MT mode the <code>TVirtualMCRootManager</code> is not instantiated on master but only on workers.
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">if</span> ( TVirtualMCRootManager<span style="color:#f92672">::</span>Instance() ) Register();
+<p>Check the existence of <code>TMCRootManager</code> in <code>YourSD::Initialize()</code> as when running in MT mode the <code>TMCRootManager</code> is not instantiated on master but only on workers.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">if</span> ( TMCRootManager<span style="color:#f92672">::</span>Instance() ) Register();
   
 </code></pre></div></p>
 </li>
 <li>
-<p>The MTRoot package provides a locking mechanism similar to
+<p>The <code>vmc</code> package provides a locking mechanism similar to
 <code>G4AutoLock</code>, which can be used in the user application for handling
 the operations which are not thread-safe. (It is not demonstrated in
 the VMC examples, as there is no such use case where locking
@@ -1704,6 +1699,22 @@ would be needed.)
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -1728,38 +1739,6 @@ would be needed.)
                     
                         
                         
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -1873,6 +1852,38 @@ would be needed.)
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -1967,22 +1978,6 @@ would be needed.)
                     
             
         
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
             
         
@@ -2161,19 +2156,19 @@ would be needed.)
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1638888296"></script>
-    <script src="/js/perfect-scrollbar.min.js?1638888296"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1638888296"></script>
-    <script src="/js/jquery.sticky.js?1638888296"></script>
-    <script src="/js/featherlight.min.js?1638888296"></script>
-    <script src="/js/highlight.pack.js?1638888296"></script>
+    <script src="/js/clipboard.min.js?1643971708"></script>
+    <script src="/js/perfect-scrollbar.min.js?1643971708"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1643971708"></script>
+    <script src="/js/jquery.sticky.js?1643971708"></script>
+    <script src="/js/featherlight.min.js?1643971708"></script>
+    <script src="/js/highlight.pack.js?1643971708"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1638888296"></script>
-    <script src="/js/learn.js?1638888296"></script>
-    <script src="/js/hugo-learn.js?1638888296"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1643971708"></script>
+    <script src="/js/learn.js?1643971708"></script>
+    <script src="/js/hugo-learn.js?1643971708"></script>
 
-    <link href="/mermaid/mermaid.css?1638888296" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1638888296"></script>
+    <link href="/mermaid/mermaid.css?1643971708" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1643971708"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

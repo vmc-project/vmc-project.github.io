@@ -17,7 +17,7 @@
       
       <guid>/installation/examples/build-options/</guid>
       <description>Overview of the available options for building VMC examples and their default values:
-VMC_WITH_Geant4 Build with Geant4 OFF VMC_WITH_Geant3 Build with Geant3 OFF VMC_WITH_Multi Build with multiple engines OFF VMC_WITH_MTRoot Build with MTRoot ON VMC_INSTALL_EXAMPLES Install examples libraries and programs ON Geant4 VMC build options are automatically exported in Geant4VMCConfig.cmake. If Geant4 VMC was built with VGM, the VGM installation path has to be provided via -DVGM_DIR option.</description>
+VMC_WITH_Geant4 Build with Geant4 OFF VMC_WITH_Geant3 Build with Geant3 OFF VMC_WITH_Multi Build with multiple engines OFF VMC_INSTALL_EXAMPLES Install examples libraries and programs ON Geant4 VMC build options are automatically exported in Geant4VMCConfig.cmake. If Geant4 VMC was built with VGM, the VGM installation path has to be provided via -DVGM_DIR option.</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@ VMC_WITH_Geant4 Build with Geant4 OFF VMC_WITH_Geant3 Build with Geant3 OFF VMC_
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/installation/geant4_vmc/build-options/</guid>
-      <description>Geant4 VMC includes G4Root and MTRoot packages, which are independent from Geant4 VMC and can be build and used stand-alone. Use of G4Root, VGM, Geant4 G3toG4, UI and VIS packages in Geant4 VMC library is optional and can be switched on/off during CMake build.
+      <description>Geant4 VMC includes the G4Root package and examples, which are independent from Geant4 VMC and can be build and used stand-alone. Use of G4Root, VGM, Geant4 G3toG4, UI and VIS packages in Geant4 VMC library is optional and can be switched on/off during CMake build.
 Overview of available options and their default values:
 Geant4VMC_BUILD_G4Root Build G4Root ON Geant4VMC_BUILD_MTRoot Build MTRoot ON Geant4VMC_BUILD_Geant4VMC Build Geant4VMC ON Geant4VMC_BUILD_EXAMPLES Build VMC examples ON Geant4VMC_USE_G4Root Build with G4Root ON Geant4VMC_USE_VGM Build with VGM OFF Geant4VMC_USE_GEANT4_UI Build with Geant4 UI drivers ON Geant4VMC_USE_GEANT4_VIS Build with Geant4 Vis drivers ON Geant4VMC_USE_GEANT4_G3TOG4 Build with Geant4 G3toG4 library OFF Geant4VMC_INSTALL_EXAMPLES Install examples ON </description>
     </item>
@@ -126,10 +126,10 @@ B Volkel et al 2020 EPJ Web Conf.</description>
       <guid>/installation/examples/running-examples/</guid>
       <description>First, make sure that you have included all libraries paths in your shared library path.
 For all MCs:
-/your_path/root/lib /your_path/mtroot_install/lib[64] The MTRoot package is provided in Geant4 VMC and is installed by default with Geant4 VMC library and is located in geant4_vmc_install. It can be however installed also stand-alone and without Geant4 libraries.
-For Geant3 only:
+/your_path/root_install/lib /your_path/vmc_install/lib For Geant3 only:
 path to Pythia6 library /your_path/geant3_install/lib[64] /your_path/examples_install_g3/lib[64] For Geant4 only:
-/your_path/geant4_install/lib[64] /your_path/geant4_vmc_install/lib[64] /your_path/examples_install_g4/lib[64] Running examples from Root session The example can be run by calling the provided macros from Root session:</description>
+/your_path/geant4_install/lib[64] /your_path/geant4_vmc_install/lib[64] /your_path/examples_install_g4/lib[64] Running examples from Root session The example can be run by calling the provided macros from Root session:
+$ cd geant4_vmc/examples/E01 $ root root[0] .x load_g4.C # load all libraries needed to run with Geant4 root[1] .</description>
     </item>
     
     <item>
@@ -268,6 +268,16 @@ Download Geant4 - from the Geant4 Web site</description>
       
       <guid>/user-guide/geant4_vmc/physics-lists/</guid>
       <description>Physics list selection Physics Geant4 VMC does not provide a default physics list. User have to choose the physics list from the physics lists provided in Geant4 (see the Geant4 Physics List Guide or include their own physics list. The choice of the physics list is done via the option specified with creating TG4RunConfiguration object. This option is passed asthe second argument in TG4RunConfiguration constructor (see examples for more details).This option can be defined as:</description>
+    </item>
+    
+    <item>
+      <title>Root IO Manager</title>
+      <link>/user-guide/vmc/mtroot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/user-guide/vmc/mtroot/</guid>
+      <description>Root IO manager class, TMCRootManager, facilitates use of ROOT IO in VMC examples and it also handles necessary locking in multi-threaded applications.
+It was first provided in Geant4 VMC in the MTRoot sub-package and moved to the core VMC library (since vmc 2.0 and geant4_vmc 6.0).</description>
     </item>
     
     <item>

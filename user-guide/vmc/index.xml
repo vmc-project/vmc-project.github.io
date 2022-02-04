@@ -41,5 +41,15 @@ The core of the VMC is the category of classes vmc. It provides a set of interfa
  GEANT3_VMC GEANT4_VMC  This also allows the user to implement his/her own class deriving from TVirtualMC to be used in a split simulation.</description>
     </item>
     
+    <item>
+      <title>Root IO Manager</title>
+      <link>/user-guide/vmc/mtroot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/user-guide/vmc/mtroot/</guid>
+      <description>Root IO manager class, TMCRootManager, facilitates use of ROOT IO in VMC examples and it also handles necessary locking in multi-threaded applications.
+It was first provided in Geant4 VMC in the MTRoot sub-package and moved to the core VMC library (since vmc 2.0 and geant4_vmc 6.0).</description>
+    </item>
+    
   </channel>
 </rss>

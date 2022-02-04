@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Required and Optional Packages :: VMC</title>
+    <title>Root IO Manager :: VMC</title>
 
     
     <link href="/css/nucleus.css?1643971708" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/installation/geant4_vmc/required-optional-packages/">
+  <body class="" data-url="/user-guide/vmc/mtroot/">
     <nav id="sidebar" class="">
 
 
@@ -186,7 +186,7 @@
   
     
     <li data-nav-id="/installation/" title="Installation" class="dd-item 
-        parent
+        
         
         
         ">
@@ -269,7 +269,7 @@
   
     
     <li data-nav-id="/installation/geant4_vmc/" title="Installing Geant4 VMC" class="dd-item 
-        parent
+        
         
         
         ">
@@ -318,7 +318,7 @@
  
   
     
-      <li data-nav-id="/installation/geant4_vmc/required-optional-packages/" title="Required and Optional Packages" class="dd-item active">
+      <li data-nav-id="/installation/geant4_vmc/required-optional-packages/" title="Required and Optional Packages" class="dd-item ">
         <a href="/installation/geant4_vmc/required-optional-packages/">
         Required and Optional Packages
         
@@ -429,7 +429,7 @@
   
     
     <li data-nav-id="/user-guide/" title="User Guide" class="dd-item 
-        
+        parent
         
         
         ">
@@ -456,7 +456,7 @@
   
     
     <li data-nav-id="/user-guide/vmc/" title="Virtual Monte Carlo" class="dd-item 
-        
+        parent
         
         
         ">
@@ -537,7 +537,7 @@
  
   
     
-      <li data-nav-id="/user-guide/vmc/mtroot/" title="Root IO Manager" class="dd-item ">
+      <li data-nav-id="/user-guide/vmc/mtroot/" title="Root IO Manager" class="dd-item active">
         <a href="/user-guide/vmc/mtroot/">
         Root IO Manager
         
@@ -1190,7 +1190,7 @@
             
           
           
-            <a href='/'>VMC Project</a> > <a href='/installation/'>Installation</a> > <a href='/installation/geant4_vmc/'>Installing Geant4 VMC</a> > Required and Optional Packages
+            <a href='/'>VMC Project</a> > <a href='/user-guide/'>User Guide</a> > <a href='/user-guide/vmc/'>Virtual Monte Carlo</a> > Root IO Manager
           
          
           
@@ -1205,18 +1205,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#c11">C++11</a></li>
-        <li><a href="#root">ROOT</a></li>
-        <li><a href="#geant4">Geant4</a></li>
-        <li><a href="#vgm-optional">VGM (optional)</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -1232,7 +1221,7 @@
           
             <h1>
               
-              Required and Optional Packages
+              Root IO Manager
             </h1>
           
 
@@ -1240,68 +1229,9 @@
 
 
 
-<p>Geant4 VMC requires <a href="https://root.cern.ch/">ROOT</a> and <a href="http://geant4.web.cern.ch/">Geant4</a> installed, then the <a href="/user-guide/vmc/vmc-library">VMC core package</a> if using ROOT built without <code>vmc</code> enabled, and optionally, it can be built with <a href="https://github.com/vmc-project/vgm">VGM</a>. See below tips for configuration and installation of these packages.</p>
-<p>The path to required and optional packages installations can be defined in the standard CMake way, via the paths to the CMake configuration file:</p>
-<pre><code>Geant4_DIR      ... path to Geant4Config.cmake
-ROOT_DIR        ... path to ROOTConfig.cmake
-VMC_DIR         ... path to VMCConfig.cmake
-VGM_DIR         ... path to VGMConfig.cmake
-</code></pre><p>CMake will also find the CMake configuration files (for ROOT and Geant4) if you source the relevant script from the packages installations (CMAKE_INSTALL_PREFIX) so that they are available in the sestem paths:</p>
-<pre><code>$ . bin/geant4.sh          ... Geant4 - on bourne shells (eg. bash)
-$ . bin/thisroot.sh        ... Root    
-or
-$ source bin/geant4.csh    ... Geant4 - on C shells  
-$ source bin/thisroot.csh  ... Root
-</code></pre><h3 id="c11">C++11</h3>
-<p>Geant4 VMC, as well as ROOT and Geant4, have moved to the C++11 standard.
-C++11 is used by default since Geant4 VMC 3.3, Geant4 10.2 and ROOT 6.</p>
-<p>When mixing other versions of Geant4 and ROOT together, the same standard must
-be used for both packages. See below how the override the default setting
-when needed.</p>
-<h3 id="root">ROOT</h3>
-<p>To install ROOT - follow the <a href="http://root.cern.ch/building-root">Root Installation Page</a></p>
-<ul>
-<li><strong>C++11</strong> <!-- raw HTML omitted -->
-Geant4 VMC 3.3 built against ROOT 5.x requires ROOT built with C++11 (not default for this ROOT version), set via:</li>
-</ul>
-<pre><code>-Dcxx11=ON
-</code></pre><p>option, when ROOT is built using CMake, or</p>
-<pre><code>--enable-cxx11
-</code></pre><p>option, when ROOT is built using configure script.</p>
-<h3 id="geant4">Geant4</h3>
-<p>To install Geant4 - download the source from <a href="http://geant4.web.cern.ch/support/download">Geant4 Download page</a> and follow the <a href="http://geant4.web.cern.ch/geant4/UserDocumentation/UsersGuides/InstallationGuide/html/index.html">Geant4 Installation Guide</a> together with the tips relevant to using it with VMC described below.</p>
-<ul>
-<li><strong>C++11</strong> <!-- raw HTML omitted -->
-Geant4 VMC 3.0 - 3.2 built against Geant4 10.0.x or 10.1.x and ROOT 6x requires
-Geant4 built with C++11 (not default for these Geant4 versions), set via:</li>
-</ul>
-<pre><code>-DGEANT4_BUILD_CXXSTD=c++11
-</code></pre><ul>
-<li><strong>G3toG4 tool</strong><!-- raw HTML omitted -->
-The G3toG4 package is used in geant4_vmc to support geometry definition via VMC with Geant4 native navigation. The build of G3toG4 package can be activated when building Geant4 with the following CMake options:</li>
-</ul>
-<pre><code>-DGEANT4_USE_G3TOG4=ON
-</code></pre><p>Since Geant4 VMC 3.0 the use of this package is optional.</p>
-<ul>
-<li><strong>OpenGL visualization</strong> <!-- raw HTML omitted -->
-It is recommended to build Geant4 X11 OpenGL visualization driver used in the VMC examples. It is handled in Geant4 CMake build via the CMake option:</li>
-</ul>
-<pre><code>-DGEANT4_USE_OPENGL_X11=ON
-</code></pre><ul>
-<li><strong>Multi-threading</strong> <!-- raw HTML omitted -->
-Geant4 VMC can be built against Geant4 installation in multi-threading mode which is handled in Geant4 CMake build via the CMake option:</li>
-</ul>
-<pre><code>-DG4MULTITHREADED=ON
-</code></pre><p>Dynamic loading of Geant4 libraries, as used in VMC, requires to change the Geant4 default TLS model, initial-exec, with global-dynamic via the CMake option:</p>
-<pre><code>-DGEANT4_BUILD_TLS_MODEL=global-dynamic
-</code></pre><p>Geant4 VMC 3.00.x version is migrated to Geant4 multi-threading and can be built against both Geant4 sequential and Geant4 multi-threading installations. The global-dynamic model is required for running VMC applications from Root session (in a &ldquo;traditional&rdquo; way  with dynamic loading of libraries). When the VMC application main program is linked with all libraries, Geant4 built with the default TLS model can be used.</p>
-<p>The VMC application will run automatically in MT mode when Geant4 VMC is built against Geant4 MT. See <a href="/user-guide/geant4_vmc/multi-threaded-processing/">the page on Multi-threaded processing</a> how this default behaviour can be changed in the configuration of the application.</p>
-<h3 id="vgm-optional">VGM (optional)</h3>
-<p>VGM is used in Geant4 VMC for a geometry in memory conversion from Root TGeo objects to the Geant4 native geometry. This conversion is performed when users geometry is defined via the Root geometry package and Geant4 native geometry navigation is selected.</p>
-<p>To install VGM - follow the installation instructions on the <a href="https://github.com/vmc-project/vgm">VGM Web site</a>.</p>
-<p>To build Geant4 VMC with VGM, you have to select the option:</p>
-<pre><code>-DGeant4VMC_USE_VGM=ON
-</code></pre>
+<p>Root IO manager class, <a href="https://vmc-project.github.io/vmc/html/classTMCRootManager.html">TMCRootManager</a>, facilitates use of ROOT IO in VMC examples and it also handles necessary locking in multi-threaded applications.</p>
+<p>It was first provided in Geant4 VMC in the MTRoot sub-package and moved to the core VMC library (since vmc 2.0 and geant4_vmc 6.0).</p>
+
 
 <footer class=" footline" >
 	
@@ -1422,7 +1352,6 @@ Geant4 VMC can be built against Geant4 installation in multi-threading mode whic
             
                 
                     
-                    
                 
                 
 
@@ -1437,9 +1366,6 @@ Geant4 VMC can be built against Geant4 installation in multi-threading mode whic
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1478,7 +1404,6 @@ Geant4 VMC can be built against Geant4 installation in multi-threading mode whic
             
                 
                     
-                    
                 
                 
 
@@ -1491,9 +1416,6 @@ Geant4 VMC can be built against Geant4 installation in multi-threading mode whic
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1520,7 +1442,6 @@ Geant4 VMC can be built against Geant4 installation in multi-threading mode whic
             
             
                 
-                    
                     
                 
                 
@@ -1540,9 +1461,6 @@ Geant4 VMC can be built against Geant4 installation in multi-threading mode whic
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1600,6 +1518,7 @@ Geant4 VMC can be built against Geant4 installation in multi-threading mode whic
             
                 
                     
+                    
                 
                 
 
@@ -1615,6 +1534,7 @@ Geant4 VMC can be built against Geant4 installation in multi-threading mode whic
             
                 
                     
+                    
                 
                 
 
@@ -1627,6 +1547,9 @@ Geant4 VMC can be built against Geant4 installation in multi-threading mode whic
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1676,6 +1599,7 @@ Geant4 VMC can be built against Geant4 installation in multi-threading mode whic
             
                 
                     
+                    
                 
                 
 
@@ -1694,6 +1618,9 @@ Geant4 VMC can be built against Geant4 installation in multi-threading mode whic
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2107,10 +2034,10 @@ Geant4 VMC can be built against Geant4 installation in multi-threading mode whic
 	 
 	 
 		
-			<a class="nav nav-prev" href="/installation/geant4_vmc/build-options/" title="Build Options"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/user-guide/vmc/multiple-vmc/" title="Multiple VMC Engines"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/installation/examples/" title="Installing and Running Examples" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/user-guide/geant4_vmc/" title="Geant4 VMC" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
