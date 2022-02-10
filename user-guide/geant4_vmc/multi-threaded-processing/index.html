@@ -12,20 +12,20 @@
     <title>Multi-threaded Processing :: VMC</title>
 
     
-    <link href="/css/nucleus.css?1644487017" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1644487017" rel="stylesheet">
-    <link href="/css/hybrid.css?1644487017" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1644487017" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1644487017" rel="stylesheet">
-    <link href="/css/auto-complete.css?1644487017" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1644487017" rel="stylesheet">
-    <link href="/css/theme.css?1644487017" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1644487017" rel="stylesheet">
+    <link href="/css/nucleus.css?1644515959" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1644515959" rel="stylesheet">
+    <link href="/css/hybrid.css?1644515959" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1644515959" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1644515959" rel="stylesheet">
+    <link href="/css/auto-complete.css?1644515959" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1644515959" rel="stylesheet">
+    <link href="/css/theme.css?1644515959" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1644515959" rel="stylesheet">
     
-      <link href="/css/theme-vmc.css?1644487017" rel="stylesheet">
+      <link href="/css/theme-vmc.css?1644515959" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1644487017"></script>
+    <script src="/js/jquery-3.3.1.min.js?1644515959"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1644487017"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1644487017"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1644515959"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1644515959"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1644487017"></script>
+<script type="text/javascript" src="/js/search.js?1644515959"></script>
 
     
   </div>
@@ -1240,7 +1240,7 @@
 
 
 <h3 id="geant4-vmc-with-multi-threading-geant4">Geant4 VMC with Multi-threading Geant4</h3>
-<p>Since version 3.00, Geant4 VMC supports running Geant4 in multi-threading (MT) mode. The VMC application will run automatically in MT mode when Geant4 VMC is built against Geant4 MT. This default behaviour can be changed via the option specified with creating <a href="http://ivana.home.cern.ch/ivana/g4vmc_html/classTG4RunConfiguration.html">TG4RunConfiguration</a> passed as the fifth argument in TG4RunConfiguration constructor. <em>(Note that the fourth argument, specialStacking option, cannot be omitted in this case.)</em></p>
+<p>Since version 3.00, Geant4 VMC supports running Geant4 in multi-threading (MT) mode. The VMC application will run automatically in MT mode when Geant4 VMC is built against Geant4 MT. This default behaviour can be changed via the option specified with creating <a href="https://vmc-project.github.io/geant4_vmc/g4vmc_html/classTG4RunConfiguration.html">TG4RunConfiguration</a> passed as the fifth argument in TG4RunConfiguration constructor. <em>(Note that the fourth argument, specialStacking option, cannot be omitted in this case.)</em></p>
 <p>The VMC application which has not been migrated to MT should be run in a sequential mode, either with Geant4 VMC built against Geant4 sequential libraries or with Geant4 VMC built against Geant4 MT libraries with disabled multi-threading mode in <code>TG4RunConfiguration</code>. Otherwise its run will stop with an exception.</p>
 <p>As the VMC classes work as a factory for creating Geant4 application objects (user initialization and user action classes, sensitive detector classes etc.), the main VMC objects: <code>TGeant4</code> and <code>MCApplication</code> need to be created on both master and worker threads. Creating of all objects on worker threads is triggered from the Geant4 VMC classes. Users need just to implement new functions of <code>TVirtualMCApplication</code> which are then used to clone the application and its containing objects on workers:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"> <span style="color:#75715e">// required for running in MT
@@ -2156,19 +2156,19 @@ would be needed.)
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1644487017"></script>
-    <script src="/js/perfect-scrollbar.min.js?1644487017"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1644487017"></script>
-    <script src="/js/jquery.sticky.js?1644487017"></script>
-    <script src="/js/featherlight.min.js?1644487017"></script>
-    <script src="/js/highlight.pack.js?1644487017"></script>
+    <script src="/js/clipboard.min.js?1644515959"></script>
+    <script src="/js/perfect-scrollbar.min.js?1644515959"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1644515959"></script>
+    <script src="/js/jquery.sticky.js?1644515959"></script>
+    <script src="/js/featherlight.min.js?1644515959"></script>
+    <script src="/js/highlight.pack.js?1644515959"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1644487017"></script>
-    <script src="/js/learn.js?1644487017"></script>
-    <script src="/js/hugo-learn.js?1644487017"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1644515959"></script>
+    <script src="/js/learn.js?1644515959"></script>
+    <script src="/js/hugo-learn.js?1644515959"></script>
 
-    <link href="/mermaid/mermaid.css?1644487017" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1644487017"></script>
+    <link href="/mermaid/mermaid.css?1644515959" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1644515959"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

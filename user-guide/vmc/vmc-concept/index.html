@@ -12,20 +12,20 @@
     <title>VMC Concept :: VMC</title>
 
     
-    <link href="/css/nucleus.css?1644487017" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1644487017" rel="stylesheet">
-    <link href="/css/hybrid.css?1644487017" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1644487017" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1644487017" rel="stylesheet">
-    <link href="/css/auto-complete.css?1644487017" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1644487017" rel="stylesheet">
-    <link href="/css/theme.css?1644487017" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1644487017" rel="stylesheet">
+    <link href="/css/nucleus.css?1644515959" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1644515959" rel="stylesheet">
+    <link href="/css/hybrid.css?1644515959" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1644515959" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1644515959" rel="stylesheet">
+    <link href="/css/auto-complete.css?1644515959" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1644515959" rel="stylesheet">
+    <link href="/css/theme.css?1644515959" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1644515959" rel="stylesheet">
     
-      <link href="/css/theme-vmc.css?1644487017" rel="stylesheet">
+      <link href="/css/theme-vmc.css?1644515959" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1644487017"></script>
+    <script src="/js/jquery-3.3.1.min.js?1644515959"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1644487017"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1644487017"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1644515959"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1644515959"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1644487017"></script>
+<script type="text/javascript" src="/js/search.js?1644515959"></script>
 
     
   </div>
@@ -1243,8 +1243,8 @@
 <p>The Virtual Monte Carlo (VMC) allows to run different simulation Monte Carlo without changing the user code and therefore the input and output format as well as the geometry and detector response definition.</p>
 <p>The core of the VMC is the category of classes <strong>vmc</strong>. It provides a set of interfaces which completely decouple the dependencies between the user code and the concrete Monte Carlo, two of which have the key role:</p>
 <ul>
-<li><a href="https://vmc-project.github.io/vmc/html/classTVirtualMC.html">TVirtualMC</a>: Interface to the concrete Monte Carlo program</li>
-<li><a href="https://vmc-project.github.io/vmc/html/classTVirtualMCApplication.html">TVirtualMCApplication</a>: Interface to the user&rsquo;s Monte Carlo application</li>
+<li><a href="https://vmc-project.github.io/vmc/classTVirtualMC.html">TVirtualMC</a>: Interface to the concrete Monte Carlo program</li>
+<li><a href="https://vmc-project.github.io/vmc/classTVirtualMCApplication.html">TVirtualMCApplication</a>: Interface to the user&rsquo;s Monte Carlo application</li>
 </ul>
 <p>The implementation of the TVirtualMC interface is provided for two Monte Carlo transport codes, GEANT3 and <a href="http://geant4.web.cern.ch/geant4/">Geant4</a>, with the VMC packages listed below. The implementation for the third Monte Carlo transport code, FLUKA, has been discontinued by the FLUKA team in 2010.</p>
 <p>The other interfaces are implemented in the user application. The user VMC application is independent from concrete transport codes (GEANT3, Geant4, FLUKA). The transport code which will be used for simulation is selected at run time - when processing a ROOT macro where the concrete Monte Carlo is instantiated.</p>
@@ -1253,11 +1253,11 @@
 <p>It is also possible to define geometry via Geant3-like functions defined in the VMC interface, however this way is kept only for backward compatibility and should not be used by new VMC users.</p>
 <h2 id="available-vmcs">Available VMCs</h2>
 <h3 id="for-geant3---geant3">For GEANT3 - geant3</h3>
-<p><a href="geant3+vmc">Geant3 VMC</a> (C++) is provided within a single package together with GEANT3 (Fortran) - geant3 .</p>
+<p><a href="../../geant3+vmc">Geant3 VMC</a> (C++) is provided within a single package together with GEANT3 (Fortran) - geant3 .</p>
 <h3 id="for-geant4---geant4_vmc">For Geant4 - geant4_vmc</h3>
-<p><a href="geant4_vmc">Geant4 VMC</a> is provided within a package geant4_vmc , that, in difference from geant3, naturally does not include Geant4 itself and you will need the Geant4 installation to run your VMC application with Geant4 VMC.</p>
+<p><a href="../../geant4_vmc">Geant4 VMC</a> is provided within a package geant4_vmc , that, in difference from geant3, naturally does not include Geant4 itself and you will need the Geant4 installation to run your VMC application with Geant4 VMC.</p>
 <h2 id="multiple-vmcs">Multiple VMCs</h2>
-<p>Since the development version the simulation can be shared among multiple different engines deriving from <a href="https://vmc-project.github.io/vmc/html/classTVirtualMC.html">TVirtualMC</a> which are handled by a singleton <a href="https://vmc-project.github.io/vmc/html/classTMCManager.html">TMCManager</a> object.</p>
+<p>Since the development version the simulation can be shared among multiple different engines deriving from <a href="https://vmc-project.github.io/vmc/classTVirtualMC.html">TVirtualMC</a> which are handled by a singleton <a href="https://vmc-project.github.io/vmc/classTMCManager.html">TMCManager</a> object.</p>
 <p>See more detailed description in <a href="/user-guide/vmc/multiple-vmc">the dedicated section</a>.</p>
 
 
@@ -2072,19 +2072,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1644487017"></script>
-    <script src="/js/perfect-scrollbar.min.js?1644487017"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1644487017"></script>
-    <script src="/js/jquery.sticky.js?1644487017"></script>
-    <script src="/js/featherlight.min.js?1644487017"></script>
-    <script src="/js/highlight.pack.js?1644487017"></script>
+    <script src="/js/clipboard.min.js?1644515959"></script>
+    <script src="/js/perfect-scrollbar.min.js?1644515959"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1644515959"></script>
+    <script src="/js/jquery.sticky.js?1644515959"></script>
+    <script src="/js/featherlight.min.js?1644515959"></script>
+    <script src="/js/highlight.pack.js?1644515959"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1644487017"></script>
-    <script src="/js/learn.js?1644487017"></script>
-    <script src="/js/hugo-learn.js?1644487017"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1644515959"></script>
+    <script src="/js/learn.js?1644515959"></script>
+    <script src="/js/hugo-learn.js?1644515959"></script>
 
-    <link href="/mermaid/mermaid.css?1644487017" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1644487017"></script>
+    <link href="/mermaid/mermaid.css?1644515959" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1644515959"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

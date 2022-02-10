@@ -12,20 +12,20 @@
     <title>Physics Lists :: VMC</title>
 
     
-    <link href="/css/nucleus.css?1644487017" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1644487017" rel="stylesheet">
-    <link href="/css/hybrid.css?1644487017" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1644487017" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1644487017" rel="stylesheet">
-    <link href="/css/auto-complete.css?1644487017" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1644487017" rel="stylesheet">
-    <link href="/css/theme.css?1644487017" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1644487017" rel="stylesheet">
+    <link href="/css/nucleus.css?1644515959" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1644515959" rel="stylesheet">
+    <link href="/css/hybrid.css?1644515959" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1644515959" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1644515959" rel="stylesheet">
+    <link href="/css/auto-complete.css?1644515959" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1644515959" rel="stylesheet">
+    <link href="/css/theme.css?1644515959" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1644515959" rel="stylesheet">
     
-      <link href="/css/theme-vmc.css?1644487017" rel="stylesheet">
+      <link href="/css/theme-vmc.css?1644515959" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1644487017"></script>
+    <script src="/js/jquery-3.3.1.min.js?1644515959"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1644487017"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1644487017"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1644515959"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1644515959"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1644487017"></script>
+<script type="text/javascript" src="/js/search.js?1644515959"></script>
 
     
   </div>
@@ -1247,7 +1247,7 @@
 
 <h2 id="physics-list-selection">Physics list selection</h2>
 <h3 id="physics">Physics</h3>
-<p>Geant4 VMC does not provide a default physics list. User have to choose the physics list from the physics lists provided in Geant4 (see the <a href="http://geant4-userdoc.web.cern.ch/geant4-userdoc/UsersGuides/PhysicsListGuide/html/index.html">Geant4 Physics List Guide</a> or include their own physics list. The choice of the physics list is done via the option specified with creating <a href="http://ivana.home.cern.ch/ivana/g4vmc_html/classTG4RunConfiguration.html">TG4RunConfiguration</a> object. This option is passed as<em>the second argument</em> in <code>TG4RunConfiguration</code> constructor (see <a href="examples">examples</a> for more details).<!-- raw HTML omitted --></p>
+<p>Geant4 VMC does not provide a default physics list. User have to choose the physics list from the physics lists provided in Geant4 (see the <a href="http://geant4-userdoc.web.cern.ch/geant4-userdoc/UsersGuides/PhysicsListGuide/html/index.html">Geant4 Physics List Guide</a> or include their own physics list. The choice of the physics list is done via the option specified with creating <a href="https://vmc-project.github.io/geant4_vmc/g4vmc_html/classTG4RunConfiguration.html">TG4RunConfiguration</a> object. This option is passed as<em>the second argument</em> in <code>TG4RunConfiguration</code> constructor (see <a href="examples">examples</a> for more details).<!-- raw HTML omitted --></p>
 <p>This option can be defined as:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#e6db74">&#34;&lt;g4-physics-list&gt;[_&lt;EM-option&gt;][+extra][+optical][+radDecay]&#34;</span> 
 </code></pre></div><p>where</p>
@@ -1267,7 +1267,7 @@
 <span style="color:#e6db74">&#34;QGSP_BIC_EMY+radDecay&#34;</span> 
 </code></pre></div><p>The <code>&lt;g4-physics-list&gt;_&lt;EM-option&gt;</code> must represent a valid Geant4 physics list (except for &ldquo;emStandard&rdquo;). Since Geant4 9.5 it is possible to combine all EM options with all physics lists.</p>
 <h3 id="special-processes">Special processes</h3>
-<p>In order to activate the support of VMC features like the VMC cuts, VMC process controls, user has to activate the special processes defined in <a href="http://ivana.home.cern.ch/ivana/g4vmc_html/classTG4SpecialPhysicsList.html">TG4SpecialPhysicsList</a>. The selection of special processes is passed as the <em>third argument</em> in <code>TG4RunConfiguration</code> constructor (see <a href="http://ivana.home.cern.ch/ivana/examples_html/index.html">examples</a> for more details):</p>
+<p>In order to activate the support of VMC features like the VMC cuts, VMC process controls, user has to activate the special processes defined in <a href="https://vmc-project.github.io/geant4_vmc/g4vmc_html/classTG4SpecialPhysicsList.html">TG4SpecialPhysicsList</a>. The selection of special processes is passed as the <em>third argument</em> in <code>TG4RunConfiguration</code> constructor (see <a href="https://vmc-project.github.io/geant4_vmc/examples_html/index.html">examples</a> for more details):</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#e6db74">&#34;[stepLimiter][+specialCuts][+specialControls][+stackPopper]&#34;</span> 
 </code></pre></div><p>where</p>
 <ul>
@@ -1280,7 +1280,7 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#e6db74">&#34;stepLimit+specialCuts&#34;</span> 
 <span style="color:#e6db74">&#34;stepLimit+specialCuts+stackPopper&#34;</span> 
 </code></pre></div><h3 id="composed-physics-list">Composed physics list</h3>
-<p>According to the user selection, Geant4 VMC creates a <a href="http://ivana.home.cern.ch/ivana/g4vmc_html/classTG4ComposedPhysicsList.html">TG4ComposedPhysicsList</a> object which is a composition of a selected Geant4 physics list (or a user physics list), the extra physics list ( <a href="http://ivana.home.cern.ch/ivana/g4vmc_html/classTG4ExtraPhysicsList.html">TG4ExtraPhysicsList</a> - in development version only) and the <a href="http://ivana.home.cern.ch/ivana/g4vmc_htm/classTG4SpecialPhysicsList.html">TG4SpecialPhysicsList</a> object. The inclusion of the extra physics list is optional. The composed physics list processes the Geant4 (or user) physics list in the first order, then adds the extra physics processes (if selected) and finally the special processes, registered in TG4SpecialPhysicsList, are added in the last order.</p>
+<p>According to the user selection, Geant4 VMC creates a <a href="https://vmc-project.github.io/geant4_vmc/g4vmc_html/classTG4ComposedPhysicsList.html">TG4ComposedPhysicsList</a> object which is a composition of a selected Geant4 physics list (or a user physics list), the extra physics list ( <a href="https://vmc-project.github.io/geant4_vmc/g4vmc_html/classTG4ExtraPhysicsList.html">TG4ExtraPhysicsList</a> - in development version only) and the <a href="https://vmc-project.github.io/geant4_vmc/g4vmc_htm/classTG4SpecialPhysicsList.html">TG4SpecialPhysicsList</a> object. The inclusion of the extra physics list is optional. The composed physics list processes the Geant4 (or user) physics list in the first order, then adds the extra physics processes (if selected) and finally the special processes, registered in TG4SpecialPhysicsList, are added in the last order.</p>
 <p>Since version 2.13, the user physics selection is added to the TGeant4 object title so that it can be retrievable in a user application.</p>
 <h2 id="inspecting-particles-and-physics-processes">Inspecting particles and physics processes</h2>
 <p>The instantiated particles and physics processes can be the viewed with the following Geant4 and Geant4 VMC commands.</p>
@@ -2152,19 +2152,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1644487017"></script>
-    <script src="/js/perfect-scrollbar.min.js?1644487017"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1644487017"></script>
-    <script src="/js/jquery.sticky.js?1644487017"></script>
-    <script src="/js/featherlight.min.js?1644487017"></script>
-    <script src="/js/highlight.pack.js?1644487017"></script>
+    <script src="/js/clipboard.min.js?1644515959"></script>
+    <script src="/js/perfect-scrollbar.min.js?1644515959"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1644515959"></script>
+    <script src="/js/jquery.sticky.js?1644515959"></script>
+    <script src="/js/featherlight.min.js?1644515959"></script>
+    <script src="/js/highlight.pack.js?1644515959"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1644487017"></script>
-    <script src="/js/learn.js?1644487017"></script>
-    <script src="/js/hugo-learn.js?1644487017"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1644515959"></script>
+    <script src="/js/learn.js?1644515959"></script>
+    <script src="/js/hugo-learn.js?1644515959"></script>
 
-    <link href="/mermaid/mermaid.css?1644487017" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1644487017"></script>
+    <link href="/mermaid/mermaid.css?1644515959" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1644515959"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

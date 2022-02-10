@@ -12,20 +12,20 @@
     <title>Special Cuts and Regions :: VMC</title>
 
     
-    <link href="/css/nucleus.css?1644487017" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1644487017" rel="stylesheet">
-    <link href="/css/hybrid.css?1644487017" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1644487017" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1644487017" rel="stylesheet">
-    <link href="/css/auto-complete.css?1644487017" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1644487017" rel="stylesheet">
-    <link href="/css/theme.css?1644487017" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1644487017" rel="stylesheet">
+    <link href="/css/nucleus.css?1644515959" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1644515959" rel="stylesheet">
+    <link href="/css/hybrid.css?1644515959" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1644515959" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1644515959" rel="stylesheet">
+    <link href="/css/auto-complete.css?1644515959" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1644515959" rel="stylesheet">
+    <link href="/css/theme.css?1644515959" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1644515959" rel="stylesheet">
     
-      <link href="/css/theme-vmc.css?1644487017" rel="stylesheet">
+      <link href="/css/theme-vmc.css?1644515959" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1644487017"></script>
+    <script src="/js/jquery-3.3.1.min.js?1644515959"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1644487017"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1644487017"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1644515959"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1644515959"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1644487017"></script>
+<script type="text/javascript" src="/js/search.js?1644515959"></script>
 
     
   </div>
@@ -1242,7 +1242,7 @@
 <p>The way of applying cuts is different in Geant3 and Geant4. In Geant3, the cuts are defined as a limit in energy, which is applied both as an energy threshold (a secondary particle is not produced if its energy is beyond the threshold) and a tracking cut (a particle is stopped when its energy gets below the cut).</p>
 <p>Inn Geant4, there is defined a unique cut in range which is then converted to an energy threshold per particle and material. The advantage is that you keep the same spatial resolution of your energy deposit over the whole detector. It is also possible to define cuts per regions, as in big experimental setups you may want to speed up your simulation by setting a higher cut in the support structures etc. See more details at the Geant4 User Guide for Application Developers, <a href="http://geant4-userdoc.web.cern.ch/geant4-userdoc/UsersGuides/ForApplicationDeveloper/html/TrackingAndPhysics/thresholdVScut.html">section Production Threshold versus Tracking Cut</a>.</p>
 <h3 id="vmc-cuts">VMC cuts</h3>
-<p>The VMC provides a possibility for a user to define cuts in Geant3 way. The cuts can be defined globally or per tracking medium via the following <a href="http://root.cern.ch/root/htmldoc/TVirtualMC.html">TVirtualMC</a> functions:
+<p>The VMC provides a possibility for a user to define cuts in Geant3 way. The cuts can be defined globally or per tracking medium via the following <a href="https://vmc-project.github.io/vmc/classTVirtualMC.html">TVirtualMC</a> functions:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">gMC<span style="color:#f92672">-&gt;</span>SetCut(cutname, cutValue);
 gMC<span style="color:#f92672">-&gt;</span>Gstpar(medId, cutName, cutValue);
 </code></pre></div></p>
@@ -1263,7 +1263,7 @@ gMC<span style="color:#f92672">-&gt;</span>Gstpar(medId, cutName, cutValue);
 /mcPhysics/rangeCuts value
 </code></pre></div><h3 id="applying-vmc-cuts-in-geant4">Applying VMC cuts in Geant4</h3>
 <p>In order to take the VMC cuts into account, the user has to activate the special cuts process by switching it on in his <code>g4Config.C</code> (see the section on <a href="/user-guide/geant4_vmc/physics_lists">Physics list selection</a>. This special cuts process applies the VMC cuts as tracking cuts using <code>G4UserLimits</code>.</p>
-<p>When the special cuts process is activated, Geant4 VMC defines also regions according to the VMC cuts defined by the user. The regions apply the VMC cuts as an energy threshold. In order to do this, the cut energy has to be converted in range. This conversion is performed in <a href="http://ivana.home.cern.ch/ivana/g4vmc_html/classTG4RegionsManager.html">TG4RegionsManager</a> using the Geant4 converter classes <code>G4RToEConvForElectron</code> and <code>G4RToEConvForGamma</code> by iterating within a given range interval up to a given precision. User can change the default precision (2 orders of magnitude) with the command:</p>
+<p>When the special cuts process is activated, Geant4 VMC defines also regions according to the VMC cuts defined by the user. The regions apply the VMC cuts as an energy threshold. In order to do this, the cut energy has to be converted in range. This conversion is performed in <a href="https://vmc-project.github.io/geant4_vmc/g4vmc_html/classTG4RegionsManager.html">TG4RegionsManager</a> using the Geant4 converter classes <code>G4RToEConvForElectron</code> and <code>G4RToEConvForGamma</code> by iterating within a given range interval up to a given precision. User can change the default precision (2 orders of magnitude) with the command:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/mcRegions/setRangePrecision value
 </code></pre></div><p>The conversion of VMC cuts to the regions follows these rules:</p>
 <ul>
@@ -2111,19 +2111,19 @@ It may happen that a value cannot be refined up to given precision, then the bes
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1644487017"></script>
-    <script src="/js/perfect-scrollbar.min.js?1644487017"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1644487017"></script>
-    <script src="/js/jquery.sticky.js?1644487017"></script>
-    <script src="/js/featherlight.min.js?1644487017"></script>
-    <script src="/js/highlight.pack.js?1644487017"></script>
+    <script src="/js/clipboard.min.js?1644515959"></script>
+    <script src="/js/perfect-scrollbar.min.js?1644515959"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1644515959"></script>
+    <script src="/js/jquery.sticky.js?1644515959"></script>
+    <script src="/js/featherlight.min.js?1644515959"></script>
+    <script src="/js/highlight.pack.js?1644515959"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1644487017"></script>
-    <script src="/js/learn.js?1644487017"></script>
-    <script src="/js/hugo-learn.js?1644487017"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1644515959"></script>
+    <script src="/js/learn.js?1644515959"></script>
+    <script src="/js/hugo-learn.js?1644515959"></script>
 
-    <link href="/mermaid/mermaid.css?1644487017" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1644487017"></script>
+    <link href="/mermaid/mermaid.css?1644515959" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1644515959"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

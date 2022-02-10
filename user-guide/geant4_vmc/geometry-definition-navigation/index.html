@@ -12,20 +12,20 @@
     <title>Geometry Definition &amp; Navigation :: VMC</title>
 
     
-    <link href="/css/nucleus.css?1644487017" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1644487017" rel="stylesheet">
-    <link href="/css/hybrid.css?1644487017" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1644487017" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1644487017" rel="stylesheet">
-    <link href="/css/auto-complete.css?1644487017" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1644487017" rel="stylesheet">
-    <link href="/css/theme.css?1644487017" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1644487017" rel="stylesheet">
+    <link href="/css/nucleus.css?1644515959" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1644515959" rel="stylesheet">
+    <link href="/css/hybrid.css?1644515959" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1644515959" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1644515959" rel="stylesheet">
+    <link href="/css/auto-complete.css?1644515959" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1644515959" rel="stylesheet">
+    <link href="/css/theme.css?1644515959" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1644515959" rel="stylesheet">
     
-      <link href="/css/theme-vmc.css?1644487017" rel="stylesheet">
+      <link href="/css/theme-vmc.css?1644515959" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1644487017"></script>
+    <script src="/js/jquery-3.3.1.min.js?1644515959"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1644487017"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1644487017"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1644515959"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1644515959"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1644487017"></script>
+<script type="text/javascript" src="/js/search.js?1644515959"></script>
 
     
   </div>
@@ -1243,11 +1243,11 @@
 <h3 id="geometry-definition">Geometry definition</h3>
 <p>The VMC supports two ways of geometry definition:</p>
 <ul>
-<li>via <a href="http://root.cern.ch/root/doc/chapter19.pdf">Root geometry package (TGeo)</a></li>
-<li>via <a href="https://vmc-project.github.io/vmc/html/classTVirtualMC.html">TVirtualMC interface</a> (historically the first way)</li>
+<li>via <a href="https://root.cern/doc/master/group__Geometry.html">Root geometry package (TGeo)</a></li>
+<li>via <a href="https://vmc-project.github.io/vmc/classTVirtualMC.html">TVirtualMC interface</a> (historically the first way)</li>
 </ul>
 <p>The first (newer) way is recommended for new users, the way via VMC is kept for a backward compatibility.</p>
-<p>Since the version 2.0, user can choose between Geant4 native navigation and G4Root navigation, if geometry is define via TGeo. The choice of the navigation is done via the option specified with creating <a href="http://ivana.home.cern.ch/ivana/g4vmc_html/classTG4RunConfiguration.html">TG4RunConfiguration</a> object (see  <a href="http://ivana.home.cern.ch/ivana/examples_html/index.html">VMC examples</a> for more details):</p>
+<p>Since the version 2.0, user can choose between Geant4 native navigation and G4Root navigation, if geometry is define via TGeo. The choice of the navigation is done via the option specified with creating <a href="https://vmc-project.github.io/geant4_vmc/g4vmc_html/classTG4RunConfiguration.html">TG4RunConfiguration</a> object (see  <a href="https://vmc-project.github.io/geant4_vmc/examples_html/index.html">VMC examples</a> for more details):</p>
 <ul>
 <li><code>geomVMCtoGeant4</code>   - geometry defined via VMC, G4 native navigation</li>
 <li><code>geomVMCtoRoot</code>     - geometry defined via VMC, Root navigation</li>
@@ -1263,7 +1263,7 @@ The interfaces to functions for geometry definitions provided by VMC were strong
 </li>
 <li>
 <p><code>geomVMCtoRoot</code>:
-The implementation of this option uses <a href="https://root.cern.ch/doc/master/classTGeoMCGeometry.html">TGeoMCGeometry</a> provided in the root/vmc package. The same class is used also by TGeant3TGeo and TFluka for supporting user geometry defined via VMC.</p>
+The implementation of this option uses <a href="https://vmc-project.github.io/vmc/classTGeoMCGeometry.html">TGeoMCGeometry</a> provided in the root/vmc package. The same class is used also by TGeant3TGeo and TFluka for supporting user geometry defined via VMC.</p>
 </li>
 <li>
 <p><code>geomRoot</code>:
@@ -1271,7 +1271,7 @@ If geometry is defined via Root and G4Root navigation is selected, Geant4 VMC on
 </li>
 <li>
 <p><code>geomRootToGeant4</code>:
-The geometry defined via TGeo is converted in Geant4 geometry using the external <a href="http://ivana.home.cern.ch/ivana/VGM.html">Virtual Geometry Model</a> (VGM), which has replaced the old one-way converters from Geant4 VMC (G4toXML, RootToG4), removed from Geant4 VMC with the version 1.7. In the VGM, these convertors has been generalized and improved.</p>
+The geometry defined via TGeo is converted in Geant4 geometry using the external <a href="https://vmc-project.github.io/vgm-documentation/">Virtual Geometry Model</a> (VGM), which has replaced the old one-way converters from Geant4 VMC (G4toXML, RootToG4), removed from Geant4 VMC with the version 1.7. In the VGM, these convertors has been generalized and improved.</p>
 </li>
 <li>
 <p><code>geomGeant4</code>:
@@ -2118,19 +2118,19 @@ The geometry can be then browsed and visualized using  <a href="http://hrivnac.h
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1644487017"></script>
-    <script src="/js/perfect-scrollbar.min.js?1644487017"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1644487017"></script>
-    <script src="/js/jquery.sticky.js?1644487017"></script>
-    <script src="/js/featherlight.min.js?1644487017"></script>
-    <script src="/js/highlight.pack.js?1644487017"></script>
+    <script src="/js/clipboard.min.js?1644515959"></script>
+    <script src="/js/perfect-scrollbar.min.js?1644515959"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1644515959"></script>
+    <script src="/js/jquery.sticky.js?1644515959"></script>
+    <script src="/js/featherlight.min.js?1644515959"></script>
+    <script src="/js/highlight.pack.js?1644515959"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1644487017"></script>
-    <script src="/js/learn.js?1644487017"></script>
-    <script src="/js/hugo-learn.js?1644487017"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1644515959"></script>
+    <script src="/js/learn.js?1644515959"></script>
+    <script src="/js/hugo-learn.js?1644515959"></script>
 
-    <link href="/mermaid/mermaid.css?1644487017" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1644487017"></script>
+    <link href="/mermaid/mermaid.css?1644515959" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1644515959"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
