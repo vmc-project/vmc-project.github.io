@@ -207,7 +207,7 @@
 	"title": "Geant4 VMC",
 	"tags": [],
 	"description": "",
-	"content": "Development version (the whole repository):\ngit clone http://github.com/vmc-project/geant4_vmc.git To switch to the \u0026lsquo;pro\u0026rsquo; tagged version 6.0 (compatible with Geant4 11.0.x):\ngit checkout v6-0 To switch to the \u0026lsquo;old\u0026rsquo; tagged version 5.4 (compatible with Geant4 10.7.x):\ncd geant4_vmc git checkout v5-4 The list of new developments, bug fixes and the required versions of ROOT and Geant4 for each version can be found in the history file.\nDownload Geant4 - from the Geant4 Web site\n  "
+	"content": "Development version (the whole repository):\ngit clone http://github.com/vmc-project/geant4_vmc.git To switch to the \u0026lsquo;pro\u0026rsquo; tagged version 6.0 (compatible with Geant4 11.0.x):\ncd geant4_vmc git checkout v6-0 To switch to the \u0026lsquo;old\u0026rsquo; tagged version 5.4 (compatible with Geant4 10.7.x):\ncd geant4_vmc git checkout v5-4 The list of new developments, bug fixes and the required versions of ROOT and Geant4 for each version can be found in the history file.\nDownload Geant4 - from the Geant4 Web site\n  "
 },
 {
 	"uri": "/installation/examples/",
@@ -256,7 +256,7 @@
 	"title": "Tar Files",
 	"tags": [],
 	"description": "",
-	"content": "Pro versions    Package Version Tar file Tested with     vmc 2.0 v2-0.tar.gz ROOT 6.24/06   geant3 4.0 v4-0.tar.gz ROOT 6.24/06   geant4_vmc 6.0 v6-0.tar.gz ROOT 6.24.06,Geant4 11.0 (with embedded CLHEP 2.4.5.1), VGM 5.0, Garfield 4.0    In general, the VMC packages can be built with the Root version which they were tested with and higher, and Geant4 VMC with the Geant4 version which it was tested with including the patches. Note that the Geant4 patches released after the Geant4 VMC tag do not appear in the table above, it is however recommended to update Geant4 with each patch release.\nOld versions    Package Version Tar file Tested with     geant3 2.7.p2 v2-7-p2.tar.gz ROOT 5.34/36    "
+	"content": "Pro versions    Package Version Tar file Tested with     vmc 2.0 vmc-2-0.tar.gz ROOT 6.24/06   geant3 4.0 geant3-4-0.tar.gz ROOT 6.24/06   geant4_vmc 6.0 geant4_vmc-6-0.tar.gz ROOT 6.24.06,Geant4 11.0 (with embedded CLHEP 2.4.5.1), VGM 5.0, Garfield 4.0    In general, the VMC packages can be built with the Root version which they were tested with and higher, and Geant4 VMC with the Geant4 version which it was tested with including the patches. Note that the Geant4 patches released after the Geant4 VMC tag do not appear in the table above, it is however recommended to update Geant4 with each patch release.\nOld versions    Package Version Tar file Tested with     geant3 2.7.p2 v2-7-p2.tar.gz ROOT 5.34/36    "
 },
 {
 	"uri": "/user-guide/geant3+vmc/",
