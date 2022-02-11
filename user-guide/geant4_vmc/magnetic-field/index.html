@@ -12,20 +12,20 @@
     <title>Magnetic Field :: VMC</title>
 
     
-    <link href="/css/nucleus.css?1644515959" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1644515959" rel="stylesheet">
-    <link href="/css/hybrid.css?1644515959" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1644515959" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1644515959" rel="stylesheet">
-    <link href="/css/auto-complete.css?1644515959" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1644515959" rel="stylesheet">
-    <link href="/css/theme.css?1644515959" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1644515959" rel="stylesheet">
+    <link href="/css/nucleus.css?1644572090" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1644572090" rel="stylesheet">
+    <link href="/css/hybrid.css?1644572090" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1644572090" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1644572090" rel="stylesheet">
+    <link href="/css/auto-complete.css?1644572090" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1644572090" rel="stylesheet">
+    <link href="/css/theme.css?1644572090" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1644572090" rel="stylesheet">
     
-      <link href="/css/theme-vmc.css?1644515959" rel="stylesheet">
+      <link href="/css/theme-vmc.css?1644572090" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1644515959"></script>
+    <script src="/js/jquery-3.3.1.min.js?1644572090"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1644515959"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1644515959"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1644572090"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1644572090"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1644515959"></script>
+<script type="text/javascript" src="/js/search.js?1644572090"></script>
 
     
   </div>
@@ -1284,7 +1284,7 @@
 <pre><code>/mcMagField/volumeName/stepperType stepperType
 /mcMagField/volumeName/equationType eqType
 ...
-</code></pre><p>Since Geant4 VMC version 3.2, users can also provide their own magnetic field equation of motion and/or its integrator. These objects should be instantiated in a detector construction class derived from <a href="https://vmc-project.github.io/geant4_vmc/g4vmc_html/classTG4DetConstruction.html">TG4DetConstruction</a>. This use case is demonstrated in the E03 example in <a href="https://vmc-project.github.io/geant4_vmc/examples_html/classEx03G4DetectorConstruction.html">Ex03G4DetectorConstruction</a> and <a href="https://vmc-project.github.io/geant4_vmc/examples_html/classEx03RunConfiguration4.html">Ex03RunConfiguration4</a> classes. How to include user Geant4 classes in a VMC application is explained at the section on  <a href="/user-guide/geant4_vmc/user-geant4-classes">User Geant4 classes</a>.</p>
+</code></pre><p>Since Geant4 VMC version 3.2, users can also provide their own magnetic field equation of motion and/or its integrator. These objects should be instantiated in a detector construction class derived from <a href="https://vmc-project.github.io/geant4_vmc/g4vmc_html/classTG4DetConstruction.html">TG4DetConstruction</a> or post-detector construction class derived from <a href="https://vmc-project.github.io/geant4_vmc/g4vmc_html/classTG4VUserPostDetConstruction.html">TG4VUserPostDetConstruction</a> if using ROOT navigation. This use case is demonstrated in the E03 example in <a href="https://vmc-project.github.io/geant4_vmc/examples_html/classEx03PostDetConstruction.html">Ex03PostDetConstruction</a> and <a href="https://vmc-project.github.io/geant4_vmc/examples_html/classEx03RunConfiguration4.html">Ex03RunConfiguration4</a> classes. How to include user Geant4 classes in a VMC application is explained at the section on  <a href="/user-guide/geant4_vmc/user-geant4-classes">User Geant4 classes</a>.</p>
 <h3 id="control-of-the-parameters-for-killing-looping-particles">Control of the parameters for killing looping particles</h3>
 <p>Since Geant4 10.5, users can change the thresholds for killing ‘looping’ tracks, which criteria can be used to ensure that a track continues to propagate and for how many steps an ‘important’ track that is ‘looping’ can survive (see more details in <a href="http://geant4-userdoc.web.cern.ch/geant4-userdoc/UsersGuides/ForApplicationDeveloper/html/Appendix/magneticTransportation.html#fine-grained-control-of-the-parameters-for-killing-looping-particles">Transportation in Magnetic Field - Further Details section</a> in Geant4 Guide for Application Developers).</p>
 <p>The following UI commands were introduced in Geant4 VMC development version, and back-ported to Geant4 VMC 5.0.p5, for this control.</p>
@@ -2117,19 +2117,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1644515959"></script>
-    <script src="/js/perfect-scrollbar.min.js?1644515959"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1644515959"></script>
-    <script src="/js/jquery.sticky.js?1644515959"></script>
-    <script src="/js/featherlight.min.js?1644515959"></script>
-    <script src="/js/highlight.pack.js?1644515959"></script>
+    <script src="/js/clipboard.min.js?1644572090"></script>
+    <script src="/js/perfect-scrollbar.min.js?1644572090"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1644572090"></script>
+    <script src="/js/jquery.sticky.js?1644572090"></script>
+    <script src="/js/featherlight.min.js?1644572090"></script>
+    <script src="/js/highlight.pack.js?1644572090"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1644515959"></script>
-    <script src="/js/learn.js?1644515959"></script>
-    <script src="/js/hugo-learn.js?1644515959"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1644572090"></script>
+    <script src="/js/learn.js?1644572090"></script>
+    <script src="/js/hugo-learn.js?1644572090"></script>
 
-    <link href="/mermaid/mermaid.css?1644515959" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1644515959"></script>
+    <link href="/mermaid/mermaid.css?1644572090" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1644572090"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
