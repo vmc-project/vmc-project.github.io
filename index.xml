@@ -134,10 +134,10 @@ $ cd geant4_vmc/examples/E01 $ root root[0] .x load_g4.C # load all libraries ne
     
     <item>
       <title>VMC Concept</title>
-      <link>/user-guide/vmc/vmc-concept/</link>
+      <link>/user-guide/introduction/vmc-concept/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/user-guide/vmc/vmc-concept/</guid>
+      <guid>/user-guide/introduction/vmc-concept/</guid>
       <description>The Virtual Monte Carlo (VMC) allows to run different simulation Monte Carlo without changing the user code and therefore the input and output format as well as the geometry and detector response definition.
 The core of the VMC is the category of classes vmc. It provides a set of interfaces which completely decouple the dependencies between the user code and the concrete Monte Carlo, two of which have the key role:</description>
     </item>
@@ -151,6 +151,19 @@ The core of the VMC is the category of classes vmc. It provides a set of interfa
       <description>A set of examples of usage of VMC is included in geant4_vmc.
 Though provided within Geant4 VMC, they can be built independently and do not require Geant4 installation in case you want to run them with GEANT3 only.
 See more details on the VMC Examples web page.</description>
+    </item>
+    
+    <item>
+      <title>VMC Project</title>
+      <link>/user-guide/introduction/vmc-project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/user-guide/introduction/vmc-project/</guid>
+      <description>The vmc-project GitGub organization provides the following packages:
+vmc -&amp;gt; The core of the VMC provides the interfaces and classes independent from the Monte Carlo transport code.
+See more in the VMC Core section.
+geant3 -&amp;gt; The updated version of Geant3.21 that includes several bug fixes compared to the standard version in CERNLIB. The directory TGeant3 contains the classes which implement the TVirtualMC interface for Geant3
+See more in the Geant3 section.</description>
     </item>
     
     <item>
@@ -207,12 +220,12 @@ cd vmc git checkout v1-1-p1 The list of new developments, bug fixes and the requ
     </item>
     
     <item>
-      <title>VMC Library</title>
-      <link>/user-guide/vmc/vmc-library/</link>
+      <title>VMC Core</title>
+      <link>/user-guide/vmc/vmc-core/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/user-guide/vmc/vmc-library/</guid>
-      <description>The core of the VMC, VMC library, provides a set of interfaces which completely decouple the dependencies between the user code and the concrete Monte Carlo:
+      <guid>/user-guide/vmc/vmc-core/</guid>
+      <description>The core of the VMC, vmc, provides a set of interfaces which completely decouple the dependencies between the user code and the concrete Monte Carlo:
  TVirtualMC: Interface to the concrete Monte Carlo program TVirtualMCApplication: Interface to the user&amp;rsquo;s Monte Carlo application TVirtualMCStack: Interface to the particle stack TVirtualMCDecayer: Interface to the external decayer TVirtualMCSensitiveDetector: Interface to the user&amp;rsquo;s sensitive detector  The implementation of the TVirtualMC interface is provided for two Monte Carlo transport codes, GEANT3 and Geant4, with the VMC packages listed below.</description>
     </item>
     
@@ -269,16 +282,6 @@ Download Geant4 - from the Geant4 Web site</description>
       
       <guid>/user-guide/geant4_vmc/physics-lists/</guid>
       <description>Physics list selection Physics Geant4 VMC does not provide a default physics list. User have to choose the physics list from the physics lists provided in Geant4 (see the Geant4 Physics List Guide or include their own physics list. The choice of the physics list is done via the option specified with creating TG4RunConfiguration object. This option is passed asthe second argument in TG4RunConfiguration constructor (see examples for more details).This option can be defined as:</description>
-    </item>
-    
-    <item>
-      <title>Root IO Manager</title>
-      <link>/user-guide/vmc/mtroot/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/user-guide/vmc/mtroot/</guid>
-      <description>Root IO manager class, TMCRootManager, facilitates use of ROOT IO in VMC examples and it also handles necessary locking in multi-threaded applications.
-It was first provided in Geant4 VMC in the MTRoot sub-package and moved to the core VMC library (since vmc 2.0 and geant4_vmc 6.0).</description>
     </item>
     
     <item>

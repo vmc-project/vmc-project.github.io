@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Installing and Running Examples :: VMC</title>
+    <title>Reference :: VMC</title>
 
     
     <link href="/css/nucleus.css?1644591038" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/installation/examples/">
+  <body class="" data-url="/reference/">
     <nav id="sidebar" class="">
 
 
@@ -186,7 +186,7 @@
   
     
     <li data-nav-id="/installation/" title="Installation" class="dd-item 
-        parent
+        
         
         
         ">
@@ -347,8 +347,8 @@
   
     
     <li data-nav-id="/installation/examples/" title="Installing and Running Examples" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/installation/examples/">
@@ -1035,8 +1035,8 @@
   
     
     <li data-nav-id="/reference/" title="Reference" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/reference/">
@@ -1226,8 +1226,6 @@
                         </a>
                     </span>
                   
-                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
-                  
                   <span class="links">
                  
                  
@@ -1238,13 +1236,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/'>VMC Project</a> > <a href='/installation/'>Installation</a> > Installing and Running Examples
-          
-         
+            <a href='/'>VMC Project</a> > Reference
           
          
           
@@ -1253,13 +1245,6 @@
                   </span>
                 </div>
                 
-                    <div class="progress">
-    <div class="wrapper">
-<nav id="TableOfContents"></nav>
-    </div>
-</div>
-
-                
               </div>
             </div>
             
@@ -1267,12 +1252,9 @@
         
         </div>
         
+          <div id="chapter">
+        
         <div id="body-inner">
-          
-            <h1>
-              
-              Installing and Running Examples
-            </h1>
           
 
         
@@ -1280,149 +1262,15 @@
 
 
 
-	<p>The following instructions apply to the installation since the version 3.00. Since this 3.00, VMC examples are installed with CMake.</p>
-<p>The VMC examples libraries require <a href="https://root.cern.ch/">ROOT</a> installation and the <a href="/user-guide/vmc/vmc-library">VMC core package</a> if using ROOT built without <code>vmc</code> enabled. The VMC examples programs can be built against Geant3 with VMC or Geant4 VMC libraries. Only the examples with the multiple engine mode (at present only E03c) can be built with both Geant3 and Geant4 VMC libraries. The <code>VMC_WITH_Multi</code> CMake option has to be set, too, in this special case.</p>
-<p>By default, the VMC examples libraries and the VMC examples programs are built against Geant4 VMC libraries together with Geant4 VMC installation. Below we provide the instructions how to build VMC examples altogether outside Geant4 VMC. The analogous instructions can be used to build each example individually or to build a user application.</p>
-<p>To install all examples</p>
-<ol>
-<li>
-<p>First get the Geant4 VMC source from the <a href="/download/git-geant4_vmc">Download page</a>, as the examples are provided within this package. We will assume that the Geant4 VMC package sits in a subdirectory
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/mypath/geant4_vmc</code></pre></div></p>
-</li>
-<li>
-<p>Create build directory alongside our source directory for installation with Geant4:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd /mypath
-$ mkdir examples_build_g4
-$ ls
-geant4_vmc examples_build_g4    </code></pre></div>
-and/or for installation with Geant3:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd /mypath
-$ mkdir examples_build_g3
-$ ls
-geant4_vmc examples_build_g3    </code></pre></div>
-and/or for the installation without specific MC (only libraries will be installed in this case):
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd /mypath
-$ mkdir examples_build
-$ ls
-geant4_vmc examples_build    </code></pre></div></p>
-</li>
-<li>
-<p>To configure the build, change into the build directory and run CMake with either <code>-DVMC_WITH_Geant4</code>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd /mypath/example_build_g4
-$ cmake -DCMAKE_INSTALL_PREFIX<span style="color:#f92672">=</span>/mypath/examples_install_g4 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    -DVMC_WITH_Geant4<span style="color:#f92672">=</span>ON <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    -DGeant4VMC_DIR<span style="color:#f92672">=</span>/mypath/geant4_vmc_install/lib<span style="color:#f92672">[</span>64<span style="color:#f92672">]</span>/Geant4VMC-3.0.0 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    /mypath/geant4_vmc/examples</code></pre></div>
-or <code>-DVMC_WITH_Geant3</code>,
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd /mypath/example_build_g3
-$ cmake -DCMAKE_INSTALL_PREFIX<span style="color:#f92672">=</span>/mypath/examples_install_g3 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    -DVMC_WITH_Geant3<span style="color:#f92672">=</span>ON <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    -DGeant3_DIR<span style="color:#f92672">=</span>/mypath/geant3_install/lib<span style="color:#f92672">[</span>64<span style="color:#f92672">]</span>/Geant3-2.0.0 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    -DPythia6_LIB_DIR<span style="color:#f92672">=</span>/my_path_to_pythia6_library <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    /mypath/geant4_vmc/examples</code></pre></div>
-or with  <code>VMC_WITH_Multi</code>,
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd /mypath/example_build_multi
-$ cmake -DCMAKE_INSTALL_PREFIX<span style="color:#f92672">=</span>/mypath/examples_install_multi <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    -DVMC_WITH_Geant3<span style="color:#f92672">=</span>ON <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    -DVMC_WITH_Geant4<span style="color:#f92672">=</span>ON <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    -DVMC_WITH_Multi<span style="color:#f92672">=</span>ON <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    -DGeant3_DIR<span style="color:#f92672">=</span>/mypath/geant3_install/lib<span style="color:#f92672">[</span>64<span style="color:#f92672">]</span>/Geant3-2.0.0 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    -DGeant4VMC_DIR<span style="color:#f92672">=</span>/mypath/geant4_vmc_install/lib<span style="color:#f92672">[</span>64<span style="color:#f92672">]</span>/Geant4VMC-3.0.0 <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    -DPythia6_LIB_DIR<span style="color:#f92672">=</span>/my_path_to_pythia6_library <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    /mypath/geant4_vmc/examples</code></pre></div>
-or no specific MC:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd /mypath/example_build_g3
-$ cmake -DCMAKE_INSTALL_PREFIX<span style="color:#f92672">=</span>/mypath/examples_install <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>    -DCMAKE_MODULE_PATH<span style="color:#f92672">=</span>/mypath/geant4_vmc_install/lib<span style="color:#f92672">[</span>64<span style="color:#f92672">]</span>/Geant4VMC-3.0.0/Modules <span style="color:#ae81ff">\ </span> 
-    /mypath/geant4_vmc/examples</code></pre></div></p>
+	<h3 id="chapter-5">Chapter 5</h3>
+<h1 id="reference-documentation">Reference Documentation</h1>
+<p>This chapter provides the links to the VMC packages reference documentation</p>
 <ul>
-<li>
-<p>Note that in the last case, you still have to define the path to CMake configuration files used in examples which are provided with both Geant4 VMC and Geant3 CMake installations. Only examples libraries are built and installed in this case.</p>
-</li>
-<li>
-<p>If ROOT and Geant4 environment was defined using <code>thisroot.[c]sh</code> and <code>geant4.[c]sh</code> scripts, there is no need to provide the path to their installations. Otherwise, they can be provided using <code>-DROOT_DIR</code> and <code>-DGeant4_DIR</code> cmake options.</p>
-</li>
+<li><a href="https://vmc-project.github.io/vmc/">VMC core</a></li>
+<li><a href="https://vmc-project.github.io/geant4_vmc/g4vmc_html">Geant4 VMC</a></li>
+<li><a href="https://vmc-project.github.io/geant4_vmc/examples_html">Examples</a></li>
+<li><a href="https://vmc-project.github.io/geant4_vmc/g4root_html">G4Root</a></li>
 </ul>
-</li>
-</ol>
-<ul>
-<li>Since ROOT 6.18, building the VMC library is optional. When using ROOT built with the vmc option enabled, then Geant4 VMC will automatically use the VMC library from ROOT, otherwise the VMC stand-alone library has to be provided using <code>-DVMC_DIR</code> cmake option.</li>
-</ul>
-<ol start="4">
-<li>After the configuration has run, CMake will have generated Unix Makefiles for building examples. To run the build, simply execute make in the build directory:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ make -jN</code></pre></div>
-where N is the number of parallel jobs you require (e.g. if your machine has a dual core processor, you could set N to 2).</li>
-</ol>
-<ul>
-<li>If you need more output to help resolve issues or simply for information, run make as
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    $ make -jN VERBOSE<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-    </code></pre></div></li>
-</ul>
-<ol start="5">
-<li>Once the build has completed, you can install examples to the directory you specified earlier in CMAKE_INSTALL_PREFIX by running
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ make install</code></pre></div></li>
-</ol>
-<p>This will install examples libraries in lib[64] and executables in bin directory in CMAKE_INSTALL_PREFIX directory.</p>
-
-
-
-
-
-
-
-<ul class="children children-li">
-	
-
-	
-		
-	
-
-	
-
-	
-		
-	
-		
-			
-				
-<li>
-<a href="/installation/examples/build-options/" >Build Options</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-		
-		
-	
-		
-			
-				
-<li>
-<a href="/installation/examples/running-examples/" >Running examples</a>
-</li>
-				
-
-				
-			
-			
-		
-	
-
-	
-</ul>
-
-<!-- raw HTML omitted -->
-<p>For the old instructions see:</p>
-<ul>
-<li><a href="examples-old">Older Versions</a></li>
-</ul>
-
-
-
 
 
 
@@ -1432,6 +1280,8 @@ where N is the number of parallel jobs you require (e.g. if your machine has a d
 	
 </footer>
 
+        
+            </div> 
         
         </div> 
         
@@ -1546,7 +1396,6 @@ where N is the number of parallel jobs you require (e.g. if your machine has a d
             
                 
                     
-                    
                 
                 
 
@@ -1561,9 +1410,6 @@ where N is the number of parallel jobs you require (e.g. if your machine has a d
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1660,7 +1506,6 @@ where N is the number of parallel jobs you require (e.g. if your machine has a d
             
                 
                     
-                    
                 
                 
 
@@ -1673,9 +1518,6 @@ where N is the number of parallel jobs you require (e.g. if your machine has a d
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -2154,6 +1996,7 @@ where N is the number of parallel jobs you require (e.g. if your machine has a d
             
                 
                     
+                    
                 
                 
 
@@ -2169,6 +2012,9 @@ where N is the number of parallel jobs you require (e.g. if your machine has a d
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2259,10 +2105,10 @@ where N is the number of parallel jobs you require (e.g. if your machine has a d
 	 
 	 
 		
-			<a class="nav nav-prev" href="/installation/geant4_vmc/required-optional-packages/" title="Required and Optional Packages"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/examples/experiment-frameworks/" title="Experiment Frameworks"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/installation/examples/build-options/" title="Build Options" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/publications/" title="Publications" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

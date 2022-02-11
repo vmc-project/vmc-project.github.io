@@ -35,6 +35,10 @@
   </url>
   
   <url>
+    <loc>/user-guide/introduction/</loc>
+  </url>
+  
+  <url>
     <loc>/user-guide/geant4_vmc/magnetic-field/</loc>
   </url>
   
@@ -51,11 +55,15 @@
   </url>
   
   <url>
-    <loc>/user-guide/vmc/vmc-concept/</loc>
+    <loc>/user-guide/introduction/vmc-concept/</loc>
   </url>
   
   <url>
     <loc>/examples/vmc-examples/</loc>
+  </url>
+  
+  <url>
+    <loc>/user-guide/introduction/vmc-project/</loc>
   </url>
   
   <url>
@@ -87,11 +95,19 @@
   </url>
   
   <url>
-    <loc>/user-guide/vmc/vmc-library/</loc>
+    <loc>/user-guide/vmc/</loc>
+  </url>
+  
+  <url>
+    <loc>/user-guide/vmc/vmc-core/</loc>
   </url>
   
   <url>
     <loc>/download/git-geant3/</loc>
+  </url>
+  
+  <url>
+    <loc>/user-guide/geant4_vmc/</loc>
   </url>
   
   <url>
@@ -111,11 +127,11 @@
   </url>
   
   <url>
-    <loc>/user-guide/vmc/</loc>
+    <loc>/examples/</loc>
   </url>
   
   <url>
-    <loc>/examples/</loc>
+    <loc>/user-guide/geant3&#43;vmc/</loc>
   </url>
   
   <url>
@@ -131,15 +147,11 @@
   </url>
   
   <url>
-    <loc>/user-guide/vmc/mtroot/</loc>
+    <loc>/reference/</loc>
   </url>
   
   <url>
-    <loc>/user-guide/geant4_vmc/</loc>
-  </url>
-  
-  <url>
-    <loc>/publications/</loc>
+    <loc>/user-guide/g4root/</loc>
   </url>
   
   <url>
@@ -151,23 +163,19 @@
   </url>
   
   <url>
-    <loc>/user-guide/geant3&#43;vmc/</loc>
-  </url>
-  
-  <url>
     <loc>/user-guide/geant3&#43;vmc/geant3&#43;vmc-content/</loc>
   </url>
   
   <url>
-    <loc>/support/</loc>
-  </url>
-  
-  <url>
-    <loc>/user-guide/g4root/</loc>
+    <loc>/publications/</loc>
   </url>
   
   <url>
     <loc>/user-guide/geant4_vmc/special-cuts-and-regions/</loc>
+  </url>
+  
+  <url>
+    <loc>/support/</loc>
   </url>
   
   <url>

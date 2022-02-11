@@ -53,7 +53,14 @@
 	"title": "Installing VMC",
 	"tags": [],
 	"description": "",
-	"content": "VMC requires ROOT.\nThe vmc core package was separated from the ROOT source into a new stand-alone vmc package in the GitHub vmc-project organization. The motivation for this step was a gain in flexibility and faster workflow for new developments of multiple engine mode. The vmc package in ROOT is deprecated since ROOT version 6.18 (its compilation is optional) and it is going to be removed in the next ROOT version, 6.26. The VMC stand-alone is then needed for building Geant3 and Geant4 VMC when using ROOT compiled with the vmc disabled (default).\nVMC uses CMake to configure a build system for compiling and installing the headers, libraries and Cmake configuration files. To install VMC:\n First get the VMC source from the Download page. We will assume that the VMC package sits in a subdirectory  /mypath/vmc Create build directory alongside our source directory  $ cd /mypath $ mkdir vmc_build $ ls vmc vmc_build To configure the build, change into the build directory and run CMake:  $ cd /mypath/vmc_build $ cmake -DCMAKE_INSTALL_PREFIX=/mypath/vmc_install /mypath/vmc   If ROOT environment was defined using thisroot.{c}sh script, there is no need to provide the path to its installation. Otherwise, they can be provided using -DROOT_DIR cmake option.\n  The VMC library is built by default in RelWithDebInfo build mode (Optimized build with debugging symbols). This default can be changed via the standard CMake option CMAKE_BUILD_TYPE. The other useful values are  Release : Optimized build, no debugging symbols  Debug : Debugging symbols, no optimization     After the configuration has run, CMake will have generated Unix Makefiles for building VMC. To run the build, simply execute make in the build directory:  $ make -jN where N is the number of parallel jobs you require (e.g. if your machine has a dual core processor, you could set N to 2).\n If you need more output to help resolve issues or simply for information, run make as  $ make -jN VERBOSE=1 Once the build has completed, you can install VMC to the directory you specified earlier in CMAKE_INSTALL_PREFIX by running  $ make install "
+	"content": "VMC requires ROOT.\nThe vmc core package was separated from the ROOT source into a new stand-alone vmc package in the GitHub vmc-project organization. The motivation for this step was a gain in flexibility and faster workflow for new developments of multiple engine mode. The vmc package in ROOT is deprecated since ROOT version 6.18 (its compilation is optional) and it is going to be removed in the next ROOT version, 6.26. The VMC stand-alone is then needed for building Geant3 and Geant4 VMC when using ROOT compiled with the vmc disabled (default).\nVMC uses CMake to configure a build system for compiling and installing the headers, libraries and Cmake configuration files. To install VMC:\n First get the VMC source from the Download page. We will assume that the VMC package sits in a subdirectory  /mypath/vmc Create build directory alongside our source directory  $ cd /mypath $ mkdir vmc_build $ ls vmc vmc_build To configure the build, change into the build directory and run CMake:  $ cd /mypath/vmc_build $ cmake -DCMAKE_INSTALL_PREFIX=/mypath/vmc_install /mypath/vmc   If ROOT environment was defined using thisroot.{c}sh script, there is no need to provide the path to its installation. Otherwise, they can be provided using -DROOT_DIR cmake option.\n  The VMC core is built by default in RelWithDebInfo build mode (Optimized build with debugging symbols). This default can be changed via the standard CMake option CMAKE_BUILD_TYPE. The other useful values are  Release : Optimized build, no debugging symbols  Debug : Debugging symbols, no optimization     After the configuration has run, CMake will have generated Unix Makefiles for building VMC. To run the build, simply execute make in the build directory:  $ make -jN where N is the number of parallel jobs you require (e.g. if your machine has a dual core processor, you could set N to 2).\n If you need more output to help resolve issues or simply for information, run make as  $ make -jN VERBOSE=1 Once the build has completed, you can install VMC to the directory you specified earlier in CMAKE_INSTALL_PREFIX by running  $ make install "
+},
+{
+	"uri": "/user-guide/introduction/",
+	"title": "Introduction",
+	"tags": [],
+	"description": "",
+	"content": "Chapter 3.1 Introduction This chapter presents the VMC concept, and gives an overview of the packages provided in vmc-project.\n VMC Concept   VMC Project   "
 },
 {
 	"uri": "/user-guide/geant4_vmc/magnetic-field/",
@@ -84,11 +91,11 @@
 	"content": "First, make sure that you have included all libraries paths in your shared library path.\nFor all MCs:\n/your_path/root_install/lib /your_path/vmc_install/lib For Geant3 only:\npath to Pythia6 library /your_path/geant3_install/lib[64] /your_path/examples_install_g3/lib[64] For Geant4 only:\n/your_path/geant4_install/lib[64] /your_path/geant4_vmc_install/lib[64] /your_path/examples_install_g4/lib[64] Running examples from Root session The example can be run by calling the provided macros from Root session:\n$ cd geant4_vmc/examples/E01 $ root root[0] .x load_g4.C # load all libraries needed to run with Geant4 root[1] .x run_g4.C # run with Geant4 or root[0] .x load_g3.C # load all libraries needed to run with Geant3 root[1] .x run_g3.C # run with Geant3 Running examples application programs The example can be also run by calling the executable from the examples installation directory:\n$ cd geant4_vmc/examples/E01 $ /mypath/examples_install_g4/bin/g4vmc_exampleE01 For keeping maximum simplicity of the code, a fixed configuration is defined in the examples main() function. More flexible version of the main() function is provided in the test programs which default configuration options can be changed by running the program with selected command line options, eg.\n$ g4vmc_testE01 [-g4g, --g4-geometry] Geant4 VMC geometry option [-g4pl, --g4-physics-list] Geant4 physics list selection [-g4sp, --g4-special-physics] Geant4 special physics selection [-g4m, --g4-macro] Geant4 macro [-g4vm, --g4-vis-macro] Geant4 visualization macro [-r4m, --root-macro] Root macro [-v, --verbose] verbose option (yes,no) or\n$ g3vmc_testE01 [-g3g, --g3-geometry] Geant3 geometry option [-r4m, --root-macro] Root macro [-v, --verbose] verbose option (yes,no) Note that the g4* and g3* options are available only when the program was built with the corresponding VMC_WITH_Geant4 or VMC_WITH_Geant3 option. Root macro with arguments has to be passed in a single string, eg.:\n--root-macro \u0026#39;test_E01.C(\u0026#34;\u0026#34;,kFALSE)\u0026#39; "
 },
 {
-	"uri": "/user-guide/vmc/vmc-concept/",
+	"uri": "/user-guide/introduction/vmc-concept/",
 	"title": "VMC Concept",
 	"tags": [],
 	"description": "",
-	"content": "The Virtual Monte Carlo (VMC) allows to run different simulation Monte Carlo without changing the user code and therefore the input and output format as well as the geometry and detector response definition.\nThe core of the VMC is the category of classes vmc. It provides a set of interfaces which completely decouple the dependencies between the user code and the concrete Monte Carlo, two of which have the key role:\n TVirtualMC: Interface to the concrete Monte Carlo program TVirtualMCApplication: Interface to the user\u0026rsquo;s Monte Carlo application  The implementation of the TVirtualMC interface is provided for two Monte Carlo transport codes, GEANT3 and Geant4, with the VMC packages listed below. The implementation for the third Monte Carlo transport code, FLUKA, has been discontinued by the FLUKA team in 2010.\nThe other interfaces are implemented in the user application. The user VMC application is independent from concrete transport codes (GEANT3, Geant4, FLUKA). The transport code which will be used for simulation is selected at run time - when processing a ROOT macro where the concrete Monte Carlo is instantiated.\nVMC and TGeo The VMC is fully integrated with the Root geometry package, TGeo, and users can easily define their VMC application with TGeo geometry and this way of geometry definition is recommended for new users.\nIt is also possible to define geometry via Geant3-like functions defined in the VMC interface, however this way is kept only for backward compatibility and should not be used by new VMC users.\nAvailable VMCs For GEANT3 - geant3 Geant3 VMC (C++) is provided within a single package together with GEANT3 (Fortran) - geant3 .\nFor Geant4 - geant4_vmc Geant4 VMC is provided within a package geant4_vmc , that, in difference from geant3, naturally does not include Geant4 itself and you will need the Geant4 installation to run your VMC application with Geant4 VMC.\nMultiple VMCs Since the development version the simulation can be shared among multiple different engines deriving from TVirtualMC which are handled by a singleton TMCManager object.\nSee more detailed description in the dedicated section.\n"
+	"content": "The Virtual Monte Carlo (VMC) allows to run different simulation Monte Carlo without changing the user code and therefore the input and output format as well as the geometry and detector response definition.\nThe core of the VMC is the category of classes vmc. It provides a set of interfaces which completely decouple the dependencies between the user code and the concrete Monte Carlo, two of which have the key role:\n TVirtualMC: Interface to the concrete Monte Carlo program TVirtualMCApplication: Interface to the user\u0026rsquo;s Monte Carlo application  The implementation of the TVirtualMC interface is provided for two Monte Carlo transport codes, GEANT3 and Geant4, with the VMC packages listed below. The implementation for the third Monte Carlo transport code, FLUKA, has been discontinued by the FLUKA team in 2010.\nThe other interfaces are implemented in the user application. The user VMC application is independent from concrete transport codes (GEANT3, Geant4, FLUKA). The transport code which will be used for simulation is selected at run time - when processing a ROOT macro where the concrete Monte Carlo is instantiated.\nVMC and TGeo The VMC is fully integrated with the Root geometry package, TGeo, and users can easily define their VMC application with TGeo geometry and this way of geometry definition is recommended for new users.\nIt is also possible to define geometry via Geant3-like functions defined in the VMC interface, however this way is kept only for backward compatibility and should not be used by new VMC users.\nMultiple VMCs Since the development version the simulation can be shared among multiple different engines deriving from TVirtualMC which are handled by a singleton TMCManager object.\nSee more detailed description in the dedicated section.\n"
 },
 {
 	"uri": "/examples/vmc-examples/",
@@ -96,6 +103,13 @@
 	"tags": [],
 	"description": "",
 	"content": "A set of examples of usage of VMC is included in geant4_vmc.\nThough provided within Geant4 VMC, they can be built independently and do not require Geant4 installation in case you want to run them with GEANT3 only.\nSee more details on the VMC Examples web page.\n"
+},
+{
+	"uri": "/user-guide/introduction/vmc-project/",
+	"title": "VMC Project",
+	"tags": [],
+	"description": "",
+	"content": "The vmc-project GitGub organization provides the following packages:\nvmc -\u0026gt; The core of the VMC provides the interfaces and classes independent from the Monte Carlo transport code.\nSee more in the VMC Core section.\ngeant3 -\u0026gt; The updated version of Geant3.21 that includes several bug fixes compared to the standard version in CERNLIB. The directory TGeant3 contains the classes which implement the TVirtualMC interface for Geant3\nSee more in the Geant3 section.\ngeant4_vmc -\u0026gt; Geant4 VMC contains the classes which implement the TVirtualMC interface for Geant4.\nFor historical reasons, it also includes the G4Root package, which is independent from Geant4 VMC and can be built and used stand-alone, and VMC Examples, that can also be built independently and do not require Geant4 installation in case you want to run them with GEANT3.\nSee more in the Geant4 VMC, G4Root and Examples sections.\nOther packages In addition to these VMC packages, the vmc-project includes also the geometry conversion tool VGM and the VMC and VGM documentation repositories.\n"
 },
 {
 	"uri": "/support/bug-reports/",
@@ -116,7 +130,7 @@
 	"title": "Installation",
 	"tags": [],
 	"description": "",
-	"content": "Chapter 2 Installation  Installing VMC     Installing Geant3     Installing Geant4 VMC    Build Options     Required and Optional Packages      Installing and Running Examples    Build Options     Running examples      "
+	"content": "Chapter 2 Installation  Installing VMC     Installing Geant3     Installing Geant4 VMC    Build Options     Running examples      Installing and Running Examples    Build Options     Running examples      "
 },
 {
 	"uri": "/installation/geant3/",
@@ -147,11 +161,18 @@
 	"content": "Development version (the whole repository):\ngit clone http://github.com/vmc-project/vmc.git To switch to \u0026lsquo;pro\u0026rsquo; tagged version 2.0:\ncd vmc git checkout v2-0 To switch to the \u0026lsquo;old\u0026rsquo; tagged version 1.1.p1:\ncd vmc git checkout v1-1-p1 The list of new developments, bug fixes and the required versions of ROOT and Geant4 for each version can be found in the History file.\n"
 },
 {
-	"uri": "/user-guide/vmc/vmc-library/",
-	"title": "VMC Library",
+	"uri": "/user-guide/vmc/",
+	"title": "VMC Core",
 	"tags": [],
 	"description": "",
-	"content": "The core of the VMC, VMC library, provides a set of interfaces which completely decouple the dependencies between the user code and the concrete Monte Carlo:\n TVirtualMC: Interface to the concrete Monte Carlo program TVirtualMCApplication: Interface to the user\u0026rsquo;s Monte Carlo application TVirtualMCStack: Interface to the particle stack TVirtualMCDecayer: Interface to the external decayer TVirtualMCSensitiveDetector: Interface to the user\u0026rsquo;s sensitive detector  The implementation of the TVirtualMC interface is provided for two Monte Carlo transport codes, GEANT3 and Geant4, with the VMC packages listed below. The implementation for the third Monte Carlo transport code, FLUKA, has been discontinued by the FLUKA team in 2010.\nThe other three interfaces are implemented in the user application.The user has to implement two mandatory classes: the MC application (derived from TVirtualMCApplication) and the MC stack (derived from TVirtualMCStack), optionally an external decayer (derived from TVirtualMCDecayer) can be introduced. The user VMC application is independent from concrete transport codes (GEANT3, Geant4, FLUKA). The transport code which will be used for simulation is selected at run time - when processing a ROOT macro where the concrete Monte Carlo is instantiated.\nThe relationships between the interfaces and their implementations are illustrated in the class diagrams: User MC application , Virtual MC , demonstarting the decoupling between the user code and the concrete transport code.\nMultiple VMCs Since the development version the simulation can be shared among multiple different engines deriving from TVirtualMC which are handled by a singleton TMCManager object.\nSee more detailed description in the dedicated section.\n"
+	"content": "Chapter 3.2 VMC Core This chapter presents the core VMC package and the new multiple engine functionality.\n VMC Core   Multiple VMC Engines   "
+},
+{
+	"uri": "/user-guide/vmc/vmc-core/",
+	"title": "VMC Core",
+	"tags": [],
+	"description": "",
+	"content": "The core of the VMC, vmc, provides a set of interfaces which completely decouple the dependencies between the user code and the concrete Monte Carlo:\n TVirtualMC: Interface to the concrete Monte Carlo program TVirtualMCApplication: Interface to the user\u0026rsquo;s Monte Carlo application TVirtualMCStack: Interface to the particle stack TVirtualMCDecayer: Interface to the external decayer TVirtualMCSensitiveDetector: Interface to the user\u0026rsquo;s sensitive detector  The implementation of the TVirtualMC interface is provided for two Monte Carlo transport codes, GEANT3 and Geant4, with the VMC packages listed below. The implementation for the third Monte Carlo transport code, FLUKA, has been discontinued by the FLUKA team in 2010.\nThe other three interfaces are implemented in the user application. The user has to implement two mandatory classes: the MC application (derived from TVirtualMCApplication) and the MC stack (derived from TVirtualMCStack), optionally an external decayer (derived from TVirtualMCDecayer) can be introduced. The user VMC application is independent from concrete transport codes (GEANT3, Geant4, FLUKA). The transport code which will be used for simulation is selected at run time - when processing a ROOT macro where the concrete Monte Carlo is instantiated.\nThe relationships between the interfaces and their implementations are illustrated in the class diagrams: User MC application , Virtual MC , demonstarting the decoupling between the user code and the concrete transport code.\nMultiple VMCs Since the development version the simulation can be shared among multiple different engines deriving from TVirtualMC which are handled by a singleton TMCManager object.\nSee more detailed description in the dedicated section.\nRoot IO Manager Root IO manager class, TMCRootManager, facilitates use of ROOT IO in VMC examples and it also handles necessary locking in multi-threaded applications.\nIt was first provided in Geant4 VMC in the MTRoot sub-package and moved to the VMC core (since vmc 2.0 and geant4_vmc 6.0).\n"
 },
 {
 	"uri": "/download/git-geant3/",
@@ -159,6 +180,13 @@
 	"tags": [],
 	"description": "",
 	"content": "Development version (the whole repository):\ngit clone http://github.com/vmc-project/geant3.git To switch to the \u0026lsquo;pro\u0026rsquo; tagged version 4.0:\ncd geant3 git checkout v4-0 To switch to the \u0026lsquo;old\u0026rsquo; tagged version 2.7.p2 (compatible with ROOT 5.x):cd geant3 git checkout v2-7-p2 For older versions see the correspondent tag and the required version of ROOT in the history file.\n"
+},
+{
+	"uri": "/user-guide/geant4_vmc/",
+	"title": "Geant4 VMC",
+	"tags": [],
+	"description": "",
+	"content": "Chapter 3.3 Geant4 VMC Geant4 VMC represents the realisation of the Virtual Monte Carlo (VMC) for Geant4. It can be also seen as a Geant4 application implemented via the VMC interfaces. It implements all Geant4 user mandatory classes and user action classes, which provide the default Geant4 VMC behaviour, that can be then customized by a user in many ways.\n Geometry Definition \u0026amp; Navigation   Magnetic Field   Sensitive Detectors and Volumes   Physics Lists   Stacking of Particles   Special Cuts and Regions   User Geant4 Classes   Visualization   Switching User Interfaces   Multi-threaded Processing   Verbosity   Verbosity for Developers   Source code documentation   "
 },
 {
 	"uri": "/installation/geant4_vmc/",
@@ -186,14 +214,7 @@
 	"title": "User Guide",
 	"tags": [],
 	"description": "",
-	"content": "Chapter 3 User Guide  Virtual Monte Carlo    VMC Concept     VMC Library     Multiple VMC Engines     Root IO Manager      Geant4 VMC    Geometry Definition \u0026amp; Navigation     Magnetic Field     Sensitive Detectors and Volumes     Physics Lists     Stacking of Particles     Special Cuts and Regions     User Geant4 Classes     Visualization     Switching User Interfaces     Multi-threaded Processing     Verbosity     Verbosity for Developers     Source code documentation      Geant3 \u0026#43; VMC    Publications List      G4Root     "
-},
-{
-	"uri": "/user-guide/vmc/",
-	"title": "Virtual Monte Carlo",
-	"tags": [],
-	"description": "",
-	"content": "Chapter 3.1 Virtual Monte Carlo This chapter presents the VMC concept, the core VMC library and the new multiple engine functionality.\n VMC Concept   VMC Library   Multiple VMC Engines   Root IO Manager   "
+	"content": "Chapter 3 User Guide  Introduction    VMC Concept     VMC Project      VMC Core    VMC Core     Multiple VMC Engines      Geant4 VMC    Geometry Definition \u0026amp; Navigation     Magnetic Field     Sensitive Detectors and Volumes     Physics Lists     Stacking of Particles     Special Cuts and Regions     User Geant4 Classes     Visualization     Switching User Interfaces     Multi-threaded Processing     Verbosity     Verbosity for Developers     Source code documentation      Geant3 \u0026#43; VMC    Geant3 \u0026#43; VMC Content      G4Root     "
 },
 {
 	"uri": "/examples/",
@@ -201,6 +222,13 @@
 	"tags": [],
 	"description": "",
 	"content": "Chapter 4 Examples This chapter presents the examples of usage of VMC.\n VMC Examples   Experiment Frameworks   "
+},
+{
+	"uri": "/user-guide/geant3+vmc/",
+	"title": "Geant3 + VMC",
+	"tags": [],
+	"description": "",
+	"content": "Chapter 3.4 Geant3 + VMC The geant3 package provided in vmc-project contains both the Geant3.21 code itself and the implementation of the TVirtualMC interface, TGeant3.\n Geant3 \u0026#43; VMC Content   "
 },
 {
 	"uri": "/download/git-geant4_vmc/",
@@ -224,25 +252,18 @@
 	"content": "Physics list selection Physics Geant4 VMC does not provide a default physics list. User have to choose the physics list from the physics lists provided in Geant4 (see the Geant4 Physics List Guide or include their own physics list. The choice of the physics list is done via the option specified with creating TG4RunConfiguration object. This option is passed asthe second argument in TG4RunConfiguration constructor (see examples for more details).This option can be defined as:\n\u0026#34;\u0026lt;g4-physics-list\u0026gt;[_\u0026lt;EM-option\u0026gt;][+extra][+optical][+radDecay]\u0026#34; where\n \u0026lt;g4-physics-list\u0026gt; - is a name of a Geant4 physics list; eg. FTFP_BERT, QGSP, \u0026hellip; It is also possible to select \u0026ldquo;emStandard\u0026rdquo; which builds only G4EmStandardPhysics() and G4DecayPhysics()   _\u0026lt;EM-option\u0026gt; - is the EM physics option (none, _EMV, _EMX, _EMY, _LIV, _PEN) +extra - adds G4ExtraPhysics +optical - adds G4OpticalPhysics +radDecay - adds G4RadioactiveDecayPhysics  Examples:\n\u0026#34;FTFP_BERT_EMV+optical\u0026#34; \u0026#34;QGSP_BIC_EMY+radDecay\u0026#34; The \u0026lt;g4-physics-list\u0026gt;_\u0026lt;EM-option\u0026gt; must represent a valid Geant4 physics list (except for \u0026ldquo;emStandard\u0026rdquo;). Since Geant4 9.5 it is possible to combine all EM options with all physics lists.\nSpecial processes In order to activate the support of VMC features like the VMC cuts, VMC process controls, user has to activate the special processes defined in TG4SpecialPhysicsList. The selection of special processes is passed as the third argument in TG4RunConfiguration constructor (see examples for more details):\n\u0026#34;[stepLimiter][+specialCuts][+specialControls][+stackPopper]\u0026#34; where\n \u0026quot;stepLimiter\u0026quot; - step limiter (default) \u0026quot;specialCuts\u0026quot; - VMC cuts \u0026quot;specialControls\u0026quot; - VMC controls for activation/inactivation selected processes \u0026quot;stackPopper\u0026quot; - stack popper physics  Examples:\n\u0026#34;stepLimit+specialCuts\u0026#34; \u0026#34;stepLimit+specialCuts+stackPopper\u0026#34; Composed physics list According to the user selection, Geant4 VMC creates a TG4ComposedPhysicsList object which is a composition of a selected Geant4 physics list (or a user physics list), the extra physics list ( TG4ExtraPhysicsList - in development version only) and the TG4SpecialPhysicsList object. The inclusion of the extra physics list is optional. The composed physics list processes the Geant4 (or user) physics list in the first order, then adds the extra physics processes (if selected) and finally the special processes, registered in TG4SpecialPhysicsList, are added in the last order.\nSince version 2.13, the user physics selection is added to the TGeant4 object title so that it can be retrievable in a user application.\nInspecting particles and physics processes The instantiated particles and physics processes can be the viewed with the following Geant4 and Geant4 VMC commands.\nTo list all particles and processes:\n/particle/list /process/list /mcPhysics/dumpAllProcess To inspect a selected particle:\n/particle/select particleName /particle/process/dump /particle/property/dump /particle/property/decay/dump To print the mapping of G4 processes to VMC process codes and VMC (G3-like) process controls:\n/mcPhysics/printProcessMCMap /mcPhysics/printProcessControlMap Electromagnetic physics Users can tailor the extra physics processes provided by Geant4 via the commands defined in the /physics_lists/em/ command directory and switch on the muon or gamma nuclear interaction, synchrotron radiation, gamma or positron conversion to muon pair or positron conversion to hadrons processes, which are not which are not included by default:\n/physics_lists/em/SyncRadiation true|false /physics_lists/em/SyncRadiationAll true|false /physics_lists/em/GammaNuclear true|false /physics_lists/em/MuonNuclear true|false /physics_lists/em/GammaToMuons true|false /physics_lists/em/PositronToMuons true|false /physics_lists/em/PositronToHadrons true|false Users can also customize the parameters of the electromagnetic physics processes using the commands in the following directories (use interactive help to get more information):\n/process/eLoss/ /process/msc/ /process/em/ Since Geant4 VMC version 2.10, it is also possible to choose an extra model of energy loss, fluctuations or multiple scattering for selected tracking media and selected particles. This can be done via the following built-in commands:\n/mcPhysics/emModel/setEmModel PAI /mcPhysics/emModel/setRegions trackingMedium1 [trackingMedium2 ...] /mcPhysics/emModel/setParticles all The setRegions and setParticles commands must be followed by the list of tracking media names and particle names respectively, separated with a blank space. The setParticles command can also take as a parameter the keyword \u0026quot;all\u0026quot;. The model will be then applied to all particles.\nAt present, the following models are supported: PAI and PAIPhoton models which are applied to ionisation process, and SpecialUrbanMsc, a special model tuned for ALICE EMCAL detector, which is applied to e- and e+ multiple scattering processes.\nHadronic physics User can activate a generation of the cross sections plots for a given projectile particle and a target element via the following commands:\n/mcCrossSection/makeHistograms [true|false] /mcCrossSection/setParticle proton /mcCrossSection/setElement Al The default energy or momentum limits and the number of bins can be customised via the commands:\n/mcCrossSection/setMinKinE 1 MeV /mcCrossSection/setMaxKinE 1 TeV /mcCrossSection/setMinMomentum 10 MeV /mcCrossSection/setMaxMomentum 10 TeV /mcCrossSection/setNofBinsE 900 /mcCrossSection/setNofBinsP 800 It is also possible to print the cross section value for a selected energy or a momentum for a selected cross section type (or all types) via the following commands:\n/mcCrossSection/setParticle anti_proton /mcCrossSection/setElement H /mcCrossSection/setMomentum 0.3 GeV /mcCrossSection/printCrossSection All How to apply Geant4 commands in a Root user session is explained at the section on Switching User Interfaces.\n"
 },
 {
-	"uri": "/user-guide/vmc/mtroot/",
-	"title": "Root IO Manager",
+	"uri": "/reference/",
+	"title": "Reference",
 	"tags": [],
 	"description": "",
-	"content": "Root IO manager class, TMCRootManager, facilitates use of ROOT IO in VMC examples and it also handles necessary locking in multi-threaded applications.\nIt was first provided in Geant4 VMC in the MTRoot sub-package and moved to the core VMC library (since vmc 2.0 and geant4_vmc 6.0).\n"
+	"content": "Chapter 5 Reference Documentation This chapter provides the links to the VMC packages reference documentation\n VMC core Geant4 VMC Examples G4Root  "
 },
 {
-	"uri": "/user-guide/geant4_vmc/",
-	"title": "Geant4 VMC",
+	"uri": "/user-guide/g4root/",
+	"title": "G4Root",
 	"tags": [],
 	"description": "",
-	"content": "Chapter 3.2 Geant4 VMC Geant4 VMC represents the realisation of the Virtual Monte Carlo (VMC) for Geant4. It can be also seen as a Geant4 application implemented via the VMC interfaces. It implements all Geant4 user mandatory classes and user action classes, which provide the default Geant4 VMC behaviour, that can be then customized by a user in many ways.\n Geometry Definition \u0026amp; Navigation   Magnetic Field   Sensitive Detectors and Volumes   Physics Lists   Stacking of Particles   Special Cuts and Regions   User Geant4 Classes   Visualization   Switching User Interfaces   Multi-threaded Processing   Verbosity   Verbosity for Developers   Source code documentation   "
-},
-{
-	"uri": "/publications/",
-	"title": "Publications",
-	"tags": [],
-	"description": "",
-	"content": "Chapter 5 Publications This chapter lists the presentations \u0026amp; publication related to VMC.\n Publications List   "
+	"content": "Chapter 3.5 G4Root The G4Root package is an interface allowing running a GEANT4 simulation with a ROOT geometry. In fact it is just the G4 navigation that uses directly the TGeo geometry. Though it is distributed in geant4_vmc, it can be built and used independently from VMC.\nSee more details on the G4Root Reference web page.\n"
 },
 {
 	"uri": "/user-guide/geant4_vmc/stacking-of-particles/",
@@ -259,13 +280,6 @@
 	"content": "Pro versions    Package Version Tar file Tested with     vmc 2.0 vmc-2-0.tar.gz ROOT 6.24/06   geant3 4.0 geant3-4-0.tar.gz ROOT 6.24/06   geant4_vmc 6.0 geant4_vmc-6-0.tar.gz ROOT 6.24.06,Geant4 11.0 (with embedded CLHEP 2.4.5.1), VGM 5.0, Garfield 4.0    In general, the VMC packages can be built with the Root version which they were tested with and higher, and Geant4 VMC with the Geant4 version which it was tested with including the patches. Note that the Geant4 patches released after the Geant4 VMC tag do not appear in the table above, it is however recommended to update Geant4 with each patch release.\nOld versions    Package Version Tar file Tested with     geant3 2.7.p2 v2-7-p2.tar.gz ROOT 5.34/36    "
 },
 {
-	"uri": "/user-guide/geant3+vmc/",
-	"title": "Geant3 + VMC",
-	"tags": [],
-	"description": "",
-	"content": "Chapter 3.3 Geant3 + VMC The geant3 package provided in vmc-project contains both the Geant3.21 code itself and the implementation of the TVirtualMC interface, TGeant3.\n Geant3 \u0026#43; VMC Content   "
-},
-{
 	"uri": "/user-guide/geant3+vmc/geant3+vmc-content/",
 	"title": "Geant3 + VMC Content",
 	"tags": [],
@@ -273,18 +287,11 @@
 	"content": " Only the Geant3.21 code itself and the implementation of the TVirtualMC interface, TGeant3, provided in geant3 are maintained by the VMC project.\n Geant3.21 The updated version of Geant3.21 that includes several bug fixes compared to the standard version in CERNLIB. In this version all Geant3 gxxxxx routines have been renamed g3xxxxx.\nThe old Makefile system was replaced with a CMake based system since version 2.0.\nSee also Geant3.21 User Guide\nTGeant3 (Geant3 VMC) The directory TGeant3 contains the classes TGeant3 and TGeant3TGeo, which implement the TVirtualMC interface.\nExamples The directory examples includes a set of FORTRAN examples. These examples are not maintained and tested in the VMC project test suites. Instead, the geant3 package is tested using the test suites defined in geant4_vmc/examples.\n"
 },
 {
-	"uri": "/support/",
-	"title": "Support",
+	"uri": "/publications/",
+	"title": "Publications",
 	"tags": [],
 	"description": "",
-	"content": "Chapter 6 Support  Mailing List   Bug Reports   "
-},
-{
-	"uri": "/user-guide/g4root/",
-	"title": "G4Root",
-	"tags": [],
-	"description": "",
-	"content": "Chapter 3.4 G4Root The G4Root package is an interface allowing running a GEANT4 simulation with a ROOT geometry. In fact it is just the G4 navigation that uses directly the TGeo geometry. Though it is distributed in geant4_vmc, it can be built and used independently from VMC.\nSee more details on the G4Root web page.\n"
+	"content": "Chapter 6 Publications This chapter lists the presentations \u0026amp; publication related to VMC.\n Publications List   "
 },
 {
 	"uri": "/user-guide/geant4_vmc/special-cuts-and-regions/",
@@ -292,6 +299,13 @@
 	"tags": [],
 	"description": "",
 	"content": "The way of applying cuts is different in Geant3 and Geant4. In Geant3, the cuts are defined as a limit in energy, which is applied both as an energy threshold (a secondary particle is not produced if its energy is beyond the threshold) and a tracking cut (a particle is stopped when its energy gets below the cut).\nInn Geant4, there is defined a unique cut in range which is then converted to an energy threshold per particle and material. The advantage is that you keep the same spatial resolution of your energy deposit over the whole detector. It is also possible to define cuts per regions, as in big experimental setups you may want to speed up your simulation by setting a higher cut in the support structures etc. See more details at the Geant4 User Guide for Application Developers, section Production Threshold versus Tracking Cut.\nVMC cuts The VMC provides a possibility for a user to define cuts in Geant3 way. The cuts can be defined globally or per tracking medium via the following TVirtualMC functions: gMC-\u0026gt;SetCut(cutname, cutValue); gMC-\u0026gt;Gstpar(medId, cutName, cutValue); \nThe user defined VMC cuts and their interpretation in Geant4 can be viewed with the following commands:\nTo print the cut values for the given cut type (cutName) and control values for the given control type (controlName) for all tracking media:\n/mcDet/printCuts cutName /mcDet/printControls controlName To print global cuts and global process controls:\n/mcPhysics/printGlobalCuts /mcPhysics/printGlobalControls To print the user limits (including the VMC cuts and controls) set for the specified volume:\n/mcPhysics/printVolumeLimits volName Geant4 cuts By default, Geant4 VMC ignores the VMC cuts and applies only the global cut in range defined in the physics list. The default global cut value in Geant4 VMC is 1*mm for all particles which cut is applied for (gamma, e-, e+). User can change this default value for each particle separately or set a new value for all using the commands:\n/mcPhysics/rangeCutForGamma value /mcPhysics/rangeCutForElectron value /mcPhysics/rangeCutForPositron value /mcPhysics/rangeCuts value Applying VMC cuts in Geant4 In order to take the VMC cuts into account, the user has to activate the special cuts process by switching it on in his g4Config.C (see the section on Physics list selection. This special cuts process applies the VMC cuts as tracking cuts using G4UserLimits.\nWhen the special cuts process is activated, Geant4 VMC defines also regions according to the VMC cuts defined by the user. The regions apply the VMC cuts as an energy threshold. In order to do this, the cut energy has to be converted in range. This conversion is performed in TG4RegionsManager using the Geant4 converter classes G4RToEConvForElectron and G4RToEConvForGamma by iterating within a given range interval up to a given precision. User can change the default precision (2 orders of magnitude) with the command:\n/mcRegions/setRangePrecision value The conversion of VMC cuts to the regions follows these rules:\n  If the VMC energy cut defined by user results in a range cut smaller than the default range cut value defined in user physics list, the VMC cut is ignored and the default range cut is used.\n  The range cut is first evaluated within the range 1e-03mm to 1m; when the range cut order is found, it is refined up to given precision (2 orders of magnitude by default) within 10 values of each order and the range value with the closest energy still smaller than VMC cut is chosen.It may happen that a value cannot be refined up to given precision, then the best found value is returned.\n  The regions are defined only in case when the VMC cuts result in range cuts different from the range cuts in the default region; then the region includes all logical volumes with a given material.\n  As the range cuts do not match precisely to user defined energy cuts, the specialCuts process applies the energy cuts as tracking cuts when a particle with energy cut below threshold is generated.\n  User can select several levels of verbosity to control the process of regions definition:\n/mcVerbose/regionsManager level level = 0 no output 1 number of regions added via VMC 2 the list of all volumes, the cuts in energy and calculated cuts in range 3 all evaluated energy values It is also possible to dump the regions properties for a specified volume or to activate printing properties of all regions:\n/mcRegions/dump volumeName /mcRegions/print true|false How to apply Geant4 commands in a Root user session is explained at the section on Switching User Interfaces.\n"
+},
+{
+	"uri": "/support/",
+	"title": "Support",
+	"tags": [],
+	"description": "",
+	"content": "Chapter 7 Support  Mailing List   Bug Reports   "
 },
 {
 	"uri": "/user-guide/geant4_vmc/user-geant4-classes/",
