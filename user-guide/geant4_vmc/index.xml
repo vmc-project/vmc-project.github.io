@@ -5,11 +5,7 @@
     <link>/user-guide/geant4_vmc/</link>
     <description>Recent content in Geant4 VMC on VMC</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="/user-guide/geant4_vmc/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="/user-guide/geant4_vmc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Geometry Definition &amp; Navigation</title>
       <link>/user-guide/geant4_vmc/geometry-definition-navigation/</link>
@@ -37,8 +33,8 @@ Since the version 2.0, user can choose between Geant4 native navigation and G4Ro
       
       <guid>/user-guide/geant4_vmc/sensitive-volumes/</guid>
       <description>Sensitive Detectors Recently (since ROOT version v6.13.04) a new interface to user sensitive detector, TVirtualMCSensitiveDetector, has been added in the set of VMC interfaces. The support for this new way of definig sensitive detector is available since geant3 2.6 and geant4_vmc 4.0.
-The user sensitive detectors object should be associated to the selected volumes in the new dedicated MCApplication function: void TVirtualMCApplication::SetSensitiveDetectors() 
-using the new TVirtualMC function: void TVirtualMC::SetSensitiveDetector( const TString&amp;amp; volumeName, TVirtualMCSensitiveDetector* userSD);  Users can also choose whether scoring should be performed exclusively via sensitive detectors or via both sensitive detectors and MCApplication::Stepping() using the function void VirtualMC::SetExclusiveSDScoring(Bool_t);  If exclusive scoring is selected, the MCApplication::Stepping() is not called by MC.</description>
+The user sensitive detectors object should be associated to the selected volumes in the new dedicated MCApplication function: void TVirtualMCApplication::SetSensitiveDetectors()
+using the new TVirtualMC function: void TVirtualMC::SetSensitiveDetector( 	const TString&amp;amp; volumeName, 	TVirtualMCSensitiveDetector* userSD); Users can also choose whether scoring should be performed exclusively via sensitive detectors or via both sensitive detectors and MCApplication::Stepping() using the function void VirtualMC::SetExclusiveSDScoring(Bool_t); If exclusive scoring is selected, the MCApplication::Stepping() is not called by MC.</description>
     </item>
     
     <item>

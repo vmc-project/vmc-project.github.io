@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.98.0" />
     <meta name="description" content="">
 
 
@@ -12,20 +12,20 @@
     <title>Stacking of Particles :: VMC</title>
 
     
-    <link href="/css/nucleus.css?1647537405" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1647537405" rel="stylesheet">
-    <link href="/css/hybrid.css?1647537405" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1647537405" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1647537405" rel="stylesheet">
-    <link href="/css/auto-complete.css?1647537405" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1647537405" rel="stylesheet">
-    <link href="/css/theme.css?1647537405" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1647537405" rel="stylesheet">
+    <link href="/css/nucleus.css?1656154685" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1656154685" rel="stylesheet">
+    <link href="/css/hybrid.css?1656154685" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1656154685" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1656154685" rel="stylesheet">
+    <link href="/css/auto-complete.css?1656154685" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1656154685" rel="stylesheet">
+    <link href="/css/theme.css?1656154685" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1656154685" rel="stylesheet">
     
-      <link href="/css/theme-vmc.css?1647537405" rel="stylesheet">
+      <link href="/css/theme-vmc.css?1656154685" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1647537405"></script>
+    <script src="/js/jquery-3.3.1.min.js?1656154685"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1647537405"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1647537405"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1656154685"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1656154685"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1647537405"></script>
+<script type="text/javascript" src="/js/search.js?1656154685"></script>
 
     
   </div>
@@ -1288,9 +1288,9 @@
 <p>The user <a href="https://vmc-project.github.io/vmc/classTVirtualMCStack.html">VMC stack</a> is used differently in Geant3 VMC and Geant4 VMC. Geant3 VMC pops both primary and secondary particles as they are provided by <code>TVirtualMCStack::PopNextTrack()</code>, while Geant4 VMC pops only primary particles using <code>TVirtualMCStack::PopPrimaryForTracking()</code> from the VMC stack.</p>
 <p>Stacking of secondary particles is then handled by Geant4 kernel and the user VMC stack only monitors this stacking. By default, Geant4 VMC saves each secondary particle when it starts its tracking (at the the pre-track phase). User can customize this default behaviour and choose also not to save secondary particles at all or to save them in the step of their parent particle, immediately after their creation.
 This can be done using the command (see in the section on  <a href="/user-guide/geant4_vmc/switching-user-interfaces">Switching User Interfaces</a> how to apply Geant4 commands in a Root user session):</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/mcTracking/saveSecondaries selection
-   selection <span style="color:#f92672">=</span> DoNotSave, SaveInPreTrack, SaveInStep
-</code></pre></div><p>The consequence of this is that, by default, the particles added to the VMC stack in other than <code>TVirtualMCApplication::GeneratePrimaries()</code> functions are ignored in Geant4 tracking. Users have to activate the stack popper special process (see the section on <a href="/user-guide/geant4_vmc/physics-lists">Physics list selection</a>), if they want to add particles to the stack during tracking. The added particles are then handled as secondaries of the current track.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/mcTracking/saveSecondaries selection
+</span></span><span style="display:flex;"><span>   selection <span style="color:#f92672">=</span> DoNotSave, SaveInPreTrack, SaveInStep
+</span></span></code></pre></div><p>The consequence of this is that, by default, the particles added to the VMC stack in other than <code>TVirtualMCApplication::GeneratePrimaries()</code> functions are ignored in Geant4 tracking. Users have to activate the stack popper special process (see the section on <a href="/user-guide/geant4_vmc/physics-lists">Physics list selection</a>), if they want to add particles to the stack during tracking. The added particles are then handled as secondaries of the current track.</p>
 <p>The stack classes in the VMC examples provide the same stacking mechanism for both Geant3 and Geant4 MCs and they are recommended to be used in a user application.</p>
 
 
@@ -2143,19 +2143,19 @@ This can be done using the command (see in the section on  <a href="/user-guide/
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1647537405"></script>
-    <script src="/js/perfect-scrollbar.min.js?1647537405"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1647537405"></script>
-    <script src="/js/jquery.sticky.js?1647537405"></script>
-    <script src="/js/featherlight.min.js?1647537405"></script>
-    <script src="/js/highlight.pack.js?1647537405"></script>
+    <script src="/js/clipboard.min.js?1656154685"></script>
+    <script src="/js/perfect-scrollbar.min.js?1656154685"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1656154685"></script>
+    <script src="/js/jquery.sticky.js?1656154685"></script>
+    <script src="/js/featherlight.min.js?1656154685"></script>
+    <script src="/js/highlight.pack.js?1656154685"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1647537405"></script>
-    <script src="/js/learn.js?1647537405"></script>
-    <script src="/js/hugo-learn.js?1647537405"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1656154685"></script>
+    <script src="/js/learn.js?1656154685"></script>
+    <script src="/js/hugo-learn.js?1656154685"></script>
 
-    <link href="/mermaid/mermaid.css?1647537405" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1647537405"></script>
+    <link href="/mermaid/mermaid.css?1656154685" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1656154685"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

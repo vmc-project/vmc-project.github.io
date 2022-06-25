@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.98.0" />
     <meta name="description" content="">
 
 
@@ -12,20 +12,20 @@
     <title>Switching User Interfaces :: VMC</title>
 
     
-    <link href="/css/nucleus.css?1647537405" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1647537405" rel="stylesheet">
-    <link href="/css/hybrid.css?1647537405" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1647537405" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1647537405" rel="stylesheet">
-    <link href="/css/auto-complete.css?1647537405" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1647537405" rel="stylesheet">
-    <link href="/css/theme.css?1647537405" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1647537405" rel="stylesheet">
+    <link href="/css/nucleus.css?1656154685" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1656154685" rel="stylesheet">
+    <link href="/css/hybrid.css?1656154685" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1656154685" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1656154685" rel="stylesheet">
+    <link href="/css/auto-complete.css?1656154685" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1656154685" rel="stylesheet">
+    <link href="/css/theme.css?1656154685" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1656154685" rel="stylesheet">
     
-      <link href="/css/theme-vmc.css?1647537405" rel="stylesheet">
+      <link href="/css/theme-vmc.css?1656154685" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1647537405"></script>
+    <script src="/js/jquery-3.3.1.min.js?1656154685"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1647537405"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1647537405"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1656154685"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1656154685"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1647537405"></script>
+<script type="text/javascript" src="/js/search.js?1656154685"></script>
 
     
   </div>
@@ -1298,28 +1298,25 @@
 <p>The VMC interface provides a common denominator for all implemented MC&rsquo;s and cannot cover all commands available in a Geant4 user session through Geant4 user interface (UI). Switching between the Root UI and the Geant4 UI gives a user the possibility of working with the native Geant4 UI. It is also possible to process a foreign command or a foreign macro in both UIs:</p>
 <h3 id="from-root-to-geant4-ui">From Root to Geant4 UI</h3>
 <p>Switching UI:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">root [<span style="color:#ae81ff">0</span>] ((TGeant4<span style="color:#f92672">*</span>)gMC)<span style="color:#f92672">-&gt;</span>StartGeantUI();
-</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>root [<span style="color:#ae81ff">0</span>] ((TGeant4<span style="color:#f92672">*</span>)gMC)<span style="color:#f92672">-&gt;</span>StartGeantUI();</span></span></code></pre></div></p>
 <p>Call Geant4 macro <code>myMacro.in</code> from Root:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">root [<span style="color:#ae81ff">0</span>] ((TGeant4<span style="color:#f92672">*</span>)gMC)<span style="color:#f92672">-&gt;</span>ProcessGeantMacro(<span style="color:#e6db74">&#34;myMacro.in&#34;</span>);
-</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>root [<span style="color:#ae81ff">0</span>] ((TGeant4<span style="color:#f92672">*</span>)gMC)<span style="color:#f92672">-&gt;</span>ProcessGeantMacro(<span style="color:#e6db74">&#34;myMacro.in&#34;</span>);</span></span></code></pre></div></p>
 <p>Call Geant4 command from Root:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">root [<span style="color:#ae81ff">0</span>] ((TGeant4<span style="color:#f92672">*</span>)gMC)<span style="color:#f92672">-&gt;</span>ProcessGeantCommand(<span style="color:#e6db74">&#34;/tracking/verbose 1&#34;</span>);
-</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>root [<span style="color:#ae81ff">0</span>] ((TGeant4<span style="color:#f92672">*</span>)gMC)<span style="color:#f92672">-&gt;</span>ProcessGeantCommand(<span style="color:#e6db74">&#34;/tracking/verbose 1&#34;</span>);</span></span></code></pre></div></p>
 <h3 id="from-geant4-to-root-ui">From Geant4 to Root UI</h3>
 <p>Switching UI:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Idle&gt; /mcControl/root
-</code></pre></div><p>Call Root macro &ldquo;myMacro.C&rdquo; from Geant4:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Idle&gt; /mcControl/rootMacro myMacro
-</code></pre></div><p>Call Root command from Geant4:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Idle&gt; /mcControl/rootCmd TBrowser b;
-</code></pre></div><h3 id="geant4-vmc-commands">Geant4 VMC commands</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Idle&gt; /mcControl/root
+</span></span></code></pre></div><p>Call Root macro &ldquo;myMacro.C&rdquo; from Geant4:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Idle&gt; /mcControl/rootMacro myMacro
+</span></span></code></pre></div><p>Call Root command from Geant4:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Idle&gt; /mcControl/rootCmd TBrowser b;
+</span></span></code></pre></div><h3 id="geant4-vmc-commands">Geant4 VMC commands</h3>
 <p>Geant4 VMC implements several Geant4 UI commands associated with the objects defined in Geant4 VMC. To make their Geant4 VMC origin apparent, all these commands start with the prefix <!-- raw HTML omitted -->mc<!-- raw HTML omitted -->.  Several Geant4 and Geant VMC commands are used in the <code>g4config.in</code> and <code>g4vis.in</code>  macros in the <a href="https://vmc-project.github.io/geant4_vmc/examples_html/index.html">VMC examples</a>.</p>
 <p>You can get an interactive help for all available commands by typing:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Idle&gt; help
-</code></pre></div><p>or</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Idle&gt; /control/help
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Idle&gt; help
+</span></span></code></pre></div><p>or</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Idle&gt; /control/help
+</span></span></code></pre></div>
 
 <footer class=" footline" >
 	
@@ -2170,19 +2167,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1647537405"></script>
-    <script src="/js/perfect-scrollbar.min.js?1647537405"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1647537405"></script>
-    <script src="/js/jquery.sticky.js?1647537405"></script>
-    <script src="/js/featherlight.min.js?1647537405"></script>
-    <script src="/js/highlight.pack.js?1647537405"></script>
+    <script src="/js/clipboard.min.js?1656154685"></script>
+    <script src="/js/perfect-scrollbar.min.js?1656154685"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1656154685"></script>
+    <script src="/js/jquery.sticky.js?1656154685"></script>
+    <script src="/js/featherlight.min.js?1656154685"></script>
+    <script src="/js/highlight.pack.js?1656154685"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1647537405"></script>
-    <script src="/js/learn.js?1647537405"></script>
-    <script src="/js/hugo-learn.js?1647537405"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1656154685"></script>
+    <script src="/js/learn.js?1656154685"></script>
+    <script src="/js/hugo-learn.js?1656154685"></script>
 
-    <link href="/mermaid/mermaid.css?1647537405" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1647537405"></script>
+    <link href="/mermaid/mermaid.css?1656154685" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1656154685"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

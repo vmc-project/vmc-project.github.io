@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.98.0" />
     <meta name="description" content="">
 
 
@@ -12,20 +12,20 @@
     <title>Required and Optional Packages :: VMC</title>
 
     
-    <link href="/css/nucleus.css?1647537405" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1647537405" rel="stylesheet">
-    <link href="/css/hybrid.css?1647537405" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1647537405" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1647537405" rel="stylesheet">
-    <link href="/css/auto-complete.css?1647537405" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1647537405" rel="stylesheet">
-    <link href="/css/theme.css?1647537405" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1647537405" rel="stylesheet">
+    <link href="/css/nucleus.css?1656154685" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1656154685" rel="stylesheet">
+    <link href="/css/hybrid.css?1656154685" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1656154685" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1656154685" rel="stylesheet">
+    <link href="/css/auto-complete.css?1656154685" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1656154685" rel="stylesheet">
+    <link href="/css/theme.css?1656154685" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1656154685" rel="stylesheet">
     
-      <link href="/css/theme-vmc.css?1647537405" rel="stylesheet">
+      <link href="/css/theme-vmc.css?1656154685" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1647537405"></script>
+    <script src="/js/jquery-3.3.1.min.js?1656154685"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1647537405"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1647537405"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1656154685"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1656154685"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1647537405"></script>
+<script type="text/javascript" src="/js/search.js?1656154685"></script>
 
     
   </div>
@@ -1298,12 +1298,12 @@
 
 <p>Geant4 VMC requires <a href="https://root.cern.ch/">ROOT</a> and <a href="http://geant4.web.cern.ch/">Geant4</a> installed, then the <a href="/user-guide/vmc/vmc-library">VMC core package</a> if using ROOT built without <code>vmc</code> enabled, and optionally, it can be built with <a href="https://github.com/vmc-project/vgm">VGM</a>. See below tips for configuration and installation of these packages.</p>
 <p>The path to required and optional packages installations can be defined in the standard CMake way, via the paths to the CMake configuration file:</p>
-<pre><code>Geant4_DIR      ... path to Geant4Config.cmake
+<pre tabindex="0"><code>Geant4_DIR      ... path to Geant4Config.cmake
 ROOT_DIR        ... path to ROOTConfig.cmake
 VMC_DIR         ... path to VMCConfig.cmake
 VGM_DIR         ... path to VGMConfig.cmake
 </code></pre><p>CMake will also find the CMake configuration files (for ROOT and Geant4) if you source the relevant script from the packages installations (CMAKE_INSTALL_PREFIX) so that they are available in the sestem paths:</p>
-<pre><code>$ . bin/geant4.sh          ... Geant4 - on bourne shells (eg. bash)
+<pre tabindex="0"><code>$ . bin/geant4.sh          ... Geant4 - on bourne shells (eg. bash)
 $ . bin/thisroot.sh        ... Root    
 or
 $ source bin/geant4.csh    ... Geant4 - on C shells  
@@ -1320,9 +1320,9 @@ when needed.</p>
 <li><strong>C++11</strong> <!-- raw HTML omitted -->
 Geant4 VMC 3.3 built against ROOT 5.x requires ROOT built with C++11 (not default for this ROOT version), set via:</li>
 </ul>
-<pre><code>-Dcxx11=ON
+<pre tabindex="0"><code>-Dcxx11=ON
 </code></pre><p>option, when ROOT is built using CMake, or</p>
-<pre><code>--enable-cxx11
+<pre tabindex="0"><code>--enable-cxx11
 </code></pre><p>option, when ROOT is built using configure script.</p>
 <h3 id="geant4">Geant4</h3>
 <p>To install Geant4 - download the source from <a href="http://geant4.web.cern.ch/support/download">Geant4 Download page</a> and follow the <a href="http://geant4.web.cern.ch/geant4/UserDocumentation/UsersGuides/InstallationGuide/html/index.html">Geant4 Installation Guide</a> together with the tips relevant to using it with VMC described below.</p>
@@ -1331,32 +1331,32 @@ Geant4 VMC 3.3 built against ROOT 5.x requires ROOT built with C++11 (not defaul
 Geant4 VMC 3.0 - 3.2 built against Geant4 10.0.x or 10.1.x and ROOT 6x requires
 Geant4 built with C++11 (not default for these Geant4 versions), set via:</li>
 </ul>
-<pre><code>-DGEANT4_BUILD_CXXSTD=c++11
+<pre tabindex="0"><code>-DGEANT4_BUILD_CXXSTD=c++11
 </code></pre><ul>
 <li><strong>G3toG4 tool</strong><!-- raw HTML omitted -->
 The G3toG4 package is used in geant4_vmc to support geometry definition via VMC with Geant4 native navigation. The build of G3toG4 package can be activated when building Geant4 with the following CMake options:</li>
 </ul>
-<pre><code>-DGEANT4_USE_G3TOG4=ON
+<pre tabindex="0"><code>-DGEANT4_USE_G3TOG4=ON
 </code></pre><p>Since Geant4 VMC 3.0 the use of this package is optional.</p>
 <ul>
 <li><strong>OpenGL visualization</strong> <!-- raw HTML omitted -->
 It is recommended to build Geant4 X11 OpenGL visualization driver used in the VMC examples. It is handled in Geant4 CMake build via the CMake option:</li>
 </ul>
-<pre><code>-DGEANT4_USE_OPENGL_X11=ON
+<pre tabindex="0"><code>-DGEANT4_USE_OPENGL_X11=ON
 </code></pre><ul>
 <li><strong>Multi-threading</strong> <!-- raw HTML omitted -->
 Geant4 VMC can be built against Geant4 installation in multi-threading mode which is handled in Geant4 CMake build via the CMake option:</li>
 </ul>
-<pre><code>-DG4MULTITHREADED=ON
+<pre tabindex="0"><code>-DG4MULTITHREADED=ON
 </code></pre><p>Dynamic loading of Geant4 libraries, as used in VMC, requires to change the Geant4 default TLS model, initial-exec, with global-dynamic via the CMake option:</p>
-<pre><code>-DGEANT4_BUILD_TLS_MODEL=global-dynamic
+<pre tabindex="0"><code>-DGEANT4_BUILD_TLS_MODEL=global-dynamic
 </code></pre><p>Geant4 VMC 3.00.x version is migrated to Geant4 multi-threading and can be built against both Geant4 sequential and Geant4 multi-threading installations. The global-dynamic model is required for running VMC applications from Root session (in a &ldquo;traditional&rdquo; way  with dynamic loading of libraries). When the VMC application main program is linked with all libraries, Geant4 built with the default TLS model can be used.</p>
 <p>The VMC application will run automatically in MT mode when Geant4 VMC is built against Geant4 MT. See <a href="/user-guide/geant4_vmc/multi-threaded-processing/">the page on Multi-threaded processing</a> how this default behaviour can be changed in the configuration of the application.</p>
 <h3 id="vgm-optional">VGM (optional)</h3>
 <p>VGM is used in Geant4 VMC for a geometry in memory conversion from Root TGeo objects to the Geant4 native geometry. This conversion is performed when users geometry is defined via the Root geometry package and Geant4 native geometry navigation is selected.</p>
 <p>To install VGM - follow the installation instructions on the <a href="https://github.com/vmc-project/vgm">VGM Web site</a>.</p>
 <p>To build Geant4 VMC with VGM, you have to select the option:</p>
-<pre><code>-DGeant4VMC_USE_VGM=ON
+<pre tabindex="0"><code>-DGeant4VMC_USE_VGM=ON
 </code></pre>
 
 <footer class=" footline" >
@@ -2208,19 +2208,19 @@ Geant4 VMC can be built against Geant4 installation in multi-threading mode whic
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1647537405"></script>
-    <script src="/js/perfect-scrollbar.min.js?1647537405"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1647537405"></script>
-    <script src="/js/jquery.sticky.js?1647537405"></script>
-    <script src="/js/featherlight.min.js?1647537405"></script>
-    <script src="/js/highlight.pack.js?1647537405"></script>
+    <script src="/js/clipboard.min.js?1656154685"></script>
+    <script src="/js/perfect-scrollbar.min.js?1656154685"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1656154685"></script>
+    <script src="/js/jquery.sticky.js?1656154685"></script>
+    <script src="/js/featherlight.min.js?1656154685"></script>
+    <script src="/js/highlight.pack.js?1656154685"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1647537405"></script>
-    <script src="/js/learn.js?1647537405"></script>
-    <script src="/js/hugo-learn.js?1647537405"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1656154685"></script>
+    <script src="/js/learn.js?1656154685"></script>
+    <script src="/js/hugo-learn.js?1656154685"></script>
 
-    <link href="/mermaid/mermaid.css?1647537405" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1647537405"></script>
+    <link href="/mermaid/mermaid.css?1656154685" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1656154685"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

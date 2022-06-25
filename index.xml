@@ -5,11 +5,7 @@
     <link>/</link>
     <description>Recent content in VMC Project on VMC</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Build Options</title>
       <link>/installation/examples/build-options/</link>
@@ -259,8 +255,8 @@ cd geant3 git checkout v3-9-p1 To switch to the &amp;lsquo;old&amp;rsquo; tagged
       
       <guid>/user-guide/geant4_vmc/sensitive-volumes/</guid>
       <description>Sensitive Detectors Recently (since ROOT version v6.13.04) a new interface to user sensitive detector, TVirtualMCSensitiveDetector, has been added in the set of VMC interfaces. The support for this new way of definig sensitive detector is available since geant3 2.6 and geant4_vmc 4.0.
-The user sensitive detectors object should be associated to the selected volumes in the new dedicated MCApplication function: void TVirtualMCApplication::SetSensitiveDetectors() 
-using the new TVirtualMC function: void TVirtualMC::SetSensitiveDetector( const TString&amp;amp; volumeName, TVirtualMCSensitiveDetector* userSD);  Users can also choose whether scoring should be performed exclusively via sensitive detectors or via both sensitive detectors and MCApplication::Stepping() using the function void VirtualMC::SetExclusiveSDScoring(Bool_t);  If exclusive scoring is selected, the MCApplication::Stepping() is not called by MC.</description>
+The user sensitive detectors object should be associated to the selected volumes in the new dedicated MCApplication function: void TVirtualMCApplication::SetSensitiveDetectors()
+using the new TVirtualMC function: void TVirtualMC::SetSensitiveDetector( 	const TString&amp;amp; volumeName, 	TVirtualMCSensitiveDetector* userSD); Users can also choose whether scoring should be performed exclusively via sensitive detectors or via both sensitive detectors and MCApplication::Stepping() using the function void VirtualMC::SetExclusiveSDScoring(Bool_t); If exclusive scoring is selected, the MCApplication::Stepping() is not called by MC.</description>
     </item>
     
     <item>
@@ -270,8 +266,8 @@ using the new TVirtualMC function: void TVirtualMC::SetSensitiveDetector( const 
       
       <guid>/download/git-geant4_vmc/</guid>
       <description>Development version (the whole repository):
-git clone http://github.com/vmc-project/geant4_vmc.git To switch to the &amp;lsquo;pro&amp;rsquo; tagged version 6.1 (compatible with vmc 2.x, Geant4 11.0.x):
-cd geant4_vmc git checkout v6-1 To switch to the &amp;lsquo;old&amp;rsquo; tagged version 5.4 (compatible with vmc 1.x, Geant4 10.7.x):
+git clone http://github.com/vmc-project/geant4_vmc.git To switch to the &amp;lsquo;pro&amp;rsquo; tagged version 6.1.p1 (compatible with vmc 2.x, Geant4 11.0.x):
+cd geant4_vmc git checkout v6-1-p1 To switch to the &amp;lsquo;old&amp;rsquo; tagged version 5.4 (compatible with vmc 1.x, Geant4 10.7.x):
 cd geant4_vmc git checkout v5-4-p2 The list of new developments, bug fixes and the required versions of ROOT and Geant4 for each version can be found in the history file.</description>
     </item>
     
@@ -300,7 +296,7 @@ Stacking of secondary particles is then handled by Geant4 kernel and the user VM
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/download/tar-files/</guid>
-      <description>Pro versions    Package Version Tar file Tested with     vmc 2.0 vmc-2-0.tar.gz ROOT 6.24/06   geant3 4.1 geant3-4-1.tar.gz vmc 2.0, ROOT 6.24/06 and 6.26/00   geant4_vmc 6.1 geant4_vmc-6-1.tar.gz vmc 2.0, ROOT 6.24.06 and 6.26/00,Geant4 11.0.p1 (with embedded CLHEP 2.4.5.1), VGM 5.0, Garfield 4.0    In general, the VMC packages can be built with the Root version which they were tested with and higher, and Geant4 VMC with the Geant4 version which it was tested with including the patches.</description>
+      <description>Pro versions    Package Version Tar file Tested with     vmc 2.0 vmc-2-0.tar.gz ROOT 6.24/06   geant3 4.1 geant3-4-1.tar.gz vmc 2.0, ROOT 6.24/06 and 6.26/00   geant4_vmc 6.1.p1 geant4_vmc-6-1-p1.tar.gz vmc 2.0, ROOT 6.26/04,Geant4 11.0.p2 (with embedded CLHEP 2.4.5.1), VGM 5.0, Garfield 4.0    In general, the VMC packages can be built with the Root version which they were tested with and higher, and Geant4 VMC with the Geant4 version which it was tested with including the patches.</description>
     </item>
     
     <item>
@@ -420,9 +416,9 @@ Copyright holders Institutions:
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/credits/</guid>
-      <description>The concept of Virtual MonteCarlo has been developed by the ALICE Software Project . Authors: R.Brun1, F.Carminati1, I.Hrivnacova2, A.Morsch1
-The integration with TGeo, G4Root: A. Gheata1
-The multiple VMC engines: B. Volkel1,3
+      <description>The concept of Virtual MonteCarlo has been developed by the ALICE Software Project . Authors: R.Brun1, F.Carminati*1, I.Hrivnacova2, A.Morsch1*
+The integration with TGeo, G4Root: A. Gheata*1*
+The multiple VMC engines: B. Volkel*1,3*
 1European Organization for Nuclear Research (CERN), Geneva, Switzerland 2Institut de Physique Nucléaire dʼOrsay (IPNO), Université Paris-Sud, CNRS-IN2P3, Orsay, France 3Ruprecht Karls Universitaet Heidelberg (DE)</description>
     </item>
     

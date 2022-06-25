@@ -5,10 +5,6 @@
     <link>/reference/</link>
     <description>Recent content in Reference on VMC</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="/reference/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="/reference/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

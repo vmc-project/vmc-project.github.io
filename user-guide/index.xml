@@ -5,10 +5,6 @@
     <link>/user-guide/</link>
     <description>Recent content in User Guide on VMC</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="/user-guide/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="/user-guide/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

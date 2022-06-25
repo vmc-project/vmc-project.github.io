@@ -4,31 +4,13 @@ Your branch is up to date with 'origin/master'.
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
-	modified:   examples/vmc-examples.md
-	modified:   installation/geant4_vmc/geant4_vmc-old.md
-	modified:   user-guide/g4root/_index.md
-	modified:   user-guide/geant3+vmc/_index.md
-	modified:   user-guide/geant3+vmc/geant3+vmc-content.md
-	modified:   user-guide/geant4_vmc/geometry-definition-navigation.md
-	modified:   user-guide/geant4_vmc/magnetic-field.md
-	modified:   user-guide/geant4_vmc/multi-threaded-processing.md
-	modified:   user-guide/geant4_vmc/physics-lists.md
-	modified:   user-guide/geant4_vmc/sensitive-volumes.md
-	modified:   user-guide/geant4_vmc/source-code-documentation.md
-	modified:   user-guide/geant4_vmc/special-cuts-and-regions.md
-	modified:   user-guide/geant4_vmc/stacking-of-particles.md
-	modified:   user-guide/geant4_vmc/switching-user-interfaces.md
-	modified:   user-guide/geant4_vmc/user-geant4-classes.md
-	modified:   user-guide/geant4_vmc/visualization.md
-	modified:   user-guide/vmc/mtroot.md
-	modified:   user-guide/vmc/multiple-vmc.md
-	modified:   user-guide/vmc/vmc-concept.md
-	modified:   user-guide/vmc/vmc-library.md
+	modified:   _index.md
+	modified:   download/git-geant4_vmc.md
+	modified:   download/tar-files.md
 
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 	../.DS_Store
-	../comments.txt
 	status.txt
 	../diffs
 	../logs.txt

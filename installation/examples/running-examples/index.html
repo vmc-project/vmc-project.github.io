@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.98.0" />
     <meta name="description" content="">
 
 
@@ -12,20 +12,20 @@
     <title>Running examples :: VMC</title>
 
     
-    <link href="/css/nucleus.css?1647537405" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1647537405" rel="stylesheet">
-    <link href="/css/hybrid.css?1647537405" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1647537405" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1647537405" rel="stylesheet">
-    <link href="/css/auto-complete.css?1647537405" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1647537405" rel="stylesheet">
-    <link href="/css/theme.css?1647537405" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1647537405" rel="stylesheet">
+    <link href="/css/nucleus.css?1656154685" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1656154685" rel="stylesheet">
+    <link href="/css/hybrid.css?1656154685" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1656154685" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1656154685" rel="stylesheet">
+    <link href="/css/auto-complete.css?1656154685" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1656154685" rel="stylesheet">
+    <link href="/css/theme.css?1656154685" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1656154685" rel="stylesheet">
     
-      <link href="/css/theme-vmc.css?1647537405" rel="stylesheet">
+      <link href="/css/theme-vmc.css?1656154685" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1647537405"></script>
+    <script src="/js/jquery-3.3.1.min.js?1656154685"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1647537405"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1647537405"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1656154685"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1656154685"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1647537405"></script>
+<script type="text/javascript" src="/js/search.js?1656154685"></script>
 
     
   </div>
@@ -1295,46 +1295,46 @@
 
 <p>First, make sure that you have included all libraries paths in your shared library path.</p>
 <p>For all MCs:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">/your_path/root_install/lib
-/your_path/vmc_install/lib
-</code></pre></div><p>For Geant3 only:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">path to Pythia6 library
-/your_path/geant3_install/lib[64]
-/your_path/examples_install_g3/lib[64]
-</code></pre></div><p>For Geant4 only:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">/your_path/geant4_install/lib[64]
-/your_path/geant4_vmc_install/lib[64]
-/your_path/examples_install_g4/lib[64]
-</code></pre></div><h4 id="running-examples-from-root-session">Running examples from Root session</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>/your_path/root_install/lib
+</span></span><span style="display:flex;"><span>/your_path/vmc_install/lib
+</span></span></code></pre></div><p>For Geant3 only:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>path to Pythia6 library
+</span></span><span style="display:flex;"><span>/your_path/geant3_install/lib[64]
+</span></span><span style="display:flex;"><span>/your_path/examples_install_g3/lib[64]
+</span></span></code></pre></div><p>For Geant4 only:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>/your_path/geant4_install/lib[64]
+</span></span><span style="display:flex;"><span>/your_path/geant4_vmc_install/lib[64]
+</span></span><span style="display:flex;"><span>/your_path/examples_install_g4/lib[64]
+</span></span></code></pre></div><h4 id="running-examples-from-root-session">Running examples from Root session</h4>
 <p>The example can be run by calling the provided macros from Root session:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd geant4_vmc/examples/E01
-$ root
-root<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> .x load_g4.C   <span style="color:#75715e"># load all libraries needed to run with Geant4</span>
-root<span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> .x run_g4.C    <span style="color:#75715e"># run with Geant4</span>
-or
-root<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> .x load_g3.C   <span style="color:#75715e"># load all libraries needed to run with Geant3</span>
-root<span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> .x run_g3.C    <span style="color:#75715e"># run with Geant3</span>
-</code></pre></div><h4 id="running-examples-application-programs">Running examples application programs</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cd geant4_vmc/examples/E01
+</span></span><span style="display:flex;"><span>$ root
+</span></span><span style="display:flex;"><span>root<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> .x load_g4.C   <span style="color:#75715e"># load all libraries needed to run with Geant4</span>
+</span></span><span style="display:flex;"><span>root<span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> .x run_g4.C    <span style="color:#75715e"># run with Geant4</span>
+</span></span><span style="display:flex;"><span>or
+</span></span><span style="display:flex;"><span>root<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> .x load_g3.C   <span style="color:#75715e"># load all libraries needed to run with Geant3</span>
+</span></span><span style="display:flex;"><span>root<span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> .x run_g3.C    <span style="color:#75715e"># run with Geant3</span>
+</span></span></code></pre></div><h4 id="running-examples-application-programs">Running examples application programs</h4>
 <p>The example can be also run by calling the executable from the examples installation directory:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd geant4_vmc/examples/E01
-$ /mypath/examples_install_g4/bin/g4vmc_exampleE01
-</code></pre></div><p>For keeping maximum simplicity of the code, a fixed configuration is defined in the examples <code>main()</code> function. More flexible version of the <code>main()</code> function is provided in the test programs which default configuration options can be changed by running the program with selected command line options, eg.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ g4vmc_testE01
-   <span style="color:#f92672">[</span>-g4g,  --g4-geometry<span style="color:#f92672">]</span>         Geant4 VMC geometry option
-   <span style="color:#f92672">[</span>-g4pl, --g4-physics-list<span style="color:#f92672">]</span>     Geant4 physics list selection
-   <span style="color:#f92672">[</span>-g4sp, --g4-special-physics<span style="color:#f92672">]</span>  Geant4 special physics selection
-   <span style="color:#f92672">[</span>-g4m,  --g4-macro<span style="color:#f92672">]</span>            Geant4 macro
-   <span style="color:#f92672">[</span>-g4vm, --g4-vis-macro<span style="color:#f92672">]</span>        Geant4 visualization macro
-   <span style="color:#f92672">[</span>-r4m,  --root-macro<span style="color:#f92672">]</span>          Root macro
-   <span style="color:#f92672">[</span>-v,    --verbose<span style="color:#f92672">]</span>             verbose option <span style="color:#f92672">(</span>yes,no<span style="color:#f92672">)</span>
-</code></pre></div><p>or</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ g3vmc_testE01
-   <span style="color:#f92672">[</span>-g3g,  --g3-geometry<span style="color:#f92672">]</span>         Geant3 geometry option    
-   <span style="color:#f92672">[</span>-r4m,  --root-macro<span style="color:#f92672">]</span>          Root macro
-   <span style="color:#f92672">[</span>-v,    --verbose<span style="color:#f92672">]</span>             verbose option <span style="color:#f92672">(</span>yes,no<span style="color:#f92672">)</span>
-</code></pre></div><p>Note that the g4* and g3* options are available only when the program was built with the corresponding <code>VMC_WITH_Geant4</code> or <code>VMC_WITH_Geant3</code> option. Root macro with arguments has to be passed in a single string, eg.:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">   --root-macro <span style="color:#e6db74">&#39;test_E01.C(&#34;&#34;,kFALSE)&#39;</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cd geant4_vmc/examples/E01
+</span></span><span style="display:flex;"><span>$ /mypath/examples_install_g4/bin/g4vmc_exampleE01
+</span></span></code></pre></div><p>For keeping maximum simplicity of the code, a fixed configuration is defined in the examples <code>main()</code> function. More flexible version of the <code>main()</code> function is provided in the test programs which default configuration options can be changed by running the program with selected command line options, eg.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ g4vmc_testE01
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">[</span>-g4g,  --g4-geometry<span style="color:#f92672">]</span>         Geant4 VMC geometry option
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">[</span>-g4pl, --g4-physics-list<span style="color:#f92672">]</span>     Geant4 physics list selection
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">[</span>-g4sp, --g4-special-physics<span style="color:#f92672">]</span>  Geant4 special physics selection
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">[</span>-g4m,  --g4-macro<span style="color:#f92672">]</span>            Geant4 macro
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">[</span>-g4vm, --g4-vis-macro<span style="color:#f92672">]</span>        Geant4 visualization macro
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">[</span>-r4m,  --root-macro<span style="color:#f92672">]</span>          Root macro
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">[</span>-v,    --verbose<span style="color:#f92672">]</span>             verbose option <span style="color:#f92672">(</span>yes,no<span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>or</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ g3vmc_testE01
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">[</span>-g3g,  --g3-geometry<span style="color:#f92672">]</span>         Geant3 geometry option    
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">[</span>-r4m,  --root-macro<span style="color:#f92672">]</span>          Root macro
+</span></span><span style="display:flex;"><span>   <span style="color:#f92672">[</span>-v,    --verbose<span style="color:#f92672">]</span>             verbose option <span style="color:#f92672">(</span>yes,no<span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>Note that the g4* and g3* options are available only when the program was built with the corresponding <code>VMC_WITH_Geant4</code> or <code>VMC_WITH_Geant3</code> option. Root macro with arguments has to be passed in a single string, eg.:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>   --root-macro <span style="color:#e6db74">&#39;test_E01.C(&#34;&#34;,kFALSE)&#39;</span>
+</span></span></code></pre></div>
 
 <footer class=" footline" >
 	
@@ -2185,19 +2185,19 @@ $ /mypath/examples_install_g4/bin/g4vmc_exampleE01
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1647537405"></script>
-    <script src="/js/perfect-scrollbar.min.js?1647537405"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1647537405"></script>
-    <script src="/js/jquery.sticky.js?1647537405"></script>
-    <script src="/js/featherlight.min.js?1647537405"></script>
-    <script src="/js/highlight.pack.js?1647537405"></script>
+    <script src="/js/clipboard.min.js?1656154685"></script>
+    <script src="/js/perfect-scrollbar.min.js?1656154685"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1656154685"></script>
+    <script src="/js/jquery.sticky.js?1656154685"></script>
+    <script src="/js/featherlight.min.js?1656154685"></script>
+    <script src="/js/highlight.pack.js?1656154685"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1647537405"></script>
-    <script src="/js/learn.js?1647537405"></script>
-    <script src="/js/hugo-learn.js?1647537405"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1656154685"></script>
+    <script src="/js/learn.js?1656154685"></script>
+    <script src="/js/hugo-learn.js?1656154685"></script>
 
-    <link href="/mermaid/mermaid.css?1647537405" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1647537405"></script>
+    <link href="/mermaid/mermaid.css?1656154685" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1656154685"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

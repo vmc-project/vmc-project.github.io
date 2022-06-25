@@ -5,11 +5,7 @@
     <link>/installation/geant4_vmc/</link>
     <description>Recent content in Installing Geant4 VMC on VMC</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="/installation/geant4_vmc/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="/installation/geant4_vmc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Build Options</title>
       <link>/installation/geant4_vmc/build-options/</link>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.98.0" />
     <meta name="description" content="">
 
 
@@ -12,20 +12,20 @@
     <title>Special Cuts and Regions :: VMC</title>
 
     
-    <link href="/css/nucleus.css?1647537405" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1647537405" rel="stylesheet">
-    <link href="/css/hybrid.css?1647537405" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1647537405" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1647537405" rel="stylesheet">
-    <link href="/css/auto-complete.css?1647537405" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1647537405" rel="stylesheet">
-    <link href="/css/theme.css?1647537405" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1647537405" rel="stylesheet">
+    <link href="/css/nucleus.css?1656154685" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1656154685" rel="stylesheet">
+    <link href="/css/hybrid.css?1656154685" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1656154685" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1656154685" rel="stylesheet">
+    <link href="/css/auto-complete.css?1656154685" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1656154685" rel="stylesheet">
+    <link href="/css/theme.css?1656154685" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1656154685" rel="stylesheet">
     
-      <link href="/css/theme-vmc.css?1647537405" rel="stylesheet">
+      <link href="/css/theme-vmc.css?1656154685" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1647537405"></script>
+    <script src="/js/jquery-3.3.1.min.js?1656154685"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1647537405"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1647537405"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1656154685"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1656154685"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1647537405"></script>
+<script type="text/javascript" src="/js/search.js?1656154685"></script>
 
     
   </div>
@@ -1299,29 +1299,28 @@
 <p>Inn Geant4, there is defined a unique cut in range which is then converted to an energy threshold per particle and material. The advantage is that you keep the same spatial resolution of your energy deposit over the whole detector. It is also possible to define cuts per regions, as in big experimental setups you may want to speed up your simulation by setting a higher cut in the support structures etc. See more details at the Geant4 User Guide for Application Developers, <a href="http://geant4-userdoc.web.cern.ch/geant4-userdoc/UsersGuides/ForApplicationDeveloper/html/TrackingAndPhysics/thresholdVScut.html">section Production Threshold versus Tracking Cut</a>.</p>
 <h3 id="vmc-cuts">VMC cuts</h3>
 <p>The VMC provides a possibility for a user to define cuts in Geant3 way. The cuts can be defined globally or per tracking medium via the following <a href="https://vmc-project.github.io/vmc/classTVirtualMC.html">TVirtualMC</a> functions:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">gMC<span style="color:#f92672">-&gt;</span>SetCut(cutname, cutValue);
-gMC<span style="color:#f92672">-&gt;</span>Gstpar(medId, cutName, cutValue);
-</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>gMC<span style="color:#f92672">-&gt;</span>SetCut(cutname, cutValue);
+</span></span><span style="display:flex;"><span>gMC<span style="color:#f92672">-&gt;</span>Gstpar(medId, cutName, cutValue);</span></span></code></pre></div></p>
 <p>The user defined VMC cuts and their interpretation in Geant4 can be viewed with the following commands:</p>
 <p>To print the cut values for the given cut type (cutName) and control values for the given control type (controlName) for all tracking media:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/mcDet/printCuts  cutName
-/mcDet/printControls  controlName
-</code></pre></div><p>To print global cuts and global process controls:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/mcPhysics/printGlobalCuts
-/mcPhysics/printGlobalControls
-</code></pre></div><p>To print the user limits (including the VMC cuts and controls) set for the specified volume:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/mcPhysics/printVolumeLimits volName
-</code></pre></div><h3 id="geant4-cuts">Geant4 cuts</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/mcDet/printCuts  cutName
+</span></span><span style="display:flex;"><span>/mcDet/printControls  controlName
+</span></span></code></pre></div><p>To print global cuts and global process controls:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/mcPhysics/printGlobalCuts
+</span></span><span style="display:flex;"><span>/mcPhysics/printGlobalControls
+</span></span></code></pre></div><p>To print the user limits (including the VMC cuts and controls) set for the specified volume:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/mcPhysics/printVolumeLimits volName
+</span></span></code></pre></div><h3 id="geant4-cuts">Geant4 cuts</h3>
 <p><em>By default, Geant4 VMC ignores the VMC cuts</em> and applies only the global cut in range defined in the physics list. The default global cut value in Geant4 VMC is 1*mm for all particles which cut is applied for (gamma, e-, e+). User can change this default value for each particle separately or set a new value for all using the commands:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/mcPhysics/rangeCutForGamma    value    
-/mcPhysics/rangeCutForElectron value
-/mcPhysics/rangeCutForPositron value
-/mcPhysics/rangeCuts value
-</code></pre></div><h3 id="applying-vmc-cuts-in-geant4">Applying VMC cuts in Geant4</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/mcPhysics/rangeCutForGamma    value    
+</span></span><span style="display:flex;"><span>/mcPhysics/rangeCutForElectron value
+</span></span><span style="display:flex;"><span>/mcPhysics/rangeCutForPositron value
+</span></span><span style="display:flex;"><span>/mcPhysics/rangeCuts value
+</span></span></code></pre></div><h3 id="applying-vmc-cuts-in-geant4">Applying VMC cuts in Geant4</h3>
 <p>In order to take the VMC cuts into account, the user has to activate the special cuts process by switching it on in his <code>g4Config.C</code> (see the section on <a href="/user-guide/geant4_vmc/physics_lists">Physics list selection</a>. This special cuts process applies the VMC cuts as tracking cuts using <code>G4UserLimits</code>.</p>
 <p>When the special cuts process is activated, Geant4 VMC defines also regions according to the VMC cuts defined by the user. The regions apply the VMC cuts as an energy threshold. In order to do this, the cut energy has to be converted in range. This conversion is performed in <a href="https://vmc-project.github.io/geant4_vmc/g4vmc_html/classTG4RegionsManager.html">TG4RegionsManager</a> using the Geant4 converter classes <code>G4RToEConvForElectron</code> and <code>G4RToEConvForGamma</code> by iterating within a given range interval up to a given precision. User can change the default precision (2 orders of magnitude) with the command:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/mcRegions/setRangePrecision value
-</code></pre></div><p>The conversion of VMC cuts to the regions follows these rules:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/mcRegions/setRangePrecision value
+</span></span></code></pre></div><p>The conversion of VMC cuts to the regions follows these rules:</p>
 <ul>
 <li>
 <p>If the VMC energy cut defined by user results in a range cut smaller than the default range cut value defined in user physics list, the VMC cut is ignored and the default range cut is used.</p>
@@ -1338,16 +1337,16 @@ It may happen that a value cannot be refined up to given precision, then the bes
 </li>
 </ul>
 <p>User can select several levels of verbosity to control the process of regions definition:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/mcVerbose/regionsManager level   
-  level <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>  no output
-          <span style="color:#ae81ff">1</span>  number of regions added via VMC
-          <span style="color:#ae81ff">2</span>  the list of all volumes, the cuts in energy and
-             calculated cuts in range
-          <span style="color:#ae81ff">3</span>  all evaluated energy values
-</code></pre></div><p>It is also possible to dump the regions properties for a specified volume or to activate printing properties of all regions:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/mcRegions/dump volumeName
-/mcRegions/print true|false
-</code></pre></div><p>How to apply Geant4 commands in a Root user session is explained at the section on <a href="/user-guide/geant4_vmc/switching-user-interfaces">Switching User Interfaces</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/mcVerbose/regionsManager level   
+</span></span><span style="display:flex;"><span>  level <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>  no output
+</span></span><span style="display:flex;"><span>          <span style="color:#ae81ff">1</span>  number of regions added via VMC
+</span></span><span style="display:flex;"><span>          <span style="color:#ae81ff">2</span>  the list of all volumes, the cuts in energy and
+</span></span><span style="display:flex;"><span>             calculated cuts in range
+</span></span><span style="display:flex;"><span>          <span style="color:#ae81ff">3</span>  all evaluated energy values
+</span></span></code></pre></div><p>It is also possible to dump the regions properties for a specified volume or to activate printing properties of all regions:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/mcRegions/dump volumeName
+</span></span><span style="display:flex;"><span>/mcRegions/print true|false
+</span></span></code></pre></div><p>How to apply Geant4 commands in a Root user session is explained at the section on <a href="/user-guide/geant4_vmc/switching-user-interfaces">Switching User Interfaces</a>.</p>
 
 
 <footer class=" footline" >
@@ -2199,19 +2198,19 @@ It may happen that a value cannot be refined up to given precision, then the bes
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1647537405"></script>
-    <script src="/js/perfect-scrollbar.min.js?1647537405"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1647537405"></script>
-    <script src="/js/jquery.sticky.js?1647537405"></script>
-    <script src="/js/featherlight.min.js?1647537405"></script>
-    <script src="/js/highlight.pack.js?1647537405"></script>
+    <script src="/js/clipboard.min.js?1656154685"></script>
+    <script src="/js/perfect-scrollbar.min.js?1656154685"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1656154685"></script>
+    <script src="/js/jquery.sticky.js?1656154685"></script>
+    <script src="/js/featherlight.min.js?1656154685"></script>
+    <script src="/js/highlight.pack.js?1656154685"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1647537405"></script>
-    <script src="/js/learn.js?1647537405"></script>
-    <script src="/js/hugo-learn.js?1647537405"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1656154685"></script>
+    <script src="/js/learn.js?1656154685"></script>
+    <script src="/js/hugo-learn.js?1656154685"></script>
 
-    <link href="/mermaid/mermaid.css?1647537405" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1647537405"></script>
+    <link href="/mermaid/mermaid.css?1656154685" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1656154685"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
