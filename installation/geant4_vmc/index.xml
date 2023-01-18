@@ -23,8 +23,8 @@ Geant4VMC_BUILD_G4Root Build G4Root ON Geant4VMC_BUILD_MTRoot Build MTRoot ON Ge
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/installation/geant4_vmc/geant4_vmc-old/</guid>
-      <description>&amp;lt;li&amp;gt;&amp;lt;b&amp;gt;OpenGL visualization &amp;lt;/b&amp;gt; &amp;lt;br&amp;gt;  It is recommended to build Geant4 X11 OpenGL visualization driver used in the VMC examples. It is handled in Geant4 CMake build via the following CMake option:
--DGEANT4_USE_OPENGL_X11=ON &amp;lt;/li&amp;gt; &amp;lt;li&amp;gt; &amp;lt;h3&amp;gt; Geant4 VMC &amp;lt;/h3&amp;gt;  </description>
+      <description> &amp;lt;li&amp;gt;&amp;lt;b&amp;gt;OpenGL visualization &amp;lt;/b&amp;gt; &amp;lt;br&amp;gt; It is recommended to build Geant4 X11 OpenGL visualization driver used in the VMC examples. It is handled in Geant4 CMake build via the following CMake option:
+-DGEANT4_USE_OPENGL_X11=ON &amp;lt;/li&amp;gt; &amp;lt;li&amp;gt; &amp;lt;h3&amp;gt; Geant4 VMC &amp;lt;/h3&amp;gt; </description>
     </item>
     
     <item>
@@ -33,7 +33,7 @@ Geant4VMC_BUILD_G4Root Build G4Root ON Geant4VMC_BUILD_MTRoot Build MTRoot ON Ge
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/installation/geant4_vmc/special-installations/</guid>
-      <description>&amp;lt;li&amp;gt; &amp;lt;h3&amp;gt;Geant4 configuration (version &amp;gt;= 9.5) &amp;lt;br&amp;gt; with manual installation (with GNUmake) &amp;lt;/h3&amp;gt;  If you install Geant4 with the GNUmakefile build system and your own environment setting, you need to have set the following environment variables. This way of installation requires an experience in Geant4 and so it is not recommended for novice users.
+      <description> &amp;lt;li&amp;gt; &amp;lt;h3&amp;gt;Geant4 configuration (version &amp;gt;= 9.5) &amp;lt;br&amp;gt; with manual installation (with GNUmake) &amp;lt;/h3&amp;gt; If you install Geant4 with the GNUmakefile build system and your own environment setting, you need to have set the following environment variables. This way of installation requires an experience in Geant4 and so it is not recommended for novice users.
 G4LIB_BUILD_SHARED set to 1 (required) G4LIB_USE_G3TOG4 set to 1 (required) G4VIS_BUILD_OPENGLX_DRIVER set to 1 (recommended) G4VIS_USE_OPENGLX set to 1 (recommended) If Geant4 is installed in a different path than the path to the source tree, the following additional variables have to be set: G4LIB &amp;hellip; path to Geant4 libraries (optional) G4INCLUDE &amp;hellip; path to Geant4 include files (option) </description>
     </item>
     

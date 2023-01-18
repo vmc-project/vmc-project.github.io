@@ -24,7 +24,7 @@ See more details on the VMC Examples web page.</description>
       
       <guid>/examples/experiment-frameworks/</guid>
       <description>VMC was developed by the ALICE Software Project and, since then it was adopted by other experiment frameworks.
-ALICE  AliRoot - the ALICE software framework (for LHC Run 1 and 2) O2 - the new ALICE software framework in development (for LHC Run 3 and 4)  FAIR  FairRoot - A simulation, reconstruction and analysis framework, based on the ROOT system, for FAIR experiments  </description>
+ALICE AliRoot - the ALICE software framework (for LHC Run 1 and 2) O2 - the new ALICE software framework in development (for LHC Run 3 and 4) FAIR FairRoot - A simulation, reconstruction and analysis framework, based on the ROOT system, for FAIR experiments </description>
     </item>
     
   </channel>
