@@ -214,7 +214,7 @@
 	"title": "User Guide",
 	"tags": [],
 	"description": "",
-	"content": "Chapter 3 User Guide  Introduction    VMC Concept     VMC Project      VMC Core    VMC Core     Multiple VMC Engines    Installing VMC     Installing Geant3     Installing Geant4 VMC    Build Options     Required and Optional Packages      Installing and Running Examples    Build Options     Running examples        Geant4 VMC    Geometry Definition \u0026amp; Navigation     Magnetic Field     Sensitive Detectors and Volumes     Physics Lists     Stacking of Particles     Special Cuts and Regions     User Geant4 Classes     Visualization     Switching User Interfaces     Multi-threaded Processing     Verbosity     Verbosity for Developers     Source code documentation      Geant3 \u0026#43; VMC    Geant3 \u0026#43; VMC Content      G4Root     "
+	"content": "Chapter 3 User Guide  Introduction    VMC Concept     VMC Project      VMC Core    VMC Core     Multiple VMC Engines      Geant4 VMC    Geometry Definition \u0026amp; Navigation     Magnetic Field     Sensitive Detectors and Volumes     Physics Lists     Stacking of Particles     Special Cuts and Regions     User Geant4 Classes     Visualization     Switching User Interfaces     Multi-threaded Processing     Verbosity     Verbosity for Developers     Source code documentation      Geant3 \u0026#43; VMC    Geant3 \u0026#43; VMC Content      G4Root     "
 },
 {
 	"uri": "/examples/",
