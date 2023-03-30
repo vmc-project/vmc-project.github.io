@@ -1,87 +1,19 @@
-On branch master
-Your branch is up to date with 'origin/master'.
+On branch main
+Your branch is up to date with 'origin/main'.
 
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
-	modified:   404.html
-	modified:   categories/index.html
-	modified:   categories/index.xml
-	modified:   copyright/index.html
-	modified:   credits/index.html
-	modified:   download/git-geant3/index.html
-	modified:   download/git-geant4_vmc/index.html
-	modified:   download/git-vmc/index.html
-	modified:   download/index.html
-	modified:   download/index.xml
-	modified:   download/tar-files/index.html
-	modified:   examples/experiment-frameworks/index.html
-	modified:   examples/index.html
-	modified:   examples/index.xml
-	modified:   examples/vmc-examples/index.html
-	modified:   index.html
-	modified:   index.json
-	modified:   index.xml
-	modified:   installation/examples/build-options/index.html
-	modified:   installation/examples/examples-old/index.html
-	modified:   installation/examples/index.html
-	modified:   installation/examples/index.xml
-	modified:   installation/examples/running-examples/index.html
-	modified:   installation/geant3/geant3-old/index.html
-	modified:   installation/geant3/index.html
-	modified:   installation/geant3/index.xml
-	modified:   installation/geant4_vmc/build-options/index.html
-	modified:   installation/geant4_vmc/geant4_vmc-old/index.html
-	modified:   installation/geant4_vmc/index.html
-	modified:   installation/geant4_vmc/index.xml
-	modified:   installation/geant4_vmc/required-optional-packages/index.html
-	modified:   installation/geant4_vmc/special-installations/index.html
-	modified:   installation/index.html
-	modified:   installation/index.xml
-	modified:   installation/vmc/index.html
-	modified:   publications/index.html
-	modified:   publications/index.xml
-	modified:   publications/meetings/index.html
-	modified:   publications/publications-list/index.html
-	modified:   reference/index.html
-	modified:   reference/index.xml
-	modified:   sitemap.xml
-	modified:   status.txt
-	modified:   support/bug-reports/index.html
-	modified:   support/index.html
-	modified:   support/index.xml
-	modified:   support/mailing-list/index.html
-	modified:   tags/index.html
-	modified:   tags/index.xml
-	modified:   user-guide/g4root/index.html
-	modified:   user-guide/g4root/index.xml
-	modified:   user-guide/geant3+vmc/geant3+vmc-content/index.html
-	modified:   user-guide/geant3+vmc/index.html
-	modified:   user-guide/geant3+vmc/index.xml
-	modified:   user-guide/geant4_vmc/geometry-definition-navigation/index.html
-	modified:   user-guide/geant4_vmc/index.html
-	modified:   user-guide/geant4_vmc/index.xml
-	modified:   user-guide/geant4_vmc/magnetic-field/index.html
-	modified:   user-guide/geant4_vmc/multi-threaded-processing/index.html
-	modified:   user-guide/geant4_vmc/physics-lists/index.html
-	modified:   user-guide/geant4_vmc/sensitive-volumes/index.html
-	modified:   user-guide/geant4_vmc/source-code-documentation/index.html
-	modified:   user-guide/geant4_vmc/special-cuts-and-regions/index.html
-	modified:   user-guide/geant4_vmc/stacking-of-particles/index.html
-	modified:   user-guide/geant4_vmc/switching-user-interfaces/index.html
-	modified:   user-guide/geant4_vmc/user-geant4-classes/index.html
-	modified:   user-guide/geant4_vmc/vebosity-for-developers/index.html
-	modified:   user-guide/geant4_vmc/verbosity/index.html
-	modified:   user-guide/geant4_vmc/visualization/index.html
-	modified:   user-guide/index.html
-	modified:   user-guide/index.xml
-	modified:   user-guide/introduction/index.html
-	modified:   user-guide/introduction/index.xml
-	modified:   user-guide/introduction/vmc-concept/index.html
-	modified:   user-guide/introduction/vmc-project/index.html
-	modified:   user-guide/vmc/index.html
-	modified:   user-guide/vmc/index.xml
-	modified:   user-guide/vmc/multiple-vmc/index.html
-	modified:   user-guide/vmc/vmc-core/index.html
+	modified:   ../config.toml
+	modified:   _index.md
+	modified:   download/git-geant4_vmc.md
+	modified:   download/tar-files.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	../.hugo_build.lock
+	status.txt
+	../public.rm/
+	../public/
 
 no changes added to commit (use "git add" and/or "git commit -a")
