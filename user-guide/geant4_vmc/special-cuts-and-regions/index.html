@@ -12,20 +12,20 @@
     <title>Special Cuts and Regions :: VMC</title>
 
     
-    <link href="/css/nucleus.css?1695712701" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1695712701" rel="stylesheet">
-    <link href="/css/hybrid.css?1695712701" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1695712701" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1695712701" rel="stylesheet">
-    <link href="/css/auto-complete.css?1695712701" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1695712701" rel="stylesheet">
-    <link href="/css/theme.css?1695712701" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1695712701" rel="stylesheet">
+    <link href="/css/nucleus.css?1702322398" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1702322398" rel="stylesheet">
+    <link href="/css/hybrid.css?1702322398" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1702322398" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1702322398" rel="stylesheet">
+    <link href="/css/auto-complete.css?1702322398" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1702322398" rel="stylesheet">
+    <link href="/css/theme.css?1702322398" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1702322398" rel="stylesheet">
     
-      <link href="/css/theme-vmc.css?1695712701" rel="stylesheet">
+      <link href="/css/theme-vmc.css?1702322398" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1695712701"></script>
+    <script src="/js/jquery-3.3.1.min.js?1702322398"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -54,14 +54,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1695712701"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1695712701"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1702322398"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1702322398"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/vmc-project.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1695712701"></script>
+<script type="text/javascript" src="/js/search.js?1702322398"></script>
 
     
   </div>
@@ -1268,6 +1268,7 @@
         <li><a href="#vmc-cuts">VMC cuts</a></li>
         <li><a href="#geant4-cuts">Geant4 cuts</a></li>
         <li><a href="#applying-vmc-cuts-in-geant4">Applying VMC cuts in Geant4</a></li>
+        <li><a href="#applying-vmc-cuts-in-geant4-via-ranges-old-method">Applying VMC cuts in Geant4 via ranges (Old method)</a></li>
       </ul>
     </li>
   </ul>
@@ -1311,14 +1312,30 @@
 </span></span></code></pre></div><p>To print the user limits (including the VMC cuts and controls) set for the specified volume:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/mcPhysics/printVolumeLimits volName
 </span></span></code></pre></div><h3 id="geant4-cuts">Geant4 cuts</h3>
-<p><strong>By default, Geant4 VMC ignores the VMC cuts</strong> and applies only the global cut in range defined in the physics list. The default global cut value in Geant4 VMC is 1*mm for all particles which cut is applied for (gamma, e-, e+). User can change this default value for each particle separately or set a new value for all using the commands:</p>
+<p><strong>By default, Geant4 VMC ignores the VMC cuts</strong> and applies only the global cut in range defined in the physics list. The default global cut value in Geant4 VMC is 1*mm for all particles which cut is applied for (gamma, e-, e+, proton). User can change this default value for each particle separately or set a new value for all using the commands:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/mcPhysics/rangeCutForGamma    value    
 </span></span><span style="display:flex;"><span>/mcPhysics/rangeCutForElectron value
 </span></span><span style="display:flex;"><span>/mcPhysics/rangeCutForPositron value
 </span></span><span style="display:flex;"><span>/mcPhysics/rangeCuts value
 </span></span></code></pre></div><h3 id="applying-vmc-cuts-in-geant4">Applying VMC cuts in Geant4</h3>
 <p>In order to take the VMC cuts into account, the user has to <strong>activate the special cuts process</strong> by switching it on in his <code>g4Config.C</code> (see the section on <a href="/user-guide/geant4_vmc/physics_lists">Physics list selection</a>. This special cuts process applies the VMC cuts as tracking cuts using <code>G4UserLimits</code>.</p>
-<p>When the special cuts process is activated, Geant4 VMC defines also regions according to the VMC cuts defined by the user. The regions apply the VMC cuts as an energy threshold. In order to do this, the cut energy has to be converted in range. This conversion is performed in <a href="https://vmc-project.github.io/geant4_vmc/g4vmc_html/classTG4RegionsManager.html">TG4RegionsManager</a> using the Geant4 converter classes <code>G4RToEConvForElectron</code> and <code>G4RToEConvForGamma</code> by iterating within a given range interval up to a given precision. User can change the default precision (=
+<p>Since Geant4 VMC version 6.5, based on Geant4 version 11.2, when the special cuts process is activated, the VMC cuts are also directly set as production cuts to <code>G4ProductionCutsTable.</code></p>
+<p>First, Geant4 VMC defines regions per materials. Each region contains all volumes that have the same material. In the next step, these regions are used to create materials cuts couples in <code>G4ProductionCutsTable</code> and then, in the third step, the energy cut vector is constructed (by filling the VMC cuts in the order of already constructed materials cuts couples vector) and then set to  <code>G4ProductionCutsTable</code> using its <code>SetEnergyCutVector()</code> function.
+This is performed in <a href="https://vmc-project.github.io/geant4_vmc/g4vmc_html/classTG4RegionsManager2.html">TG4RegionsManager2</a> (new in Geant4 VMC version 6.5).</p>
+<p>User can select several levels of verbosity to control the process of regions definition:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/mcVerbose/regionsManager level
+</span></span><span style="display:flex;"><span>  level <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>  no output
+</span></span><span style="display:flex;"><span>          <span style="color:#ae81ff">1</span>  number of regions added via VMC
+</span></span><span style="display:flex;"><span>          <span style="color:#ae81ff">2</span>  the list of all volumes and their associated regions
+</span></span></code></pre></div><p>Since Geant4 VMC version 6.3, users can print or save the regions data in a file. The default filename, <code>regions.dat</code> can be also changes with a command:</p>
+<pre tabindex="0"><code>/mcRegions/print [true|false]
+/mcRegions/save [true|false]
+/mcRegions/setFileName fileName
+</code></pre><p>The consistency of the volume material and associated regions can be also checked with the <code>check</code> command.</p>
+<pre tabindex="0"><code>/mcRegions/check [true|false]
+</code></pre><p>The old method of applying cuts via ranges can be activated in <code>g4Config.C</code> using <code>TG4RunConfiguration::SetSpecialCutsOld()</code>.</p>
+<h3 id="applying-vmc-cuts-in-geant4-via-ranges-old-method">Applying VMC cuts in Geant4 via ranges (Old method)</h3>
+<p>With older versions, the cut energy is first converted in range and then these range production cuts are set to the region. This conversion is performed in <a href="https://vmc-project.github.io/geant4_vmc/g4vmc_html/classTG4RegionsManager.html">TG4RegionsManager</a> using the Geant4 converter classes <code>G4RToEConvForElectron</code> and <code>G4RToEConvForGamma</code> by iterating within a given range interval up to a given precision. User can change the default precision (=
 the number of iterations), which is set to 5 (was 2 up the version 6.2) with the command:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/mcRegions/setRangePrecision value
 </span></span></code></pre></div><p>The conversion of VMC cuts to the regions follows these rules:</p>
@@ -1344,11 +1361,12 @@ It may happen that a value cannot be refined up to the given precision, then the
 </span></span><span style="display:flex;"><span>          <span style="color:#ae81ff">2</span>  the list of all volumes, the cuts in energy and
 </span></span><span style="display:flex;"><span>             calculated cuts in range
 </span></span><span style="display:flex;"><span>          <span style="color:#ae81ff">3</span>  all evaluated energy values
-</span></span></code></pre></div><p>Since Geant4 VMC version 6.3, users can save the computed regions data in a file and then load the regions data from this files. The default filename, <code>regions.dat</code> can be also changes with a command:</p>
-<pre tabindex="0"><code>/mcRegions/save [true|false]
-/mcRegions/load [true|false]
-/mcRegions/setFileName fileName
-</code></pre><p>The match between the cuts computed from ranges and the input VMC cuts can be also checked with the <code>check</code> command. When this check is activated all cut values that differ with more than a given tolerance will be printed in the output. The default value of this tolerance (1%) can be also tuned:</p>
+</span></span></code></pre></div><p>By default, the computed range cut for e- is applied also to e+ and proton. This feature can be switched off by the UI commands:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/mcRegions/applyForPositron false
+</span></span><span style="display:flex;"><span>/mcRegions/applyForProton false
+</span></span></code></pre></div><p>In addition to the commands presented in previous sections, users can also load the regions data from the a file.</p>
+<pre tabindex="0"><code>/mcRegions/load [true|false]
+</code></pre><p>The <code>check</code> commands permorms also a check for the match between the cuts computed from ranges and the input VMC cuts. When this check is activated all cut values that differ with more than a given tolerance will be printed in the output. The default value of this tolerance (1%) can be also tuned:</p>
 <pre tabindex="0"><code>/mcRegions/check [true|false]
 /mcRegions/setEnergyTolerance value
 </code></pre><p>It is also possible to dump the regions properties for a specified volume or to activate printing properties of all regions:</p>
@@ -2206,19 +2224,19 @@ It may happen that a value cannot be refined up to the given precision, then the
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1695712701"></script>
-    <script src="/js/perfect-scrollbar.min.js?1695712701"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1695712701"></script>
-    <script src="/js/jquery.sticky.js?1695712701"></script>
-    <script src="/js/featherlight.min.js?1695712701"></script>
-    <script src="/js/highlight.pack.js?1695712701"></script>
+    <script src="/js/clipboard.min.js?1702322398"></script>
+    <script src="/js/perfect-scrollbar.min.js?1702322398"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1702322398"></script>
+    <script src="/js/jquery.sticky.js?1702322398"></script>
+    <script src="/js/featherlight.min.js?1702322398"></script>
+    <script src="/js/highlight.pack.js?1702322398"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1695712701"></script>
-    <script src="/js/learn.js?1695712701"></script>
-    <script src="/js/hugo-learn.js?1695712701"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1702322398"></script>
+    <script src="/js/learn.js?1702322398"></script>
+    <script src="/js/hugo-learn.js?1702322398"></script>
 
-    <link href="/mermaid/mermaid.css?1695712701" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1695712701"></script>
+    <link href="/mermaid/mermaid.css?1702322398" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1702322398"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
