@@ -4,7 +4,7 @@
     <title>Installing Geant3 on VMC</title>
     <link>https://vmc-project.github.io/installation/geant3/</link>
     <description>Recent content in Installing Geant3 on VMC</description>
-    <generator>Hugo 0.125.0</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://vmc-project.github.io/installation/geant3/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -12,7 +12,7 @@
       <link>https://vmc-project.github.io/installation/geant3/geant3-old/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://vmc-project.github.io/installation/geant3/geant3-old/</guid>
-      <description>The following instructions apply to the installation of the versions &amp;lt; 2.0.</description>
+      <description>&lt;p&gt;The following instructions apply to the installation of the versions &amp;lt; 2.0.&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
     </item>
   </channel>
 </rss>

@@ -4,7 +4,7 @@
     <title>Support on VMC</title>
     <link>https://vmc-project.github.io/support/</link>
     <description>Recent content in Support on VMC</description>
-    <generator>Hugo 0.125.0</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://vmc-project.github.io/support/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -12,14 +12,14 @@
       <link>https://vmc-project.github.io/support/mailing-list/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://vmc-project.github.io/support/mailing-list/</guid>
-      <description>The mailing list is used to keep you up to date about new developments in VMC packages, releases and bug fixes. This list is also used to discuss use of VMC with other users and with the developers. If you want to report a bug, please, use Bug Reports.&#xA;To join the root-vmc@cern.ch mailing list, do the following:&#xA;If you don&amp;rsquo;t have a CERN account, create a light weight CERN account.</description>
+      <description>&lt;p&gt;The mailing list is used to keep you up to date about new developments in VMC packages, releases and bug fixes. This list is also used to discuss use of VMC with other users and with the developers. If you want to report a bug, please, use &lt;a href=&#34;https://vmc-project.github.io/support/bug-reports/&#34;&gt;Bug Reports&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;To join the &lt;a href=&#34;mailto:root-vmc@cern.ch&#34;&gt;root-vmc@cern.ch&lt;/a&gt; mailing list, do the following:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;If you don&amp;rsquo;t have a CERN account, create a &lt;a href=&#34;https://account.cern.ch/account/Externals&#34;&gt;light weight CERN account&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;li&gt;Add yourself to the &lt;a href=&#34;https://e-groups.cern.ch/e-groups/Egroup.do?egroupId=10060132&amp;amp;AI_USERNAME=RDM&amp;amp;searchField=0&amp;amp;searchMethod=0&amp;amp;searchValue=&amp;amp;pageSize=30&amp;amp;hideSearchFields=false&amp;amp;searchMemberOnly=false&amp;amp;searchAdminOnly=false&amp;amp;AI_SESSION=d2pfPsKDGpw5kQw5CvJnhT1GNPl7QkbMW7pyTctBLrXG3Q7vWkrT!-1625067136!1340887240667&#34;&gt;root-vmc mailing list&lt;/a&gt;, by clicking on the&#xA;&amp;ldquo;Members&amp;rdquo; tab and then on the &amp;ldquo;Add me&amp;rdquo; button.&lt;/li&gt;&#xA;&lt;li&gt;To remove yourself from the mailing list click on the &amp;ldquo;Remove me&amp;rdquo; button on the same above &amp;ldquo;Members&amp;rdquo; page.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Mailing list archive: &lt;a href=&#34;https://groups.cern.ch/group/root-vmc&#34;&gt;VMC Digest&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Bug Reports</title>
       <link>https://vmc-project.github.io/support/bug-reports/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://vmc-project.github.io/support/bug-reports/</guid>
-      <description>We use JIRA to track bugs and to gather feature requests.&#xA;Report a bug in VMC packages.</description>
+      <description>&lt;p&gt;We use &lt;a href=&#34;http://www.atlassian.com/software/jira/overview&#34;&gt;JIRA&lt;/a&gt; to track bugs and to gather feature requests.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://sft.its.cern.ch/jira/browse/VMC&#34;&gt;Report a bug in VMC packages.&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

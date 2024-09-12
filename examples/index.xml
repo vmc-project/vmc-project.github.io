@@ -4,7 +4,7 @@
     <title>Examples on VMC</title>
     <link>https://vmc-project.github.io/examples/</link>
     <description>Recent content in Examples on VMC</description>
-    <generator>Hugo 0.125.0</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://vmc-project.github.io/examples/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -12,14 +12,14 @@
       <link>https://vmc-project.github.io/examples/vmc-examples/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://vmc-project.github.io/examples/vmc-examples/</guid>
-      <description>A set of examples of usage of VMC is included in geant4_vmc.&#xA;Though provided within Geant4 VMC, they can be built independently and do not require Geant4 installation in case you want to run them with GEANT3 only.&#xA;See more details on the VMC Examples web page.</description>
+      <description>&lt;p&gt;A set of examples of usage of VMC is included in &lt;strong&gt;geant4_vmc&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Though provided within Geant4 VMC, they can be built independently and do not require Geant4 installation in case you want to run them with GEANT3 only.&lt;/p&gt;&#xA;&lt;p&gt;See more details on the &lt;a href=&#34;https://vmc-project.github.io/geant4_vmc/examples_html/&#34;&gt;VMC Examples&lt;/a&gt; web page.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Experiment Frameworks</title>
       <link>https://vmc-project.github.io/examples/experiment-frameworks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://vmc-project.github.io/examples/experiment-frameworks/</guid>
-      <description>VMC was developed by the ALICE Software Project and, since then it was adopted by other experiment frameworks.&#xA;ALICE AliRoot - the ALICE software framework (for LHC Run 1 and 2) O2 - the new ALICE software framework in development (for LHC Run 3 and 4) FAIR FairRoot - A simulation, reconstruction and analysis framework, based on the ROOT system, for FAIR experiments </description>
+      <description>&lt;p&gt;VMC was developed by the &lt;a href=&#34;http://aliceinfo.cern.ch/Offline/&#34;&gt;ALICE Software Project&lt;/a&gt; and,&#xA;since then it was adopted by other experiment frameworks.&lt;/p&gt;&#xA;&lt;h4 id=&#34;alice&#34;&gt;ALICE&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://alice-offline.web.cern.ch&#34;&gt;AliRoot&lt;/a&gt; - the ALICE software framework (for LHC Run 1 and 2)&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/AliceO2Group/AliceO2&#34;&gt;O2&lt;/a&gt; - the new ALICE software framework in development (for LHC Run 3 and 4)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h4 id=&#34;fair&#34;&gt;FAIR&lt;/h4&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/FairRootGroup/FairRoot&#34;&gt;FairRoot&lt;/a&gt; - A simulation, reconstruction and analysis framework, based on the ROOT system, for FAIR experiments&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
   </channel>
 </rss>
