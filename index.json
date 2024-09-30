@@ -186,7 +186,7 @@
 	"title": "Geant4 VMC",
 	"tags": [],
 	"description": "",
-	"content": "Chapter 3.3 Geant4 VMC Geant4 VMC represents the realisation of the Virtual Monte Carlo (VMC) for Geant4. It can be also seen as a Geant4 application implemented via the VMC interfaces. It implements all Geant4 user mandatory classes and user action classes, which provide the default Geant4 VMC behaviour, that can be then customized by a user in many ways.\nGeometry Definition \u0026amp; Navigation Magnetic Field Sensitive Detectors and Volumes Physics Lists Stacking of Particles Special Cuts and Regions User Geant4 Classes Visualization Switching User Interfaces Multi-threaded Processing Verbosity Verbosity for Developers Source code documentation "
+	"content": "Chapter 3.3 Geant4 VMC Geant4 VMC represents the realisation of the Virtual Monte Carlo (VMC) for Geant4. It can be also seen as a Geant4 application implemented via the VMC interfaces. It implements all Geant4 user mandatory classes and user action classes, which provide the default Geant4 VMC behaviour, that can be then customized by a user in many ways.\nGeometry Definition \u0026amp; Navigation Geometry Definition \u0026amp; Navigation Magnetic Field Sensitive Detectors and Volumes Physics Lists Stacking of Particles Special Cuts and Regions User Geant4 Classes Visualization Switching User Interfaces Multi-threaded Processing Verbosity Verbosity for Developers Source code documentation Magnetic Field Sensitive Detectors and Volumes Physics Lists Stacking of Particles Special Cuts and Regions User Geant4 Classes Visualization Switching User Interfaces Multi-threaded Processing Verbosity Verbosity for Developers Source code documentation "
 },
 {
 	"uri": "https://vmc-project.github.io/installation/geant4_vmc/",
@@ -228,7 +228,7 @@
 	"title": "Geant3 + VMC",
 	"tags": [],
 	"description": "",
-	"content": "Chapter 3.4 Geant3 + VMC The geant3 package provided in vmc-project contains both the Geant3.21 code itself and the implementation of the TVirtualMC interface, TGeant3.\nGeant3 \u0026#43; VMC Content Introduction VMC Concept VMC Project VMC Core VMC Core Multiple VMC Engines Geant4 VMC Geometry Definition \u0026amp; Navigation Magnetic Field Sensitive Detectors and Volumes Physics Lists Stacking of Particles Special Cuts and Regions User Geant4 Classes Visualization Switching User Interfaces Multi-threaded Processing Verbosity Verbosity for Developers Source code documentation Geant3 \u0026#43; VMC Geant3 \u0026#43; VMC Content G4Root "
+	"content": "Chapter 3.4 Geant3 + VMC The geant3 package provided in vmc-project contains both the Geant3.21 code itself and the implementation of the TVirtualMC interface, TGeant3.\nGeant3 \u0026#43; VMC Content "
 },
 {
 	"uri": "https://vmc-project.github.io/download/git-geant4_vmc/",
