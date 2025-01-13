@@ -4,7 +4,6 @@ Your branch is up to date with 'origin/main'.
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
-	modified:   ../config.toml
 	modified:   _index.md
 	modified:   download/git-geant4_vmc.md
 	modified:   download/tar-files.md
@@ -12,8 +11,12 @@ Changes not staged for commit:
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 	../.hugo_build.lock
+	../config.toml.prev
 	status.txt
+	../logs.txt
 	../public.rm/
 	../public/
+	../status.txt
+	../themes/hugo-theme-learn.prev/
 
 no changes added to commit (use "git add" and/or "git commit -a")
