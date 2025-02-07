@@ -40,7 +40,7 @@
   </url><url>
     <loc>https://vmc-project.github.io/installation/</loc>
   </url><url>
-    <loc>https://vmc-project.github.io/installation/geant3/</loc>
+    <loc>https://vmc-project.github.io/installation/geant4_vmc/</loc>
   </url><url>
     <loc>https://vmc-project.github.io/installation/geant4_vmc/special-installations/</loc>
   </url><url>
@@ -52,11 +52,11 @@
   </url><url>
     <loc>https://vmc-project.github.io/user-guide/vmc/vmc-core/</loc>
   </url><url>
-    <loc>https://vmc-project.github.io/download/git-geant3/</loc>
+    <loc>https://vmc-project.github.io/download/git-geant4_vmc/</loc>
   </url><url>
     <loc>https://vmc-project.github.io/user-guide/geant4_vmc/</loc>
   </url><url>
-    <loc>https://vmc-project.github.io/installation/geant4_vmc/</loc>
+    <loc>https://vmc-project.github.io/installation/geant3/</loc>
   </url><url>
     <loc>https://vmc-project.github.io/user-guide/vmc/multiple-vmc/</loc>
   </url><url>
@@ -66,9 +66,9 @@
   </url><url>
     <loc>https://vmc-project.github.io/examples/</loc>
   </url><url>
-    <loc>https://vmc-project.github.io/user-guide/geant3&#43;vmc/</loc>
+    <loc>https://vmc-project.github.io/download/git-geant3/</loc>
   </url><url>
-    <loc>https://vmc-project.github.io/download/git-geant4_vmc/</loc>
+    <loc>https://vmc-project.github.io/user-guide/geant3&#43;vmc/</loc>
   </url><url>
     <loc>https://vmc-project.github.io/installation/examples/</loc>
   </url><url>

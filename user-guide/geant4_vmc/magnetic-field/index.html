@@ -12,22 +12,22 @@
     <title>Magnetic Field :: VMC</title>
 
     
-    <link href="/css/nucleus.css?1736767178" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1736767178" rel="stylesheet">
-    <link href="/css/hybrid.css?1736767178" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1736767178" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1736767178" rel="stylesheet">
-    <link href="/css/auto-complete.css?1736767178" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1736767178" rel="stylesheet">
-    <link href="/css/theme.css?1736767178" rel="stylesheet">
-    <link href="/css/tabs.css?1736767178" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1736767178" rel="stylesheet">
+    <link href="/css/nucleus.css?1738946947" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1738946947" rel="stylesheet">
+    <link href="/css/hybrid.css?1738946947" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1738946947" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1738946947" rel="stylesheet">
+    <link href="/css/auto-complete.css?1738946947" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1738946947" rel="stylesheet">
+    <link href="/css/theme.css?1738946947" rel="stylesheet">
+    <link href="/css/tabs.css?1738946947" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1738946947" rel="stylesheet">
     
-    <link href="/css/theme-vmc.css?1736767178" rel="stylesheet">
+    <link href="/css/theme-vmc.css?1738946947" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1736767178"></script>
+    <script src="/js/jquery-3.3.1.min.js?1738946947"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1736767178"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1736767178"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1738946947"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1738946947"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/vmc-project.github.io\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1736767178"></script>
+<script type="text/javascript" src="/js/search.js?1738946947"></script>
 
     
   </div>
@@ -129,9 +129,9 @@
  
   
     
-      <li data-nav-id="/download/git-geant3/" title="Geant3" class="dd-item ">
-        <a href="/download/git-geant3/">
-        Geant3
+      <li data-nav-id="/download/git-geant4_vmc/" title="Geant4 VMC" class="dd-item ">
+        <a href="/download/git-geant4_vmc/">
+        Geant4 VMC
         
         </a>
     </li>
@@ -150,9 +150,9 @@
  
   
     
-      <li data-nav-id="/download/git-geant4_vmc/" title="Geant4 VMC" class="dd-item ">
-        <a href="/download/git-geant4_vmc/">
-        Geant4 VMC
+      <li data-nav-id="/download/git-geant3/" title="Geant3" class="dd-item ">
+        <a href="/download/git-geant3/">
+        Geant3
         
         </a>
     </li>
@@ -249,32 +249,6 @@
  
   
     
-    <li data-nav-id="/installation/geant3/" title="Installing Geant3" class="dd-item
-        
-        
-        
-        ">
-      <a href="/installation/geant3/">
-          Geant3
-          
-      </a>
-      
-      
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
     <li data-nav-id="/installation/geant4_vmc/" title="Installing Geant4 VMC" class="dd-item
         
         
@@ -343,6 +317,32 @@
           
         
         </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/installation/geant3/" title="Installing Geant3" class="dd-item
+        
+        
+        
+        ">
+      <a href="/installation/geant3/">
+          Geant3
+          
+      </a>
+      
       
     </li>
   
@@ -1349,6 +1349,7 @@
       <ul>
         <li><a href="#local-fields">Local fields</a></li>
         <li><a href="#customization-of-field-parameters">Customization of Field Parameters</a></li>
+        <li><a href="#customization-of-field-parameters-old">Customization of Field Parameters (OLD)</a></li>
         <li><a href="#control-of-the-parameters-for-killing-looping-particles">Control of the parameters for killing looping particles</a></li>
       </ul>
     </li>
@@ -1384,7 +1385,11 @@
 </code></pre><p>Since Geant4 VMC version 3.5, it is possible to propagate the zero magnetic field defined in tracking media in Geant4 geometry. A local zero magnetic field is set to all logical volumes associated with the tracking medium with &lsquo;ifield = 0&rsquo; if a global magnetic field is defined. This feature (not switched on by default) can be activated via:</p>
 <pre tabindex="0"><code>/mcDet/setIsZeroMagField true 
 </code></pre><h3 id="customization-of-field-parameters">Customization of Field Parameters</h3>
-<p>In Geant4 VMC, user can customize the default integration method and the default accuracy parameters with a set of dedicated commands. It is a user responsibility to choose the type of equation of motion and the integration method compatible with the user field. (The defined commands are not limited to magnetic field only in order to make easier an eventual future extension of VMC to electric and electromagnetic fields.)</p>
+<p>Since Geant4 11.3, the UI commands to customize the default integration method and the default accuracy parameters with a set of dedicated commands were integrated in Geant4 and removed from Geant4 VMC.</p>
+<p>Please, refer to the <a href="https://geant4-userdoc.web.cern.ch/UsersGuides/ForApplicationDeveloper/html/Detector/electroMagneticField.html#creating-a-field-for-a-detector">Creating a Field for a Detector</a> section in Geant4 Applicator Developer Guide.</p>
+<p>The commands described below are available in the <code>/field/</code> command directory.</p>
+<h3 id="customization-of-field-parameters-old">Customization of Field Parameters (OLD)</h3>
+<p>In Geant4 VMC <strong>versions before 6.7</strong>, user can customize the default integration method and the default accuracy parameters with a set of dedicated commands. It is a user responsibility to choose the type of equation of motion and the integration method compatible with the user field. (The defined commands are not limited to magnetic field only in order to make easier an eventual future extension of VMC to electric and electromagnetic fields.)</p>
 <p>The available commands:</p>
 <ul>
 <li>
@@ -1597,27 +1602,6 @@
                         
             
             
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
                 
                     
                 
@@ -1654,6 +1638,27 @@
                     
 
                     
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
             
         
                     
@@ -2285,19 +2290,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1736767178"></script>
-    <script src="/js/perfect-scrollbar.min.js?1736767178"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1736767178"></script>
-    <script src="/js/jquery.sticky.js?1736767178"></script>
-    <script src="/js/featherlight.min.js?1736767178"></script>
-    <script src="/js/highlight.pack.js?1736767178"></script>
+    <script src="/js/clipboard.min.js?1738946947"></script>
+    <script src="/js/perfect-scrollbar.min.js?1738946947"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1738946947"></script>
+    <script src="/js/jquery.sticky.js?1738946947"></script>
+    <script src="/js/featherlight.min.js?1738946947"></script>
+    <script src="/js/highlight.pack.js?1738946947"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1736767178"></script>
-    <script src="/js/learn.js?1736767178"></script>
-    <script src="/js/hugo-learn.js?1736767178"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1738946947"></script>
+    <script src="/js/learn.js?1738946947"></script>
+    <script src="/js/hugo-learn.js?1738946947"></script>
     
         
-            <script src="/mermaid/mermaid.js?1736767178"></script>
+            <script src="/mermaid/mermaid.js?1738946947"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
