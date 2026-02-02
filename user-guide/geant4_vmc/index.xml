@@ -33,7 +33,7 @@
       <link>https://vmc-project.github.io/user-guide/geant4_vmc/geant4-scoring/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://vmc-project.github.io/user-guide/geant4_vmc/geant4-scoring/index.html</guid>
-      <description>Geant4 command line scoring Since Geant4 VMC version 6.8, it is possible to activate Geant4 command line scoring (see details in the Geant4 Application developers Guide, section Command-based scoring).&#xA;The activation should be done via calling&#xA;void TG4RunConfiguration::SetUseOfG4Scoring() in user g4Config.C.&#xA;The scoring (mesh, scorers etc.) can be then defined via Geant UI commands defined in ‘/score’ directory in g4config.in. The scoring data are then automatically saved for each mesh in a mesh_name.txt file at the end of run</description>
+      <description>Geant4 command line scoring Since Geant4 VMC version 6.8, it is possible to activate Geant4 command line scoring (see details in the Geant4 Application developers Guide, section Command-based scoring).&#xA;The activation should be done via calling&#xA;void TG4RunConfiguration::SetUseOfG4Scoring() in the user g4Config.C.&#xA;The scoring (mesh, scorers etc.) can be then defined via Geant UI commands, available in the ‘/score’ directory, in g4config.in.&#xA;The scoring data will be then automatically saved for each mesh in a mesh_name.txt file at the end of simulation run.</description>
     </item>
     <item>
       <title>Physics Lists</title>
