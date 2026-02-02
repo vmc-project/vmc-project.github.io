@@ -1,18 +1,39 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Installation on VMC</title>
-    <link>https://vmc-project.github.io/installation/</link>
-    <description>Recent content in Installation on VMC</description>
+    <title>Installation :: VMC</title>
+    <link>https://vmc-project.github.io/installation/index.html</link>
+    <description>Installing VMC Installing Geant4 VMC Build Options Required and Optional Packages Installing Geant3 Installing and Running Examples Build Options Running examples</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://vmc-project.github.io/installation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Installing VMC</title>
-      <link>https://vmc-project.github.io/installation/vmc/</link>
+      <link>https://vmc-project.github.io/installation/vmc/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://vmc-project.github.io/installation/vmc/</guid>
-      <description>&lt;p&gt;VMC requires &lt;a href=&#34;https://root.cern.ch/&#34;&gt;ROOT&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;The &lt;a href=&#34;https://vmc-project.github.io/user-guide/vmc/vmc-library&#34;&gt;vmc core package&lt;/a&gt; was separated from the ROOT source into a new stand-alone &lt;a href=&#34;https://github.com/vmc-project/vmc&#34;&gt;vmc&lt;/a&gt; package in the GitHub &lt;a href=&#34;https://github.com/vmc-project&#34;&gt;vmc-project&lt;/a&gt; organization.  The motivation for this step was a gain in flexibility and faster workflow for new developments of multiple engine mode. The &lt;code&gt;vmc&lt;/code&gt; package in ROOT is deprecated since ROOT version 6.18 (its compilation is optional) and it is going to be removed in the next ROOT version, 6.26. The VMC stand-alone is then needed for building Geant3 and Geant4 VMC when using ROOT compiled with the vmc disabled (default).&lt;/p&gt;</description>
+      <guid>https://vmc-project.github.io/installation/vmc/index.html</guid>
+      <description>VMC requires ROOT.&#xA;The vmc core package was separated from the ROOT source into a new stand-alone vmc package in the GitHub vmc-project organization. The motivation for this step was a gain in flexibility and faster workflow for new developments of multiple engine mode. The vmc package in ROOT is deprecated since ROOT version 6.18 (its compilation is optional) and it is going to be removed in the next ROOT version, 6.26. The VMC stand-alone is then needed for building Geant3 and Geant4 VMC when using ROOT compiled with the vmc disabled (default).</description>
+    </item>
+    <item>
+      <title>Installing Geant4 VMC</title>
+      <link>https://vmc-project.github.io/installation/geant4_vmc/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://vmc-project.github.io/installation/geant4_vmc/index.html</guid>
+      <description>Geant4 VMC requires the VMC core package, ROOT and Geant4 installed, and optionally, it can be built with VGM. See below tips for configuration and installation of these packages.&#xA;The vmc core package was separated from the ROOT source into a new stand-alone vmc package in the GitHub vmc-project organization. The motivation for this step was a gain in flexibility and faster workflow for new developments of multiple engine mode. The vmc package in ROOT is deprecated since ROOT version 6.18 (its compilation is optional) and it is going to be removed in the next ROOT version, 6.26. The VMC stand-alone is supported since Geant4 VMC 5.0.</description>
+    </item>
+    <item>
+      <title>Installing Geant3</title>
+      <link>https://vmc-project.github.io/installation/geant3/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://vmc-project.github.io/installation/geant3/index.html</guid>
+      <description>Geant3 with VMC requires the VMC core package and ROOT.&#xA;The vmc core package was separated from the ROOT source into a new stand-alone vmc package in the GitHub vmc-project organization. The motivation for this step was a gain in flexibility and faster workflow for new developments of multiple engine mode. The vmc package in ROOT is deprecated since ROOT version 6.18 (its compilation is optional) and it is going to be removed in the next ROOT version, 6.26. The VMC stand-alone is supported since Geant3 3.0.</description>
+    </item>
+    <item>
+      <title>Installing and Running Examples</title>
+      <link>https://vmc-project.github.io/installation/examples/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://vmc-project.github.io/installation/examples/index.html</guid>
+      <description>The following instructions apply to the installation since the version 3.00. Since this 3.00, VMC examples are installed with CMake.&#xA;The VMC examples libraries require ROOT installation and the VMC core package if using ROOT built without vmc enabled. The VMC examples programs can be built against Geant3 with VMC or Geant4 VMC libraries. Only the examples with the multiple engine mode (at present only E03c) can be built with both Geant3 and Geant4 VMC libraries. The VMC_WITH_Multi CMake option has to be set, too, in this special case.</description>
     </item>
   </channel>
 </rss>

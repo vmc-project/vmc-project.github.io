@@ -1,11 +1,46 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>User Guide on VMC</title>
-    <link>https://vmc-project.github.io/user-guide/</link>
-    <description>Recent content in User Guide on VMC</description>
+    <title>User Guide :: VMC</title>
+    <link>https://vmc-project.github.io/user-guide/index.html</link>
+    <description>Introduction VMC Concept VMC Project VMC Core VMC Core Multiple VMC Engines Geant4 VMC Geometry Definition &amp; Navigation Magnetic Field Sensitive Detectors and Volumes Geant4 Scoring Physics Lists Stacking of Particles Special Cuts and Regions User Geant4 Classes Visualization Switching User Interfaces Multi-threaded Processing Verbosity Verbosity for Developers Source code documentation Geant3 + VMC Geant3 + VMC Content G4Root</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://vmc-project.github.io/user-guide/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction</title>
+      <link>https://vmc-project.github.io/user-guide/introduction/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://vmc-project.github.io/user-guide/introduction/index.html</guid>
+      <description>This chapter presents the VMC concept, and gives an overview of the packages provided in vmc-project.&#xA;VMC Concept VMC Project</description>
+    </item>
+    <item>
+      <title>VMC Core</title>
+      <link>https://vmc-project.github.io/user-guide/vmc/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://vmc-project.github.io/user-guide/vmc/index.html</guid>
+      <description>This chapter presents the core VMC package and the new multiple engine functionality.&#xA;VMC Core Multiple VMC Engines</description>
+    </item>
+    <item>
+      <title>Geant4 VMC</title>
+      <link>https://vmc-project.github.io/user-guide/geant4_vmc/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://vmc-project.github.io/user-guide/geant4_vmc/index.html</guid>
+      <description>Geant4 VMC represents the realisation of the Virtual Monte Carlo (VMC) for Geant4. It can be also seen as a Geant4 application implemented via the VMC interfaces. It implements all Geant4 user mandatory classes and user action classes, which provide the default Geant4 VMC behaviour, that can be then customized by a user in many ways.&#xA;Geometry Definition &amp; Navigation Magnetic Field Sensitive Detectors and Volumes Geant4 Scoring Physics Lists Stacking of Particles Special Cuts and Regions User Geant4 Classes Visualization Switching User Interfaces Multi-threaded Processing Verbosity Verbosity for Developers Source code documentation</description>
+    </item>
+    <item>
+      <title>Geant3 &#43; VMC</title>
+      <link>https://vmc-project.github.io/user-guide/geant3&#43;vmc/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://vmc-project.github.io/user-guide/geant3&#43;vmc/index.html</guid>
+      <description>The geant3 package provided in vmc-project contains both the Geant3.21 code itself and the implementation of the TVirtualMC interface, TGeant3.&#xA;For a detail description of Geant3, see the Geant3 manual.&#xA;Geant3 + VMC Content</description>
+    </item>
+    <item>
+      <title>G4Root</title>
+      <link>https://vmc-project.github.io/user-guide/g4root/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://vmc-project.github.io/user-guide/g4root/index.html</guid>
+      <description>The G4Root package is an interface allowing running a GEANT4 simulation with a ROOT geometry. In fact it is just the G4 navigation that uses directly the TGeo geometry. Though it is distributed in geant4_vmc, it can be built and used independently from VMC.&#xA;See more details on the G4Root Reference web page.</description>
+    </item>
   </channel>
 </rss>

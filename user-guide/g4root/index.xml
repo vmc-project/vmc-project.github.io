@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>G4Root on VMC</title>
-    <link>https://vmc-project.github.io/user-guide/g4root/</link>
-    <description>Recent content in G4Root on VMC</description>
+    <title>G4Root :: VMC</title>
+    <link>https://vmc-project.github.io/user-guide/g4root/index.html</link>
+    <description>The G4Root package is an interface allowing running a GEANT4 simulation with a ROOT geometry. In fact it is just the G4 navigation that uses directly the TGeo geometry. Though it is distributed in geant4_vmc, it can be built and used independently from VMC.&#xA;See more details on the G4Root Reference web page.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://vmc-project.github.io/user-guide/g4root/index.xml" rel="self" type="application/rss+xml" />

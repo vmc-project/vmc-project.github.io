@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Introduction on VMC</title>
-    <link>https://vmc-project.github.io/user-guide/introduction/</link>
-    <description>Recent content in Introduction on VMC</description>
+    <title>Introduction :: VMC</title>
+    <link>https://vmc-project.github.io/user-guide/introduction/index.html</link>
+    <description>This chapter presents the VMC concept, and gives an overview of the packages provided in vmc-project.&#xA;VMC Concept VMC Project</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://vmc-project.github.io/user-guide/introduction/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VMC Concept</title>
-      <link>https://vmc-project.github.io/user-guide/introduction/vmc-concept/</link>
+      <link>https://vmc-project.github.io/user-guide/introduction/vmc-concept/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://vmc-project.github.io/user-guide/introduction/vmc-concept/</guid>
-      <description>&lt;p&gt;The Virtual Monte Carlo (VMC) allows to run different simulation Monte Carlo without changing the user code and therefore the input and output format as well as the geometry and detector response definition.&lt;/p&gt;&#xA;&lt;p&gt;The core of the VMC is the category of classes &lt;strong&gt;vmc&lt;/strong&gt;. It provides a set of interfaces which completely decouple the dependencies between the user code and the concrete Monte Carlo, two of which have the key role:&lt;/p&gt;</description>
+      <guid>https://vmc-project.github.io/user-guide/introduction/vmc-concept/index.html</guid>
+      <description>The Virtual Monte Carlo (VMC) allows to run different simulation Monte Carlo without changing the user code and therefore the input and output format as well as the geometry and detector response definition.&#xA;The core of the VMC is the category of classes vmc. It provides a set of interfaces which completely decouple the dependencies between the user code and the concrete Monte Carlo, two of which have the key role:</description>
     </item>
     <item>
       <title>VMC Project</title>
-      <link>https://vmc-project.github.io/user-guide/introduction/vmc-project/</link>
+      <link>https://vmc-project.github.io/user-guide/introduction/vmc-project/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://vmc-project.github.io/user-guide/introduction/vmc-project/</guid>
-      <description>&lt;p&gt;The &lt;a href=&#34;https://github.com/vmc-project&#34;&gt;vmc-project&lt;/a&gt; GitGub organization provides the following packages:&lt;/p&gt;&#xA;&lt;h2 id=&#34;vmc--httpsgithubcomvmc-projectvmc&#34;&gt;vmc &lt;a href=&#34;https://github.com/vmc-project/vmc&#34;&gt;-&amp;gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;The core of the VMC provides the &lt;strong&gt;interfaces&lt;/strong&gt; and classes independent from the Monte Carlo transport code.&lt;/p&gt;&#xA;&lt;p&gt;See more in the &lt;a href=&#34;../../vmc-core&#34;&gt;VMC Core&lt;/a&gt; section.&lt;/p&gt;&#xA;&lt;h2 id=&#34;geant3--httpsgithubcomvmc-projectgeant3&#34;&gt;geant3 &lt;a href=&#34;https://github.com/vmc-project/geant3&#34;&gt;-&amp;gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;The updated version of &lt;strong&gt;Geant3.21&lt;/strong&gt; that includes several bug fixes compared to the standard version in CERNLIB. The directory TGeant3 contains the classes which &lt;strong&gt;implement the TVirtualMC interface&lt;/strong&gt; for Geant3&lt;/p&gt;&#xA;&lt;p&gt;See more in the &lt;a href=&#34;../../geant3+vmc&#34;&gt;Geant3&lt;/a&gt; section.&lt;/p&gt;&#xA;&lt;h2 id=&#34;geant4_vmc--httpsgithubcomvmc-projectgeant4_vmc&#34;&gt;geant4_vmc &lt;a href=&#34;https://github.com/vmc-project/geant4_vmc&#34;&gt;-&amp;gt;&lt;/a&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Geant4 VMC contains the classes which &lt;strong&gt;implement the TVirtualMC interface for &lt;a href=&#34;http://geant4.cern.ch&#34;&gt;Geant4&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;</description>
+      <guid>https://vmc-project.github.io/user-guide/introduction/vmc-project/index.html</guid>
+      <description>The vmc-project GitGub organization provides the following packages:&#xA;vmc -&gt; The core of the VMC provides the interfaces and classes independent from the Monte Carlo transport code.&#xA;See more in the VMC Core section.&#xA;geant3 -&gt; The updated version of Geant3.21 that includes several bug fixes compared to the standard version in CERNLIB. The directory TGeant3 contains the classes which implement the TVirtualMC interface for Geant3&#xA;See more in the Geant3 section.&#xA;geant4_vmc -&gt; Geant4 VMC contains the classes which implement the TVirtualMC interface for Geant4.</description>
     </item>
   </channel>
 </rss>

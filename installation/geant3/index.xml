@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Installing Geant3 on VMC</title>
-    <link>https://vmc-project.github.io/installation/geant3/</link>
-    <description>Recent content in Installing Geant3 on VMC</description>
+    <title>Installing Geant3 :: VMC</title>
+    <link>https://vmc-project.github.io/installation/geant3/index.html</link>
+    <description>Geant3 with VMC requires the VMC core package and ROOT.&#xA;The vmc core package was separated from the ROOT source into a new stand-alone vmc package in the GitHub vmc-project organization. The motivation for this step was a gain in flexibility and faster workflow for new developments of multiple engine mode. The vmc package in ROOT is deprecated since ROOT version 6.18 (its compilation is optional) and it is going to be removed in the next ROOT version, 6.26. The VMC stand-alone is supported since Geant3 3.0.</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://vmc-project.github.io/installation/geant3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Installing Geant3 - Older Versions</title>
-      <link>https://vmc-project.github.io/installation/geant3/geant3-old/</link>
+      <link>https://vmc-project.github.io/installation/geant3/geant3-old/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://vmc-project.github.io/installation/geant3/geant3-old/</guid>
-      <description>&lt;p&gt;The following instructions apply to the installation of the versions &amp;lt; 2.0.&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;</description>
+      <guid>https://vmc-project.github.io/installation/geant3/geant3-old/index.html</guid>
+      <description>The following instructions apply to the installation of the versions &lt; 2.0.&#xA;First get the Geant3 source from the Download page. No special configuration option for Root installation is needed with the actual version of Root. With old Root v5.20/00, you have to specify your Fortran compiler: --with-f77=g77   geant3 requires Pythia6 library. You can follow ROOT installation instructions or directly the Pythia site.   To install geant3:&#xA;cd geant3 make</description>
     </item>
   </channel>
 </rss>

@@ -1,1349 +1,123 @@
 <!DOCTYPE html>
-<html lang="en" class="js csstransforms3d">
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.134.2">
-    <meta name="description" content="">
-
-
-    <link rel="icon" href="/images/favicon.png" type="image/png">
-
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.154.1">
+    <meta name="generator" content="Relearn 8.2.0">
+    <meta name="description" content="Introduction The VMC package allows splitting the event simulation among multiple engines. The criteria of how to split the simulation have to be defined by the user and among others the decision which engine to be used could depend on
+geometry particle phase space particle type any combination of that … Running multiple engines is fully supported for
+GEANT3_VMC GEANT4_VMC This also allows the user to implement his/her own class deriving from TVirtualMC to be used in a split simulation. The communication between the engines is handled by a singleton object of type TMCManager such that the user does not have to deal with special implementation details. Hence, pausing an engine, re-starting it or transferring tracks between them is done automatically and at the same time the user stack is kept up-to-date. Furthermore, the same user application derived from TVirtualMCApplication together with the same user stack derived from TVirtualMCStack can be used for both a single engine run or a simulation split among multiple ones.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Multiple VMC Engines :: VMC">
+    <meta name="twitter:description" content="Introduction The VMC package allows splitting the event simulation among multiple engines. The criteria of how to split the simulation have to be defined by the user and among others the decision which engine to be used could depend on
+geometry particle phase space particle type any combination of that … Running multiple engines is fully supported for
+GEANT3_VMC GEANT4_VMC This also allows the user to implement his/her own class deriving from TVirtualMC to be used in a split simulation. The communication between the engines is handled by a singleton object of type TMCManager such that the user does not have to deal with special implementation details. Hence, pausing an engine, re-starting it or transferring tracks between them is done automatically and at the same time the user stack is kept up-to-date. Furthermore, the same user application derived from TVirtualMCApplication together with the same user stack derived from TVirtualMCStack can be used for both a single engine run or a simulation split among multiple ones.">
+    <meta property="og:url" content="https://vmc-project.github.io/user-guide/vmc/multiple-vmc/index.html">
+    <meta property="og:site_name" content="VMC">
+    <meta property="og:title" content="Multiple VMC Engines :: VMC">
+    <meta property="og:description" content="Introduction The VMC package allows splitting the event simulation among multiple engines. The criteria of how to split the simulation have to be defined by the user and among others the decision which engine to be used could depend on
+geometry particle phase space particle type any combination of that … Running multiple engines is fully supported for
+GEANT3_VMC GEANT4_VMC This also allows the user to implement his/her own class deriving from TVirtualMC to be used in a split simulation. The communication between the engines is handled by a singleton object of type TMCManager such that the user does not have to deal with special implementation details. Hence, pausing an engine, re-starting it or transferring tracks between them is done automatically and at the same time the user stack is kept up-to-date. Furthermore, the same user application derived from TVirtualMCApplication together with the same user stack derived from TVirtualMCStack can be used for both a single engine run or a simulation split among multiple ones.">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="User Guide">
+    <meta itemprop="name" content="Multiple VMC Engines :: VMC">
+    <meta itemprop="description" content="Introduction The VMC package allows splitting the event simulation among multiple engines. The criteria of how to split the simulation have to be defined by the user and among others the decision which engine to be used could depend on
+geometry particle phase space particle type any combination of that … Running multiple engines is fully supported for
+GEANT3_VMC GEANT4_VMC This also allows the user to implement his/her own class deriving from TVirtualMC to be used in a split simulation. The communication between the engines is handled by a singleton object of type TMCManager such that the user does not have to deal with special implementation details. Hence, pausing an engine, re-starting it or transferring tracks between them is done automatically and at the same time the user stack is kept up-to-date. Furthermore, the same user application derived from TVirtualMCApplication together with the same user stack derived from TVirtualMCStack can be used for both a single engine run or a simulation split among multiple ones.">
+    <meta itemprop="wordCount" content="1248">
     <title>Multiple VMC Engines :: VMC</title>
-
-    
-    <link href="/css/nucleus.css?1738946947" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1738946947" rel="stylesheet">
-    <link href="/css/hybrid.css?1738946947" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1738946947" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1738946947" rel="stylesheet">
-    <link href="/css/auto-complete.css?1738946947" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1738946947" rel="stylesheet">
-    <link href="/css/theme.css?1738946947" rel="stylesheet">
-    <link href="/css/tabs.css?1738946947" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1738946947" rel="stylesheet">
-    
-    <link href="/css/theme-vmc.css?1738946947" rel="stylesheet">
-    
-    
-
-    <script src="/js/jquery-3.3.1.min.js?1738946947"></script>
-
-    <style>
-      :root #header + #content > #left > #rlblock_left{
-          display:none !important;
+    <link href="/css/auto-complete/auto-complete.min.css?1770049849" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1770049849" defer></script>
+    <script src="/js/search-lunr.min.js?1770049849" defer></script>
+    <script src="/js/search.min.js?1770049849" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1770049849";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1770049849" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1770049849" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1770049849" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1770049849" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1770049849" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1770049849" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1770049849" rel="stylesheet">
+    <link href="/css/theme.min.css?1770049849" rel="stylesheet">
+    <link href="/css/format-html.min.css?1770049849" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = `.min`;
+      window.relearn.path='\/user-guide\/vmc\/multiple-vmc\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/vmc-project.github.io';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      // variant stuff
+      window.relearn.themevariants = [ 'vmc' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
       }
-      
-    </style>
-    
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
   </head>
-  <body class="" data-url="/user-guide/vmc/multiple-vmc/">
-    <nav id="sidebar" class="">
-
-
-
-  <div id="header-wrapper">
-    <div id="header">
-      <a id="logo" href="https://vmc-project.github.io/">
-  <img src="/images/VMClogo6_white.png" width=80% />
-</a>
-
-    </div>
-    
-        <div class="searchbox">
-    <label for="search-by"><i class="fas fa-search"></i></label>
-    <input data-search-input id="search-by" type="search" placeholder="Search...">
-    <span data-search-clear=""><i class="fas fa-times"></i></span>
-</div>
-
-<script type="text/javascript" src="/js/lunr.min.js?1738946947"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1738946947"></script>
-<script type="text/javascript">
-    
-        var baseurl = "https:\/\/vmc-project.github.io\/";
-    
-</script>
-<script type="text/javascript" src="/js/search.js?1738946947"></script>
-
-    
-  </div>
-
-    <div class="highlightable">
-    <ul class="topics">
-
-        
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/download/" title="Download" class="dd-item
-        
-        
-        
-        ">
-      <a href="/download/">
-          Download
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/download/git-vmc/" title="VMC" class="dd-item ">
-        <a href="/download/git-vmc/">
-        VMC
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/download/git-geant4_vmc/" title="Geant4 VMC" class="dd-item ">
-        <a href="/download/git-geant4_vmc/">
-        Geant4 VMC
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/download/git-geant3/" title="Geant3" class="dd-item ">
-        <a href="/download/git-geant3/">
-        Geant3
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/download/tar-files/" title="Tar Files" class="dd-item ">
-        <a href="/download/tar-files/">
-        Tar Files
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-      
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/installation/" title="Installation" class="dd-item
-        
-        
-        
-        ">
-      <a href="/installation/">
-          Installation
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-            
-          
-          
-
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/installation/vmc/" title="Installing VMC" class="dd-item ">
-        <a href="/installation/vmc/">
-        VMC
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/installation/geant4_vmc/" title="Installing Geant4 VMC" class="dd-item
-        
-        
-        
-        ">
-      <a href="/installation/geant4_vmc/">
-          Geant4 VMC
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/installation/geant4_vmc/build-options/" title="Build Options" class="dd-item ">
-        <a href="/installation/geant4_vmc/build-options/">
-        Build Options
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-          
-            
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/installation/geant4_vmc/required-optional-packages/" title="Required and Optional Packages" class="dd-item ">
-        <a href="/installation/geant4_vmc/required-optional-packages/">
-        Required and Optional Packages
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-      
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/installation/geant3/" title="Installing Geant3" class="dd-item
-        
-        
-        
-        ">
-      <a href="/installation/geant3/">
-          Geant3
-          
-      </a>
-      
-      
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/installation/examples/" title="Installing and Running Examples" class="dd-item
-        
-        
-        
-        ">
-      <a href="/installation/examples/">
-          Examples
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/installation/examples/build-options/" title="Build Options" class="dd-item ">
-        <a href="/installation/examples/build-options/">
-        Build Options
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/installation/examples/running-examples/" title="Running examples" class="dd-item ">
-        <a href="/installation/examples/running-examples/">
-        Running examples
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-      
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
-      
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/user-guide/" title="User Guide" class="dd-item
-        parent
-        
-        
-        ">
-      <a href="/user-guide/">
-          User Guide
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-            
-          
-          
-
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/user-guide/introduction/" title="Introduction" class="dd-item
-        
-        
-        
-        ">
-      <a href="/user-guide/introduction/">
-          Introduction
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/introduction/vmc-concept/" title="VMC Concept" class="dd-item ">
-        <a href="/user-guide/introduction/vmc-concept/">
-        VMC Concept
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/introduction/vmc-project/" title="VMC Project" class="dd-item ">
-        <a href="/user-guide/introduction/vmc-project/">
-        VMC Project
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-      
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/user-guide/vmc/" title="VMC Core" class="dd-item
-        parent
-        
-        
-        ">
-      <a href="/user-guide/vmc/">
-          VMC
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/vmc/vmc-core/" title="VMC Core" class="dd-item ">
-        <a href="/user-guide/vmc/vmc-core/">
-        VMC Core
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/vmc/multiple-vmc/" title="Multiple VMC Engines" class="dd-item active">
-        <a href="/user-guide/vmc/multiple-vmc/">
-        Multiple VMC
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-      
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/user-guide/geant4_vmc/" title="Geant4 VMC" class="dd-item
-        
-        
-        
-        ">
-      <a href="/user-guide/geant4_vmc/">
-          Geant4 VMC
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/geant4_vmc/geometry-definition-navigation/" title="Geometry Definition &amp; Navigation" class="dd-item ">
-        <a href="/user-guide/geant4_vmc/geometry-definition-navigation/">
-        Geometry Definition &amp; Navigation
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/geant4_vmc/magnetic-field/" title="Magnetic Field" class="dd-item ">
-        <a href="/user-guide/geant4_vmc/magnetic-field/">
-        Magnetic Field
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/geant4_vmc/sensitive-volumes/" title="Sensitive Detectors and Volumes" class="dd-item ">
-        <a href="/user-guide/geant4_vmc/sensitive-volumes/">
-        Sensitive Detectors and Volumes
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/geant4_vmc/physics-lists/" title="Physics Lists" class="dd-item ">
-        <a href="/user-guide/geant4_vmc/physics-lists/">
-        Physics Lists
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/geant4_vmc/stacking-of-particles/" title="Stacking of Particles" class="dd-item ">
-        <a href="/user-guide/geant4_vmc/stacking-of-particles/">
-        Stacking of Particles
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/geant4_vmc/special-cuts-and-regions/" title="Special Cuts and Regions" class="dd-item ">
-        <a href="/user-guide/geant4_vmc/special-cuts-and-regions/">
-        Special Cuts and Regions
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/geant4_vmc/user-geant4-classes/" title="User Geant4 Classes" class="dd-item ">
-        <a href="/user-guide/geant4_vmc/user-geant4-classes/">
-        User Geant4 Classes
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/geant4_vmc/visualization/" title="Visualization" class="dd-item ">
-        <a href="/user-guide/geant4_vmc/visualization/">
-        Visualization
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/geant4_vmc/switching-user-interfaces/" title="Switching User Interfaces" class="dd-item ">
-        <a href="/user-guide/geant4_vmc/switching-user-interfaces/">
-        Switching User Interfaces
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/geant4_vmc/multi-threaded-processing/" title="Multi-threaded Processing" class="dd-item ">
-        <a href="/user-guide/geant4_vmc/multi-threaded-processing/">
-        Multi-threaded Processing
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/geant4_vmc/verbosity/" title="Verbosity" class="dd-item ">
-        <a href="/user-guide/geant4_vmc/verbosity/">
-        Verbosity
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/geant4_vmc/vebosity-for-developers/" title="Verbosity for Developers" class="dd-item ">
-        <a href="/user-guide/geant4_vmc/vebosity-for-developers/">
-        Verbosity for Developers
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/geant4_vmc/source-code-documentation/" title="Source code documentation" class="dd-item ">
-        <a href="/user-guide/geant4_vmc/source-code-documentation/">
-        Source code documentation
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-      
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/user-guide/geant3&#43;vmc/" title="Geant3 &#43; VMC" class="dd-item
-        
-        
-        
-        ">
-      <a href="/user-guide/geant3&#43;vmc/">
-          Geant3 &#43; VMC
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/geant3&#43;vmc/geant3&#43;vmc-content/" title="Geant3 &#43; VMC Content" class="dd-item ">
-        <a href="/user-guide/geant3&#43;vmc/geant3&#43;vmc-content/">
-        Geant3 &#43; VMC Content
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-      
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/user-guide/g4root/" title="G4Root" class="dd-item
-        
-        
-        
-        ">
-      <a href="/user-guide/g4root/">
-          G4Root
-          
-      </a>
-      
-      
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
-      
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/examples/" title="Examples" class="dd-item
-        
-        
-        
-        ">
-      <a href="/examples/">
-          Examples
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/examples/vmc-examples/" title="VMC Examples" class="dd-item ">
-        <a href="/examples/vmc-examples/">
-        VMC Examples
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/examples/experiment-frameworks/" title="Experiment Frameworks" class="dd-item ">
-        <a href="/examples/experiment-frameworks/">
-        Experiment Frameworks
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-      
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/reference/" title="Reference" class="dd-item
-        
-        
-        
-        ">
-      <a href="/reference/">
-          Reference
-          
-      </a>
-      
-      
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/publications/" title="Publications" class="dd-item
-        
-        
-        
-        ">
-      <a href="/publications/">
-          Publications
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/publications/publications-list/" title="Publications List" class="dd-item ">
-        <a href="/publications/publications-list/">
-        Publications List
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-          
-        
-        </ul>
-      
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/support/" title="Support" class="dd-item
-        
-        
-        
-        ">
-      <a href="/support/">
-          Support
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/support/mailing-list/" title="Mailing List" class="dd-item ">
-        <a href="/support/mailing-list/">
-        Mailing List
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/support/bug-reports/" title="Bug Reports" class="dd-item ">
-        <a href="/support/bug-reports/">
-        Bug Reports
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-      
-    </li>
-  
- 
-
-          
-        
-    </ul>
-
-    
-    
-      <section id="shortcuts">
-        <h3>More</h3>
-        <ul>
-          
-              <li>
-                  <a class="padding" href="https://github.com/vmc-project"><i class='fab fa-github'></i> vmc-project on Github</a>
-              </li>
-          
-              <li>
-                  <a class="padding" href="https://vmc-project.github.io/copyright"><i class='far fa-copyright'></i> Copyright</a>
-              </li>
-          
-              <li>
-                  <a class="padding" href="https://vmc-project.github.io/credits"><i class='fas fa-bullhorn'></i> Credits</a>
-              </li>
-          
-        </ul>
-      </section>
-    
-
-    
-    <section id="footer">
-      <p>Built from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
-
-    </section>
-  </div>
-</nav>
-
-
-
-
-        <section id="body">
-        <div id="overlay"></div>
-        <div class="padding highlightable">
-              
-              <div>
-                <div id="top-bar">
-                
-                
-                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-                    <span id="sidebar-toggle-span">
-                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
-                          <i class="fas fa-bars"></i>
-                        </a>
-                    </span>
-                  
-                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
-                  
-                  <span class="links">
-                 
-                 
-                    
-          
-          
-            
-            
-          
-          
-            
-            
-          
-          
-            
-            
-          
-          
-            <a href='/'>VMC Project</a> > <a href='/user-guide/'>User Guide</a> > <a href='/user-guide/vmc/'>VMC Core</a> > Multiple VMC Engines
-          
-        
-          
-        
-          
-        
-          
-        
-                 
-                  </span>
-                </div>
-                
-                    <div class="progress">
-    <div class="wrapper">
-<nav id="TableOfContents">
+  <body class="mobile-support html" data-url="/user-guide/vmc/multiple-vmc/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleNav()" type="button"title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button"title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
   <ul>
     <li><a href="#introduction">Introduction</a></li>
     <li><a href="#how-multiple-engines-are-handled">How multiple engines are handled</a>
@@ -1353,27 +127,39 @@
     </li>
   </ul>
 </nav>
-    </div>
-</div>
-
-                
+                </div>
               </div>
             </div>
-            
-        <div id="head-tags">
-        
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">VMC Project</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/user-guide/index.html"><span itemprop="name">User Guide</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/user-guide/vmc/index.html"><span itemprop="name">VMC Core</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Multiple VMC Engines</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle link noborder notitle interactive"><a href="/user-guide/vmc/vmc-core/index.html" title="VMC Core (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle link noborder notitle interactive"><a href="/user-guide/geant4_vmc/index.html" title="Geant4 VMC (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button"title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        
-        <div id="body-inner">
-          
-            <h1>
-              
-              Multiple VMC Engines
-            </h1>
-          
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable user-guide" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
 
-        
-
+<h1 id="multiple-vmc-engines">Multiple VMC Engines</h1>
 
 <h2 id="introduction">Introduction</h2>
 <p>The VMC package allows splitting the event simulation among multiple engines. The criteria of how to split the simulation have to be defined by the user and among others the decision which engine to be used could depend on</p>
@@ -1386,76 +172,79 @@
 </ul>
 <p>Running multiple engines is fully supported for</p>
 <ul>
-<li><a href="https://github.com/vmc-project/geant3">GEANT3_VMC</a></li>
-<li><a href="https://github.com/vmc-project/geant4_vmc">GEANT4_VMC</a></li>
+<li><a href="https://github.com/vmc-project/geant3" rel="external">GEANT3_VMC</a></li>
+<li><a href="https://github.com/vmc-project/geant4_vmc" rel="external">GEANT4_VMC</a></li>
 </ul>
-<p>This also allows the user to implement his/her own class deriving from <a href="https://vmc-project.github.io/vmc/classTVirtualMC.html">TVirtualMC</a> to be used in a split simulation. The communication between the engines is handled by a singleton object of type <a href="https://vmc-project.github.io/vmc/classTMCManager.html">TMCManager</a> such that the user does not have to deal with special implementation details. Hence, pausing an engine, re-starting it or transferring tracks between them is done automatically and at the same time the user stack is kept up-to-date. Furthermore, the same user application derived from <a href="https://vmc-project.github.io/vmc/classTVirtualMCApplication.html">TVirtualMCApplication</a> together with the same user stack derived from <a href="https://vmc-project.github.io/vmc/classTVirtualMCStack.html">TVirtualMCStack</a> can be used for both a single engine run or a simulation split among multiple ones.</p>
+<p>This also allows the user to implement his/her own class deriving from <a href="https://vmc-project.github.io/vmc/classTVirtualMC.html" rel="external">TVirtualMC</a> to be used in a split simulation. The communication between the engines is handled by a singleton object of type <a href="https://vmc-project.github.io/vmc/classTMCManager.html" rel="external">TMCManager</a> such that the user does not have to deal with special implementation details. Hence, pausing an engine, re-starting it or transferring tracks between them is done automatically and at the same time the user stack is kept up-to-date. Furthermore, the same user application derived from <a href="https://vmc-project.github.io/vmc/classTVirtualMCApplication.html" rel="external">TVirtualMCApplication</a> together with the same user stack derived from <a href="https://vmc-project.github.io/vmc/classTVirtualMCStack.html" rel="external">TVirtualMCStack</a> can be used for both a single engine run or a simulation split among multiple ones.</p>
 <h2 id="how-multiple-engines-are-handled">How multiple engines are handled</h2>
-<p>To keep the overhead as small as possible, the <a href="https://vmc-project.github.io/vmc/classTMCManager.html">TMCManager</a> object has to be requested by the user explicitly during construction of the user application by calling <code>TVirtualMCApplication::RequestManager()</code>. That makes the manager available via the protected member <code>TVirtualMCApplication::fMCManager</code> and a pointer can also always be obtained via <code>TMCManager::Instance()</code>. In a single run, on the other hand, there is no such object and the VMC would directly interacts with the user&rsquo;s particle stack. In that case the scenario of how that VMC is treated and interacts with other objects is the same as it was in previous versions of the VMC package.</p>
-<p>The most important interfaces of the <a href="https://vmc-project.github.io/vmc/classTMCManager.html">TMCManager</a> to deal with multiple VMCs are:</p>
+<p>To keep the overhead as small as possible, the <a href="https://vmc-project.github.io/vmc/classTMCManager.html" rel="external">TMCManager</a> object has to be requested by the user explicitly during construction of the user application by calling <code>TVirtualMCApplication::RequestManager()</code>. That makes the manager available via the protected member <code>TVirtualMCApplication::fMCManager</code> and a pointer can also always be obtained via <code>TMCManager::Instance()</code>. In a single run, on the other hand, there is no such object and the VMC would directly interacts with the user&rsquo;s particle stack. In that case the scenario of how that VMC is treated and interacts with other objects is the same as it was in previous versions of the VMC package.</p>
+<p>The most important interfaces of the <a href="https://vmc-project.github.io/vmc/classTMCManager.html" rel="external">TMCManager</a> to deal with multiple VMCs are:</p>
 <ul>
-<li><code>void SetUserStack(TVirtualMCStack* userStack)</code><br>
-This notifies the manager about the user stack such that it will be kept up-to-date during the simulation. Not setting it makes the <a href="https://vmc-project.github.io/vmc/classTMCManager.html">TMCManager</a> abort the execution.</li>
-<li><code>void ForwardTrack(Int_t toBeDone, Int_t trackId, Int_t parentId, TParticle* userParticle)</code><br>
+<li><code>void SetUserStack(TVirtualMCStack* userStack)</code><br />
+This notifies the manager about the user stack such that it will be kept up-to-date during the simulation. Not setting it makes the <a href="https://vmc-project.github.io/vmc/classTMCManager.html" rel="external">TMCManager</a> abort the execution.</li>
+<li><code>void ForwardTrack(Int_t toBeDone, Int_t trackId, Int_t parentId, TParticle* userParticle)</code><br />
 The user is always the owner of all track objects (aka <code>TParticle</code>) being created. Hence, all engine calls to <code>TVirtualMCStack::PushTrack(...)</code> are first redirected to the user stack where a <code>TParticle</code> has to be created on the heap. After that, this method has to be invoked to forward the pointer of the created <code>TParticle</code> object. If a particle should be pushed to an engine other than the one currently running, the engine&rsquo;s ID has to be provided as the last argument.</li>
-<li><code>void TransferTrack(Int_t targetEngineId)</code><br>
+<li><code>void TransferTrack(Int_t targetEngineId)</code><br />
 For instance during <code>TVirtualMCApplication::Stepping()</code> the user might decide that the current track should be transferred to another engine, e.g., if a certain volume is entered. By specifying the ID or the pointer to the target engine the manager will take care of interrupting the track in the current engine, extracting the kinematics and geometry state and it will save these information for the target engine.</li>
-<li><code>template &lt;typename F&gt; void Apply(F f)</code><br>
-This assumes <code>f</code> to implement the <code>()</code> operator and taking a <a href="https://vmc-project.github.io/vmc/classTVirtualMC.html">TVirtualMC</a> pointer as an argument. <code>f</code> will be then called for all engines.</li>
-<li><code>template &lt;typename F&gt; void Init(F f)</code><br>
+<li><code>template &lt;typename F&gt; void Apply(F f)</code><br />
+This assumes <code>f</code> to implement the <code>()</code> operator and taking a <a href="https://vmc-project.github.io/vmc/classTVirtualMC.html" rel="external">TVirtualMC</a> pointer as an argument. <code>f</code> will be then called for all engines.</li>
+<li><code>template &lt;typename F&gt; void Init(F f)</code><br />
 This works as <code>TMCManager::Apply</code> during the initialization of the engines. It can also be called without an argument such that no additional user routine is included.</li>
-<li><code>void Run(Int_t nEvents)</code><br>
+<li><code>void Run(Int_t nEvents)</code><br />
 A run involving all registered VMCs is steered for the specific number of events.</li>
-<li><code>void ConnectEnginePointers(TVirtualMC *&amp;mc)</code><br>
+<li><code>void ConnectEnginePointers(TVirtualMC *&amp;mc)</code><br />
 This gives the possibility for a user to pass a pointer variable which will always be set to point to the currently running engine. Note, however, that there is a protected member <code>TVirtualMCApplication::fMC</code> which always points to the currently running engine and it can therefore be used within the application&rsquo;s code.</li>
-<li><code>TVirtualMC *GetCurrentEngine()</code><br>
+<li><code>TVirtualMC *GetCurrentEngine()</code><br />
 This provides the user with a pointer to the currently running engine.</li>
 </ul>
-<p>An example of how the <a href="https://vmc-project.github.io/vmc/classTMCManager.html">TMCManager</a> is utilized in a multi-run can be found in <a href="https://github.com/vmc-project/geant4_vmc/tree/master/examples/E03/E03c">E03c example</a> of the <code>geant4_vmc</code> repository. The <code>diff</code> of e.g <strong>E03/E03a</strong> and <strong>E03/E03c</strong> nicely highlights the small amount of extensions necessary to use the same application and stack for both a single and a multi-run.</p>
+<p>An example of how the <a href="https://vmc-project.github.io/vmc/classTMCManager.html" rel="external">TMCManager</a> is utilized in a multi-run can be found in <a href="https://github.com/vmc-project/geant4_vmc/tree/master/examples/E03/E03c" rel="external">E03c example</a> of the <code>geant4_vmc</code> repository. The <code>diff</code> of e.g <strong>E03/E03a</strong> and <strong>E03/E03c</strong> nicely highlights the small amount of extensions necessary to use the same application and stack for both a single and a multi-run.</p>
 <h3 id="implementation-and-workflow-example">Implementation and workflow example</h3>
-<p>The general workflow of a multi-run is explained using some of the classes/implementations of the <a href="https://github.com/vmc-project/geant4_vmc/tree/master/examples/E03/E03c">E03c example</a> mentioned above.</p>
+<p>The general workflow of a multi-run is explained using some of the classes/implementations of the <a href="https://github.com/vmc-project/geant4_vmc/tree/master/examples/E03/E03c" rel="external">E03c example</a> mentioned above.</p>
 <p><strong>Implementation</strong></p>
 <ol>
-<li>Implement your application and stack as you have done before. Request the <a href="https://vmc-project.github.io/vmc/classTMCManager.html">TMCManager</a> in your constructor by calling <code>TVirtualMCApplication::RequestMCManager()</code>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>Ex03MCApplication<span style="color:#f92672">::</span>Ex03MCApplication(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> name, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> title, Bool_t isMulti, Bool_t splitSimulation)
+<li>Implement your application and stack as you have done before. Request the <a href="https://vmc-project.github.io/vmc/classTMCManager.html" rel="external">TMCManager</a> in your constructor by calling <code>TVirtualMCApplication::RequestMCManager()</code>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>Ex03MCApplication<span style="color:#f92672">::</span>Ex03MCApplication(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> name, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">*</span> title, Bool_t isMulti, Bool_t splitSimulation)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e">// some construction
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">// user stack
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        fStack <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Ex03MCStack(<span style="color:#ae81ff">1000</span>);
+</span></span></span><span style="display:flex;"><span>        <span style="color:#75715e">// user stack
+</span></span></span><span style="display:flex;"><span>        fStack <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Ex03MCStack(<span style="color:#ae81ff">1000</span>);
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(isMulti) {
 </span></span><span style="display:flex;"><span>            RequestManager();
 </span></span><span style="display:flex;"><span>            fMCManager<span style="color:#f92672">-&gt;</span>SetUserStack(fStack);
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e">// further construction
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}</span></span></code></pre></div></li>
+</span></span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+</li>
 <li>At an appropriate stage (i.e. in <code>UserStack::PushTrack(...)</code>) you would call <code>TMCManager::ForwardTrack(...)</code> to forward the pointer to your newly constructed <code>TParticle</code> object.
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> Ex03MCStack<span style="color:#f92672">::</span>PushTrack(Int_t toBeDone, Int_t parent, ..., Int_t<span style="color:#f92672">&amp;</span> ntr, ...)
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> Ex03MCStack<span style="color:#f92672">::</span>PushTrack(Int_t toBeDone, Int_t parent, ..., Int_t<span style="color:#f92672">&amp;</span> ntr, ...)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e">// TParticle construction yielding pointer &#34;particle&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">// User defines the track ID
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        ntr <span style="color:#f92672">=</span> GetNtrack() <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
+</span></span></span><span style="display:flex;"><span>        <span style="color:#75715e">// User defines the track ID
+</span></span></span><span style="display:flex;"><span>        ntr <span style="color:#f92672">=</span> GetNtrack() <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Forward to the TMCManager in case of multi-run
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">auto</span> mgr <span style="color:#f92672">=</span> TMCManager<span style="color:#f92672">::</span>Instance()) {
+</span></span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">auto</span> mgr <span style="color:#f92672">=</span> TMCManager<span style="color:#f92672">::</span>Instance()) {
 </span></span><span style="display:flex;"><span>            mgr<span style="color:#f92672">-&gt;</span>ForwardTrack(toBeDone, ntr, parent, particle);
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e">// further implementations
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}</span></span></code></pre></div></li>
-<li>Whenever needed, check the presence of <a href="https://vmc-project.github.io/vmc/classTMCManager.html"><code>TMCManager</code></a> to decide whether the code should work for single or multi-run, e.g. in the constructor of <code>Ex03DetectorConstruction</code> where its member <code>fMC</code> is setup to point to the currently running VMC in the multi-run scenario.
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>Ex03DetecorConstruction<span style="color:#f92672">::</span>Ex03DetectorConstruction(...)
+</span></span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+</li>
+<li>Whenever needed, check the presence of <a href="https://vmc-project.github.io/vmc/classTMCManager.html" rel="external"><code>TMCManager</code></a> to decide whether the code should work for single or multi-run, e.g. in the constructor of <code>Ex03DetectorConstruction</code> where its member <code>fMC</code> is setup to point to the currently running VMC in the multi-run scenario.
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>Ex03DetecorConstruction<span style="color:#f92672">::</span>Ex03DetectorConstruction(...)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e">// some construction
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">auto</span> mgr <span style="color:#f92672">=</span> TMCManager<span style="color:#f92672">::</span>Instance()) {
+</span></span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">auto</span> mgr <span style="color:#f92672">=</span> TMCManager<span style="color:#f92672">::</span>Instance()) {
 </span></span><span style="display:flex;"><span>            mgr<span style="color:#f92672">-&gt;</span>ConnectEnginePointer(fMC);
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e">// ...
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        }
+</span></span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e">// maybe some more construction
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}</span></span></code></pre></div></li>
+</span></span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+</li>
 <li>Transfer a track involving <code>TMCManager::TransferTrack(...)</code>. If the target VMC ID coincides with the one currently running, nothing will happen and the simulation would just continue.
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>Ex03MCApplication<span style="color:#f92672">::</span>Stepping()
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>Ex03MCApplication<span style="color:#f92672">::</span>Stepping()
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e">// some implementation
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        Int_t targetId <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+</span></span></span><span style="display:flex;"><span>        Int_t targetId <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (fMC<span style="color:#f92672">-&gt;</span>GetId() <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> strcmp(fMC<span style="color:#f92672">-&gt;</span>GetCurrentVolName(), <span style="color:#e6db74">&#34;ABSO&#34;</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
 </span></span><span style="display:flex;"><span>            targetId <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
 </span></span><span style="display:flex;"><span>        }
@@ -1469,920 +258,141 @@ This provides the user with a pointer to the currently running engine.</li>
 </span></span><span style="display:flex;"><span>            fMCManager<span style="color:#f92672">-&gt;</span>TransferTrack(targetId);
 </span></span><span style="display:flex;"><span>        }   
 </span></span><span style="display:flex;"><span>        <span style="color:#75715e">// further implementations
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}</span></span></code></pre></div>
+</span></span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+
 To use the same stack in both scenarios (single and multi-run), one can always check whether the manager is present by checking if <code>TMCManager::Instance()</code> returns a valid pointer value.</li>
 </ol>
 <p><strong>Usage</strong></p>
 <ol>
 <li>Instantiate your application (here the user stack is created during construction of the application, see above)
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> isMulti <span style="color:#f92672">=</span> true;
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> isMulti <span style="color:#f92672">=</span> true;
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> splitSimulation <span style="color:#f92672">=</span> true;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> appl <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Ex03MCapplication(<span style="color:#e6db74">&#34;multiApplication&#34;</span>, <span style="color:#e6db74">&#34;multiApplication&#34;</span>, isMulti, splitSimulation);</span></span></code></pre></div></li>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> appl <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Ex03MCapplication(<span style="color:#e6db74">&#34;multiApplication&#34;</span>, <span style="color:#e6db74">&#34;multiApplication&#34;</span>, isMulti, splitSimulation);</span></span></code></pre></div>
+</li>
 <li>Instantiate the engines you want to use (these are registered automatically to the manager). In the E03c example this is done in <code>TVirtualMCApplication::InitMC</code> but to clarify, it is written here explicitely,
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> engine1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TGeant3(...);
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> engine1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TGeant3(...);
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">auto</span> engine2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TGeant4(...);
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// Nothing further to be done
-</span></span></span></code></pre></div></li>
+</span></span></span></code></pre></div>
+</li>
 <li>Call <code>TMCManager::Init(...)</code> (if needed with your custom initialization procedure, see above; that can of course also be wrapped into another method of your application as it is done here),
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> Ex03MCApplication<span style="color:#f92672">::</span>InitMC(std<span style="color:#f92672">::</span>initializer_list<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">*&gt;</span> setupMacros)
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> Ex03MCApplication<span style="color:#f92672">::</span>InitMC(std<span style="color:#f92672">::</span>initializer_list<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span><span style="color:#f92672">*&gt;</span> setupMacros)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>      <span style="color:#75715e">// some implementation
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      fMCManager<span style="color:#f92672">-&gt;</span>Init([<span style="color:#66d9ef">this</span>](TVirtualMC<span style="color:#f92672">*</span> mc) {
+</span></span></span><span style="display:flex;"><span>      fMCManager<span style="color:#f92672">-&gt;</span>Init([<span style="color:#66d9ef">this</span>](TVirtualMC<span style="color:#f92672">*</span> mc) {
 </span></span><span style="display:flex;"><span>        mc<span style="color:#f92672">-&gt;</span>SetRootGeometry();
 </span></span><span style="display:flex;"><span>        mc<span style="color:#f92672">-&gt;</span>SetMagField(fMagField);
 </span></span><span style="display:flex;"><span>        mc<span style="color:#f92672">-&gt;</span>Init();
 </span></span><span style="display:flex;"><span>        mc<span style="color:#f92672">-&gt;</span>BuildPhysics();
 </span></span><span style="display:flex;"><span>      });
 </span></span><span style="display:flex;"><span>      <span style="color:#75715e">// further implementations
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}</span></span></code></pre></div>
+</span></span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+
 The lambda argument will be called for each registered VMC separately. If necessary, it can be more specific. Instead of passing a lambda function, a function pointer could be given or also an object. The only requirement is that what is passed implements a <code>()</code> operator taking a VMC pointer as an argument.</li>
 <li>Call <code>TMCManager::Run(...)</code> specifying the desired number of events to be simulated.
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> Ex03MCApplication<span style="color:#f92672">::</span>RunMC(Int_t nofEvents)
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> Ex03MCApplication<span style="color:#f92672">::</span>RunMC(Int_t nofEvents)
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>      <span style="color:#75715e">// some implementation
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      fMCManager<span style="color:#f92672">-&gt;</span>Run(nofEvents);
+</span></span></span><span style="display:flex;"><span>      fMCManager<span style="color:#f92672">-&gt;</span>Run(nofEvents);
 </span></span><span style="display:flex;"><span>      <span style="color:#75715e">// further implementations
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}</span></span></code></pre></div></li>
+</span></span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+</li>
 </ol>
 <p><strong>Important comments</strong></p>
-<p>The geometry is built once centrally via the <a href="https://vmc-project.github.io/vmc/classTMCManager.html">TMCManager</a> calling</p>
+<p>The geometry is built once centrally via the <a href="https://vmc-project.github.io/vmc/classTMCManager.html" rel="external">TMCManager</a> calling</p>
 <ol>
 <li><code>TVirtualMCApplication::ConstructGeometry()</code>,</li>
 <li><code>TVirtualMCApplication::MisalignGeometry()</code>,</li>
 <li><code>TVirtualMCApplication::ConstructOpGeometry()</code></li>
 </ol>
 <p>and therefore, it is expected that these methods do not depend on any engine.</p>
-<p>If multiple engines have been instantiated, never call <code>TVirtualMC::ProcessRun(...)</code> or other steering methods on the individual engine because that would bypass the <a href="https://vmc-project.github.io/vmc/classTMCManager.html">TMCManager</a> and will lead to inconsistent behavior.</p>
+<p>If multiple engines have been instantiated, never call <code>TVirtualMC::ProcessRun(...)</code> or other steering methods on the individual engine because that would bypass the <a href="https://vmc-project.github.io/vmc/classTMCManager.html" rel="external">TMCManager</a> and will lead to inconsistent behavior.</p>
 
-
-<footer class="footline">
-	
-</footer>
-
-        
+  <footer class="footline">
+  </footer>
+</article>
         </div>
-        
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<a id="logo" href="https://vmc-project.github.io/">
+  <img src="/images/VMClogo6_white.png" width=80% />
+</a>
 
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
       </div>
-
-    <div id="navigation">
-        
-        
-
-        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-        
-                    
-                        
-            
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-
-        
-
-
-	 
-	 
-		
-			<a class="nav nav-prev" href="/user-guide/vmc/vmc-core/" title="VMC Core"> <i class="fa fa-chevron-left"></i></a>
-		
-		
-			<a class="nav nav-next" href="/user-guide/geant4_vmc/" title="Geant4 VMC" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
-		
-	
-    </div>
-
-    </section>
-
-    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
-      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
-    </div>
-    <script src="/js/clipboard.min.js?1738946947"></script>
-    <script src="/js/perfect-scrollbar.min.js?1738946947"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1738946947"></script>
-    <script src="/js/jquery.sticky.js?1738946947"></script>
-    <script src="/js/featherlight.min.js?1738946947"></script>
-    <script src="/js/highlight.pack.js?1738946947"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1738946947"></script>
-    <script src="/js/learn.js?1738946947"></script>
-    <script src="/js/hugo-learn.js?1738946947"></script>
-    
-        
-            <script src="/mermaid/mermaid.js?1738946947"></script>
-        
-        <script>
-            mermaid.initialize({ startOnLoad: true });
-        </script>
-    
-    
-
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-url="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-url="/download/index.html"><a class="padding" href="/download/index.html">Download</a><ul id="R-subsections-89f76e1526985442faec91b4b17e0f07" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/installation/index.html"><a class="padding" href="/installation/index.html">Installation</a><ul id="R-subsections-ff749ccaab053548f690f97bcd6daed0" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-url="/user-guide/index.html"><a class="padding" href="/user-guide/index.html">User Guide</a><ul id="R-subsections-2481933c277ea702431836ec0ab63c8d" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-url="/user-guide/introduction/index.html"><a class="padding" href="/user-guide/introduction/index.html">Introduction</a><ul id="R-subsections-532eb40a7cfc1156985d16550c20c318" class="collapsible-menu"></ul></li>
+            <li class="parent alwaysopen " data-nav-url="/user-guide/vmc/index.html"><a class="padding" href="/user-guide/vmc/index.html">VMC Core</a><ul id="R-subsections-066cb094d3f438e7db65ed94824c02fc" class="collapsible-menu">
+            <li class="" data-nav-url="/user-guide/vmc/vmc-core/index.html"><a class="padding" href="/user-guide/vmc/vmc-core/index.html">VMC Core</a></li>
+            <li class="active " data-nav-url="/user-guide/vmc/multiple-vmc/index.html"><a class="padding" href="/user-guide/vmc/multiple-vmc/index.html">Multiple VMC Engines</a></li></ul></li>
+            <li class="alwaysopen " data-nav-url="/user-guide/geant4_vmc/index.html"><a class="padding" href="/user-guide/geant4_vmc/index.html">Geant4 VMC</a><ul id="R-subsections-f0eeb039b5c33cec668a20de8c677e7b" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-url="/user-guide/geant3&#43;vmc/index.html"><a class="padding" href="/user-guide/geant3+vmc/index.html">Geant3 &#43; VMC</a><ul id="R-subsections-16038b6e10e2124b564d6f1a2a927fab" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/user-guide/g4root/index.html"><a class="padding" href="/user-guide/g4root/index.html">G4Root</a></li></ul></li>
+            <li class="" data-nav-url="/examples/index.html"><a class="padding" href="/examples/index.html">Examples</a><ul id="R-subsections-2e4187ca04853a7e1382c8d86f7be6fd" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/reference/index.html"><a class="padding" href="/reference/index.html">Reference</a></li>
+            <li class="" data-nav-url="/publications/index.html"><a class="padding" href="/publications/index.html">Publications</a><ul id="R-subsections-e0b210545207756ebe6bf30368fa14c3" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/support/index.html"><a class="padding" href="/support/index.html">Support</a><ul id="R-subsections-caa68563dfb61577c2c4699e1aa63010" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <div class="nav-title padding">More</div>
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-url="https://github.com/vmc-project"><a class="padding" href="https://github.com/vmc-project" rel="external"><i class='fab fa-github'></i> vmc-project on Github</a></li>
+            <li class="" data-nav-url="/copyright"><a class="padding" href="/copyright"><i class='far fa-copyright'></i> Copyright</a></li>
+            <li class="" data-nav-url="/credits"><a class="padding" href="/credits"><i class='fas fa-bullhorn'></i> Credits</a></li>
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+</div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1770049849" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1770049849" defer></script>
+    <script src="/js/theme.min.js?1770049849" defer></script>
   </body>
 </html>
-

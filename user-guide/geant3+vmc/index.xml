@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Geant3 &#43; VMC on VMC</title>
-    <link>https://vmc-project.github.io/user-guide/geant3&#43;vmc/</link>
-    <description>Recent content in Geant3 &#43; VMC on VMC</description>
+    <title>Geant3 &#43; VMC :: VMC</title>
+    <link>https://vmc-project.github.io/user-guide/geant3&#43;vmc/index.html</link>
+    <description>The geant3 package provided in vmc-project contains both the Geant3.21 code itself and the implementation of the TVirtualMC interface, TGeant3.&#xA;For a detail description of Geant3, see the Geant3 manual.&#xA;Geant3 + VMC Content</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://vmc-project.github.io/user-guide/geant3+vmc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Geant3 &#43; VMC Content</title>
-      <link>https://vmc-project.github.io/user-guide/geant3&#43;vmc/geant3&#43;vmc-content/</link>
+      <link>https://vmc-project.github.io/user-guide/geant3&#43;vmc/geant3&#43;vmc-content/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://vmc-project.github.io/user-guide/geant3&#43;vmc/geant3&#43;vmc-content/</guid>
-      <description>&lt;div class=&#34;notices warning&#34; &gt;&lt;p&gt;Only the &lt;strong&gt;Geant3.21&lt;/strong&gt; code itself and the implementation of the &lt;a href=&#34;https://vmc-project.github.io/vmc/classTVirtualMC.html&#34;&gt;TVirtualMC&lt;/a&gt; interface, &lt;strong&gt;TGeant3&lt;/strong&gt;, provided in &lt;a href=&#34;https://github.com/vmc-project/geant3&#34;&gt;geant3&lt;/a&gt; are maintained by the VMC project.&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;h3 id=&#34;geant321&#34;&gt;Geant3.21&lt;/h3&gt;&#xA;&lt;p&gt;The updated version of Geant3.21 that includes several bug fixes compared to the standard version in CERNLIB.&#xA;In this version all Geant3 gxxxxx routines have been renamed g3xxxxx.&lt;/p&gt;&#xA;&lt;p&gt;The old &lt;code&gt;Makefile&lt;/code&gt; system was replaced with a &lt;code&gt;CMake&lt;/code&gt; based system since version 2.0.&lt;/p&gt;&#xA;&lt;p&gt;See also &lt;a href=&#34;https://vmc-project.github.io/geant.pdf&#34;&gt;Geant3.21 User Guide&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;tgeant3-geant3-vmc&#34;&gt;TGeant3 (Geant3 VMC)&lt;/h3&gt;&#xA;&lt;p&gt;The directory &lt;code&gt;TGeant3&lt;/code&gt; contains the classes &lt;a href=&#34;https://github.com/vmc-project/geant3/blob/master/TGeant3/TGeant3.h&#34;&gt;TGeant3&lt;/a&gt; and &lt;a href=&#34;https://github.com/vmc-project/geant3/blob/master/TGeant3/TGeant3TGeo.h&#34;&gt;TGeant3TGeo&lt;/a&gt;,&#xA;which implement the &lt;a href=&#34;https://vmc-project.github.io/vmc/classTVirtualMC.html&#34;&gt;TVirtualMC&lt;/a&gt; interface.&lt;/p&gt;</description>
+      <guid>https://vmc-project.github.io/user-guide/geant3&#43;vmc/geant3&#43;vmc-content/index.html</guid>
+      <description>Warning Only the Geant3.21 code itself and the implementation of the TVirtualMC interface, TGeant3, provided in geant3 are maintained by the VMC project.&#xA;Geant3.21 The updated version of Geant3.21 that includes several bug fixes compared to the standard version in CERNLIB. In this version all Geant3 gxxxxx routines have been renamed g3xxxxx.&#xA;The old Makefile system was replaced with a CMake based system since version 2.0.</description>
     </item>
   </channel>
 </rss>

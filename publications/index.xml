@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Publications on VMC</title>
-    <link>https://vmc-project.github.io/publications/</link>
-    <description>Recent content in Publications on VMC</description>
+    <title>Publications :: VMC</title>
+    <link>https://vmc-project.github.io/publications/index.html</link>
+    <description>This chapter lists the presentations &amp; publication related to VMC.&#xA;Publications List</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://vmc-project.github.io/publications/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Publications List</title>
-      <link>https://vmc-project.github.io/publications/publications-list/</link>
+      <link>https://vmc-project.github.io/publications/publications-list/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://vmc-project.github.io/publications/publications-list/</guid>
-      <description>&lt;p&gt;Please refer to the paper below when publishing results base on simulations with VMC:&lt;/p&gt;&#xA;&#xA;&lt;div class=&#34;notices info&#34; &gt;&lt;p&gt;&lt;strong&gt;Reference paper&lt;/strong&gt;&lt;br&gt;&#xA;Hřivnáčová I et al: The Virtual MonteCarlo,&lt;br&gt;&#xA;ECONF C0303241:THJT006,2003; &lt;a href=&#34;https://arxiv.org/abs/cs/0306005&#34;&gt;e-Print: cs.SE/0306005&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;All publications listed in time reversed order:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.epj-conferences.org/articles/epjconf/pdf/2020/21/epjconf_chep2020_02005.pdf&#34;&gt;New Developments in the VMC Project&lt;/a&gt;,&lt;br&gt;&#xA;I Hřivnáčová, B Volkel 2020 &lt;em&gt;EPJ Web Conf.&lt;/em&gt; &lt;strong&gt;Volume 245&lt;/strong&gt; 02005&lt;br&gt;&#xA;doi: 10.1051/epjconf/202024502005&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.epj-conferences.org/articles/epjconf/pdf/2020/21/epjconf_chep2020_02008.pdf&#34;&gt;Using multiple engines in the Virtual Monte Carlo package&lt;/a&gt;,&lt;br&gt;&#xA;B Volkel et al  2020 &lt;em&gt;EPJ Web Conf.&lt;/em&gt; &lt;strong&gt;Volume 245&lt;/strong&gt; 02008&lt;br&gt;&#xA;doi: 10.1051/epjconf/202024502008&lt;/p&gt;</description>
+      <guid>https://vmc-project.github.io/publications/publications-list/index.html</guid>
+      <description>Please refer to the paper below when publishing results base on simulations with VMC:&#xA;Info Reference paper&#xA;Hřivnáčová I et al: The Virtual MonteCarlo,&#xA;ECONF C0303241:THJT006,2003; e-Print: cs.SE/0306005&#xA;All publications listed in time reversed order:&#xA;New Developments in the VMC Project,&#xA;I Hřivnáčová, B Volkel 2020 EPJ Web Conf. Volume 245 02005&#xA;doi: 10.1051/epjconf/202024502005&#xA;Using multiple engines in the Virtual Monte Carlo package,&#xA;B Volkel et al 2020 EPJ Web Conf. Volume 245 02008&#xA;doi: 10.1051/epjconf/202024502008</description>
     </item>
     <item>
       <title>Meetings (Old)</title>
-      <link>https://vmc-project.github.io/publications/meetings/</link>
+      <link>https://vmc-project.github.io/publications/meetings/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://vmc-project.github.io/publications/meetings/</guid>
-      <description>&lt;!-- raw HTML omitted --&gt;</description>
+      <guid>https://vmc-project.github.io/publications/meetings/index.html</guid>
+      <description>VMC meeting, CERN, 03 June 2009   VMC meeting, CERN, 04 February 2009   VMC Open issues meeting, CERN, 22 September 2008   VMC Workshop, CERN, 29-30th November 2004</description>
     </item>
   </channel>
 </rss>

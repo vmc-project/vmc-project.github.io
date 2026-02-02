@@ -1,1349 +1,123 @@
 <!DOCTYPE html>
-<html lang="en" class="js csstransforms3d">
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.134.2">
-    <meta name="description" content="">
-
-
-    <link rel="icon" href="/images/favicon.png" type="image/png">
-
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.154.1">
+    <meta name="generator" content="Relearn 8.2.0">
+    <meta name="description" content="Geant4 VMC requires ROOT and Geant4 installed, then the VMC core package if using ROOT built without vmc enabled, and optionally, it can be built with VGM. See below tips for configuration and installation of these packages.
+The path to required and optional packages installations can be defined in the standard CMake way, via the paths to the CMake configuration file:
+Geant4_DIR ... path to Geant4Config.cmake ROOT_DIR ... path to ROOTConfig.cmake VMC_DIR ... path to VMCConfig.cmake VGM_DIR ... path to VGMConfig.cmake CMake will also find the CMake configuration files (for ROOT and Geant4) if you source the relevant script from the packages installations (CMAKE_INSTALL_PREFIX) so that they are available in the sestem paths:">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Required and Optional Packages :: VMC">
+    <meta name="twitter:description" content="Geant4 VMC requires ROOT and Geant4 installed, then the VMC core package if using ROOT built without vmc enabled, and optionally, it can be built with VGM. See below tips for configuration and installation of these packages.
+The path to required and optional packages installations can be defined in the standard CMake way, via the paths to the CMake configuration file:
+Geant4_DIR ... path to Geant4Config.cmake ROOT_DIR ... path to ROOTConfig.cmake VMC_DIR ... path to VMCConfig.cmake VGM_DIR ... path to VGMConfig.cmake CMake will also find the CMake configuration files (for ROOT and Geant4) if you source the relevant script from the packages installations (CMAKE_INSTALL_PREFIX) so that they are available in the sestem paths:">
+    <meta property="og:url" content="https://vmc-project.github.io/installation/geant4_vmc/required-optional-packages/index.html">
+    <meta property="og:site_name" content="VMC">
+    <meta property="og:title" content="Required and Optional Packages :: VMC">
+    <meta property="og:description" content="Geant4 VMC requires ROOT and Geant4 installed, then the VMC core package if using ROOT built without vmc enabled, and optionally, it can be built with VGM. See below tips for configuration and installation of these packages.
+The path to required and optional packages installations can be defined in the standard CMake way, via the paths to the CMake configuration file:
+Geant4_DIR ... path to Geant4Config.cmake ROOT_DIR ... path to ROOTConfig.cmake VMC_DIR ... path to VMCConfig.cmake VGM_DIR ... path to VGMConfig.cmake CMake will also find the CMake configuration files (for ROOT and Geant4) if you source the relevant script from the packages installations (CMAKE_INSTALL_PREFIX) so that they are available in the sestem paths:">
+    <meta property="og:locale" content="en_us">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Installation">
+    <meta itemprop="name" content="Required and Optional Packages :: VMC">
+    <meta itemprop="description" content="Geant4 VMC requires ROOT and Geant4 installed, then the VMC core package if using ROOT built without vmc enabled, and optionally, it can be built with VGM. See below tips for configuration and installation of these packages.
+The path to required and optional packages installations can be defined in the standard CMake way, via the paths to the CMake configuration file:
+Geant4_DIR ... path to Geant4Config.cmake ROOT_DIR ... path to ROOTConfig.cmake VMC_DIR ... path to VMCConfig.cmake VGM_DIR ... path to VGMConfig.cmake CMake will also find the CMake configuration files (for ROOT and Geant4) if you source the relevant script from the packages installations (CMAKE_INSTALL_PREFIX) so that they are available in the sestem paths:">
+    <meta itemprop="wordCount" content="603">
     <title>Required and Optional Packages :: VMC</title>
-
-    
-    <link href="/css/nucleus.css?1738946947" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1738946947" rel="stylesheet">
-    <link href="/css/hybrid.css?1738946947" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1738946947" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1738946947" rel="stylesheet">
-    <link href="/css/auto-complete.css?1738946947" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1738946947" rel="stylesheet">
-    <link href="/css/theme.css?1738946947" rel="stylesheet">
-    <link href="/css/tabs.css?1738946947" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1738946947" rel="stylesheet">
-    
-    <link href="/css/theme-vmc.css?1738946947" rel="stylesheet">
-    
-    
-
-    <script src="/js/jquery-3.3.1.min.js?1738946947"></script>
-
-    <style>
-      :root #header + #content > #left > #rlblock_left{
-          display:none !important;
+    <link href="/css/auto-complete/auto-complete.min.css?1770049849" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1770049849" defer></script>
+    <script src="/js/search-lunr.min.js?1770049849" defer></script>
+    <script src="/js/search.min.js?1770049849" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1770049849";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1770049849" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1770049849" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1770049849" defer></script>
+    <script src="/js/lunr/lunr.en.min.js?1770049849" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['en'];
+    </script>
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1770049849" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1770049849" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1770049849" rel="stylesheet">
+    <link href="/css/theme.min.css?1770049849" rel="stylesheet">
+    <link href="/css/format-html.min.css?1770049849" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = `.min`;
+      window.relearn.path='\/installation\/geant4_vmc\/required-optional-packages\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='https:\/\/vmc-project.github.io';
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+      // variant stuff
+      window.relearn.themevariants = [ 'vmc' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
       }
-      
-    </style>
-    
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
   </head>
-  <body class="" data-url="/installation/geant4_vmc/required-optional-packages/">
-    <nav id="sidebar" class="">
-
-
-
-  <div id="header-wrapper">
-    <div id="header">
-      <a id="logo" href="https://vmc-project.github.io/">
-  <img src="/images/VMClogo6_white.png" width=80% />
-</a>
-
-    </div>
-    
-        <div class="searchbox">
-    <label for="search-by"><i class="fas fa-search"></i></label>
-    <input data-search-input id="search-by" type="search" placeholder="Search...">
-    <span data-search-clear=""><i class="fas fa-times"></i></span>
-</div>
-
-<script type="text/javascript" src="/js/lunr.min.js?1738946947"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1738946947"></script>
-<script type="text/javascript">
-    
-        var baseurl = "https:\/\/vmc-project.github.io\/";
-    
-</script>
-<script type="text/javascript" src="/js/search.js?1738946947"></script>
-
-    
-  </div>
-
-    <div class="highlightable">
-    <ul class="topics">
-
-        
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/download/" title="Download" class="dd-item
-        
-        
-        
-        ">
-      <a href="/download/">
-          Download
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/download/git-vmc/" title="VMC" class="dd-item ">
-        <a href="/download/git-vmc/">
-        VMC
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/download/git-geant4_vmc/" title="Geant4 VMC" class="dd-item ">
-        <a href="/download/git-geant4_vmc/">
-        Geant4 VMC
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/download/git-geant3/" title="Geant3" class="dd-item ">
-        <a href="/download/git-geant3/">
-        Geant3
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/download/tar-files/" title="Tar Files" class="dd-item ">
-        <a href="/download/tar-files/">
-        Tar Files
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-      
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/installation/" title="Installation" class="dd-item
-        parent
-        
-        
-        ">
-      <a href="/installation/">
-          Installation
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-            
-          
-          
-
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/installation/vmc/" title="Installing VMC" class="dd-item ">
-        <a href="/installation/vmc/">
-        VMC
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/installation/geant4_vmc/" title="Installing Geant4 VMC" class="dd-item
-        parent
-        
-        
-        ">
-      <a href="/installation/geant4_vmc/">
-          Geant4 VMC
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/installation/geant4_vmc/build-options/" title="Build Options" class="dd-item ">
-        <a href="/installation/geant4_vmc/build-options/">
-        Build Options
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-          
-            
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/installation/geant4_vmc/required-optional-packages/" title="Required and Optional Packages" class="dd-item active">
-        <a href="/installation/geant4_vmc/required-optional-packages/">
-        Required and Optional Packages
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-      
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/installation/geant3/" title="Installing Geant3" class="dd-item
-        
-        
-        
-        ">
-      <a href="/installation/geant3/">
-          Geant3
-          
-      </a>
-      
-      
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/installation/examples/" title="Installing and Running Examples" class="dd-item
-        
-        
-        
-        ">
-      <a href="/installation/examples/">
-          Examples
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/installation/examples/build-options/" title="Build Options" class="dd-item ">
-        <a href="/installation/examples/build-options/">
-        Build Options
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/installation/examples/running-examples/" title="Running examples" class="dd-item ">
-        <a href="/installation/examples/running-examples/">
-        Running examples
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-      
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
-      
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/user-guide/" title="User Guide" class="dd-item
-        
-        
-        
-        ">
-      <a href="/user-guide/">
-          User Guide
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-            
-          
-          
-
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/user-guide/introduction/" title="Introduction" class="dd-item
-        
-        
-        
-        ">
-      <a href="/user-guide/introduction/">
-          Introduction
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/introduction/vmc-concept/" title="VMC Concept" class="dd-item ">
-        <a href="/user-guide/introduction/vmc-concept/">
-        VMC Concept
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/introduction/vmc-project/" title="VMC Project" class="dd-item ">
-        <a href="/user-guide/introduction/vmc-project/">
-        VMC Project
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-      
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/user-guide/vmc/" title="VMC Core" class="dd-item
-        
-        
-        
-        ">
-      <a href="/user-guide/vmc/">
-          VMC
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/vmc/vmc-core/" title="VMC Core" class="dd-item ">
-        <a href="/user-guide/vmc/vmc-core/">
-        VMC Core
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/vmc/multiple-vmc/" title="Multiple VMC Engines" class="dd-item ">
-        <a href="/user-guide/vmc/multiple-vmc/">
-        Multiple VMC
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-      
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/user-guide/geant4_vmc/" title="Geant4 VMC" class="dd-item
-        
-        
-        
-        ">
-      <a href="/user-guide/geant4_vmc/">
-          Geant4 VMC
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/geant4_vmc/geometry-definition-navigation/" title="Geometry Definition &amp; Navigation" class="dd-item ">
-        <a href="/user-guide/geant4_vmc/geometry-definition-navigation/">
-        Geometry Definition &amp; Navigation
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/geant4_vmc/magnetic-field/" title="Magnetic Field" class="dd-item ">
-        <a href="/user-guide/geant4_vmc/magnetic-field/">
-        Magnetic Field
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/geant4_vmc/sensitive-volumes/" title="Sensitive Detectors and Volumes" class="dd-item ">
-        <a href="/user-guide/geant4_vmc/sensitive-volumes/">
-        Sensitive Detectors and Volumes
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/geant4_vmc/physics-lists/" title="Physics Lists" class="dd-item ">
-        <a href="/user-guide/geant4_vmc/physics-lists/">
-        Physics Lists
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/geant4_vmc/stacking-of-particles/" title="Stacking of Particles" class="dd-item ">
-        <a href="/user-guide/geant4_vmc/stacking-of-particles/">
-        Stacking of Particles
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/geant4_vmc/special-cuts-and-regions/" title="Special Cuts and Regions" class="dd-item ">
-        <a href="/user-guide/geant4_vmc/special-cuts-and-regions/">
-        Special Cuts and Regions
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/geant4_vmc/user-geant4-classes/" title="User Geant4 Classes" class="dd-item ">
-        <a href="/user-guide/geant4_vmc/user-geant4-classes/">
-        User Geant4 Classes
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/geant4_vmc/visualization/" title="Visualization" class="dd-item ">
-        <a href="/user-guide/geant4_vmc/visualization/">
-        Visualization
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/geant4_vmc/switching-user-interfaces/" title="Switching User Interfaces" class="dd-item ">
-        <a href="/user-guide/geant4_vmc/switching-user-interfaces/">
-        Switching User Interfaces
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/geant4_vmc/multi-threaded-processing/" title="Multi-threaded Processing" class="dd-item ">
-        <a href="/user-guide/geant4_vmc/multi-threaded-processing/">
-        Multi-threaded Processing
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/geant4_vmc/verbosity/" title="Verbosity" class="dd-item ">
-        <a href="/user-guide/geant4_vmc/verbosity/">
-        Verbosity
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/geant4_vmc/vebosity-for-developers/" title="Verbosity for Developers" class="dd-item ">
-        <a href="/user-guide/geant4_vmc/vebosity-for-developers/">
-        Verbosity for Developers
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/geant4_vmc/source-code-documentation/" title="Source code documentation" class="dd-item ">
-        <a href="/user-guide/geant4_vmc/source-code-documentation/">
-        Source code documentation
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-      
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/user-guide/geant3&#43;vmc/" title="Geant3 &#43; VMC" class="dd-item
-        
-        
-        
-        ">
-      <a href="/user-guide/geant3&#43;vmc/">
-          Geant3 &#43; VMC
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/user-guide/geant3&#43;vmc/geant3&#43;vmc-content/" title="Geant3 &#43; VMC Content" class="dd-item ">
-        <a href="/user-guide/geant3&#43;vmc/geant3&#43;vmc-content/">
-        Geant3 &#43; VMC Content
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-      
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/user-guide/g4root/" title="G4Root" class="dd-item
-        
-        
-        
-        ">
-      <a href="/user-guide/g4root/">
-          G4Root
-          
-      </a>
-      
-      
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
-      
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/examples/" title="Examples" class="dd-item
-        
-        
-        
-        ">
-      <a href="/examples/">
-          Examples
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/examples/vmc-examples/" title="VMC Examples" class="dd-item ">
-        <a href="/examples/vmc-examples/">
-        VMC Examples
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/examples/experiment-frameworks/" title="Experiment Frameworks" class="dd-item ">
-        <a href="/examples/experiment-frameworks/">
-        Experiment Frameworks
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-      
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/reference/" title="Reference" class="dd-item
-        
-        
-        
-        ">
-      <a href="/reference/">
-          Reference
-          
-      </a>
-      
-      
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/publications/" title="Publications" class="dd-item
-        
-        
-        
-        ">
-      <a href="/publications/">
-          Publications
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/publications/publications-list/" title="Publications List" class="dd-item ">
-        <a href="/publications/publications-list/">
-        Publications List
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-          
-        
-        </ul>
-      
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/support/" title="Support" class="dd-item
-        
-        
-        
-        ">
-      <a href="/support/">
-          Support
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/support/mailing-list/" title="Mailing List" class="dd-item ">
-        <a href="/support/mailing-list/">
-        Mailing List
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/support/bug-reports/" title="Bug Reports" class="dd-item ">
-        <a href="/support/bug-reports/">
-        Bug Reports
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-      
-    </li>
-  
- 
-
-          
-        
-    </ul>
-
-    
-    
-      <section id="shortcuts">
-        <h3>More</h3>
-        <ul>
-          
-              <li>
-                  <a class="padding" href="https://github.com/vmc-project"><i class='fab fa-github'></i> vmc-project on Github</a>
-              </li>
-          
-              <li>
-                  <a class="padding" href="https://vmc-project.github.io/copyright"><i class='far fa-copyright'></i> Copyright</a>
-              </li>
-          
-              <li>
-                  <a class="padding" href="https://vmc-project.github.io/credits"><i class='fas fa-bullhorn'></i> Credits</a>
-              </li>
-          
-        </ul>
-      </section>
-    
-
-    
-    <section id="footer">
-      <p>Built from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
-
-    </section>
-  </div>
-</nav>
-
-
-
-
-        <section id="body">
-        <div id="overlay"></div>
-        <div class="padding highlightable">
-              
-              <div>
-                <div id="top-bar">
-                
-                
-                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-                    <span id="sidebar-toggle-span">
-                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
-                          <i class="fas fa-bars"></i>
-                        </a>
-                    </span>
-                  
-                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
-                  
-                  <span class="links">
-                 
-                 
-                    
-          
-          
-            
-            
-          
-          
-            
-            
-          
-          
-            
-            
-          
-          
-            <a href='/'>VMC Project</a> > <a href='/installation/'>Installation</a> > <a href='/installation/geant4_vmc/'>Installing Geant4 VMC</a> > Required and Optional Packages
-          
-        
-          
-        
-          
-        
-          
-        
-                 
-                  </span>
-                </div>
-                
-                    <div class="progress">
-    <div class="wrapper">
-<nav id="TableOfContents">
+  <body class="mobile-support html" data-url="/installation/geant4_vmc/required-optional-packages/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleNav()" type="button"title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button"title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
   <ul>
     <li>
       <ul>
@@ -1355,959 +129,186 @@
     </li>
   </ul>
 </nav>
-    </div>
-</div>
-
-                
+                </div>
               </div>
             </div>
-            
-        <div id="head-tags">
-        
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">VMC Project</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/installation/index.html"><span itemprop="name">Installation</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/installation/geant4_vmc/index.html"><span itemprop="name">Installing Geant4 VMC</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Required and Optional Packages</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle link noborder notitle interactive"><a href="/installation/geant4_vmc/build-options/index.html" title="Build Options (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle link noborder notitle interactive"><a href="/installation/geant3/index.html" title="Installing Geant3 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button"title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        
-        <div id="body-inner">
-          
-            <h1>
-              
-              Required and Optional Packages
-            </h1>
-          
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable installation" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
 
-        
+<h1 id="required-and-optional-packages">Required and Optional Packages</h1>
 
-
-<p>Geant4 VMC requires <a href="https://root.cern.ch/">ROOT</a> and <a href="http://geant4.web.cern.ch/">Geant4</a> installed, then the <a href="/user-guide/vmc/vmc-library">VMC core package</a> if using ROOT built without <code>vmc</code> enabled, and optionally, it can be built with <a href="https://github.com/vmc-project/vgm">VGM</a>. See below tips for configuration and installation of these packages.</p>
+<p>Geant4 VMC requires <a href="https://root.cern.ch/" rel="external">ROOT</a> and <a href="http://geant4.web.cern.ch/" rel="external">Geant4</a> installed, then the <a href="/user-guide/vmc/vmc-library">VMC core package</a> if using ROOT built without <code>vmc</code> enabled, and optionally, it can be built with <a href="https://github.com/vmc-project/vgm" rel="external">VGM</a>. See below tips for configuration and installation of these packages.</p>
 <p>The path to required and optional packages installations can be defined in the standard CMake way, via the paths to the CMake configuration file:</p>
-<pre tabindex="0"><code>Geant4_DIR      ... path to Geant4Config.cmake
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>Geant4_DIR      ... path to Geant4Config.cmake
 ROOT_DIR        ... path to ROOTConfig.cmake
 VMC_DIR         ... path to VMCConfig.cmake
-VGM_DIR         ... path to VGMConfig.cmake
-</code></pre><p>CMake will also find the CMake configuration files (for ROOT and Geant4) if you source the relevant script from the packages installations (CMAKE_INSTALL_PREFIX) so that they are available in the sestem paths:</p>
-<pre tabindex="0"><code>$ . bin/geant4.sh          ... Geant4 - on bourne shells (eg. bash)
+VGM_DIR         ... path to VGMConfig.cmake</code></pre></div>
+<p>CMake will also find the CMake configuration files (for ROOT and Geant4) if you source the relevant script from the packages installations (CMAKE_INSTALL_PREFIX) so that they are available in the sestem paths:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>$ . bin/geant4.sh          ... Geant4 - on bourne shells (eg. bash)
 $ . bin/thisroot.sh        ... Root    
 or
 $ source bin/geant4.csh    ... Geant4 - on C shells  
-$ source bin/thisroot.csh  ... Root
-</code></pre><h3 id="c11">C++11</h3>
+$ source bin/thisroot.csh  ... Root</code></pre></div>
+<h3 id="c11">C++11</h3>
 <p>Geant4 VMC, as well as ROOT and Geant4, have moved to the C++11 standard.
 C++11 is used by default since Geant4 VMC 3.3, Geant4 10.2 and ROOT 6.</p>
 <p>When mixing other versions of Geant4 and ROOT together, the same standard must
 be used for both packages. See below how the override the default setting
 when needed.</p>
 <h3 id="root">ROOT</h3>
-<p>To install ROOT - follow the <a href="http://root.cern.ch/building-root">Root Installation Page</a></p>
+<p>To install ROOT - follow the <a href="http://root.cern.ch/building-root" rel="external">Root Installation Page</a></p>
 <ul>
-<li><strong>C++11</strong> <!-- raw HTML omitted -->
+<li><strong>C++11</strong> <br />
 Geant4 VMC 3.3 built against ROOT 5.x requires ROOT built with C++11 (not default for this ROOT version), set via:</li>
 </ul>
-<pre tabindex="0"><code>-Dcxx11=ON
-</code></pre><p>option, when ROOT is built using CMake, or</p>
-<pre tabindex="0"><code>--enable-cxx11
-</code></pre><p>option, when ROOT is built using configure script.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>-Dcxx11=ON</code></pre></div>
+<p>option, when ROOT is built using CMake, or</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>--enable-cxx11</code></pre></div>
+<p>option, when ROOT is built using configure script.</p>
 <h3 id="geant4">Geant4</h3>
-<p>To install Geant4 - download the source from <a href="http://geant4.web.cern.ch/support/download">Geant4 Download page</a> and follow the <a href="http://geant4.web.cern.ch/geant4/UserDocumentation/UsersGuides/InstallationGuide/html/index.html">Geant4 Installation Guide</a> together with the tips relevant to using it with VMC described below.</p>
+<p>To install Geant4 - download the source from <a href="http://geant4.web.cern.ch/support/download" rel="external">Geant4 Download page</a> and follow the <a href="http://geant4.web.cern.ch/geant4/UserDocumentation/UsersGuides/InstallationGuide/html/index.html" rel="external">Geant4 Installation Guide</a> together with the tips relevant to using it with VMC described below.</p>
 <ul>
-<li><strong>C++11</strong> <!-- raw HTML omitted -->
+<li><strong>C++11</strong> <br />
 Geant4 VMC 3.0 - 3.2 built against Geant4 10.0.x or 10.1.x and ROOT 6x requires
 Geant4 built with C++11 (not default for these Geant4 versions), set via:</li>
 </ul>
-<pre tabindex="0"><code>-DGEANT4_BUILD_CXXSTD=c++11
-</code></pre><ul>
-<li><strong>G3toG4 tool</strong><!-- raw HTML omitted -->
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>-DGEANT4_BUILD_CXXSTD=c++11</code></pre></div>
+<ul>
+<li><strong>G3toG4 tool</strong><br />
 The G3toG4 package is used in geant4_vmc to support geometry definition via VMC with Geant4 native navigation. The build of G3toG4 package can be activated when building Geant4 with the following CMake options:</li>
 </ul>
-<pre tabindex="0"><code>-DGEANT4_USE_G3TOG4=ON
-</code></pre><p>Since Geant4 VMC 3.0 the use of this package is optional.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>-DGEANT4_USE_G3TOG4=ON</code></pre></div>
+<p>Since Geant4 VMC 3.0 the use of this package is optional.</p>
 <ul>
-<li><strong>OpenGL visualization</strong> <!-- raw HTML omitted -->
+<li><strong>OpenGL visualization</strong> <br>
 It is recommended to build Geant4 X11 OpenGL visualization driver used in the VMC examples. It is handled in Geant4 CMake build via the CMake option:</li>
 </ul>
-<pre tabindex="0"><code>-DGEANT4_USE_OPENGL_X11=ON
-</code></pre><ul>
-<li><strong>Multi-threading</strong> <!-- raw HTML omitted -->
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>-DGEANT4_USE_OPENGL_X11=ON</code></pre></div>
+<ul>
+<li><strong>Multi-threading</strong> <br>
 Geant4 VMC can be built against Geant4 installation in multi-threading mode which is handled in Geant4 CMake build via the CMake option:</li>
 </ul>
-<pre tabindex="0"><code>-DG4MULTITHREADED=ON
-</code></pre><p>Dynamic loading of Geant4 libraries, as used in VMC, requires to change the Geant4 default TLS model, initial-exec, with global-dynamic via the CMake option:</p>
-<pre tabindex="0"><code>-DGEANT4_BUILD_TLS_MODEL=global-dynamic
-</code></pre><p>Geant4 VMC 3.00.x version is migrated to Geant4 multi-threading and can be built against both Geant4 sequential and Geant4 multi-threading installations. The global-dynamic model is required for running VMC applications from Root session (in a &ldquo;traditional&rdquo; way  with dynamic loading of libraries). When the VMC application main program is linked with all libraries, Geant4 built with the default TLS model can be used.</p>
-<p>The VMC application will run automatically in MT mode when Geant4 VMC is built against Geant4 MT. See <a href="/user-guide/geant4_vmc/multi-threaded-processing/">the page on Multi-threaded processing</a> how this default behaviour can be changed in the configuration of the application.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>-DG4MULTITHREADED=ON</code></pre></div>
+<p>Dynamic loading of Geant4 libraries, as used in VMC, requires to change the Geant4 default TLS model, initial-exec, with global-dynamic via the CMake option:</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>-DGEANT4_BUILD_TLS_MODEL=global-dynamic</code></pre></div>
+<p>Geant4 VMC 3.00.x version is migrated to Geant4 multi-threading and can be built against both Geant4 sequential and Geant4 multi-threading installations. The global-dynamic model is required for running VMC applications from Root session (in a &ldquo;traditional&rdquo; way  with dynamic loading of libraries). When the VMC application main program is linked with all libraries, Geant4 built with the default TLS model can be used.</p>
+<p>The VMC application will run automatically in MT mode when Geant4 VMC is built against Geant4 MT. See <a href="/user-guide/geant4_vmc/multi-threaded-processing/index.html">the page on Multi-threaded processing</a> how this default behaviour can be changed in the configuration of the application.</p>
 <h3 id="vgm-optional">VGM (optional)</h3>
 <p>VGM is used in Geant4 VMC for a geometry in memory conversion from Root TGeo objects to the Geant4 native geometry. This conversion is performed when users geometry is defined via the Root geometry package and Geant4 native geometry navigation is selected.</p>
-<p>To install VGM - follow the installation instructions on the <a href="https://github.com/vmc-project/vgm">VGM Web site</a>.</p>
+<p>To install VGM - follow the installation instructions on the <a href="https://github.com/vmc-project/vgm" rel="external">VGM Web site</a>.</p>
 <p>To build Geant4 VMC with VGM, you have to select the option:</p>
-<pre tabindex="0"><code>-DGeant4VMC_USE_VGM=ON
-</code></pre>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>-DGeant4VMC_USE_VGM=ON</code></pre></div>
 
-<footer class="footline">
-	
-</footer>
-
-        
+  <footer class="footline">
+  </footer>
+</article>
         </div>
-        
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+<a id="logo" href="https://vmc-project.github.io/">
+  <img src="/images/VMClogo6_white.png" width=80% />
+</a>
 
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
       </div>
-
-    <div id="navigation">
-        
-        
-
-        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-        
-                    
-                        
-            
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-
-        
-
-
-	 
-	 
-		
-			<a class="nav nav-prev" href="/installation/geant4_vmc/build-options/" title="Build Options"> <i class="fa fa-chevron-left"></i></a>
-		
-		
-			<a class="nav nav-next" href="/installation/geant3/" title="Installing Geant3" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
-		
-	
-    </div>
-
-    </section>
-
-    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
-      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
-    </div>
-    <script src="/js/clipboard.min.js?1738946947"></script>
-    <script src="/js/perfect-scrollbar.min.js?1738946947"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1738946947"></script>
-    <script src="/js/jquery.sticky.js?1738946947"></script>
-    <script src="/js/featherlight.min.js?1738946947"></script>
-    <script src="/js/highlight.pack.js?1738946947"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1738946947"></script>
-    <script src="/js/learn.js?1738946947"></script>
-    <script src="/js/hugo-learn.js?1738946947"></script>
-    
-        
-            <script src="/mermaid/mermaid.js?1738946947"></script>
-        
-        <script>
-            mermaid.initialize({ startOnLoad: true });
-        </script>
-    
-    
-
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-url="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-url="/download/index.html"><a class="padding" href="/download/index.html">Download</a><ul id="R-subsections-89f76e1526985442faec91b4b17e0f07" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-url="/installation/index.html"><a class="padding" href="/installation/index.html">Installation</a><ul id="R-subsections-ff749ccaab053548f690f97bcd6daed0" class="collapsible-menu">
+            <li class="" data-nav-url="/installation/vmc/index.html"><a class="padding" href="/installation/vmc/index.html">Installing VMC</a></li>
+            <li class="parent alwaysopen " data-nav-url="/installation/geant4_vmc/index.html"><a class="padding" href="/installation/geant4_vmc/index.html">Installing Geant4 VMC</a><ul id="R-subsections-31441cf00b0f0fcba940af07d361bab7" class="collapsible-menu">
+            <li class="" data-nav-url="/installation/geant4_vmc/build-options/index.html"><a class="padding" href="/installation/geant4_vmc/build-options/index.html">Build Options</a></li>
+            <li class="active " data-nav-url="/installation/geant4_vmc/required-optional-packages/index.html"><a class="padding" href="/installation/geant4_vmc/required-optional-packages/index.html">Required and Optional Packages</a></li></ul></li>
+            <li class="" data-nav-url="/installation/geant3/index.html"><a class="padding" href="/installation/geant3/index.html">Installing Geant3</a></li>
+            <li class="alwaysopen " data-nav-url="/installation/examples/index.html"><a class="padding" href="/installation/examples/index.html">Installing and Running Examples</a><ul id="R-subsections-e7d6c4ce737f4a65c4f47ef2ae12efee" class="collapsible-menu"></ul></li></ul></li>
+            <li class="" data-nav-url="/user-guide/index.html"><a class="padding" href="/user-guide/index.html">User Guide</a><ul id="R-subsections-2481933c277ea702431836ec0ab63c8d" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/examples/index.html"><a class="padding" href="/examples/index.html">Examples</a><ul id="R-subsections-2e4187ca04853a7e1382c8d86f7be6fd" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/reference/index.html"><a class="padding" href="/reference/index.html">Reference</a></li>
+            <li class="" data-nav-url="/publications/index.html"><a class="padding" href="/publications/index.html">Publications</a><ul id="R-subsections-e0b210545207756ebe6bf30368fa14c3" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-url="/support/index.html"><a class="padding" href="/support/index.html">Support</a><ul id="R-subsections-caa68563dfb61577c2c4699e1aa63010" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <div class="nav-title padding">More</div>
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-url="https://github.com/vmc-project"><a class="padding" href="https://github.com/vmc-project" rel="external"><i class='fab fa-github'></i> vmc-project on Github</a></li>
+            <li class="" data-nav-url="/copyright"><a class="padding" href="/copyright"><i class='far fa-copyright'></i> Copyright</a></li>
+            <li class="" data-nav-url="/credits"><a class="padding" href="/credits"><i class='fas fa-bullhorn'></i> Credits</a></li>
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built from <a href="https://getgrav.org">Grav</a> and <a href="https://gohugo.io/">Hugo</a></p>
+</div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1770049849" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1770049849" defer></script>
+    <script src="/js/theme.min.js?1770049849" defer></script>
   </body>
 </html>
-
